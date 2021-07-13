@@ -1,0 +1,117 @@
+﻿@{
+    Layout = "~/Views/Shared/_BootstrapTableLayout.cshtml";
+    var pkItem = Model.FirstOrDefault(c => c.IS_PK == "是");
+}
+@section scripts
+{
+    <script>
+        var tag = "<";
+        var pk = "@(pkItem==null?"":pkItem.NAME)";
+        var columns = [
+            {
+                checkbox: true, visible: true
+            },
+            {
+                title: '序号',
+                field: '',
+                align: 'center',
+                formatter: function (value, row, index) {
+                    var pageSize = $('#mainTable').bootstrapTable('getOptions').pageSize;     //通过table的#id 得到每页多少条
+                    var pageNumber = $('#mainTable').bootstrapTable('getOptions').pageNumber; //通过table的#id 得到当前第几页
+                    return pageSize * (pageNumber - 1) + index + 1;    // 返回每条的序号： 每页条数 *（当前页 - 1 ）+ 序号
+                }
+            }];
+        @foreach (var item in Model)
+        {
+            <text>
+        columns.push({
+            field: "@(item.NAME)",
+            title: "@(string.IsNullOrWhiteSpace(item.COMMENTS) ? item.NAME : item.COMMENTS)",
+            filterable: true,
+            sortable: true,
+            formatter: function (value, row, index) {
+                //console.log(value);
+                if (value!=undefined&&value!=null&&typeof(value)=="string"&&value.indexOf(tag) > -1) {
+                    return "";
+                }
+                return value;
+            },
+            @if(item.IS_PK=="是"){<text>isPk:true</text>}
+        })
+            </text>
+        }
+    </script>
+
+    <script src="~/static/modules/adhoc/genColumn.js"></script>
+}
+@using GGZY.Core.Extensions
+@model List<GGZY.Core.Models.GeneralColumn>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">GenColumn:@(Request.QueryString["id"].DesDecrypt())</h3>
+    </div>
+    <div class="panel-body">
+        @Html.Hidden("tid", Request.QueryString["id"], new { @class = "filter-control" })
+        <div id="search-collapse" class="collapse" style="">
+            <div class="accordion-inner">
+                <form id="searchForm" class="form form-horizontal well clearfix" action="@(Url.Action("GenTable", "Adhoc", new {RspType = "view"}))" method="post">
+
+                    @*@foreach (var item in Model)
+                        {
+                            var name = item.NAME;
+                            var comments= item.COMMENTS;
+                            if (string.IsNullOrWhiteSpace(comments))
+                            {
+                                comments = name;
+                            }
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <label class="label-item single-overflow pull-left" title="@(comments)">@(comments)：</label>
+                                <input id="@(name)" name="@(name)" class=" form-control" type="text" value="" maxlength="257" placeholder="@(comments)" />
+                            </div>
+                        }*@
+                    @*<div class="col-xs-12 col-sm-6 col-md-4">
+                            <div style="margin-top:26px">
+                                <a id="search" class="btn btn-primary btn-rounded  btn-bordered btn-sm"><i class="fa fa-search"></i> 查询</a>
+                                <a id="reset" class="btn btn-primary btn-rounded  btn-bordered btn-sm"><i class="fa fa-refresh"></i> 重置</a>
+                            </div>
+                        </div>*@
+                </form>
+            </div>
+        </div>
+
+        <div id="toolbar">
+            <a id="search" class="btn btn-primary btn-rounded  btn-bordered btn-sm"><i class="fa fa-search"></i> 查询</a>
+            <a id="reset" class="btn btn-primary btn-rounded  btn-bordered btn-sm"><i class="fa fa-refresh"></i> 重置</a>
+            @*<button id="add" class="btn btn-primary" onclick="add()">
+                    <i class="glyphicon glyphicon-plus"></i> 新建
+                </button>
+                <button id="edit" class="btn btn-success" disabled onclick="edit()">
+                    <i class="glyphicon glyphicon-edit"></i> 修改
+                </button>
+                <button id="remove" class="btn btn-danger" disabled onclick="deleteAll()">
+                    <i class="glyphicon glyphicon-remove"></i> 删除
+                </button>
+                <button id="btnImport" class="btn btn-info"><i class="fa fa-folder-open-o"></i> 导入</button>
+                <button id="export" class="btn btn-warning">
+                    <i class="fa fa-file-excel-o"></i> 导出
+                </button>
+                <button id="view" class="btn btn-default" disabled onclick="view()">
+                    <i class="fa fa-search-plus"></i> 查看
+                </button>
+                <button id="removeall" class="btn btn-danger" onclick="removeAll()">
+                    <i class="glyphicon glyphicon-remove"></i> 清空日志
+                </button>*@
+        </div>
+
+        <table id="mainTable" data-toolbar="#toolbar">
+        </table>
+        <ul id="context-menu" class="dropdown-menu">
+            <li id="ctx_view" data-item="view"><a>查看</a></li>
+            <li id="ctx_edit" data-item="edit"><a>编辑</a></li>
+            <li id="ctx_del" data-item="delete"><a>删除</a></li>
+            <li id="ctx_cancel" data-item="action1"><a>取消</a></li>
+        </ul>
+    </div>
+</div>
+

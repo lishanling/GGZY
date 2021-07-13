@@ -1,0 +1,312 @@
+{
+  "DataNo": "404",
+  "DataName": "COMPLAINT_INFO",
+  "DataCnName": "投诉信息",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_NAME",
+      "CnName": "招标项目（采购项目）名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目（采购项目）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODE",
+      "CnName": "标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 23
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_NAME",
+      "CnName": "标段（包）名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "COMPLAINT_NAME",
+      "CnName": "投诉者姓名",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "COMPLAINT_PHONE",
+      "CnName": "投诉者电话",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "COMPLAINT_MAIL",
+      "CnName": "投诉者邮箱",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "COMPLAINTED_BODY_NAME",
+      "CnName": "被投诉主体名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "COMPLAINTED_BODY_TYPE",
+      "CnName": "被投诉者类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "2001"
+        }
+      ]
+    },
+    {
+      "Name": "COMPLAINTED_BODY_CODE",
+      "CnName": "被投诉主体代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "DISSENT_REASON",
+      "CnName": "依据和理由",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "COMPLAINT_CONTENT",
+      "CnName": "投诉内容",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "COMPLAINT_DATE",
+      "CnName": "投诉日期",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "ACCEPT_DATE",
+      "CnName": "受理日期",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "HANDLE_RESULT",
+      "CnName": "处理结果",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "HANDLE_BASIS",
+      "CnName": "处理依据",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "HANDLE_DATE",
+      "CnName": "处理时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "CONFINED_ACTION",
+      "CnName": "限制的行为",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "1007"
+        }
+      ]
+    },
+    {
+      "Name": "START_DATE",
+      "CnName": "限制行为开始时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "END_DATE",
+      "CnName": "限制行为结束时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "DEALING_UNIT",
+      "CnName": "处理单位",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "ENTER_CREDIT_PLAT",
+      "CnName": "处理结果是否进入信用平台",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "TRUE_OR_FALSE"
+        }
+      ]
+    },
+    {
+      "Name": "SIGNATURE",
+      "CnName": "处理人电子签名",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

@@ -1,0 +1,174 @@
+{
+  "DataNo": "1121",
+  "DataName": "DEA_MEDI_PURCHASE_ORDER",
+  "DataCnName": "药品采购单信息",
+  "Fields": [
+    {
+      "Name": "PROJECT_CODE",
+      "CnName": "项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "PROJNAME",
+      "CnName": "项目名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "DRUGGROUP",
+      "CnName": "采购类别",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 10
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "9111"
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "ORDERDETAILID",
+      "CnName": "采购单编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "ORDERNAME",
+      "CnName": "采购单名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "HOSPNAME",
+      "CnName": "药品采购机构名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "ORGCODE",
+      "CnName": "药品采购机构统一社会信用代码/组织机构代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "ORGID",
+      "CnName": "药品采购机构编码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "PURPRICE",
+      "CnName": "采购金额",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "ORDTIME",
+      "CnName": "下单时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "PURSTATUS",
+      "CnName": "订单状态",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "9113"
+        }
+      ]
+    },
+    {
+      "Name": "BID_CURRENCY",
+      "CnName": "价格币种代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

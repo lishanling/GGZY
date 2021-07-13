@@ -1,0 +1,216 @@
+{
+    "DataNo": "208",
+    "DataName": "EXPERT_CREDIT_RECORD",
+    "DataCnName": "专家信用记录",
+    "Fields": [
+        {
+            "Name": "ID_CARD",
+            "CnName": "专家身份证件号码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "REWARD_PUNISHMENT_TYPE",
+            "CnName": "奖惩类型",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "1201"
+            }
+          ]
+        },
+        {
+            "Name": "TENDER_PROJECT_NAME",
+            "CnName": "招标项目（采购项目）名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目（采购项目）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_NAME",
+            "CnName": "标段（包）名称",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODE",
+            "CnName": "标段（包）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 23
+                }
+            ]
+        },
+        {
+            "Name": "UNIFIED_DEAL_CODE",
+            "CnName": "统一交易标识码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 40
+                }
+            ]
+        },
+        {
+            "Name": "APPROVE_DEPT_NAME",
+            "CnName": "监督部门名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "APPROVE_DEPT_CODE",
+            "CnName": "监督部门代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "VIOLATING_BASIS",
+            "CnName": "处罚依据",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "VIOLATING_RESULT",
+            "CnName": "处罚结果",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "PULISH_DATE",
+            "CnName": "发布日期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "CONFINED_ACTION",
+            "CnName": "限制的行为",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "START_DATE",
+            "CnName": "限制行为开始时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "END_DATE",
+            "CnName": "限制行为结束时间",
+            "Validators": [
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "OPERATOR",
+            "CnName": "发布人",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 100
+                }
+            ]
+        },
+        {
+            "Name": "OPERATE_DATE",
+            "CnName": "发布时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

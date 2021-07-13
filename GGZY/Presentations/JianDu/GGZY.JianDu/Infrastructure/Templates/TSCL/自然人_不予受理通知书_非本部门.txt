@@ -1,0 +1,157 @@
+<p style="width:692px;margin:0 auto;page-break-before:always;text-align:right;line-height:29px">
+    <span style="font-family:仿宋_GB2312;font-size:19px">编号：&nbsp;{CODE}&nbsp;</span>
+</p>
+<p style="width:692px;margin:0 auto;text-align:center;line-height:29px">
+    <span style="font-family:黑体;font-size:29px">&nbsp;</span>
+</p>
+<p style="width:692px;margin:0 auto;text-align:center;line-height:29px">
+    <span style="font-family:黑体;font-size:29px"><span style="font-family:黑体">投诉不予受理通知书</span></span>
+</p>
+<p style="width:692px;margin:0 auto;text-align:center;line-height:29px">
+    <span style="font-family:黑体;font-size:29px">&nbsp;</span>
+</p>
+<table width="692" align="center" data-sort="sortDisabled" style="margin:0 auto">
+    <tbody>
+        <tr style="height:2px;page-break-inside:avoid" class="firstRow">
+            <td width="114" valign="center" style="padding: 0px 7px; border-width: 1px; border-color: windowtext; border-style: solid;">
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">投 诉 人</span>
+                </p>
+            </td>
+            <td width="578" valign="center" colspan="5" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: windowtext; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">{COMPLAINT_NAME}</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:2px">
+            <td width="114" valign="center" style="padding: 0px 7px; border-width: 1px; border-left-color: windowtext; border-right-color: windowtext; border-style: solid; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style="font-family:仿宋_GB2312">身份证号码</span>
+                </p>
+            </td>
+            <td valign="center" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;" rowspan="1" colspan="3">
+                <p style="text-align:center;line-height:28px">
+                    <span style="font-family: 仿宋_GB2312;">{COMPLAINT_CODE}</span><br/>
+                </p>
+            </td>
+            <td width="126" valign="center" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: windowtext; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style="font-family:仿宋_GB2312">手机号码</span>
+                </p>
+            </td>
+            <td width="168" valign="center" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: windowtext; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">{COMPLAINT_PHONE}</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:2px;page-break-inside:avoid">
+            <td width="114" valign="center" style="padding: 0px 7px; border-width: 1px; border-left-color: windowtext; border-right-color: windowtext; border-style: solid; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style="font-family:仿宋_GB2312">所在单位</span>
+                </p>
+            </td>
+            <td width="285" valign="center" colspan="3" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">{COMPLAINT_DNAME}</span>
+                </p>
+            </td>
+            <td width="126" valign="center" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">投诉时间</span>
+                </p>
+            </td>
+            <td width="168" valign="center" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">{CREATE_TM}</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:2px;page-break-inside:avoid">
+            <td width="114" valign="center" style="padding: 0px 7px; border-width: 1px; border-left-color: windowtext; border-right-color: windowtext; border-style: solid; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-indent:0;text-align:center;line-height:19px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">招标项目名称</span>
+                </p>
+            </td>
+            <td width="285" valign="center" colspan="3" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-indent:0;text-align:center;line-height:19px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">{TENDER_PROJECT_NAME}</span>
+                </p>
+            </td>
+            <td width="126" valign="center" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">招标项目编号</span>
+                </p>
+            </td>
+            <td width="168" valign="center" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">{TENDER_PROJECT_CODE}</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:2px;page-break-inside:avoid">
+            <td width="114" valign="center" style="padding: 0px 7px; border-width: 1px; border-left-color: windowtext; border-right-color: windowtext; border-style: solid; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">审 &nbsp;查</span>
+                </p>
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">存 &nbsp;在</span>
+                </p>
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">问 &nbsp;题</span>
+                </p>
+            </td>
+            <td width="578" valign="top" colspan="5" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-indent:37px;line-height:27px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">{SCCZWT}</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:2px;page-break-inside:avoid">
+            <td width="114" valign="center" style="padding: 0px 7px; border-width: 1px; border-left-color: windowtext; border-right-color: windowtext; border-style: solid; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">不 &nbsp;予</span><span style="font-family: 仿宋_GB2312;">&nbsp;</span>
+                </p>
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">受 &nbsp;理</span><span style="font-family: 仿宋_GB2312;">&nbsp;</span>
+                </p>
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">规 &nbsp;定</span>
+                </p>
+            </td>
+            <td width="578" valign="top" colspan="5" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="margin-top:10px;text-indent:24px;line-height:24px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">《工程建设项目招标投标活动投诉处理办法》（七部委11号令）第十一条第一款第（二）项规定。</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:2px;page-break-inside:avoid">
+            <td width="114" valign="center" style="padding: 0px 7px; border-width: 1px; border-left-color: windowtext; border-right-color: windowtext; border-style: solid; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">处 &nbsp;理</span>
+                </p>
+                <p style="text-align:center;line-height:28px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">意 &nbsp;见</span>
+                </p>
+            </td>
+            <td width="578" valign="top" colspan="5" style="padding: 0px 7px; border-width: 1px; border-style: solid; border-left-color: initial; border-right-color: windowtext; border-top-color: initial; border-bottom-color: windowtext; word-break: break-all;">
+                <p style="text-indent:32px;line-height:27px">
+                    <span style="font-family:仿宋_GB2312;font-size:16px">{REMARK}</span>
+                </p>
+                <p style="text-indent:32px;line-height:27px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">&nbsp;&nbsp;&nbsp;</span>
+                </p>
+                <p style="text-indent:32px;line-height:27px">
+                    <span style="font-family:仿宋_GB2312;font-size:16px">&nbsp;</span>
+                </p>
+                <p style="text-indent:232px;text-align:right;line-height:24px">
+                    <span style=";font-family:仿宋_GB2312;font-size:16px">{DNAME} &nbsp;</span>
+                </p>
+                <p style="text-indent:32px;text-align:right;line-height:27px">
+                    <span style="font-family: 仿宋_GB2312;font-size: 16px">&nbsp;{YYYY}&nbsp;年&nbsp;{MM}&nbsp;月&nbsp;{DD}&nbsp;日&nbsp;&nbsp;</span>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>

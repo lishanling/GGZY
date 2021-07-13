@@ -1,0 +1,1709 @@
+{
+    "DataName": "JT_ORD_MAIN_TENDER_FILE",
+    "DataCnName": "普通囯省道养护大中修工程施工招标文件要求",
+    "IsZXSJ": true,
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "JT_TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODES",
+            "CnName": "相关标段（包）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "LIMITE_ALL_TIME",
+            "CnName": "项目总工期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 5
+                }
+            ]
+        },
+        {
+            "Name": "DEFECT_LIABILITY_PERIOD",
+            "CnName": "缺陷责任期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 20
+                }
+            ]
+        },
+        {
+            "Name": "BEGIN_ALL_DATE",
+            "CnName": "总计划开工日期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "END_DATE",
+            "CnName": "计划交工日期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "LIMITE_TIME_UNIT",
+            "CnName": "工期单位",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "SYNDICATED_NUMBER",
+            "CnName": "联合体成员数量要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "OPEN_BID_REQURE_CHOOSE",
+            "CnName": "是否需要人员到场",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "OPEN_BID_REQURE_CERT",
+            "CnName": "到场持有证件",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        },
+        {
+            "Name": "FINANCE_YEAR",
+            "CnName": "财务年份要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "REPUTATION_TIME1",
+            "CnName": "未发生安全事故的时间要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "REPUTATION_TIME2",
+            "CnName": "未出现不良记录时间要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "MANAGER_TITLE",
+            "CnName": "项目经理职称专业",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "MANAGER_TITLE_LEVEL",
+            "CnName": "项目经理职称等级",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 2
+                }
+            ]
+        },
+        {
+            "Name": "MANAGER_AGE",
+            "CnName": "项目经理年龄",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "CONSTRUCTOR_MAJOR",
+            "CnName": "注册建造师专业名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "CONSTRUCTOR_MAJOR_LEVEL",
+            "CnName": "注册建造师等级",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "TECH_TITLE",
+            "CnName": "技术负责人职称专业",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "TECH_TITLE_LEVEL",
+            "CnName": "技术负责人职称等级",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 2
+                }
+            ]
+        },
+        {
+            "Name": "TECH_AGE",
+            "CnName": "技术负责人年龄",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "SECURITY_SELECTION_NUM",
+            "CnName": "专职人员人数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12
+                }
+            ]
+        },
+        {
+            "Name": "SECURITY_SELECTION_AGE",
+            "CnName": "专职人员年龄",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "MATERIAL_PRICE_ADJUSTED",
+            "CnName": "材料价格是否调整",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "CONTR_SUPPLE_CLAUSE",
+            "CnName": "承包人补充条款",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "STANDARD_REQUIRE",
+            "CnName": "准化建设内容及验收标准要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "ENGINEER_QUALITY_REQUIRE",
+            "CnName": "工程质量细化内容",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "PROVI_SUM",
+            "CnName": "暂列金额细化内容",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "BASE_PRICE_CITY",
+            "CnName": "基期价格参考城市",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "RELEASE_PRICE_CITY",
+            "CnName": "发布价参考城市",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "NO_RELEASE_PRICE_CITY",
+            "CnName": "未涉及材料发布价参考城市",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "ADVANCE_AMOUNT_CONTENT",
+            "CnName": "预付款细化内容",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "PROJECT_RISKS_NAME",
+            "CnName": "投保建筑工程一切险名义",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "PROJECT_RISKS_APPOINT",
+            "CnName": "投保建筑工程一切险的其他约定",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "LIABILITY_RISKS_NAME",
+            "CnName": "投保第三方责任险名义",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "LIABILITY_RISKS_APPOINT",
+            "CnName": "投保第三方责任险的其他约定",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "LIQUIDATED_DAMAGES1",
+            "CnName": "更换为项目经理备选人员违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "LIQUIDATED_DAMAGES2",
+            "CnName": "更换为技术负责人备选人员违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "LIQUIDATED_DAMAGES3",
+            "CnName": "评标时更换为项目经理备选人员违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "LIQUIDATED_DAMAGES4",
+            "CnName": "评标时更换为技术负责人备选人员违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "LIQUIDATED_DAMAGES5",
+            "CnName": "更换为项目经理其他同等资历人员违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "LIQUIDATED_DAMAGES6",
+            "CnName": "更换为技术负责人其他同等资历人员违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "LIQUIDATED_DAMAGES7",
+            "CnName": "评标时更换为项目经理其他同等资历人员违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "LIQUIDATED_DAMAGES8",
+            "CnName": "评标时更换为技术负责人其他同等资历人员违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "KEY_CONST_EQUIPMENT",
+            "CnName": "关键施工设备",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "KEY_EQUIPMENT_AMOUNT",
+            "CnName": "支付关键施工设备违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "OTHER_EQUIPMENT_AMOUNT",
+            "CnName": "支付其他主要设备违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "IF_CONSTRUCTOR",
+            "CnName": "项目经理是否有注册建造师职称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "ENCLOSURE1",
+            "CnName": "标后监管指南",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "ENCLOSURE2",
+            "CnName": "招标代理合同",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "ENCLOSURE3",
+            "CnName": "招标人授权招标代理签章协议书",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "FUND_IMPLEMENTATION",
+            "CnName": "资金落实情况",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 100
+                }
+            ]
+        },
+        {
+            "Name": "TOTAL_SECTION_NUMBER",
+            "CnName": "项目总标段个数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "TENDERER_BID_SECTION",
+            "CnName": "本次招标标段个数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "CONTRACT_SEGMENT",
+            "CnName": "每个投标人最多投标标段数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "TENDER_NUMBER",
+            "CnName": "每个投标人最多中标标段数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "MARGIN_NAME",
+            "CnName": "保证金户名",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "MARGIN_NUMBER",
+            "CnName": "保证金账号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "MARGIN_BANK",
+            "CnName": "开户银行",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "MARGIN_TIME",
+            "CnName": "投标保证金递交截止时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "MEDIA1",
+            "CnName": "其他发布媒体1",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 2000
+                }
+            ]
+        },
+        {
+            "Name": "MEDIA2",
+            "CnName": "其他发布媒体2",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 2000
+                }
+            ]
+        },
+        {
+            "Name": "SUPERVISE_DEPT_NAME",
+            "CnName": "监督部门名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "SUPERVISE_DEPT_PHONE",
+            "CnName": "监督部门联系电话",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        },
+        {
+            "Name": "SUPERVISE_DEPT_ADDRESS",
+            "CnName": "监督部门地址",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "SUPERVISE_DEPT_ZIP_CODE",
+            "CnName": "监督部门邮编",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "QUALITY_REQUIRE1",
+            "CnName": "本项目工程质量目标为交工验收质量评定",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "QUALITY_REQUIRE2",
+            "CnName": "竣工验收质量要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "SECURITY_SELECTION",
+            "CnName": "专职安全人员类型",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 2
+                }
+            ]
+        },
+        {
+            "Name": "SOCIAL_SECURITY_REQUIRE",
+            "CnName": "人员社保要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "SUBCONTRACT",
+            "CnName": "是否允许分包",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "MODIFICATION_TIME",
+            "CnName": "招标文件修改截止时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 400
+                }
+            ]
+        },
+        {
+            "Name": "INTEREST_MODE",
+            "CnName": "采用电汇形式保证金计息方式",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "INTEREST_REQUIRE",
+            "CnName": "利息约定",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "ANNUAL_DEPOSIT_REQUIRE",
+            "CnName": "年度保证金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "BRIBERY_RECORD_YEAR",
+            "CnName": "近年发生的行贿犯罪记录查询的年份要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "LITIGATION_REQUIRE",
+            "CnName": "近年发生的诉讼及仲裁情况的年份要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "COPY_NUMBER",
+            "CnName": "投标文件副本份数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "TENDER_OFFER_REQUIRE",
+            "CnName": "投标报价补充条款",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "ALL_EXPERT_NUM",
+            "CnName": "评标委员会人数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "TENDERER_NUM",
+            "CnName": "招标人代表人数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "EXPERT_NUM",
+            "CnName": "专家人数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "EXPERT_LIBRARY",
+            "CnName": "评标专家确定方式",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "WINNING_BIDDER_NUMBER",
+            "CnName": "评标委员会确定中标人数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "BOND_PRICE",
+            "CnName": "履约担保金额",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 4,
+                    "DecimalFigures": 2
+                }
+            ]
+        },
+        {
+            "Name": "SIGN_CONTRACT_TIME",
+            "CnName": "订立书面合同的时间为中标通知书发出后的天数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "MINIMUM_QUALIFICATIONS",
+            "CnName": "资质最低条件",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "FINANCIAL_REQUIRE",
+            "CnName": "财务最低要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "ACHIEVEMENT_REQUIRE",
+            "CnName": "业绩最低要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "REPUTATION_REQUIRE",
+            "CnName": "信誉最低要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "QUALIFICATION_REQUIRE",
+            "CnName": "项目经理、技术负责人、专职安全工程员最低要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "OTHER_QUALIFICATION_REQUIRE",
+            "CnName": "其他主要管理人员和技术人员最低要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "EQUIPMENT_REQUIRE",
+            "CnName": "机械设备最低要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "EVALUATING_METHOD_STANDARD",
+            "CnName": "评标办法评审因素和评审标准",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "E1_SCORE",
+            "CnName": "E1值",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 17,
+                    "DecimalFigures": 2
+                }
+            ]
+        },
+        {
+            "Name": "E2_SCORE",
+            "CnName": "E2值",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 17,
+                    "DecimalFigures": 2
+                }
+            ]
+        },
+        {
+            "Name": "CREDIT_REQUIRE",
+            "CnName": "信用分使用要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "DISPUTE_DEAL_METHOD",
+            "CnName": "争议的最终解决方式",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "ARB_COMMISSION_NAME",
+            "CnName": "仲裁委员会名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "SUBC_NAME",
+            "CnName": "发包人",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "SUBC_NAME_ADDRESS",
+            "CnName": "发包人地址",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 1000
+                }
+            ]
+        },
+        {
+            "Name": "SUBC_ZIP_CODE",
+            "CnName": "发包人邮政编码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "DEFECT_LIABILITY_PERIOD1",
+            "CnName": "缺陷责任期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 4,
+                    "DecimalFigures": 4
+                }
+            ]
+        },
+        {
+            "Name": "DRAWING_MODIFICATION",
+            "CnName": "图纸修改和补充应在施工前",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "PROVIDE_MATERIALS",
+            "CnName": "发包人是否提供材料或工程设备",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "MATERIAL_REGULATION",
+            "CnName": "提供材料或工程设备相关规定",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "SUPPLY_EQUIPMENT",
+            "CnName": "发包人是否提供施工设备或临时设施",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "EQUIPMEN_REGULATION",
+            "CnName": "发包人提供临时设施相关规定",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "DATA_PERIOD",
+            "CnName": "发包人提供资料的期限",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "APPROVAL_PERIOD",
+            "CnName": "承包人报送审批的期限",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "DELAY_PENALTY",
+            "CnName": "工期延误的违约金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 400
+                }
+            ]
+        },
+        {
+            "Name": "PENALTY_QUOTA",
+            "CnName": "逾期交工违约金限额",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "COMPLETION_BONUS",
+            "CnName": "提前交工的奖金",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "BONUS_LIMIT",
+            "CnName": "提前交工的奖金限额",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "COST_SAVING",
+            "CnName": "发包人给予奖励按所节约成本",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "INCREASE_INCOME",
+            "CnName": "发包人给予奖励按增加收益",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "ADVANCE_AMOUNT",
+            "CnName": "开工预付款金额为签约合同价",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "MATERIAL",
+            "CnName": "材料名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "DOCUMENT_CHARGES",
+            "CnName": "按单据所列费用",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "SUBMIT_REQUISITION",
+            "CnName": "承包人每个付款周期提交的申请单份数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "MINIMUM_LIMIT",
+            "CnName": "进度付款证书最低限额",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 400
+                }
+            ]
+        },
+        {
+            "Name": "MONTHLY_PAYMENT",
+            "CnName": "质量保证金百分比为月支付额",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "QUALITY_MARGIN_LIMIT",
+            "CnName": "质量保证金限额为合同价格",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "PAYMENT_APPLICATION",
+            "CnName": "承包人提交交工付款申请单的份数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "APPLICATION_NUM",
+            "CnName": "承包人提交最终结清申请单份数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "COMPLETION_DATA",
+            "CnName": "竣工资料的份数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "CONSTRUCTION_PERIOD_OPERATION",
+            "CnName": "是否需投入施工期运行",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "OPERATING_REGULATIONS",
+            "CnName": "需要施工期运行的规定",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "TEST_RUN",
+            "CnName": "是否进行试运行",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "TEST_RUN_REGULATIONS",
+            "CnName": "试运行的具体规定",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "DEFECTS_LIABILITY_PERIOD",
+            "CnName": "保修期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "PREMIUM_RATE1",
+            "CnName": "建筑工程一切险的保险费率",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "MINIMUM_INSURANCE_AMOUNT",
+            "CnName": "第三者责任险的最低投保金额",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "PREMIUM_RATE2",
+            "CnName": "保险费率",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "BILL_OF_QUANTITIES",
+            "CnName": "工程量清单",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "DRAWING",
+            "CnName": "图纸",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "TECHNICAL_SPECIFICATIONS",
+            "CnName": "技术规范",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "SUPPLY_TECHNICAL_STANDARD",
+            "CnName": "补充技术规范",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

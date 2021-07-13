@@ -1,0 +1,433 @@
+{
+  "DataNo": "9533",
+  "DataName": "YG_WIN_RESULT_ANNO",
+  "DataCnName": "中标结果公告",
+  "IsZXSJ": true,
+  "GgfwDataNo": "513",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        },
+        {
+          "ValidatorName": "TenderProjectCodeMatch",
+          "TenderProjectTableName": "YG_TENDER_PROJECT"
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODE",
+      "CnName": "标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 23
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "REGION_CODE",
+      "CnName": "标段（包）所在行政区域代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        },
+        {
+          "ValidatorName": "AreaCodeMatch",
+          "Begin": 0
+        }
+      ]
+    },
+    {
+      "Name": "TRA_PLACE_CODE",
+      "CnName": "交易发生行政区域代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_AGENCY_NAME",
+      "CnName": "招标代理机构名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_AGENCY_CODE",
+      "CnName": "招标代理机构代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "NOTICE_NAME",
+      "CnName": "公告标题",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "NOTICE_CONTENT",
+      "CnName": "公告内容",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "NOTICE_SEND_TIME",
+      "CnName": "公告发布时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "NOTICE_MEDIA",
+      "CnName": "公告发布媒体",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 1000
+        }
+      ]
+    },
+    {
+      "Name": "URL",
+      "CnName": "公告源URL",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "NOTICE_NATURE",
+      "CnName": "公告性质",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "20"
+        }
+      ]
+    },
+    {
+      "Name": "BULLETIN_TYPE",
+      "CnName": "公告类型",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "32"
+        }
+      ]
+    },
+    {
+      "Name": "WIN_BIDDER_NAME",
+      "CnName": "中标投标人名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_CODE_TYPE",
+      "CnName": "中标投标人类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 30
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "2001"
+        }
+      ]
+    },
+    {
+      "Name": "WIN_BIDDER_CODE",
+      "CnName": "中标投标人代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_ROLE",
+      "CnName": "中标投标人角色",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 2
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "26"
+        }
+      ]
+    },
+    {
+      "Name": "UNION_CODE",
+      "CnName": "联合体代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "UNION_NAME",
+      "CnName": "联合体名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 1000
+        }
+      ]
+    },
+    {
+      "Name": "PRICE_FORM_CODE",
+      "CnName": "价款形式代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "PRICE_FORM_CODE"
+        }
+      ]
+    },
+    {
+      "Name": "BID_AMOUNT",
+      "CnName": "中标金额",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "BID_CURRENCY",
+      "CnName": "价格币种代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    },
+    {
+      "Name": "PRICE_UNIT",
+      "CnName": "价格单位",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "PRICE_UNIT"
+        }
+      ]
+    },
+    {
+      "Name": "OTHER_BID_PRICE",
+      "CnName": "费率或其它类型结果",
+      "Validators": []
+    },
+    {
+      "Name": "OTHER_CONTENT",
+      "CnName": "其他内容",
+      "Validators": []
+    },
+    {
+      "Name": "BULLETIN_DUTY",
+      "CnName": "公示发布责任人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "EXAMINER_NAME",
+      "CnName": "交易平台数据验证责任人姓名",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_REGION_CODE",
+      "CnName": "中标投标人企业注册所在地",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        },
+        {
+          "ValidatorName": "AreaCodeMatch",
+          "Begin": 0
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_PROPERTY",
+      "CnName": "中标投标人企业性质",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "10005"
+        }
+      ]
+    },
+    {
+      "Name": "PROJECT_LEAD",
+      "CnName": "项目负责人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "PROJECT_LEAD_ID",
+      "CnName": "项目负责人身份证号码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    }
+  ],
+  "Validators": [
+    {
+      "ValidatorName": "BID_AMOUNT"
+    }
+  ]
+}

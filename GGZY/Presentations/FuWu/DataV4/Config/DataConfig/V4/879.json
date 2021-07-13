@@ -1,0 +1,78 @@
+{
+    "DataName": "JT_QUALIFICATION_REQUIRE",
+    "DataCnName": "资质最低要求",
+    "IsZXSJ": true,
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "JT_TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODES",
+            "CnName": "相关标段（包）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "ENGINEERING_PROJECT",
+            "CnName": "工程项目",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "SECTION",
+            "CnName": "标段",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "PERFORMANCE_REQUIRE",
+            "CnName": "业绩要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "REMARK",
+            "CnName": "备注",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

@@ -1,0 +1,90 @@
+{
+  "DataNo": "306",
+  "DataName": "SOCIAL_CREDIT_INFO",
+  "DataCnName": "社会信用信息",
+  "Fields": [
+    {
+      "Name": "BODY_CODE",
+      "CnName": "主体代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "BODY_NAME",
+      "CnName": "主体名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "BODY_TYPE",
+      "CnName": "主体类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "2001"
+        }
+      ]
+    },
+    {
+      "Name": "BODY_ROLE",
+      "CnName": "主体角色",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 2
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "26"
+        }
+      ]
+    },
+    {
+      "Name": "DATA",
+      "CnName": "数据内容",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "SCOPE",
+      "CnName": "公开范围",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

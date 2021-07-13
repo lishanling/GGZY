@@ -1,0 +1,55 @@
+--服务平台
+
+insert into sys_dic
+values (210600, '9547', '投标单位', '1', 1, null, null, null, null,'工程建设', null, '回避原因', null, null, null, null,null,null);
+insert into sys_dic
+values (210601, '9547', '招标单位', '2', 2, null, null, null, null,'工程建设', null, '回避原因', null, null, null, null,null,null);
+insert into sys_dic
+values (210602, '9547', '主管部门', '3', 3, null, null, null, null,'工程建设', null, '回避原因', null, null, null, null,null,null);
+insert into sys_dic
+values (210604, '9547', '招标代理机构', '4', 4, null, null, null, null,'工程建设', null, '回避原因', null, null, null, null,null,null);
+insert into sys_dic
+values (210605, '9547', '其他', '9', 9, null, null, null, null,'工程建设', null, '回避原因', null, null, null, null,null,null);
+
+alter table tender_file_clari_modi add EVALUATION_TYPE varchar2(1);
+comment on column tender_file_clari_modi.EVALUATION_TYPE is '评标方式';
+
+alter table avoid_enterprise_list add AVOID_REASON varchar2(1);
+comment on column avoid_enterprise_list.AVOID_REASON is '回避原因';
+
+--监督平台
+alter table zj_tender_file_clari_modi add EVALUATION_TYPE varchar2(1);
+comment on column zj_tender_file_clari_modi.EVALUATION_TYPE is '评标方式';
+
+alter table zj_avoid_enterprise_list add AVOID_REASON varchar2(1);
+comment on column zj_avoid_enterprise_list.AVOID_REASON is '回避原因';
+
+alter table sl_tender_file_clari_modi add EVALUATION_TYPE varchar2(1);
+comment on column sl_tender_file_clari_modi.EVALUATION_TYPE is '评标方式';
+
+alter table sl_avoid_enterprise_list add AVOID_REASON varchar2(1);
+comment on column sl_avoid_enterprise_list.AVOID_REASON is '回避原因';
+
+alter table jt_tender_file_clari_modi add EVALUATION_TYPE varchar2(1);
+comment on column jt_tender_file_clari_modi.EVALUATION_TYPE is '评标方式';
+
+alter table jt_avoid_enterprise_list add AVOID_REASON varchar2(1);
+comment on column jt_avoid_enterprise_list.AVOID_REASON is '回避原因';
+
+alter table yg_tender_file_clari_modi add EVALUATION_TYPE varchar2(1);
+comment on column yg_tender_file_clari_modi.EVALUATION_TYPE is '评标方式';
+
+alter table yg_avoid_enterprise_list add AVOID_REASON varchar2(1);
+comment on column yg_avoid_enterprise_list.AVOID_REASON is '回避原因';
+
+alter table gy_tender_file_clari_modi add EVALUATION_TYPE varchar2(1);
+comment on column gy_tender_file_clari_modi.EVALUATION_TYPE is '评标方式';
+
+alter table gy_avoid_enterprise_list add AVOID_REASON varchar2(1);
+comment on column gy_avoid_enterprise_list.AVOID_REASON is '回避原因';
+
+alter table xx_tender_file_clari_modi add EVALUATION_TYPE varchar2(1);
+comment on column xx_tender_file_clari_modi.EVALUATION_TYPE is '评标方式';
+
+alter table xx_avoid_enterprise_list add AVOID_REASON varchar2(1);
+comment on column xx_avoid_enterprise_list.AVOID_REASON is '回避原因';

@@ -1,0 +1,322 @@
+{
+    "DataNo": "652",
+    "DataName": "EXPLOR_BID_AUC_TRANS_RES_ANN",
+    "DataCnName": "探矿权招拍挂出让结果公示信息",
+    "Fields": [
+        {
+            "Name": "NA_APP_NAME",
+            "CnName": "项目名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "PUBLISHING_TIME",
+            "CnName": "发布时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "UNIFIED_DEAL_CODE",
+            "CnName": "统一交易标识码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 40
+                }
+            ]
+        },
+        {
+            "Name": "URL",
+            "CnName": "公告源URL",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "IN_BUY_KIND",
+            "CnName": "出让方式",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "NumberMatch",
+              "IntegerFigures": 3
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "9110"
+            }
+          ]
+        },
+        {
+            "Name": "QT_PLAN_YEARS",
+            "CnName": "出让年限",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3,
+                    "DecimalFigures": 2
+                }
+            ]
+        },
+        {
+            "Name": "QT_TOTAL_AREA",
+            "CnName": "面积",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 14,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "NA_GEOGRAPHY_POSITION",
+            "CnName": "地理位置",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "REGION_CODE",
+            "CnName": "项目所在行政区域代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                },
+                {
+                    "ValidatorName": "AreaCodeMatch",
+                    "Begin": 0
+                }
+            ]
+        },
+        {
+            "Name": "TRA_PLACE_CODE",
+            "CnName": "交易发生行政区域代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                }
+            ]
+        },
+        {
+            "Name": "TRA_AGENCY_NAME",
+            "CnName": "交易机构名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "TRA_AGENCY_CODE",
+            "CnName": "交易机构代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "NA_PUBLIC_BIDDER",
+            "CnName": "竞得人名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "BIDDER_TYPE",
+            "CnName": "竞得人类别",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "2001"
+            }
+          ]
+        },
+        {
+            "Name": "BIDDER_CODE",
+            "CnName": "竞得人代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "BIDDER_ROLE",
+            "CnName": "竞得人角色",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 2
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "26"
+            }
+          ]
+        },
+        {
+            "Name": "QT_PUBLIC_PRICE",
+            "CnName": "成交价",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 14,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "NA_REG_ADDRESS",
+            "CnName": "竞得人公司地址",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 300
+                }
+            ]
+        },
+        {
+            "Name": "NA_TD_ADDRESS",
+            "CnName": "成交地点",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 255
+                }
+            ]
+        },
+        {
+            "Name": "DT_BUY_DATE",
+            "CnName": "成交时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "IN_COST_STYLE",
+            "CnName": "出让收益缴纳方式",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 1
+                }
+            ]
+        },
+        {
+            "Name": "DT_COST_DATE",
+            "CnName": "出让收益缴纳时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "NA_AREA_COORDINATE",
+            "CnName": "区域坐标",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

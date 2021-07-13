@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+    var separator = ':';
+    var sortModel = Model;// new SortedDictionary<string, object>(Model);
+    var keys = sortModel.Keys.Select(k => k.Split(separator).Length).ToList();
+    var max = keys.Max();
+    var maxObj = sortModel.FirstOrDefault(c => c.Key.Split(separator).Length == max);
+}
+@using GGZY.Core.Extensions
+@model Dictionary<string, object>
+
+@Render(sortModel, max, maxObj.Key)
+
+@helper Render(IDictionary<string, object> model, int max, string maxKey, int i = 1, int ml = 15,char separator=':')
+{
+    if (i <= max)
+    {
+        var objs = model.Where(c => c.Key.Split(':').Length == i).ToDictionary(c => c.Key, c => c.Value);
+        if (objs.Keys.Count > 0)
+        {
+            foreach (var objsKey in objs.Keys)
+            {
+                <details style="margin-left: @(ml)px;">
+                    <summary title="@(objsKey)">@(objsKey.Split(separator).LastOrDefault())</summary>
+                    <div style="margin-left: @(ml)px;">
+                        @Html.Raw(objs[objsKey].Serializer())
+                    </div>
+                </details>
+        }
+    }
+    if (i < max)
+    {
+        //var summary = string.Join(":", maxKey.Split(':').Take(i));
+        var summary = maxKey.Split(separator).Take(i).LastOrDefault();
+        i++;
+            <details style="margin-left: @(ml)px;">
+                <summary>@(summary)</summary>
+                <div>
+                    @Render(model, max, maxKey, i)
+                </div>
+            </details>
+
+        }
+
+    }
+}
+

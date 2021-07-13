@@ -1,0 +1,385 @@
+{
+  "DataNo": "9620",
+  "DataName": "XX_LETTER_OF_GUARANTEE",
+  "DataCnName": "投标电子保函",
+  "IsZXSJ": true,
+  "GgfwDataNo": "523",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        },
+        {
+          "ValidatorName": "TenderProjectCodeMatch",
+          "TenderProjectTableName": "XX_TENDER_PROJECT"
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODE",
+      "CnName": "标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 23
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_NAME",
+      "CnName": "投标人名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_ORG_CODE",
+      "CnName": "投标人代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "UNION_ENTERPRISE_NAME",
+      "CnName": "联合体名称（如有）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 1000
+        }
+      ]
+    },
+    {
+      "Name": "UNION_ORGAN_SET_CODE",
+      "CnName": "联合体组织机构代码证（联合体招标时填写）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "GUARANTEE_FORM",
+      "CnName": "保函形式",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 2
+        }
+      ]
+    },
+    {
+      "Name": "GUARANTEE_TYPE",
+      "CnName": "保函类型",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 2
+        }
+      ]
+    },
+    {
+      "Name": "GUARANTEE_NO",
+      "CnName": "保函编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "GUARANTEE_STATUS",
+      "CnName": "保函状态",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "BENEFICIARY",
+      "CnName": "受益人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "INSURER",
+      "CnName": "承保人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "GUARANTEE_AMOUNT",
+      "CnName": "担保金额",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "GUARANTEE_COST",
+      "CnName": "担保费用",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "CREATE_TIME",
+      "CnName": "保函创建时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "BEGIN_TIME",
+      "CnName": "担保开始时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "END_TIME",
+      "CnName": "担保结束时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_METHOD",
+      "CnName": "支付方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_TIME",
+      "CnName": "支付时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "LETTER_TIME",
+      "CnName": "出函时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "PROPOSER",
+      "CnName": "申请人员",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "PROPOSER_PHONE",
+      "CnName": "申请人员联系方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "PROPOSER_CARD_TYPE",
+      "CnName": "证件类型",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixLength": 2
+        }
+      ]
+    },
+    {
+      "Name": "PROPOSER_CODE",
+      "CnName": "证件号码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_ACCOUN",
+      "CnName": "支付账号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "RATE",
+      "CnName": "费率",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "GUARANTEE_URL",
+      "CnName": "电子保单文件下载地址",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "GUARANTEE_MD5",
+      "CnName": "电子保单文件md5码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 32
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

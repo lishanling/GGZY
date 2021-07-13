@@ -1,0 +1,142 @@
+{
+    "DataNo": "521",
+    "DataName": "T_ASKANSWER",
+    "DataCnName": "质疑质询",
+    "Fields": [
+        {
+            "Name": "ANN_CODE",
+            "CnName": "质疑编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "TITLE",
+            "CnName": "质疑标题",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "ASK",
+            "CnName": "质疑内容",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "ASK_ZY_REASON",
+            "CnName": "质疑理由",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "TM",
+            "CnName": "质疑时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "TYPE",
+            "CnName": "质疑类型",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 2
+                }
+            ]
+        },
+        {
+            "Name": "NOTICE_NAME",
+            "CnName": "招标公告名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "TENDERER_CODE",
+            "CnName": "招标公告编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODES",
+            "CnName": "相关标段（包）编号",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "MaxLength": 2000
+            }
+          ]
+        }
+    ],
+    "Validators": [
+        {
+            "ValidatorName": "T_ASKANSWER"
+        }
+    ]
+}

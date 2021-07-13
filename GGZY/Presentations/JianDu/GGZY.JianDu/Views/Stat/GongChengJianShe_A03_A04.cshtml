@@ -1,0 +1,90 @@
+﻿
+@using GGZY.Core.Models
+@using GGZY.Services.Infrastructure.Model
+@using GGZY.Services.Infrastructure.Model.JianDu
+@{
+    ViewBag.Title = "建设工程勘察、设计招标统计";
+    Layout = null;
+    var condition = ViewBag.SearchCondition as SearchCondition ?? new SearchCondition() { Type = "A05" };
+    var ths = GongChengTongJiModel.Header["A03_A04"].Split(',');
+}
+@model GeneralResult<GGZY.Services.Infrastructure.Model.JianDu.GongChengTongJiModel>
+<table>
+    <thead>
+        <tr>
+            @foreach (var th in ths)
+            {
+                <th title="@(th)">@(th)</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Success)
+        {
+            if (Model.TData.List.Any())
+            {
+                for (var index = 0; index < Model.TData.List.Count; index++)
+                {
+                    var item = Model.TData.List[index];
+        <tr>
+            <td>@(index + 1)</td>
+            <td title="@(item.GCMC)">@(item.GCMC)</td>
+            @*<td title="@(item.PROJECT_TYPE)">@(item.PROJECT_TYPE)</td>*@
+            <td title="@(item.HYFL)">@(item.HYFL)</td>
+            <td title="@(item.BABM)">@(item.BABM)</td>
+            <td title="@(item.ZJLY)">@(item.ZJLY)</td>
+            <td title="@(item.ZBR)">@(item.ZBR)</td>
+            <td title="@(item.ZBFW)">@(item.ZBFW)</td>
+            <td title="@(item.ZBDLDW)">@(item.ZBDLDW)</td>
+            @*<td title="@(item.TENDER_MODE)">@(item.TENDER_MODE)</td>*@
+            <td title="@(item.ZBFS)">@(item.ZBFS)</td>
+            <td title="@(item.PBBF)">@(item.PBBF)</td>
+            <td title="@(item.GCGM)">@(item.GCGM)</td>
+            <td title="@(item.YSJ)">@(item.YSJ)</td>
+            <td title="@(item.ZBKZJ)">@(item.ZBKZJ)</td>
+            <td title="@(item.ZBJ)">@(item.ZBJ)</td>
+            <td title="@(item.YYSJBJ)">@(item.YYSJBJ)</td>
+            <td title="@(item.YKZJBJ)">@(item.YKZJBJ)</td>
+            @*<td title="@(item.DEGQ)">@(item.DEGQ)</td>
+        <td title="@(item.JSGQ)">@(item.JSGQ)</td>
+        <td title="@(item.GQSD)">@(item.GQSD)</td>*@
+            @*<td title="@(item.JLFWQ)">@(item.JLFWQ)</td>*@
+            <td title="@(item.KCSJZQ)">@(item.KCSJZQ)</td>
+            @*<td title="@(item.JHQ)">@(item.JHQ)</td>*@
+            <td title="@(item.KBRQ)">@(item.KBRQ)</td>
+            <td title="@(item.TBDWGS)">@(item.TBDWGS)</td>
+            <td title="@(item.ZBDW)">@(item.ZBDW)</td>
+            <td title="@(item.ZBDWYJ)">@(item.ZBDWYJ)</td>
+            <td title="@(item.ZBDWXYF)">@(item.ZBDWXYF)</td>
+            @*<td title="@(item.ZJLGCS)">@(item.ZJLGCS)</td>
+            <td title="@(item.ZJLGCSYJ)">@(item.ZJLGCSYJ)</td>*@
+           <td title="@(item.XMFZR)">@(item.XMFZR)</td>
+        <td title="@(item.XMFZRYJ)">@(item.XMFZRYJ)</td>
+            @* <td title="@(item.XMJSFZR)">@(item.XMJSFZR)</td>*@
+            <td title="@(item.PBWYHCY)">@(item.PBWYHCY)</td>
+            <td title="@(item.BEIZHU)">@(item.BEIZHU)</td>
+            @*<td title="@(item.PROJECT_CODE)">@(item.PROJECT_CODE)</td>
+        <td title="@(item.TENDER_PROJECT_CODE)">@(item.TENDER_PROJECT_CODE)</td>
+        <td title="@(item.TENDER_PROJECT_NAME)">@(item.TENDER_PROJECT_NAME)</td>
+        <td title="@(item.TENDER_PROJECT_TYPE)">@(item.TENDER_PROJECT_TYPE)</td>
+        <td title="@(item.ZBXMLX)">@(item.ZBXMLX)</td>
+        <td title="@(item.TENDER_PROJECT_CLASSIFY_CODE)">@(item.TENDER_PROJECT_CLASSIFY_CODE)</td>
+        <td title="@(item.TM)">@(item.TM)</td>*@
+        </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="@(ths.Length)">暂无结果</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="@(ths.Length)">@(Model.Msg)</td>
+            </tr>
+        }
+    </tbody>
+</table>

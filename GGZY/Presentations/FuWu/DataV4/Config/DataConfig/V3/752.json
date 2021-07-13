@@ -1,0 +1,97 @@
+{
+    "DataNo": "752",
+    "DataName": "TRANSFER_ENTE_HAREHOLDER",
+    "DataCnName": "转让标的企业股东信息",
+    "Fields": [
+        {
+            "Name": "PROJECT_CODE",
+            "CnName": "项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        },
+        {
+            "Name": "BID_CODE",
+            "CnName": "标的编号",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        },
+        {
+            "Name": "SUBJECT_COMPANY_NAME",
+            "CnName": "标的企业名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 300
+                }
+            ]
+        },
+        {
+            "Name": "SUBJECT_COMPANY_CODE",
+            "CnName": "标的企业社会信用代码/组织机构代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "TOP10_HOLDER_NAME",
+            "CnName": "股东名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "TOP10_HOLDER_NUMBER",
+            "CnName": "持股数量",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 22
+                }
+            ]
+        },
+        {
+            "Name": "TOP10_HOLDER_PERCENT",
+            "CnName": "股东持股比例",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 18,
+                    "DecimalFigures": 2
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

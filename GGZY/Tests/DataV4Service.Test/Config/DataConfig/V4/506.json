@@ -1,0 +1,165 @@
+{
+  "DataNo": "506",
+  "DataName": "BID_OPENING_RECORD",
+  "DataCnName": "开标记录",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        },
+        {
+          "ValidatorName": "TenderProjectCodeMatch",
+          "TenderProjectTableName": "TENDER_PROJECT"
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODES",
+      "CnName": "相关标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODES",
+      "CnName": "相关统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "NOTICE_NAME",
+      "CnName": "开标记录标题",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "BID_OPENING_ACTOR",
+      "CnName": "开标参与人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "BID_OPENING_CONTENT",
+      "CnName": "开标记录内容",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "BID_OPENING_ADDRESS",
+      "CnName": "开标地点",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "BID_OPENING_TIME",
+      "CnName": "开标时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "URL",
+      "CnName": "开标记录源URL",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "OPEN_COMPERE",
+      "CnName": "开标主持人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_AGENCY_PERSON",
+      "CnName": "开标代理机构代表",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "TENDERER_PERSON",
+      "CnName": "开标招标人代表",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    }
+  ],
+  "Validators": [],
+  "RepeatCols": [ "NOTICE_NAME", "BID_OPENING_ACTOR", "BID_OPENING_ADDRESS" ]
+}

@@ -1,0 +1,339 @@
+{
+  "DataNo": "9627",
+  "DataName": "XX_EVALUATION_SCORE_DETAIL",
+  "DataCnName": "评分细项",
+  "IsZXSJ": true,
+  "GgfwDataNo": "9015",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        },
+        {
+          "ValidatorName": "TenderProjectCodeMatch",
+          "TenderProjectTableName": "XX_TENDER_PROJECT"
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODE",
+      "CnName": "标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 23
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_NAME",
+      "CnName": "投标人名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 300
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_CODE_TYPE",
+      "CnName": "投标人类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "2001"
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_ORG_CODE",
+      "CnName": "投标人代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_ROLE",
+      "CnName": "投标人角色",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 2
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "26"
+        }
+      ]
+    },
+    {
+      "Name": "UNION_ENTERPRISE_NAME",
+      "CnName": "联合体名称（如有）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 1000
+        }
+      ]
+    },
+    {
+      "Name": "UNION_ORGAN_SET_CODE",
+      "CnName": "联合体组织机构代码证（联合体招标时填写）",
+      "Validators": []
+    },
+    {
+      "Name": "UNION_CONTACT_NAME",
+      "CnName": "联合体联系人（如有）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 3000
+        }
+      ]
+    },
+    {
+      "Name": "UNION_CONTACT_PHONE",
+      "CnName": "联合体联系电话（如有）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "EXPERT_NAME",
+      "CnName": "评标专家名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "ID_CARD",
+      "CnName": "评标专家身份证号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "PRICE_POINTS",
+      "CnName": "报价分",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "QUALIFICATION_POINTS",
+      "CnName": "资格分",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "BUSINESS_POINTS",
+      "CnName": "商务分",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "TECHNICAL_POINTS",
+      "CnName": "技术分",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "RESPONSE_POINTS",
+      "CnName": "响应性评审",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "OTHER_POINTS",
+      "CnName": "其他分",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "QUALIFICATION_DETAIL",
+      "CnName": "资格分明细",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "BUSINESS_DETAIL",
+      "CnName": "商务分明细",
+      "Validators": []
+    },
+    {
+      "Name": "TECHNICAL_DETAIL",
+      "CnName": "技术分明细",
+      "Validators": []
+    },
+    {
+      "Name": "RESPONSE_DETAIL",
+      "CnName": "响应性评审",
+      "Validators": []
+    },
+    {
+      "Name": "OTHER_DETAIL",
+      "CnName": "其他文件",
+      "Validators": []
+    },
+    {
+      "Name": "PLATFORM_CODE",
+      "CnName": "交易系统标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "PUB_SERVICE_PLAT_CODE",
+      "CnName": "交易服务系统标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "DATA_TIMESTAMP",
+      "CnName": "数据时间戳",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "TRADE_PLAT",
+      "CnName": "交易平台或发布工具标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 11
+        }
+      ]
+    },
+    {
+      "Name": "PUB_SERVICE_PLAT",
+      "CnName": "公共服务平台标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 11
+        }
+      ]
+    }
+  ]
+}

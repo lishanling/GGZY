@@ -1,0 +1,96 @@
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210001, '10001', '资质要求', '1', null, null, null, null, null, null, null, '投标资格要求类型', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210002, '10001', '业绩要求', '2', null, null, null, null, null, null, null, '投标资格要求类型', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210003, '10001', '项目负责人证书', '3', null, null, null, null, null, null, null, '投标资格要求类型', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210004, '10001', '项目负责人职称', '4', null, null, null, null, null, null, null, '投标资格要求类型', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210005, '10001', '项目负责人业绩', '5', null, null, null, null, null, null, null, '投标资格要求类型', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210006, '10001', '其他要求', '9', null, null, null, null, null, null, null, '投标资格要求类型', null, null, null, null, null, null);
+
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210101, '10002', '微信', '1', null, null, null, null, null, null, null, '招标文件购买方式', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210102, '10002', '支付宝', '2', null, null, null, null, null, null, null, '招标文件购买方式', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210103, '10002', '现金', '3', null, null, null, null, null, null, null, '招标文件购买方式', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210104, '10002', '银联', '4', null, null, null, null, null, null, null, '招标文件购买方式', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210106, '10002', '其他', '9', null, null, null, null, null, null, null, '招标文件购买方式', null, null, null, null, null, null);
+
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210201, '10003', '招标文件异议', '1', null, null, null, null, null, null, null, '异议类型', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210202, '10003', '开标异议', '2', null, null, null, null, null, null, null, '异议类型', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210203, '10003', '评标结果异议', '3', null, null, null, null, null, null, null, '异议类型', null, null, null, null, null, null);
+
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210301, '10004', '已回复', '1', null, null, null, null, null, null, null, '异议处理状态', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210302, '10004', '澄清修改', '2', null, null, null, null, null, null, null, '异议处理状态', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210303, '10004', '其他', '9', null, null, null, null, null, null, null, '异议处理状态', null, null, null, null, null, null);
+
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210401, '10005', '国有企业', '1', null, null, null, null, null, null, null, '企业性质', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210402, '10005', '集体所有制企业', '2', null, null, null, null, null, null, null, '企业性质', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210403, '10005', '联营企业', '3', null, null, null, null, null, null, null, '企业性质', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210404, '10005', '三资企业', '4', null, null, null, null, null, null, null, '企业性质', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210405, '10005', '私营企业', '5', null, null, null, null, null, null, null, '企业性质', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210406, '10005', '事业单位', '6', null, null, null, null, null, null, null, '企业性质', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210407, '10005', '其他', '9', null, null, null, null, null, null, null, '企业性质', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210501, '90', '资格预审公告PDF文件（招标人或其代理机构盖章并由项目负责人签名或者电子签名）', 'QUAL_NOTICE_FILE', null, 'TENDER_ANN_QUA_INQUERY_ANN', null, null, null, '工程建设', null, '附件集', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210502, '90', '电子保函附件原件', 'GUARANTEE_FILE', null, 'LETTER_OF_GUARANTEE', null, null, null, '工程建设', null, '附件集', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210503, '90', '电子保函附件pdf文件', 'GUARANTEE_PDF_FILE', null, 'LETTER_OF_GUARANTEE', null, null, null, '工程建设', null, '附件集', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210504, '90', '业绩证明材料', 'PERFORMANCE_PROVE_FILES', null, 'BIDDER_PERFORMANCE', null, null, null, '工程建设', null, '附件集', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210505, '90', '计价软件软硬件信息xml', 'VALUATION_XML_FILE', null, 'ZJ_BID_DOC_CHARACT_CODE', null, null, null, '工程建设', null, '附件集', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210506, '90', '开标记录pdf', 'BID_OPEN_RECORD_PDF_FILE', null, 'BID_OPENING_RECORD', null, null, null, '工程建设', null, '附件集', null, null, null, null, null, null);
+
+insert into sys_dic (ID, TYPE, TEXT, VALUE, ORDER_ID, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, PID, REMARK, IS_DEL, IS_ENABLE, OP_BY, OP_TIME, TBNAME, FNAME)
+values (210507, '29', '保险保函', '7', 68, '', null, null, null, '工程建设', null, '保证金缴纳方式', null, null, null, null, null, null);

@@ -1,0 +1,291 @@
+{
+  "DataNo": "9006",
+  "DataName": "TENDER_FILE_BUYYER_INFO",
+  "DataCnName": "招标文件购买信息",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        },
+        {
+          "ValidatorName": "TenderProjectCodeMatch",
+          "TenderProjectTableName": "TENDER_PROJECT"
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODE",
+      "CnName": "标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 23
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_WAY",
+      "CnName": "招标文件购买途径",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_MODE",
+      "CnName": "招标文件购买方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "10002"
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_MONEY",
+      "CnName": "招标文件购买金额",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 18,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_ORDER_NUMBER",
+      "CnName": "招标文件购买订单号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_ACCOUNT",
+      "CnName": "招标文件购买账号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_TIME",
+      "CnName": "招标文件购买时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_IP",
+      "CnName": "招标文件购买IP地址",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_BROWSER",
+      "CnName": "招标文件购买浏览器信息",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "DOWNLOAD_IP",
+      "CnName": "招标文件下载IP地址",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "DOWNLOAD_BROWSER",
+      "CnName": "招标文件下载浏览器信息",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "COMPANY_NAME",
+      "CnName": "招标文件购买单位名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "COMPANY_CODE",
+      "CnName": "招标文件购买单位统一社会代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_PERSON_NAME",
+      "CnName": "招标文件购买人员姓名",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_PERSON_CODE",
+      "CnName": "招标文件购买人员身份证号",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "PLATFORM_CODE",
+      "CnName": "交易系统标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "PUB_SERVICE_PLAT_CODE",
+      "CnName": "交易服务系统标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "DATA_TIMESTAMP",
+      "CnName": "数据时间戳",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "TRADE_PLAT",
+      "CnName": "交易平台或发布工具标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 11
+        }
+      ]
+    },
+    {
+      "Name": "PUB_SERVICE_PLAT",
+      "CnName": "公共服务平台标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 11
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

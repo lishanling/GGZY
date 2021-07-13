@@ -1,0 +1,46 @@
+﻿@*@using GGZY.Core.Authentication.FormsCookie
+@{
+    bool show = Request.IsLocal&&false;
+    //var menus = EngineContext.Current.Resolve<IPrtMenuService>().FindAll();
+    var menus =User.AuthorizeFormsIdentityUser().UserPermission().Where(c=>c.ENABLED==1).ToList();
+    var topMenus = menus.FindAll(c => c.PARENT_ID == "-1"&&c.MENU_TYPE==0).OrderBy(c => c.SORT).ToList();
+}
+@for (var i = 0; i < topMenus.Count; i++)
+{
+    var item = topMenus[i];
+    var subMenus = menus.FindAll(c => c.PARENT_ID == item.ID).OrderBy(c => c.SORT).ToList();
+
+    <div class="tab-pane fade @(i==0?"active in":"")" id="@item.ID">
+        <ul class="nav nav-pills nav-stacked">
+            @foreach (var subMenu in subMenus)
+            {
+                var subs= menus.FindAll(c => c.PARENT_ID == subMenu.ID).OrderBy(c=>c.SORT).ToList();
+                if (subs.Any())
+                {
+                    <li>
+                        <a href="#" class="dropdown-toggle"><i class="@subMenu.ICON"></i><span>@subMenu.NAME</span><i class="fa fa-chevron-circle-right drop-icon"></i></a>
+                        <ul class="submenu" style="display: none;">
+                            @foreach (var s in subs)
+                            {
+                                <li><a class="J_menuItem" href="@(Url.Action(s.ACTION_NAME, s.CONTROLLER_NAME))?@s.PARAMETER"><i class="@s.ICON"></i><span> @s.NAME</span></a></li>
+                            }
+
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li><a class="J_menuItem" href="@(Url.Action(subMenu.ACTION_NAME,subMenu.CONTROLLER_NAME))?@subMenu.PARAMETER"><i class="@subMenu.ICON"></i><span>@subMenu.NAME</span></a></li>
+                }
+
+            }
+        </ul>
+    </div>
+}*@
+
+<div class="tab-pane fade active in" id="YXWH">
+    <ul class="nav nav-pills nav-stacked">
+        <li><a class="J_menuItem" href="@Url.Action("Index","Flow")"><i class="fa fa-th-list"></i><span>流程管理</span></a></li>
+        <li><a class="J_menuItem" href="@Url.Action("Menu","MgrMenu")"><i class="fa fa-th-list"></i><span>菜单</span></a></li>
+    </ul>
+</div>

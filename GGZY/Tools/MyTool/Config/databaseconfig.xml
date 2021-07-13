@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<servers>
+  <server id="8bd9ef28-483b-47d4-a8bf-5a1a8e606f09" name="114.115.208.210/orcl(服务平台)" database="114.115.208.210/orcl" dbtype="Oracle">
+    <connectionstring><![CDATA[Data Source=114.115.208.210/orcl;User Id=DZJYPT;Password=strong;Integrated Security=no;Min Pool Size=1;Max Pool Size=10]]></connectionstring>
+  </server>
+  <server id="8bd9ef28-483b-47d4-a8bf-5a1a8e606f08" name="114.115.208.210/orcl(监督平台)" database="114.115.208.210/orcl" dbtype="Oracle">
+    <connectionstring><![CDATA[Data Source=114.115.208.210/orcl;User Id=GGZYJD;Password=strong;Integrated Security=no;Min Pool Size=1;Max Pool Size=10]]></connectionstring>
+  </server>
+  <server id="fa159735-c85a-44bc-864e-830812f3ec4b" name="114.115.208.210/orcl(服务广西)" database="114.115.208.210/orcl" dbtype="Oracle">
+    <connectionstring><![CDATA[Data Source=114.115.208.210/orcl;User Id=GGZYFW_GX;Password=strong;Integrated Security=no;Min Pool Size=1;Max Pool Size=10]]></connectionstring>
+  </server>
+  <server id="e411df5b-a64b-4ed7-b787-82fd2087bab1" name="114.115.208.210/orcl(监督广西)" database="114.115.208.210/orcl" dbtype="Oracle">
+    <connectionstring><![CDATA[Data Source=114.115.208.210/orcl;User Id=GGZYJD_GX;Password=strong;Integrated Security=no;Min Pool Size=1;Max Pool Size=10]]></connectionstring>
+  </server>
+  <server id="e1425705-2ded-485c-9ca3-f7151bdefa0a" name="广西电子监管(新)" database="114.115.208.210/orcl" dbtype="Oracle">
+    <connectionstring><![CDATA[Data Source=114.115.208.210/orcl;User Id=GXDZJG;Password=strong;Integrated Security=no;Min Pool Size=1;Max Pool Size=10]]></connectionstring>
+  </server>
+  <server id="6e415fd9-7b59-4f10-bf25-58ec8109593f" name="127.0.0.1(MySql)[all]" database="all" dbtype="MySql">
+    <connectionstring><![CDATA[server=127.0.0.1;user id=root; password=123456; Port=3306;database=; pooling=false]]></connectionstring>
+  </server>
+</servers>

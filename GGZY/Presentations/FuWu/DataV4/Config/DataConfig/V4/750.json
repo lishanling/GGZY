@@ -1,0 +1,379 @@
+{
+  "DataNo": "750",
+  "DataName": "STOCK_LISTING_PUB_INFO",
+  "DataCnName": "挂牌披露信息",
+  "Fields": [
+    {
+      "Name": "PROJECT_NAME",
+      "CnName": "项目名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 300
+        }
+      ]
+    },
+    {
+      "Name": "PROJECT_CODE",
+      "CnName": "项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "BID_CODE",
+      "CnName": "标的编号",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "BID_NAME",
+      "CnName": "标的名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 300
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "PROJECT_CLASSIFY_CODE",
+      "CnName": "项目分类代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "10"
+        }
+      ]
+    },
+    {
+      "Name": "REGION_CODE",
+      "CnName": "标的所在行政区域代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        },
+        {
+          "ValidatorName": "AreaCodeMatch",
+          "Begin": 0
+        }
+      ]
+    },
+    {
+      "Name": "TRA_PLACE_CODE",
+      "CnName": "交易发生行政区域代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        }
+      ]
+    },
+    {
+      "Name": "TRA_AGENCY_NAME",
+      "CnName": "交易机构名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "TRA_AGENCY_CODE",
+      "CnName": "交易机构代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "SELLER_NAME",
+      "CnName": "转让方名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "SELLER_TYPE",
+      "CnName": "转让方类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "2001"
+        }
+      ]
+    },
+    {
+      "Name": "SELLER_CODE",
+      "CnName": "转让方代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "SELLER_ROLE",
+      "CnName": "转让方角色",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "26"
+        }
+      ]
+    },
+    {
+      "Name": "AUTHORIZE_UNIT",
+      "CnName": "转让行为批准单位",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "TOTAL_PERCENT",
+      "CnName": "转让比例",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 4
+        }
+      ]
+    },
+    {
+      "Name": "PROJECT_PRICE",
+      "CnName": "挂牌价格",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "CURRENCY_CODE",
+      "CnName": "价格币种代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    },
+    {
+      "Name": "PRICE_UNIT",
+      "CnName": "价格单位",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "PRICE_UNIT"
+        }
+      ]
+    },
+    {
+      "Name": "PUBLISH_DURATION",
+      "CnName": "挂牌期间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 3
+        }
+      ]
+    },
+    {
+      "Name": "PUBLISH_DATE",
+      "CnName": "挂牌日期",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "POST_PONE",
+      "CnName": "是否自动延期",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "CQ_TRUE_OR_FALSE"
+        }
+      ]
+    },
+    {
+      "Name": "PRE_EXCHANGE_TYPE",
+      "CnName": "选择的竞价交易方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 10
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "23"
+        }
+      ]
+    },
+    {
+      "Name": "MANAGEMENT_INTENT",
+      "CnName": "管理层是否有收购意向",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "CQ_TRUE_OR_FALSE"
+        }
+      ]
+    },
+    {
+      "Name": "GIVEUP_PRIORITY",
+      "CnName": "标的企业原股东是否放弃行使优先购买权",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "CQ_TRUE_OR_FALSE"
+        }
+      ]
+    },
+    {
+      "Name": "IMPORTANT_INFO",
+      "CnName": "重要信息披露",
+      "Validators": []
+    },
+    {
+      "Name": "BUYER_POSTULATE",
+      "CnName": "受让方资格条件",
+      "Validators": []
+    },
+    {
+      "Name": "OTHER_CONDITIONS",
+      "CnName": "与转让相关的其他条件",
+      "Validators": []
+    },
+    {
+      "Name": "PROJECT_URL",
+      "CnName": "在交易机构网站进行挂牌信息披露的链接",
+      "Validators": []
+    }
+  ],
+  "Validators": []
+}

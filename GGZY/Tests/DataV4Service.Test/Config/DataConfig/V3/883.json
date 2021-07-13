@@ -1,0 +1,120 @@
+{
+    "DataName": "JT_CONTRUCT_SUPER_TIME",
+    "DataCnName": "施工工期及监理服务时间",
+    "IsZXSJ": true,
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "JT_TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODE",
+            "CnName": "标段（包）编号（监理合同段）",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 23
+                }
+            ]
+        },
+        {
+            "Name": "CONSTRUCTION_SECTION",
+            "CnName": "施工合同段",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "CONTRACT_PRE_SERVICE",
+            "CnName": "施工准备阶段监理服务期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "CONSTRUCT_STAGE_TIME",
+            "CnName": "施工阶段",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "IS_SUPERVISION_PERIOD",
+            "CnName": "是否设置交工验收监理服务期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "SUPERVISION_PERIOD",
+            "CnName": "交工验收监理服务期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "DEFECT_PERIOD_DUTY",
+            "CnName": "缺陷责任期阶段监理服务期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 6,
+                    "DecimalFigures": 6
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

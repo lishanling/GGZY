@@ -1,0 +1,439 @@
+﻿using System;
+using System.Data;
+using Dos.ORM;
+
+namespace GGZYFW.DbEntity
+{
+    /// <summary>
+    /// 实体类PURCHASE_BIDDING_RECORD。(属性说明自动提取数据库字段的描述信息)
+    /// </summary>
+    [Table("PURCHASE_BIDDING_RECORD")]
+    [Serializable]
+    public partial class PURCHASE_BIDDING_RECORD : FwEntity
+    {
+        #region Model
+		private decimal? _M_ID;
+		private string _M_KEY;
+		private string _M_DATA_SOURCE;
+		private DateTime? _M_TM;
+		private decimal? _M_CREATOR;
+		private decimal? _M_IS_HISTORY;
+		private decimal? _M_CREATEBY;
+		private DateTime? _M_CREATE_TM;
+		private string _PURCHASE_PROJECT_CODE;
+		private string _PURCHASE_SECTION_CODE;
+		private string _UNIFIED_DEAL_CODE;
+		private string _NOTICE_NAME;
+		private string _BID_OPENING_ACTOR;
+		private string _BID_OPENING_CONTENT;
+		private string _BID_OPENING_ADDRESS;
+		private string _URL;
+		private string _PLATFORM_CODE;
+		private string _PUB_SERVICE_PLAT_CODE;
+		private string _M_VERSION;
+		private DateTime? _DATA_TIMESTAMP;
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? M_ID
+		{
+			get{ return _M_ID; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_ID, _M_ID, value);
+				this._M_ID = value;
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string M_KEY
+		{
+			get{ return _M_KEY; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_KEY, _M_KEY, value);
+				this._M_KEY = value;
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string M_DATA_SOURCE
+		{
+			get{ return _M_DATA_SOURCE; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_DATA_SOURCE, _M_DATA_SOURCE, value);
+				this._M_DATA_SOURCE = value;
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public DateTime? M_TM
+		{
+			get{ return _M_TM; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_TM, _M_TM, value);
+				this._M_TM = value;
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? M_CREATOR
+		{
+			get{ return _M_CREATOR; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_CREATOR, _M_CREATOR, value);
+				this._M_CREATOR = value;
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? M_IS_HISTORY
+		{
+			get{ return _M_IS_HISTORY; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_IS_HISTORY, _M_IS_HISTORY, value);
+				this._M_IS_HISTORY = value;
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? M_CREATEBY
+		{
+			get{ return _M_CREATEBY; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_CREATEBY, _M_CREATEBY, value);
+				this._M_CREATEBY = value;
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public DateTime? M_CREATE_TM
+		{
+			get{ return _M_CREATE_TM; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_CREATE_TM, _M_CREATE_TM, value);
+				this._M_CREATE_TM = value;
+			}
+		}
+		/// <summary>
+		/// 采购项目编号
+		/// </summary>
+		public string PURCHASE_PROJECT_CODE
+		{
+			get{ return _PURCHASE_PROJECT_CODE; }
+			set
+			{
+				this.OnPropertyValueChange(_.PURCHASE_PROJECT_CODE, _PURCHASE_PROJECT_CODE, value);
+				this._PURCHASE_PROJECT_CODE = value;
+			}
+		}
+		/// <summary>
+		/// 采购项目子包编号
+		/// </summary>
+		public string PURCHASE_SECTION_CODE
+		{
+			get{ return _PURCHASE_SECTION_CODE; }
+			set
+			{
+				this.OnPropertyValueChange(_.PURCHASE_SECTION_CODE, _PURCHASE_SECTION_CODE, value);
+				this._PURCHASE_SECTION_CODE = value;
+			}
+		}
+		/// <summary>
+		/// 统一交易标识码
+		/// </summary>
+		public string UNIFIED_DEAL_CODE
+		{
+			get{ return _UNIFIED_DEAL_CODE; }
+			set
+			{
+				this.OnPropertyValueChange(_.UNIFIED_DEAL_CODE, _UNIFIED_DEAL_CODE, value);
+				this._UNIFIED_DEAL_CODE = value;
+			}
+		}
+		/// <summary>
+		/// 开标记录标题
+		/// </summary>
+		public string NOTICE_NAME
+		{
+			get{ return _NOTICE_NAME; }
+			set
+			{
+				this.OnPropertyValueChange(_.NOTICE_NAME, _NOTICE_NAME, value);
+				this._NOTICE_NAME = value;
+			}
+		}
+		/// <summary>
+		/// 开标参与人
+		/// </summary>
+		public string BID_OPENING_ACTOR
+		{
+			get{ return _BID_OPENING_ACTOR; }
+			set
+			{
+				this.OnPropertyValueChange(_.BID_OPENING_ACTOR, _BID_OPENING_ACTOR, value);
+				this._BID_OPENING_ACTOR = value;
+			}
+		}
+		/// <summary>
+		/// 开标记录内容
+		/// </summary>
+		public string BID_OPENING_CONTENT
+		{
+			get{ return _BID_OPENING_CONTENT; }
+			set
+			{
+				this.OnPropertyValueChange(_.BID_OPENING_CONTENT, _BID_OPENING_CONTENT, value);
+				this._BID_OPENING_CONTENT = value;
+			}
+		}
+		/// <summary>
+		/// 开标地点
+		/// </summary>
+		public string BID_OPENING_ADDRESS
+		{
+			get{ return _BID_OPENING_ADDRESS; }
+			set
+			{
+				this.OnPropertyValueChange(_.BID_OPENING_ADDRESS, _BID_OPENING_ADDRESS, value);
+				this._BID_OPENING_ADDRESS = value;
+			}
+		}
+		/// <summary>
+		/// 开标记录源URL
+		/// </summary>
+		public string URL
+		{
+			get{ return _URL; }
+			set
+			{
+				this.OnPropertyValueChange(_.URL, _URL, value);
+				this._URL = value;
+			}
+		}
+		/// <summary>
+		/// 交易系统标识码
+		/// </summary>
+		public string PLATFORM_CODE
+		{
+			get{ return _PLATFORM_CODE; }
+			set
+			{
+				this.OnPropertyValueChange(_.PLATFORM_CODE, _PLATFORM_CODE, value);
+				this._PLATFORM_CODE = value;
+			}
+		}
+		/// <summary>
+		/// 交易服务系统标识码
+		/// </summary>
+		public string PUB_SERVICE_PLAT_CODE
+		{
+			get{ return _PUB_SERVICE_PLAT_CODE; }
+			set
+			{
+				this.OnPropertyValueChange(_.PUB_SERVICE_PLAT_CODE, _PUB_SERVICE_PLAT_CODE, value);
+				this._PUB_SERVICE_PLAT_CODE = value;
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string M_VERSION
+		{
+			get{ return _M_VERSION; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_VERSION, _M_VERSION, value);
+				this._M_VERSION = value;
+			}
+		}
+		/// <summary>
+		/// 数据时间戳
+		/// </summary>
+		public DateTime? DATA_TIMESTAMP
+		{
+			get{ return _DATA_TIMESTAMP; }
+			set
+			{
+				this.OnPropertyValueChange(_.DATA_TIMESTAMP, _DATA_TIMESTAMP, value);
+				this._DATA_TIMESTAMP = value;
+			}
+		}
+		#endregion
+
+		#region Method
+        /// <summary>
+        /// 获取实体中的主键列
+        /// </summary>
+        public override Field[] GetPrimaryKeyFields()
+        {
+            return new Field[] {
+				_.M_ID,
+			};
+        }
+        /// <summary>
+        /// 获取列信息
+        /// </summary>
+        public override Field[] GetFields()
+        {
+            return new Field[] {
+				_.M_ID,
+				_.M_KEY,
+				_.M_DATA_SOURCE,
+				_.M_TM,
+				_.M_CREATOR,
+				_.M_IS_HISTORY,
+				_.M_CREATEBY,
+				_.M_CREATE_TM,
+				_.PURCHASE_PROJECT_CODE,
+				_.PURCHASE_SECTION_CODE,
+				_.UNIFIED_DEAL_CODE,
+				_.NOTICE_NAME,
+				_.BID_OPENING_ACTOR,
+				_.BID_OPENING_CONTENT,
+				_.BID_OPENING_ADDRESS,
+				_.URL,
+				_.PLATFORM_CODE,
+				_.PUB_SERVICE_PLAT_CODE,
+				_.M_VERSION,
+				_.DATA_TIMESTAMP,
+			};
+        }
+        /// <summary>
+        /// 获取值信息
+        /// </summary>
+        public override object[] GetValues()
+        {
+            return new object[] {
+				this._M_ID,
+				this._M_KEY,
+				this._M_DATA_SOURCE,
+				this._M_TM,
+				this._M_CREATOR,
+				this._M_IS_HISTORY,
+				this._M_CREATEBY,
+				this._M_CREATE_TM,
+				this._PURCHASE_PROJECT_CODE,
+				this._PURCHASE_SECTION_CODE,
+				this._UNIFIED_DEAL_CODE,
+				this._NOTICE_NAME,
+				this._BID_OPENING_ACTOR,
+				this._BID_OPENING_CONTENT,
+				this._BID_OPENING_ADDRESS,
+				this._URL,
+				this._PLATFORM_CODE,
+				this._PUB_SERVICE_PLAT_CODE,
+				this._M_VERSION,
+				this._DATA_TIMESTAMP,
+			};
+        }
+        #endregion
+
+		#region _Field
+        /// <summary>
+        /// 字段信息
+        /// </summary>
+        public class _
+        {
+			/// <summary>
+			/// * 
+			/// </summary>
+			public readonly static Field All = new Field("*", "PURCHASE_BIDDING_RECORD");
+            /// <summary>
+			/// 
+			/// </summary>
+			public readonly static Field M_ID = new Field("M_ID", "PURCHASE_BIDDING_RECORD", "");
+            /// <summary>
+			/// 
+			/// </summary>
+			public readonly static Field M_KEY = new Field("M_KEY", "PURCHASE_BIDDING_RECORD", "");
+            /// <summary>
+			/// 
+			/// </summary>
+			public readonly static Field M_DATA_SOURCE = new Field("M_DATA_SOURCE", "PURCHASE_BIDDING_RECORD", "");
+            /// <summary>
+			/// 
+			/// </summary>
+			public readonly static Field M_TM = new Field("M_TM", "PURCHASE_BIDDING_RECORD", "");
+            /// <summary>
+			/// 
+			/// </summary>
+			public readonly static Field M_CREATOR = new Field("M_CREATOR", "PURCHASE_BIDDING_RECORD", "");
+            /// <summary>
+			/// 
+			/// </summary>
+			public readonly static Field M_IS_HISTORY = new Field("M_IS_HISTORY", "PURCHASE_BIDDING_RECORD", "");
+            /// <summary>
+			/// 
+			/// </summary>
+			public readonly static Field M_CREATEBY = new Field("M_CREATEBY", "PURCHASE_BIDDING_RECORD", "");
+            /// <summary>
+			/// 
+			/// </summary>
+			public readonly static Field M_CREATE_TM = new Field("M_CREATE_TM", "PURCHASE_BIDDING_RECORD", "");
+            /// <summary>
+			/// 采购项目编号
+			/// </summary>
+			public readonly static Field PURCHASE_PROJECT_CODE = new Field("PURCHASE_PROJECT_CODE", "PURCHASE_BIDDING_RECORD", "采购项目编号");
+            /// <summary>
+			/// 采购项目子包编号
+			/// </summary>
+			public readonly static Field PURCHASE_SECTION_CODE = new Field("PURCHASE_SECTION_CODE", "PURCHASE_BIDDING_RECORD", "采购项目子包编号");
+            /// <summary>
+			/// 统一交易标识码
+			/// </summary>
+			public readonly static Field UNIFIED_DEAL_CODE = new Field("UNIFIED_DEAL_CODE", "PURCHASE_BIDDING_RECORD", "统一交易标识码");
+            /// <summary>
+			/// 开标记录标题
+			/// </summary>
+			public readonly static Field NOTICE_NAME = new Field("NOTICE_NAME", "PURCHASE_BIDDING_RECORD", "开标记录标题");
+            /// <summary>
+			/// 开标参与人
+			/// </summary>
+			public readonly static Field BID_OPENING_ACTOR = new Field("BID_OPENING_ACTOR", "PURCHASE_BIDDING_RECORD", "开标参与人");
+            /// <summary>
+			/// 开标记录内容
+			/// </summary>
+			public readonly static Field BID_OPENING_CONTENT = new Field("BID_OPENING_CONTENT", "PURCHASE_BIDDING_RECORD",DbType.AnsiString, null, "开标记录内容");
+            /// <summary>
+			/// 开标地点
+			/// </summary>
+			public readonly static Field BID_OPENING_ADDRESS = new Field("BID_OPENING_ADDRESS", "PURCHASE_BIDDING_RECORD", "开标地点");
+            /// <summary>
+			/// 开标记录源URL
+			/// </summary>
+			public readonly static Field URL = new Field("URL", "PURCHASE_BIDDING_RECORD", "开标记录源URL");
+            /// <summary>
+			/// 交易系统标识码
+			/// </summary>
+			public readonly static Field PLATFORM_CODE = new Field("PLATFORM_CODE", "PURCHASE_BIDDING_RECORD", "交易系统标识码");
+            /// <summary>
+			/// 交易服务系统标识码
+			/// </summary>
+			public readonly static Field PUB_SERVICE_PLAT_CODE = new Field("PUB_SERVICE_PLAT_CODE", "PURCHASE_BIDDING_RECORD", "交易服务系统标识码");
+            /// <summary>
+			/// 
+			/// </summary>
+			public readonly static Field M_VERSION = new Field("M_VERSION", "PURCHASE_BIDDING_RECORD", "");
+            /// <summary>
+			/// 数据时间戳
+			/// </summary>
+			public readonly static Field DATA_TIMESTAMP = new Field("DATA_TIMESTAMP", "PURCHASE_BIDDING_RECORD", "数据时间戳");
+        }
+        #endregion
+	}
+}

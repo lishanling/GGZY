@@ -1,0 +1,194 @@
+{
+  "DataNo": "9203",
+  "DataName": "SL_BID_INVITE_LIST",
+  "DataCnName": "投标邀请人名单",
+  "IsZXSJ": true,
+  "GgfwDataNo": "9004",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "TenderProjectCodeMatch",
+          "TenderProjectTableName": "SL_TENDER_PROJECT"
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODE",
+      "CnName": "标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 23
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "UNIT_NAME",
+      "CnName": "单位名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "UNIT_CREDIT_CODE",
+      "CnName": "统一社会信用代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "QUALIFICATION",
+      "CnName": "资质",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 1000
+        }
+      ]
+    },
+    {
+      "Name": "MANAGER_LEVEL",
+      "CnName": "项目负责人等级",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "MANAGER_NAME",
+      "CnName": "联系人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "MANAGER_PHONE",
+      "CnName": "联系电话",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "MANAGER_TELPHONE",
+      "CnName": "联系手机",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "INVITE_TIME",
+      "CnName": "邀请时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "INVITATION_STATUS",
+      "CnName": "邀请函发出状态",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "REMARK",
+      "CnName": "备注",
+      "Validators": []
+    },
+    {
+      "Name": "IS_CONFIRM",
+      "CnName": "是否已确认",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 1
+        }
+      ]
+    },
+    {
+      "Name": "PLATFORM_CODE",
+      "CnName": "交易系统标识码",
+      "Validators": []
+    },
+    {
+      "Name": "PUB_SERVICE_PLAT_CODE",
+      "CnName": "交易服务系统标识码",
+      "Validators": []
+    },
+    {
+      "Name": "DATA_TIMESTAMP",
+      "CnName": "数据时间戳",
+      "Validators": []
+    },
+    {
+      "Name": "",
+      "CnName": "交易平台或发布工具标识码",
+      "Validators": []
+    },
+    {
+      "Name": "",
+      "CnName": "公共服务平台标识码",
+      "Validators": []
+    }
+  ],
+  "Validators": []
+}

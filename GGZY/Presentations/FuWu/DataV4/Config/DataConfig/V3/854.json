@@ -1,0 +1,83 @@
+{
+    "DataName": "SL_OTHER_REQUIRE",
+    "DataCnName": "人员要求、其他要求",
+    "IsZXSJ": true,
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "SL_TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODES",
+            "CnName": "相关标段（包）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "POST",
+            "CnName": "人员岗位",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        },
+        {
+            "Name": "POST_NUM",
+            "CnName": "数量",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3
+                }
+            ]
+        },
+        {
+            "Name": "ENGINEER_MAJOR",
+            "CnName": "专业",
+            "Validators": []
+        },
+        {
+            "Name": "POST_REQUIRE",
+            "CnName": "要求",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "REMARK",
+            "CnName": "备注",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

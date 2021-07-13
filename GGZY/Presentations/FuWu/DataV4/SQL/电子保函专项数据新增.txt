@@ -1,0 +1,86 @@
+--电子保函
+alter table ZJ_letter_of_guarantee ADD PROPOSER varchar2(200);
+comment on column ZJ_letter_of_guarantee.PROPOSER is '申请人员';
+
+alter table ZJ_letter_of_guarantee ADD PROPOSER_PHONE varchar2(200);
+comment on column ZJ_letter_of_guarantee.PROPOSER_PHONE is '申请人员联系方式';
+
+alter table ZJ_letter_of_guarantee ADD PROPOSER_CARD_TYPE varchar2(2);
+comment on column ZJ_letter_of_guarantee.PROPOSER_CARD_TYPE is '证件类型';
+
+alter table ZJ_letter_of_guarantee ADD PROPOSER_CODE varchar2(200);
+comment on column ZJ_letter_of_guarantee.PROPOSER_CODE is '证件号码';
+
+alter table ZJ_letter_of_guarantee ADD PURCHASE_ACCOUN varchar2(600);
+comment on column ZJ_letter_of_guarantee.PURCHASE_ACCOUN is '支付账号';
+
+alter table ZJ_letter_of_guarantee ADD RATE number;
+comment on column ZJ_letter_of_guarantee.RATE is '费率';
+
+alter table ZJ_letter_of_guarantee ADD GUARANTEE_URL varchar2(2000);
+comment on column ZJ_letter_of_guarantee.GUARANTEE_URL is '电子保单文件下载地址';
+
+alter table ZJ_letter_of_guarantee ADD GUARANTEE_MD5 varchar2(32);
+comment on column ZJ_letter_of_guarantee.GUARANTEE_MD5 is '电子保单文件md5码';
+
+
+--电子保函
+alter table SL_letter_of_guarantee ADD PROPOSER varchar2(200);
+comment on column SL_letter_of_guarantee.PROPOSER is '申请人员';
+
+alter table SL_letter_of_guarantee ADD PROPOSER_PHONE varchar2(200);
+comment on column SL_letter_of_guarantee.PROPOSER_PHONE is '申请人员联系方式';
+
+alter table SL_letter_of_guarantee ADD PROPOSER_CARD_TYPE varchar2(2);
+comment on column SL_letter_of_guarantee.PROPOSER_CARD_TYPE is '证件类型';
+
+alter table SL_letter_of_guarantee ADD PROPOSER_CODE varchar2(200);
+comment on column SL_letter_of_guarantee.PROPOSER_CODE is '证件号码';
+
+alter table SL_letter_of_guarantee ADD PURCHASE_ACCOUN varchar2(600);
+comment on column SL_letter_of_guarantee.PURCHASE_ACCOUN is '支付账号';
+
+alter table SL_letter_of_guarantee ADD RATE number;
+comment on column SL_letter_of_guarantee.RATE is '费率';
+
+alter table SL_letter_of_guarantee ADD GUARANTEE_URL varchar2(2000);
+comment on column SL_letter_of_guarantee.GUARANTEE_URL is '电子保单文件下载地址';
+
+alter table SL_letter_of_guarantee ADD GUARANTEE_MD5 varchar2(32);
+comment on column SL_letter_of_guarantee.GUARANTEE_MD5 is '电子保单文件md5码';
+
+
+--电子保函
+alter table JT_letter_of_guarantee ADD PROPOSER varchar2(200);
+comment on column JT_letter_of_guarantee.PROPOSER is '申请人员';
+
+alter table JT_letter_of_guarantee ADD PROPOSER_PHONE varchar2(200);
+comment on column JT_letter_of_guarantee.PROPOSER_PHONE is '申请人员联系方式';
+
+alter table JT_letter_of_guarantee ADD PROPOSER_CARD_TYPE varchar2(2);
+comment on column JT_letter_of_guarantee.PROPOSER_CARD_TYPE is '证件类型';
+
+alter table JT_letter_of_guarantee ADD PROPOSER_CODE varchar2(200);
+comment on column JT_letter_of_guarantee.PROPOSER_CODE is '证件号码';
+
+alter table JT_letter_of_guarantee ADD PURCHASE_ACCOUN varchar2(600);
+comment on column JT_letter_of_guarantee.PURCHASE_ACCOUN is '支付账号';
+
+alter table JT_letter_of_guarantee ADD RATE number;
+comment on column JT_letter_of_guarantee.RATE is '费率';
+
+alter table JT_letter_of_guarantee ADD GUARANTEE_URL varchar2(2000);
+comment on column JT_letter_of_guarantee.GUARANTEE_URL is '电子保单文件下载地址';
+
+alter table JT_letter_of_guarantee ADD GUARANTEE_MD5 varchar2(32);
+comment on column JT_letter_of_guarantee.GUARANTEE_MD5 is '电子保单文件md5码';
+
+
+alter table ZJ_LETTER_OF_GUARANTEE add PURCHASE_METHOD varchar2(200);
+alter table ZJ_LETTER_OF_GUARANTEE add PURCHASE_TIME date;
+
+alter table SL_LETTER_OF_GUARANTEE add PURCHASE_METHOD varchar2(200);
+alter table SL_LETTER_OF_GUARANTEE add PURCHASE_TIME date;
+
+alter table JT_LETTER_OF_GUARANTEE add PURCHASE_METHOD varchar2(200);
+alter table JT_LETTER_OF_GUARANTEE add PURCHASE_TIME date;

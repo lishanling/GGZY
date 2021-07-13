@@ -1,0 +1,152 @@
+{
+    "DataName": "SL_ITEM_CONTROL_PRICE",
+    "DataCnName": "主要清单项目控制价",
+    "IsZXSJ": true,
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "SL_TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODE",
+            "CnName": "标段（包）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 23
+                }
+            ]
+        },
+        {
+            "Name": "PROJECT_NUMBER",
+            "CnName": "编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "PROJECT_LIST_NAME",
+            "CnName": "项目名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                }
+            ]
+        },
+        {
+            "Name": "UNIT",
+            "CnName": "单位",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "QUANTITIES",
+            "CnName": "工程量",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "UNIVALENT",
+            "CnName": "单价",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3,
+                    "DecimalFigures": 2
+                }
+            ]
+        },
+        {
+            "Name": "UNIVALENT_PRICE_UNIT",
+            "CnName": "单价金额单位",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                },
+                {
+                    "ValidatorName": "EnumMatch",
+                    "EnumType": "PRICE_UNIT"
+                }
+            ]
+        },
+        {
+            "Name": "TOTLE",
+            "CnName": "合价",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 3,
+                    "DecimalFigures": 2
+                }
+            ]
+        },
+        {
+            "Name": "TOTLE_PRICE_UNIT",
+            "CnName": "合价金额单位",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                },
+                {
+                    "ValidatorName": "EnumMatch",
+                    "EnumType": "PRICE_UNIT"
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

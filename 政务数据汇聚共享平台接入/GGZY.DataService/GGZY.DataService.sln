@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGZY.DataService", "GGZY.DataService.csproj", "{CC5A6C3E-BCF7-4F4E-9D46-546DABDFA386}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC5A6C3E-BCF7-4F4E-9D46-546DABDFA386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5A6C3E-BCF7-4F4E-9D46-546DABDFA386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC5A6C3E-BCF7-4F4E-9D46-546DABDFA386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC5A6C3E-BCF7-4F4E-9D46-546DABDFA386}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7DD92D2-053F-4C37-AA49-F86A3A11A47B}
+	EndGlobalSection
+EndGlobal

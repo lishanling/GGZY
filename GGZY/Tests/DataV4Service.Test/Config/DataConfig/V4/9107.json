@@ -1,0 +1,303 @@
+{
+  "DataNo": "9107",
+  "DataName": "ZJ_BIDDER_PERFORMANCE",
+  "DataCnName": "投标人业绩",
+  "IsZXSJ": true,
+  "GgfwDataNo": "9008",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        },
+        {
+          "ValidatorName": "TenderProjectCodeMatch",
+          "TenderProjectTableName": "ZJ_TENDER_PROJECT"
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODE",
+      "CnName": "标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 23
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_NAME",
+      "CnName": "投标人名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 300
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_CODE_TYPE",
+      "CnName": "投标人类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "2001"
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_ORG_CODE",
+      "CnName": "投标人代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "PROJECT_NAME",
+      "CnName": "业绩项目名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "TENDERE_NAME",
+      "CnName": "业绩项目招标人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "WIN_BIDDER",
+      "CnName": "业绩项目中标人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "WIN_BIDDER_NOTICE",
+      "CnName": "业绩项目中标通知书内容",
+      "Validators": []
+    },
+    {
+      "Name": "COMPLETE_TIME",
+      "CnName": "业绩项目完成时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "CONTRACT_BID_AMOUNT",
+      "CnName": "业绩合同金额",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "END_TIME",
+      "CnName": "业绩竣工时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "EVALUATE",
+      "CnName": "业绩评价",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "BID_AMOUNT",
+      "CnName": "业绩中标金额",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "APPROVAL_NUMBER",
+      "CnName": "业绩立项文号",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "COMMEND_NAME",
+      "CnName": "业绩表彰名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "COMMEND_CONTENT",
+      "CnName": "业绩表彰内容",
+      "Validators": []
+    },
+    {
+      "Name": "UNITY_COMPANY",
+      "CnName": "联合体企业名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "PLATFORM_CODE",
+      "CnName": "交易系统标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "PUB_SERVICE_PLAT_CODE",
+      "CnName": "交易服务系统标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "DATA_TIMESTAMP",
+      "CnName": "数据时间戳",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "TRADE_PLAT",
+      "CnName": "交易平台或发布工具标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 11
+        }
+      ]
+    },
+    {
+      "Name": "PUB_SERVICE_PLAT",
+      "CnName": "公共服务平台标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 11
+        }
+      ]
+    }
+  ]
+}

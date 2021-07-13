@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "CA加密";
+    Layout = "~/Views/Shared/_LayoutBody.cshtml";
+    var m = DateTime.Now.Minute;
+    var guid = Guid.NewGuid().ToString("N");
+
+
+}
+@section scripts{
+    <script src="~/static/common/js/jquery.base64.js"></script>
+
+    <script src="~/static/modules/CertificateAuthority/Encode.js"></script>
+
+}
+@section styles
+{
+    <style>
+        #decode_base64_txt, #encode_base64_txt {
+            word-wrap: break-word;
+            /*max-width: 80%*/
+        }
+    </style>
+}
+<input type="hidden" name="guid" id="guid" value="@guid" />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">CA加密</h3>
+    </div>
+    <div class="panel-body">
+        <div id="search-collapse" class="collapse" style="display: block">
+            <div class="accordion-inner">
+
+                <div class="form form-horizontal well clearfix">
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        1 下载<a href="@Url.Action("InParamFile","CertificateAuthority")" target="_blank"><i class="fa fa-download"></i></a>加密参数文件，保存到计算机，并填写保存路径到<span style="color: blue">加密参数文件</span>输入框
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        2 填写待加密文件路径到 <span style="color: blue">待加密文件</span>输入框
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        3 点击开始加密
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        4 通过消息框 打开 统一选择客户端
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        5 插入CA锁
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        6 点击启动已安装的CA客户端<span style="color: red">（启动不成功，需要重新安装）</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        7 CA客户端加密成功，自动关闭
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        8 点击确定 <span style="color: blue">根据消息提示查看加密文件与加密参数文件是否生成成功</span>
+                    </div>
+
+                </div>
+                <form id="searchForm" class="form form-horizontal well clearfix" action="" method="post">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <label class="label-item single-overflow pull-left" title="点击下载加密参数文件">加密参数文件(D:\test\inparam.txt) <a id="in_param_file_download" href="@Url.Action("InParamFile","CertificateAuthority")" target="_blank"><i class="fa fa-download"></i></a></label>
+                        <input id="in_param_file" name="in_param_file" class=" form-control" type="text" value="" maxlength="257" placeholder="下载加密参数文件保存到计算机，并填写保存路径,如:D:\test\inparam.txt" autocomplete="off" />
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <label class="label-item single-overflow pull-left" title="待加密文件">待加密文件(D:\test\in.txt) </label>
+                        <input id="in_file" name="in_file" class=" form-control" type="text" value="" maxlength="257" placeholder="填写待加密文件路径,如D:\test\in.txt" autocomplete="off" />
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <label class="label-item single-overflow pull-left" title="被加密文件">被加密文件(D:\test\out.txt) </label>
+                        <input id="out_file" name="out_file" class=" form-control" type="text" value="" maxlength="257" placeholder="填写保存加密文件路径,如D:\test\out.txt" autocomplete="off" readonly="readonly" />
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <label class="label-item single-overflow pull-left" title="加密相关参数">加密相关参数(D:\test\outparam.txt) </label>
+                        <input id="out_param_file" name="out_param_file" class=" form-control" type="text" value="" maxlength="257" placeholder="填写保存加密相关文件路径,如D:\test\outparam.txt" autocomplete="off" readonly="readonly" />
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div style="margin-top:26px">
+                            <a id="encode" class="btn btn-primary btn-rounded  btn-bordered btn-sm"><i class="fa fa-lock"></i>开始加密</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="panel panel-primary" id="panel-encode" style="display: none">
+    <div class="panel-heading">
+        <h3 class="panel-title">CA加密</h3>
+    </div>
+    <div class="panel-body">
+        <form id="inputForm" class="form-horizontal" action="" method="post">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="width-15 active">
+                            <label class="pull-right" title="明文"><font color="red"> </font>明文:</label>
+                        </td>
+                        <td style="width: 85%">
+                            <textarea id="encode_txt" style="width: 100%; height: 100px; resize: none;"readonly="readonly"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="width-15 active">
+                            <label class="pull-right" title="密文"><font color="red"> </font>密文:</label>
+                        </td>
+                        <td style="width: 85%">
+                            <textarea id="encode_base64_txt" style="width: 100%; height: 200px; resize: none;"readonly="readonly"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+
+
+

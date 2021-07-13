@@ -1,0 +1,56 @@
+{
+    "DataName": "JT_DESIGN_MAIN_LIVING",
+    "DataCnName": "设计代表办公、生活、设施标准",
+    "IsZXSJ": true,
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "JT_TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODES",
+            "CnName": "相关标段（包）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "PROJECT",
+            "CnName": "项目",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 400
+                }
+            ]
+        },
+        {
+            "Name": "FACILITY_NUMBER",
+            "CnName": "数量",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

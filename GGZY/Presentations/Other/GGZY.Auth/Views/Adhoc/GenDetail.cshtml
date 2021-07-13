@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "~/Views/Shared/_BootstrapTableLayout.cshtml";
+
+}
+
+
+@model Dos.ORM.EntityUtils.FastExpando
+
+<form id="inputForm" class="form-horizontal" action="" method="post">
+    <table class="table table-bordered">
+        <tbody>
+            @foreach (var item in Model.Data.Keys)
+            {
+                var name = item;
+                var value = Model.Data[item];
+                <tr>
+                    <td class="width-15 active">
+                        <label class="pull-right" title="@name"><font color="red"> </font>@name:</label>
+                    </td>
+                    <td style="width: 85%">
+                        @Html.Raw(value)
+                        @*@if (value != null && !string.IsNullOrWhiteSpace(value.ToString()) && value.ToString().Contains("<"))
+                        {
+                            <div>
+
+                            </div>
+
+                        }
+                        else
+                        {
+                            <input id="@name" name="@name" class="form-control " type="text" value="@(value)" autocomplete="off" title="@name">
+                        }*@
+
+                    </td>
+                    @*<td class="width-15 active">
+                        <label class="pull-right" title="奖励主体名称"><font color="red"> </font>奖励主体名称:</label>
+                    </td>
+                    <td class="width-35">
+                        <input id="BODY_NAME" name="BODY_NAME" class="form-control " type="text" value="@(Model.BODY_NAME)" autocomplete="off" title="BODY_NAME">
+                    </td>*@
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+

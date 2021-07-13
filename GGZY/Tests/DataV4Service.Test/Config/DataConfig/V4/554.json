@@ -1,0 +1,226 @@
+{
+    "DataNo": "554",
+    "DataName": "PURCHASE_CONTRACT",
+    "DataCnName": "采购合同",
+    "Fields": [
+        {
+            "Name": "PURCHASE_PROJECT_CODE",
+            "CnName": "采购项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "PURCHASE_PROJECT_NAME",
+            "CnName": "采购项目名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 600
+                }
+            ]
+        },
+        {
+            "Name": "PURCHASE_SECTION_CODE",
+            "CnName": "采购项目子包编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "UNIFIED_DEAL_CODE",
+            "CnName": "统一交易标识码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 40
+                }
+            ]
+        },
+        {
+            "Name": "CONTRACT_NAME",
+            "CnName": "合同名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 600
+                }
+            ]
+        },
+        {
+            "Name": "PURCHASER_NAME",
+            "CnName": "采购人名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 2000
+                }
+            ]
+        },
+        {
+            "Name": "PURCHASER_CODE",
+            "CnName": "采购人代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 2000
+                }
+            ]
+        },
+        {
+            "Name": "LEGAL_ROLE",
+            "CnName": "采购人角色",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 2
+                }
+            ]
+        },
+        {
+            "Name": "SUPPLIER_NAME",
+            "CnName": "中标（成交）供应商名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 2000
+                }
+            ]
+        },
+        {
+            "Name": "SUPPLIER_CODE",
+            "CnName": "中标（成交）供应商代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 2000
+                }
+            ]
+        },
+        {
+            "Name": "PRICE_FORM_CODE",
+            "CnName": "价款形式代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "CONTRACT_AMOUNT",
+            "CnName": "合同金额",
+            "Validators": [
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 14,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "CURRENCY_CODE",
+            "CnName": "价格币种代码",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 3
+                }
+            ]
+        },
+        {
+            "Name": "PRICE_UNIT",
+            "CnName": "金额单位",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                },
+                {
+                    "ValidatorName": "EnumMatch",
+                    "EnumType": "PRICE_UNIT"
+                }
+            ]
+        },
+        {
+            "Name": "WIN_BID_RATE",
+            "CnName": "优惠率或其它类型合同价格",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 2000
+                }
+            ]
+        },
+        {
+            "Name": "CONTRACT_TERM",
+            "CnName": "合同期限",
+            "Validators": [
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 4
+                }
+            ]
+        },
+        {
+            "Name": "SIGNING_TIME",
+            "CnName": "合同签署时间",
+            "Validators": [
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "URL",
+            "CnName": "合同源URL",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

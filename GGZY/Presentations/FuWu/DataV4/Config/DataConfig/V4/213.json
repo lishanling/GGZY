@@ -1,0 +1,295 @@
+{
+    "DataNo": "213",
+    "DataName": "EXPERT_EVALUATION",
+    "DataCnName": "评审专家基本信息",
+    "Fields": [
+        {
+            "Name": "ID_CARD",
+            "CnName": "专家身份证件号码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "ID_CARD_TYPE",
+            "CnName": "专家身份证件类型",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 2
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "7"
+            }
+          ]
+        },
+        {
+            "Name": "EXPERT_NAME",
+            "CnName": "专家姓名",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "SEX",
+            "CnName": "性别",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "51"
+            }
+          ]
+        },
+        {
+            "Name": "BIRTHDAY",
+            "CnName": "出生日期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "DUTY",
+            "CnName": "职务",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "EDUCATION",
+            "CnName": "最高学历",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "PROFESSIONAL",
+            "CnName": "职称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "ONWORK",
+            "CnName": "是否在职",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "EnumMatch",
+              "EnumType": "TRUE_OR_FALSE"
+            }
+          ]
+        },
+        {
+            "Name": "COMPANY",
+            "CnName": "当前工作单位",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "POST_ADDRESS",
+            "CnName": "通讯地址",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "POSTCODE",
+            "CnName": "邮政编码",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                }
+            ]
+        },
+        {
+            "Name": "INDUSTRY",
+            "CnName": "所属行业",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 3
+                }
+            ]
+        },
+        {
+            "Name": "AREA",
+            "CnName": "所在地区",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 9
+                }
+            ]
+        },
+        {
+            "Name": "WORK_YEAR",
+            "CnName": "工作年限",
+            "Validators": [
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 2
+                }
+            ]
+        },
+        {
+            "Name": "PHONE_NUMBER",
+            "CnName": "手机",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "OTHER_NUMBER",
+            "CnName": "其他联系方式",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "DMISSON",
+            "CnName": "是否可用",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "EnumMatch",
+              "EnumType": "TRUE_OR_FALSE"
+            }
+          ]
+        },
+        {
+            "Name": "ENTER_DATE",
+            "CnName": "入库时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "BASE_TYPE",
+            "CnName": "专家库类别",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "MAJOR_CODE",
+            "CnName": "参评专业编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 11
+                }
+            ]
+        },
+        {
+            "Name": "IS_MAIN",
+            "CnName": "是否主评专业",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

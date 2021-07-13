@@ -1,0 +1,129 @@
+{
+    "DataNo": "1111",
+    "DataName": "DEA_MEDI_NET_PURCHASE_LIST",
+    "DataCnName": "直接挂网采购目录基础信息",
+    "Fields": [
+        {
+            "Name": "PROJECT_CODE",
+            "CnName": "项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        },
+        {
+            "Name": "PROJNAME",
+            "CnName": "项目名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "DRUGGROUP",
+            "CnName": "采购类别",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "9111"
+            }
+          ]
+        },
+        {
+            "Name": "CATAID",
+            "CnName": "目录编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        },
+        {
+            "Name": "CATATIME",
+            "CnName": "目录时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "CATANAME",
+            "CnName": "目录名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "CATANUM",
+            "CnName": "目录条数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 5
+                }
+            ]
+        },
+        {
+            "Name": "CATACONTENT",
+            "CnName": "目录展示内容",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "CATASTATUS",
+            "CnName": "目录状态",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "9112"
+            }
+          ]
+        }
+    ],
+    "Validators": []
+}

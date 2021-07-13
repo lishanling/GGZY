@@ -1,0 +1,503 @@
+--创建表
+CREATE TABLE BHXX_CONTRACT_MEMBER
+(
+M_ID NUMBER PRIMARY KEY,
+m_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+CONTRACT_CODE   VARCHAR2(600),
+NAME   VARCHAR2(200),
+PHONE   VARCHAR2(200),
+ID_CARD_NO   VARCHAR2(18),
+POSITION   VARCHAR2(200),
+TECHNICAL_POST   VARCHAR2(200),
+CERTIFICATE_NO   VARCHAR2(200),
+CERTIFICATE_TYPE   VARCHAR2(200),
+CERTIFICATE_FULL_NAME   VARCHAR2(200),
+CERTIFICATE_LEVLE   VARCHAR2(200),
+YEARS_OF_WORKING   NUMBER,
+CREDIT_SCORE   NUMBER,
+GRADUATE_SCHOOL   VARCHAR2(200),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table BHXX_CONTRACT_MEMBER is '合同项目组成员'; 
+comment on column BHXX_CONTRACT_MEMBER.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column BHXX_CONTRACT_MEMBER.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column BHXX_CONTRACT_MEMBER.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column BHXX_CONTRACT_MEMBER.CONTRACT_CODE is '合同编号'; 
+comment on column BHXX_CONTRACT_MEMBER.NAME is '成员姓名'; 
+comment on column BHXX_CONTRACT_MEMBER.PHONE is '成员联系方式'; 
+comment on column BHXX_CONTRACT_MEMBER.ID_CARD_NO is '成员身份证号'; 
+comment on column BHXX_CONTRACT_MEMBER.POSITION is '成员岗位类型'; 
+comment on column BHXX_CONTRACT_MEMBER.TECHNICAL_POST is '成员职称'; 
+comment on column BHXX_CONTRACT_MEMBER.CERTIFICATE_NO is '成员证书编号'; 
+comment on column BHXX_CONTRACT_MEMBER.CERTIFICATE_TYPE is '成员证书类型'; 
+comment on column BHXX_CONTRACT_MEMBER.CERTIFICATE_FULL_NAME is '成员证书全称'; 
+comment on column BHXX_CONTRACT_MEMBER.CERTIFICATE_LEVLE is '成员证书等级'; 
+comment on column BHXX_CONTRACT_MEMBER.YEARS_OF_WORKING is '成员工作年限'; 
+comment on column BHXX_CONTRACT_MEMBER.CREDIT_SCORE is '成员信用分'; 
+comment on column BHXX_CONTRACT_MEMBER.GRADUATE_SCHOOL is '成员毕业院校'; 
+comment on column BHXX_CONTRACT_MEMBER.PLATFORM_CODE is '交易系统标识码'; 
+comment on column BHXX_CONTRACT_MEMBER.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column BHXX_CONTRACT_MEMBER.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column BHXX_CONTRACT_MEMBER.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column BHXX_CONTRACT_MEMBER.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_BHXX_CONTRACT_MEMBER
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE BHXX_PERFORMANCE_CONDITION
+(
+M_ID NUMBER PRIMARY KEY,
+m_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+PERFORMANCE_REPORT_NAME   VARCHAR2(600),
+TENDERER_NAME   VARCHAR2(200),
+TENDERER_CODE   VARCHAR2(18),
+PERFORMANCE_PARTY_NAME   VARCHAR2(200),
+PERFORMANCE_PARTY_CODE   VARCHAR2(18),
+SETTLE_PRICE   NUMBER,
+FINISH_TIME   DATE,
+CONTRACT_CHANGE_CONTENT   CLOB,
+ACTUALLY_PERIOD   NUMBER,
+PERFORMANCE_CONTENT   CLOB,
+REPORT_ISSUE_TIME   DATE,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table BHXX_PERFORMANCE_CONDITION is '履约情况'; 
+comment on column BHXX_PERFORMANCE_CONDITION.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column BHXX_PERFORMANCE_CONDITION.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column BHXX_PERFORMANCE_CONDITION.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column BHXX_PERFORMANCE_CONDITION.PERFORMANCE_REPORT_NAME is '履约情况报告名称'; 
+comment on column BHXX_PERFORMANCE_CONDITION.TENDERER_NAME is '业主/招标人名称'; 
+comment on column BHXX_PERFORMANCE_CONDITION.TENDERER_CODE is '业主/招标人代码'; 
+comment on column BHXX_PERFORMANCE_CONDITION.PERFORMANCE_PARTY_NAME is '履约人名称'; 
+comment on column BHXX_PERFORMANCE_CONDITION.PERFORMANCE_PARTY_CODE is '履约人代码'; 
+comment on column BHXX_PERFORMANCE_CONDITION.SETTLE_PRICE is '合同结算金额'; 
+comment on column BHXX_PERFORMANCE_CONDITION.FINISH_TIME is '合同完成时间'; 
+comment on column BHXX_PERFORMANCE_CONDITION.CONTRACT_CHANGE_CONTENT is '合同变更内容'; 
+comment on column BHXX_PERFORMANCE_CONDITION.ACTUALLY_PERIOD is '实际履约期限'; 
+comment on column BHXX_PERFORMANCE_CONDITION.PERFORMANCE_CONTENT is '履约内容'; 
+comment on column BHXX_PERFORMANCE_CONDITION.REPORT_ISSUE_TIME is '履约报告出具时间'; 
+comment on column BHXX_PERFORMANCE_CONDITION.PLATFORM_CODE is '交易系统标识码'; 
+comment on column BHXX_PERFORMANCE_CONDITION.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column BHXX_PERFORMANCE_CONDITION.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column BHXX_PERFORMANCE_CONDITION.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column BHXX_PERFORMANCE_CONDITION.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_BHXX_PERFORMANCE_CONDITION
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE BHXX_PERFORMANCE_MEMBER
+(
+M_ID NUMBER PRIMARY KEY,
+m_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+CONTRACT_CODE   VARCHAR2(600),
+PERFORMANCE_REPORT_NAME   VARCHAR2(600),
+NAME   VARCHAR2(200),
+PHONE   VARCHAR2(200),
+ID_CARD_NO   VARCHAR2(18),
+POSITION   VARCHAR2(200),
+TECHNICAL_POST   VARCHAR2(200),
+CERTIFICATE_NO   VARCHAR2(200),
+CERTIFICATE_TYPE   VARCHAR2(200),
+CERTIFICATE_FULL_NAME   VARCHAR2(200),
+CERTIFICATE_LEVLE   VARCHAR2(200),
+YEARS_OF_WORKING   NUMBER,
+CREDIT_SCORE   NUMBER,
+GRADUATE_SCHOOL   VARCHAR2(200),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table BHXX_PERFORMANCE_MEMBER is '实际履约项目组成员'; 
+comment on column BHXX_PERFORMANCE_MEMBER.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column BHXX_PERFORMANCE_MEMBER.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column BHXX_PERFORMANCE_MEMBER.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column BHXX_PERFORMANCE_MEMBER.CONTRACT_CODE is '合同编号'; 
+comment on column BHXX_PERFORMANCE_MEMBER.PERFORMANCE_REPORT_NAME is '履约情况报告名称'; 
+comment on column BHXX_PERFORMANCE_MEMBER.NAME is '成员姓名'; 
+comment on column BHXX_PERFORMANCE_MEMBER.PHONE is '成员联系方式'; 
+comment on column BHXX_PERFORMANCE_MEMBER.ID_CARD_NO is '成员身份证号'; 
+comment on column BHXX_PERFORMANCE_MEMBER.POSITION is '成员岗位类型'; 
+comment on column BHXX_PERFORMANCE_MEMBER.TECHNICAL_POST is '成员职称'; 
+comment on column BHXX_PERFORMANCE_MEMBER.CERTIFICATE_NO is '成员证书编号'; 
+comment on column BHXX_PERFORMANCE_MEMBER.CERTIFICATE_TYPE is '成员证书类型'; 
+comment on column BHXX_PERFORMANCE_MEMBER.CERTIFICATE_FULL_NAME is '成员证书全称'; 
+comment on column BHXX_PERFORMANCE_MEMBER.CERTIFICATE_LEVLE is '成员证书等级'; 
+comment on column BHXX_PERFORMANCE_MEMBER.YEARS_OF_WORKING is '成员工作年限'; 
+comment on column BHXX_PERFORMANCE_MEMBER.CREDIT_SCORE is '成员信用分'; 
+comment on column BHXX_PERFORMANCE_MEMBER.GRADUATE_SCHOOL is '成员毕业院校'; 
+comment on column BHXX_PERFORMANCE_MEMBER.PLATFORM_CODE is '交易系统标识码'; 
+comment on column BHXX_PERFORMANCE_MEMBER.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column BHXX_PERFORMANCE_MEMBER.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column BHXX_PERFORMANCE_MEMBER.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column BHXX_PERFORMANCE_MEMBER.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_BHXX_PERFORMANCE_MEMBER
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE BHXX_CONSTRUCT_PERMITS
+(
+M_ID NUMBER PRIMARY KEY,
+m_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+PROJECT_CODE   VARCHAR2(17),
+PROJECT_NAME   VARCHAR2(600),
+INVEST_PROJECT_CODE   VARCHAR2(24),
+BUILDER_LICENCE_NUM   VARCHAR2(600),
+BUILD_PLAN_NUM   VARCHAR2(600),
+PROJECT_PLAN_NUM   VARCHAR2(600),
+TENDER_NUM   VARCHAR2(600),
+CENSOR_NUM   VARCHAR2(600),
+BARGAIN_DAYS   NUMBER,
+CONTRACT_MONEY   NUMBER,
+AREA   NUMBER,
+LENGTH   NUMBER,
+SPAN   NUMBER,
+PROJECT_SIZE   VARCHAR2(600),
+RELEASE_DATE   DATE,
+TWO_DIM_CODE   VARCHAR2(600),
+CREATE_DATE   DATE,
+CHECK_DEPART_NAME   VARCHAR2(600),
+CHECK_PERSON_NAME   VARCHAR2(600),
+DATA_SOURCE   VARCHAR2(600),
+DATA_LEVEL   VARCHAR2(600)
+);
+--创建注释
+comment on table BHXX_CONSTRUCT_PERMITS is '施工许可信息'; 
+comment on column BHXX_CONSTRUCT_PERMITS.PROJECT_CODE is '项目编号'; 
+comment on column BHXX_CONSTRUCT_PERMITS.PROJECT_NAME is '项目名称'; 
+comment on column BHXX_CONSTRUCT_PERMITS.INVEST_PROJECT_CODE is '项目代码'; 
+comment on column BHXX_CONSTRUCT_PERMITS.BUILDER_LICENCE_NUM is '施工许可证编号'; 
+comment on column BHXX_CONSTRUCT_PERMITS.BUILD_PLAN_NUM is '建设用地规划许可证编号'; 
+comment on column BHXX_CONSTRUCT_PERMITS.PROJECT_PLAN_NUM is '建设工程规划许可证编号'; 
+comment on column BHXX_CONSTRUCT_PERMITS.TENDER_NUM is '中标通知书编号'; 
+comment on column BHXX_CONSTRUCT_PERMITS.CENSOR_NUM is '施工图审查合格书编号'; 
+comment on column BHXX_CONSTRUCT_PERMITS.BARGAIN_DAYS is '合同工期*'; 
+comment on column BHXX_CONSTRUCT_PERMITS.CONTRACT_MONEY is '合同金额(万元)'; 
+comment on column BHXX_CONSTRUCT_PERMITS.AREA is '面积（平方米）'; 
+comment on column BHXX_CONSTRUCT_PERMITS.LENGTH is '长度（米）'; 
+comment on column BHXX_CONSTRUCT_PERMITS.SPAN is '跨度（米）'; 
+comment on column BHXX_CONSTRUCT_PERMITS.PROJECT_SIZE is '建设规模'; 
+comment on column BHXX_CONSTRUCT_PERMITS.RELEASE_DATE is '发证日期'; 
+comment on column BHXX_CONSTRUCT_PERMITS.TWO_DIM_CODE is '证书二维码'; 
+comment on column BHXX_CONSTRUCT_PERMITS.CREATE_DATE is '记录登记时间'; 
+comment on column BHXX_CONSTRUCT_PERMITS.CHECK_DEPART_NAME is '信息审核部门'; 
+comment on column BHXX_CONSTRUCT_PERMITS.CHECK_PERSON_NAME is '信息审核人'; 
+comment on column BHXX_CONSTRUCT_PERMITS.DATA_SOURCE is '数据来源'; 
+comment on column BHXX_CONSTRUCT_PERMITS.DATA_LEVEL is '数据等级'; 
+ --创建序列
+create sequence seq_BHXX_CONSTRUCT_PERMITS
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE BHXX_CONSTRUCT_ALTER
+(
+M_ID NUMBER PRIMARY KEY,
+m_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+PROJECT_CODE   VARCHAR2(17),
+PROJECT_NAME   VARCHAR2(600),
+INVEST_PROJECT_CODE   VARCHAR2(24),
+BUILDER_LICENCE_NUM   VARCHAR2(600),
+CHANGE_ITEM   VARCHAR2(600),
+BEFORE_VALUE   VARCHAR2(600),
+AFTET_VALUE   VARCHAR2(600),
+CREATE_DATE   DATE,
+CHECK_DEPART_NAME   VARCHAR2(600),
+CHECK_PERSON_NAME   VARCHAR2(600)
+);
+--创建注释
+comment on table BHXX_CONSTRUCT_ALTER is '施工许可变更信息'; 
+comment on column BHXX_CONSTRUCT_ALTER.PROJECT_CODE is '项目编号'; 
+comment on column BHXX_CONSTRUCT_ALTER.PROJECT_NAME is '项目名称'; 
+comment on column BHXX_CONSTRUCT_ALTER.INVEST_PROJECT_CODE is '项目代码'; 
+comment on column BHXX_CONSTRUCT_ALTER.BUILDER_LICENCE_NUM is '施工许可证编号'; 
+comment on column BHXX_CONSTRUCT_ALTER.CHANGE_ITEM is '变更项'; 
+comment on column BHXX_CONSTRUCT_ALTER.BEFORE_VALUE is '变更前的内容'; 
+comment on column BHXX_CONSTRUCT_ALTER.AFTET_VALUE is '变更后的内容'; 
+comment on column BHXX_CONSTRUCT_ALTER.CREATE_DATE is '变更审核时间'; 
+comment on column BHXX_CONSTRUCT_ALTER.CHECK_DEPART_NAME is '变更审核部门'; 
+comment on column BHXX_CONSTRUCT_ALTER.CHECK_PERSON_NAME is '变更审核人'; 
+ --创建序列
+create sequence seq_BHXX_CONSTRUCT_ALTER
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE BHXX_SCENE_MANAGER_INFO
+(
+M_ID NUMBER PRIMARY KEY,
+m_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+PROJECT_CODE   VARCHAR2(17),
+PROJECT_NAME   VARCHAR2(600),
+INVEST_PROJECT_CODE   VARCHAR2(24),
+BUILDER_LICENCE_NUM   VARCHAR2(50),
+CORP_NAME   VARCHAR2(200),
+CORP_CODE   VARCHAR2(18),
+USERNAME   VARCHAR2(50),
+IDCARD_TYPE_NUM   VARCHAR2(2),
+IDCARD   VARCHAR2(18),
+REGISTER_TIME   DATE,
+LOGOUT_TIME   DATE,
+POST_NAME   VARCHAR2(50),
+POST_CERT_NAME   VARCHAR2(50),
+POST_CERT_NUM   VARCHAR2(50),
+CERT_END_DATE   DATE
+);
+--创建注释
+comment on table BHXX_SCENE_MANAGER_INFO is '施工现场管理人员信息表'; 
+comment on column BHXX_SCENE_MANAGER_INFO.PROJECT_CODE is '项目编号'; 
+comment on column BHXX_SCENE_MANAGER_INFO.PROJECT_NAME is '项目名称'; 
+comment on column BHXX_SCENE_MANAGER_INFO.INVEST_PROJECT_CODE is '项目代码'; 
+comment on column BHXX_SCENE_MANAGER_INFO.BUILDER_LICENCE_NUM is '施工许可证编号'; 
+comment on column BHXX_SCENE_MANAGER_INFO.CORP_NAME is '所属企业名称'; 
+comment on column BHXX_SCENE_MANAGER_INFO.CORP_CODE is '所属企业统一社会信用代码'; 
+comment on column BHXX_SCENE_MANAGER_INFO.USERNAME is '人员姓名'; 
+comment on column BHXX_SCENE_MANAGER_INFO.IDCARD_TYPE_NUM is '证件类型'; 
+comment on column BHXX_SCENE_MANAGER_INFO.IDCARD is '人员证件号码'; 
+comment on column BHXX_SCENE_MANAGER_INFO.REGISTER_TIME is '人员登记时间'; 
+comment on column BHXX_SCENE_MANAGER_INFO.LOGOUT_TIME is '人员注销时间'; 
+comment on column BHXX_SCENE_MANAGER_INFO.POST_NAME is '岗位名称'; 
+comment on column BHXX_SCENE_MANAGER_INFO.POST_CERT_NAME is '证书类型'; 
+comment on column BHXX_SCENE_MANAGER_INFO.POST_CERT_NUM is '证书编号'; 
+comment on column BHXX_SCENE_MANAGER_INFO.CERT_END_DATE is '证书有效期'; 
+ --创建序列
+create sequence seq_BHXX_SCENE_MANAGER_INFO
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE BHXX_SCENE_SUPERVISOR_INFO
+(
+M_ID NUMBER PRIMARY KEY,
+m_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+PROJECT_CODE   VARCHAR2(17),
+PROJECT_NAME   VARCHAR2(600),
+INVEST_PROJECT_CODE   VARCHAR2(24),
+BUILDER_LICENCE_NUM   VARCHAR2(50),
+CORP_NAME   VARCHAR2(200),
+CORP_CODE   VARCHAR2(18),
+USERNAME   VARCHAR2(50),
+IDCARD_TYPE_NUM   VARCHAR2(2),
+IDCARD   VARCHAR2(18),
+POST_CERT_NAME   VARCHAR2(50),
+POST_CERT_NUM   VARCHAR2(50),
+CERT_END_DATE   DATE
+);
+--创建注释
+comment on table BHXX_SCENE_SUPERVISOR_INFO is '施工现场工程监理人员信息表'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.PROJECT_CODE is '项目编号'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.PROJECT_NAME is '项目名称'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.INVEST_PROJECT_CODE is '项目代码'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.BUILDER_LICENCE_NUM is '施工许可证编号'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.CORP_NAME is '所属企业名称'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.CORP_CODE is '所属企业统一社会信用代码'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.USERNAME is '人员姓名'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.IDCARD_TYPE_NUM is '证件类型'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.IDCARD is '人员证件号码'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.POST_CERT_NAME is '证书类型'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.POST_CERT_NUM is '证书编号'; 
+comment on column BHXX_SCENE_SUPERVISOR_INFO.CERT_END_DATE is '证书有效期'; 
+ --创建序列
+create sequence seq_BHXX_SCENE_SUPERVISOR_INFO
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE BHXX_COMPLETE_ACCEPT
+(
+M_ID NUMBER PRIMARY KEY,
+m_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+PROJECT_CODE   VARCHAR2(17),
+PROJECT_NAME   VARCHAR2(600),
+INVEST_PROJECT_CODE   VARCHAR2(24),
+PROJECT_FINISH_CHECK_NUM   VARCHAR2(600),
+BUILDER_LICENCE_NUM   VARCHAR2(600),
+FACT_COST   NUMBER,
+FACT_AREA   NUMBER,
+LENGTH   NUMBER,
+SPAN   NUMBER,
+FACT_SIZE   CLOB,
+PROJECT_STRUCTURE_TYPE_NUM   VARCHAR2(600),
+BEGIN_DATE   DATE,
+END_DATE   DATE,
+REMARK   CLOB,
+CREATE_DATE   DATE,
+CHECK_DEPART_NAME   VARCHAR2(600),
+CHECK_PERSON_NAME   VARCHAR2(600),
+DATA_SOURCE   VARCHAR2(600),
+DATA_LEVEL   VARCHAR2(600)
+);
+--创建注释
+comment on table BHXX_COMPLETE_ACCEPT is '竣工验收信息'; 
+comment on column BHXX_COMPLETE_ACCEPT.PROJECT_CODE is '项目编号'; 
+comment on column BHXX_COMPLETE_ACCEPT.PROJECT_NAME is '项目名称'; 
+comment on column BHXX_COMPLETE_ACCEPT.INVEST_PROJECT_CODE is '项目代码'; 
+comment on column BHXX_COMPLETE_ACCEPT.PROJECT_FINISH_CHECK_NUM is '竣工验收编号'; 
+comment on column BHXX_COMPLETE_ACCEPT.BUILDER_LICENCE_NUM is '施工许可证编号'; 
+comment on column BHXX_COMPLETE_ACCEPT.FACT_COST is '实际造价（万元）'; 
+comment on column BHXX_COMPLETE_ACCEPT.FACT_AREA is '实际面积（平方米）'; 
+comment on column BHXX_COMPLETE_ACCEPT.LENGTH is '长度（米）'; 
+comment on column BHXX_COMPLETE_ACCEPT.SPAN is '跨度（米）'; 
+comment on column BHXX_COMPLETE_ACCEPT.FACT_SIZE is '实际建设规模'; 
+comment on column BHXX_COMPLETE_ACCEPT.PROJECT_STRUCTURE_TYPE_NUM is '结构体系'; 
+comment on column BHXX_COMPLETE_ACCEPT.BEGIN_DATE is '实际开工日期'; 
+comment on column BHXX_COMPLETE_ACCEPT.END_DATE is '实际竣工验收日期'; 
+comment on column BHXX_COMPLETE_ACCEPT.REMARK is '备注'; 
+comment on column BHXX_COMPLETE_ACCEPT.CREATE_DATE is '记录登记时间'; 
+comment on column BHXX_COMPLETE_ACCEPT.CHECK_DEPART_NAME is '信息审核部门*'; 
+comment on column BHXX_COMPLETE_ACCEPT.CHECK_PERSON_NAME is '信息审核人*'; 
+comment on column BHXX_COMPLETE_ACCEPT.DATA_SOURCE is '数据来源'; 
+comment on column BHXX_COMPLETE_ACCEPT.DATA_LEVEL is '数据等级'; 
+ --创建序列
+create sequence seq_BHXX_COMPLETE_ACCEPT
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE BHXX_COMPLET_ACCEPT_REVIEW
+(
+M_ID NUMBER PRIMARY KEY,
+m_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+PROJECT_CODE   VARCHAR2(17),
+PROJECT_NAME   VARCHAR2(600),
+INVEST_PROJECT_CODE   VARCHAR2(24),
+PROJECT_FINISH_CHECK_NUM   VARCHAR2(600),
+BUILDER_LICENCE_NUM   VARCHAR2(600),
+FACT_COST   NUMBER,
+FACT_AREA   NUMBER,
+LENGTH   NUMBER,
+SPAN   NUMBER,
+FACT_SIZE   VARCHAR2(2000),
+PROJECT_STRUCTURE_TYPE_NUM   VARCHAR2(600),
+BEGIN_DATE   DATE,
+END_DATE   DATE,
+REMARK   VARCHAR2(2000),
+CHECK_DEPART_NAME   VARCHAR2(600),
+CHECK_PERSON_NAME   VARCHAR2(600),
+DATA_SOURCE   VARCHAR2(600),
+DATA_LEVEL   VARCHAR2(600)
+);
+--创建注释
+comment on table BHXX_COMPLET_ACCEPT_REVIEW is '竣工验收备案信息'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.PROJECT_CODE is '项目编号'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.PROJECT_NAME is '项目名称'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.INVEST_PROJECT_CODE is '项目代码'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.PROJECT_FINISH_CHECK_NUM is '竣工验收备案编号'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.BUILDER_LICENCE_NUM is '施工许可证编号'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.FACT_COST is '实际造价（万元）'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.FACT_AREA is '实际面积（平方米）'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.LENGTH is '长度（米）'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.SPAN is '跨度（米）'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.FACT_SIZE is '实际建设规模'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.PROJECT_STRUCTURE_TYPE_NUM is '结构体系'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.BEGIN_DATE is '实际开工日期'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.END_DATE is '实际竣工验收备案日期'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.REMARK is '备注'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.CHECK_DEPART_NAME is '信息审核部门'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.CHECK_PERSON_NAME is '信息审核人'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.DATA_SOURCE is '数据来源'; 
+comment on column BHXX_COMPLET_ACCEPT_REVIEW.DATA_LEVEL is '数据等级'; 
+ --创建序列
+create sequence seq_BHXX_COMPLET_ACCEPT_REVIEW
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+

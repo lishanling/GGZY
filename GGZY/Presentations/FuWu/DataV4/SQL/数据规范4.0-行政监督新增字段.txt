@@ -1,0 +1,495 @@
+alter table ZJ_TENDER_PROJECT ADD TENDERER_REGION_CODE varchar2(6);
+comment on column ZJ_TENDER_PROJECT.TENDERER_REGION_CODE is '招标人企业注册所在地';
+
+alter table ZJ_TENDER_PROJECT ADD TENDERER_PROPERTY varchar2(2);
+comment on column ZJ_TENDER_PROJECT.TENDERER_PROPERTY is '招标人企业性质';
+
+alter table ZJ_TENDER_PROJECT ADD TENDER_AGENCY_REGION_CODE varchar2(6);
+comment on column ZJ_TENDER_PROJECT.TENDER_AGENCY_REGION_CODE is '招标代理机构企业注册所在地';
+
+alter table ZJ_TENDER_PROJECT ADD TENDER_AGENCY_PROPERTY varchar2(2);
+comment on column ZJ_TENDER_PROJECT.TENDER_AGENCY_PROPERTY is '招标代理机构企业性质';
+
+alter table ZJ_TENDER_PROJECT ADD OPERATION_NAME varchar2(200);
+comment on column ZJ_TENDER_PROJECT.OPERATION_NAME is '信息录入人员';
+
+alter table ZJ_TENDER_PROJECT ADD TRADE_SYSTEM_NO varchar2(100);
+comment on column ZJ_TENDER_PROJECT.TRADE_SYSTEM_NO is '交易系统编号';
+
+alter table ZJ_TENDER_PROJECT ADD TRADE_SYSTEM_FEE number;
+comment on column ZJ_TENDER_PROJECT.TRADE_SYSTEM_FEE is '交易系统平台使用费';
+
+alter table ZJ_TENDER_LIST ADD BIDDER_REGION_CODE varchar2(6);
+comment on column ZJ_TENDER_LIST.BIDDER_REGION_CODE is '投标人企业注册所在地';
+
+alter table ZJ_TENDER_LIST ADD BIDDER_PROPERTY varchar2(2);
+comment on column ZJ_TENDER_LIST.BIDDER_PROPERTY is '投标人企业性质';
+
+alter table ZJ_TENDER_LIST ADD BIDDER_OPERATION_PERSON varchar2(100);
+comment on column ZJ_TENDER_LIST.BIDDER_OPERATION_PERSON is '投标操作人员';
+
+alter table ZJ_TENDER_LIST ADD BIDDER_OPERATION_PERSON_ID varchar2(18);
+comment on column ZJ_TENDER_LIST.BIDDER_OPERATION_PERSON_ID is '投标操作人员身份证';
+
+alter table ZJ_TENDER_LIST ADD BIDDER_OPERATION_PERSON_CON varchar2(100);
+comment on column ZJ_TENDER_LIST.BIDDER_OPERATION_PERSON_CON is '投标操作人联系方式';
+
+alter table ZJ_TENDER_LIST ADD PURCHASE_ORDER_NUMBER varchar2(200);
+comment on column ZJ_TENDER_LIST.PURCHASE_ORDER_NUMBER is '招标文件购买订单号';
+
+alter table ZJ_BID_OPENING_RECORD ADD OPEN_COMPERE varchar2(600);
+comment on column ZJ_BID_OPENING_RECORD.OPEN_COMPERE is '开标主持人';
+
+alter table ZJ_BID_OPENING_RECORD ADD TENDER_AGENCY_PERSON varchar2(600);
+comment on column ZJ_BID_OPENING_RECORD.TENDER_AGENCY_PERSON is '开标代理机构代表';
+
+alter table ZJ_BID_OPENING_RECORD ADD TENDERER_PERSON varchar2(600);
+comment on column ZJ_BID_OPENING_RECORD.TENDERER_PERSON is '开标招标人代表';
+
+alter table ZJ_TENDER_CANDIDATE ADD BIDDER_REGION_CODE varchar2(6);
+comment on column ZJ_TENDER_CANDIDATE.BIDDER_REGION_CODE is '中标候选人人企业注册所在地';
+
+alter table ZJ_TENDER_CANDIDATE ADD BIDDER_PROPERTY varchar2(2);
+comment on column ZJ_TENDER_CANDIDATE.BIDDER_PROPERTY is '中标候选人企业性质';
+
+alter table ZJ_TENDER_CANDIDATE_ANN ADD FIRST_BIDDER_NAME varchar2(200);
+comment on column ZJ_TENDER_CANDIDATE_ANN.FIRST_BIDDER_NAME is '第一中标候选人名称';
+
+alter table ZJ_TENDER_CANDIDATE_ANN ADD FIRST_BIDDER_CODE varchar2(18);
+comment on column ZJ_TENDER_CANDIDATE_ANN.FIRST_BIDDER_CODE is '第一中标候选人统一社会信用代码';
+
+alter table ZJ_TENDER_CANDIDATE_ANN ADD SECOND_BIDDER_NAME varchar2(200);
+comment on column ZJ_TENDER_CANDIDATE_ANN.SECOND_BIDDER_NAME is '第二中标候选人名称';
+
+alter table ZJ_TENDER_CANDIDATE_ANN ADD SECOND_BIDDER_CODE varchar2(18);
+comment on column ZJ_TENDER_CANDIDATE_ANN.SECOND_BIDDER_CODE is '第二中标候选人统一社会信用代码';
+
+alter table ZJ_TENDER_CANDIDATE_ANN ADD THIRD_BIDDER_NAME varchar2(200);
+comment on column ZJ_TENDER_CANDIDATE_ANN.THIRD_BIDDER_NAME is '第三中标候选人名称';
+
+alter table ZJ_TENDER_CANDIDATE_ANN ADD THIRD_BIDDER_CODE varchar2(18);
+comment on column ZJ_TENDER_CANDIDATE_ANN.THIRD_BIDDER_CODE is '第三中标候选人统一社会信用代码';
+
+alter table ZJ_WIN_RESULT_ANNO ADD BIDDER_REGION_CODE varchar2(6);
+comment on column ZJ_WIN_RESULT_ANNO.BIDDER_REGION_CODE is '中标投标人企业注册所在地';
+
+alter table ZJ_WIN_RESULT_ANNO ADD BIDDER_PROPERTY varchar2(2);
+comment on column ZJ_WIN_RESULT_ANNO.BIDDER_PROPERTY is '中标投标人企业性质';
+
+alter table ZJ_WIN_RESULT_ANNO ADD PROJECT_LEAD varchar2(1000);
+comment on column ZJ_WIN_RESULT_ANNO.PROJECT_LEAD is '项目负责人';
+
+alter table ZJ_WIN_RESULT_ANNO ADD PROJECT_LEAD_ID varchar2(50);
+comment on column ZJ_WIN_RESULT_ANNO.PROJECT_LEAD_ID is '项目负责人身份证号码';
+
+alter table ZJ_TENDER_FILE_CLARI_MODI ADD TEMPLATE_NO varchar2(100);
+comment on column ZJ_TENDER_FILE_CLARI_MODI.TEMPLATE_NO is '范本编号';
+
+alter table ZJ_CONTRACT_PERFORMANCE ADD CONTRACT_CODE varchar2(600);
+comment on column ZJ_CONTRACT_PERFORMANCE.CONTRACT_CODE is '合同编号';
+
+
+
+
+
+
+
+alter table SL_TENDER_PROJECT ADD TENDER_RECORD_CODE varchar2(6);
+comment on column SL_TENDER_PROJECT.TENDER_RECORD_CODE is '招标文件备案编号';
+
+alter table SL_TENDER_PROJECT ADD TENDERER_REGION_CODE varchar2(6);
+comment on column SL_TENDER_PROJECT.TENDERER_REGION_CODE is '招标人企业注册所在地';
+
+alter table SL_TENDER_PROJECT ADD TENDERER_PROPERTY varchar2(2);
+comment on column SL_TENDER_PROJECT.TENDERER_PROPERTY is '招标人企业性质';
+
+alter table SL_TENDER_PROJECT ADD TENDER_AGENCY_REGION_CODE varchar2(6);
+comment on column SL_TENDER_PROJECT.TENDER_AGENCY_REGION_CODE is '招标代理机构企业注册所在地';
+
+alter table SL_TENDER_PROJECT ADD TENDER_AGENCY_PROPERTY varchar2(2);
+comment on column SL_TENDER_PROJECT.TENDER_AGENCY_PROPERTY is '招标代理机构企业性质';
+
+alter table SL_TENDER_PROJECT ADD OPERATION_NAME varchar2(200);
+comment on column SL_TENDER_PROJECT.OPERATION_NAME is '信息录入人员';
+
+alter table SL_TENDER_PROJECT ADD TRADE_SYSTEM_NO varchar2(100);
+comment on column SL_TENDER_PROJECT.TRADE_SYSTEM_NO is '交易系统编号';
+
+alter table SL_TENDER_PROJECT ADD TRADE_SYSTEM_FEE number;
+comment on column SL_TENDER_PROJECT.TRADE_SYSTEM_FEE is '交易系统平台使用费';
+
+alter table SL_TENDER_LIST ADD BIDDER_REGION_CODE varchar2(6);
+comment on column SL_TENDER_LIST.BIDDER_REGION_CODE is '投标人企业注册所在地';
+
+alter table SL_TENDER_LIST ADD BIDDER_PROPERTY varchar2(2);
+comment on column SL_TENDER_LIST.BIDDER_PROPERTY is '投标人企业性质';
+
+alter table SL_TENDER_LIST ADD BIDDER_OPERATION_PERSON varchar2(100);
+comment on column SL_TENDER_LIST.BIDDER_OPERATION_PERSON is '投标操作人员';
+
+alter table SL_TENDER_LIST ADD BIDDER_OPERATION_PERSON_ID varchar2(18);
+comment on column SL_TENDER_LIST.BIDDER_OPERATION_PERSON_ID is '投标操作人员身份证';
+
+alter table SL_TENDER_LIST ADD BIDDER_OPERATION_PERSON_CON varchar2(100);
+comment on column SL_TENDER_LIST.BIDDER_OPERATION_PERSON_CON is '投标操作人联系方式';
+
+alter table SL_TENDER_LIST ADD IS_REVIEW_SHORTLISTED varchar2(1);
+comment on column SL_TENDER_LIST.IS_REVIEW_SHORTLISTED is '投标人是否入围评审';
+
+alter table SL_TENDER_LIST ADD PURCHASE_ORDER_NUMBER varchar2(200);
+comment on column SL_TENDER_LIST.PURCHASE_ORDER_NUMBER is '招标文件购买订单号';
+
+alter table SL_BID_OPENING_RECORD ADD OPEN_COMPERE varchar2(600);
+comment on column SL_BID_OPENING_RECORD.OPEN_COMPERE is '开标主持人';
+
+alter table SL_BID_OPENING_RECORD ADD TENDER_AGENCY_PERSON varchar2(600);
+comment on column SL_BID_OPENING_RECORD.TENDER_AGENCY_PERSON is '开标代理机构代表';
+
+alter table SL_BID_OPENING_RECORD ADD TENDERER_PERSON varchar2(600);
+comment on column SL_BID_OPENING_RECORD.TENDERER_PERSON is '开标招标人代表';
+
+alter table SL_TENDER_CANDIDATE ADD BIDDER_REGION_CODE varchar2(6);
+comment on column SL_TENDER_CANDIDATE.BIDDER_REGION_CODE is '中标候选人人企业注册所在地';
+
+alter table SL_TENDER_CANDIDATE ADD BIDDER_PROPERTY varchar2(2);
+comment on column SL_TENDER_CANDIDATE.BIDDER_PROPERTY is '中标候选人企业性质';
+
+alter table SL_TENDER_CANDIDATE_ANN ADD FIRST_BIDDER_NAME varchar2(200);
+comment on column SL_TENDER_CANDIDATE_ANN.FIRST_BIDDER_NAME is '第一中标候选人名称';
+
+alter table SL_TENDER_CANDIDATE_ANN ADD FIRST_BIDDER_CODE varchar2(18);
+comment on column SL_TENDER_CANDIDATE_ANN.FIRST_BIDDER_CODE is '第一中标候选人统一社会信用代码';
+
+alter table SL_TENDER_CANDIDATE_ANN ADD SECOND_BIDDER_NAME varchar2(200);
+comment on column SL_TENDER_CANDIDATE_ANN.SECOND_BIDDER_NAME is '第二中标候选人名称';
+
+alter table SL_TENDER_CANDIDATE_ANN ADD SECOND_BIDDER_CODE varchar2(18);
+comment on column SL_TENDER_CANDIDATE_ANN.SECOND_BIDDER_CODE is '第二中标候选人统一社会信用代码';
+
+alter table SL_TENDER_CANDIDATE_ANN ADD THIRD_BIDDER_NAME varchar2(200);
+comment on column SL_TENDER_CANDIDATE_ANN.THIRD_BIDDER_NAME is '第三中标候选人名称';
+
+alter table SL_TENDER_CANDIDATE_ANN ADD THIRD_BIDDER_CODE varchar2(18);
+comment on column SL_TENDER_CANDIDATE_ANN.THIRD_BIDDER_CODE is '第三中标候选人统一社会信用代码';
+
+alter table SL_WIN_RESULT_ANNO ADD BIDDER_REGION_CODE varchar2(6);
+comment on column SL_WIN_RESULT_ANNO.BIDDER_REGION_CODE is '中标投标人企业注册所在地';
+
+alter table SL_WIN_RESULT_ANNO ADD BIDDER_PROPERTY varchar2(2);
+comment on column SL_WIN_RESULT_ANNO.BIDDER_PROPERTY is '中标投标人企业性质';
+
+alter table SL_WIN_RESULT_ANNO ADD PROJECT_LEAD varchar2(1000);
+comment on column SL_WIN_RESULT_ANNO.PROJECT_LEAD is '项目负责人';
+
+alter table SL_WIN_RESULT_ANNO ADD PROJECT_LEAD_ID varchar2(50);
+comment on column SL_WIN_RESULT_ANNO.PROJECT_LEAD_ID is '项目负责人身份证号码';
+
+alter table SL_TENDER_FILE_CLARI_MODI ADD TEMPLATE_NO varchar2(100);
+comment on column SL_TENDER_FILE_CLARI_MODI.TEMPLATE_NO is '范本编号';
+
+alter table SL_CONTRACT_PERFORMANCE ADD CONTRACT_CODE varchar2(600);
+comment on column SL_CONTRACT_PERFORMANCE.CONTRACT_CODE is '合同编号';
+
+
+
+
+
+
+alter table JT_TENDER_PROJECT ADD TENDER_RECORD_CODE varchar2(6);
+comment on column JT_TENDER_PROJECT.TENDER_RECORD_CODE is '招标文件备案编号';
+
+alter table JT_TENDER_PROJECT ADD TENDERER_REGION_CODE varchar2(6);
+comment on column JT_TENDER_PROJECT.TENDERER_REGION_CODE is '招标人企业注册所在地';
+
+alter table JT_TENDER_PROJECT ADD TENDERER_PROPERTY varchar2(2);
+comment on column JT_TENDER_PROJECT.TENDERER_PROPERTY is '招标人企业性质';
+
+alter table JT_TENDER_PROJECT ADD TENDER_AGENCY_REGION_CODE varchar2(6);
+comment on column JT_TENDER_PROJECT.TENDER_AGENCY_REGION_CODE is '招标代理机构企业注册所在地';
+
+alter table JT_TENDER_PROJECT ADD TENDER_AGENCY_PROPERTY varchar2(2);
+comment on column JT_TENDER_PROJECT.TENDER_AGENCY_PROPERTY is '招标代理机构企业性质';
+
+alter table JT_TENDER_PROJECT ADD OPERATION_NAME varchar2(200);
+comment on column JT_TENDER_PROJECT.OPERATION_NAME is '信息录入人员';
+
+alter table JT_TENDER_PROJECT ADD TRADE_SYSTEM_NO varchar2(100);
+comment on column JT_TENDER_PROJECT.TRADE_SYSTEM_NO is '交易系统编号';
+
+alter table JT_TENDER_PROJECT ADD TRADE_SYSTEM_FEE number;
+comment on column JT_TENDER_PROJECT.TRADE_SYSTEM_FEE is '交易系统平台使用费';
+
+alter table JT_TENDER_LIST ADD BIDDER_REGION_CODE varchar2(6);
+comment on column JT_TENDER_LIST.BIDDER_REGION_CODE is '投标人企业注册所在地';
+
+alter table JT_TENDER_LIST ADD BIDDER_PROPERTY varchar2(2);
+comment on column JT_TENDER_LIST.BIDDER_PROPERTY is '投标人企业性质';
+
+alter table JT_TENDER_LIST ADD BIDDER_OPERATION_PERSON varchar2(100);
+comment on column JT_TENDER_LIST.BIDDER_OPERATION_PERSON is '投标操作人员';
+
+alter table JT_TENDER_LIST ADD BIDDER_OPERATION_PERSON_ID varchar2(18);
+comment on column JT_TENDER_LIST.BIDDER_OPERATION_PERSON_ID is '投标操作人员身份证';
+
+alter table JT_TENDER_LIST ADD BIDDER_OPERATION_PERSON_CON varchar2(100);
+comment on column JT_TENDER_LIST.BIDDER_OPERATION_PERSON_CON is '投标操作人联系方式';
+
+alter table JT_TENDER_LIST ADD IS_REVIEW_SHORTLISTED varchar2(1);
+comment on column JT_TENDER_LIST.IS_REVIEW_SHORTLISTED is '投标人是否入围评审';
+
+alter table JT_TENDER_LIST ADD PURCHASE_ORDER_NUMBER varchar2(200);
+comment on column JT_TENDER_LIST.PURCHASE_ORDER_NUMBER is '招标文件购买订单号';
+
+alter table JT_BID_OPENING_RECORD ADD OPEN_COMPERE varchar2(600);
+comment on column JT_BID_OPENING_RECORD.OPEN_COMPERE is '开标主持人';
+
+alter table JT_BID_OPENING_RECORD ADD TENDER_AGENCY_PERSON varchar2(600);
+comment on column JT_BID_OPENING_RECORD.TENDER_AGENCY_PERSON is '开标代理机构代表';
+
+alter table JT_BID_OPENING_RECORD ADD TENDERER_PERSON varchar2(600);
+comment on column JT_BID_OPENING_RECORD.TENDERER_PERSON is '开标招标人代表';
+
+alter table JT_TENDER_CANDIDATE ADD BIDDER_REGION_CODE varchar2(6);
+comment on column JT_TENDER_CANDIDATE.BIDDER_REGION_CODE is '中标候选人人企业注册所在地';
+
+alter table JT_TENDER_CANDIDATE ADD BIDDER_PROPERTY varchar2(2);
+comment on column JT_TENDER_CANDIDATE.BIDDER_PROPERTY is '中标候选人企业性质';
+
+alter table JT_TENDER_CANDIDATE_ANN ADD FIRST_BIDDER_NAME varchar2(200);
+comment on column JT_TENDER_CANDIDATE_ANN.FIRST_BIDDER_NAME is '第一中标候选人名称';
+
+alter table JT_TENDER_CANDIDATE_ANN ADD FIRST_BIDDER_CODE varchar2(18);
+comment on column JT_TENDER_CANDIDATE_ANN.FIRST_BIDDER_CODE is '第一中标候选人统一社会信用代码';
+
+alter table JT_TENDER_CANDIDATE_ANN ADD SECOND_BIDDER_NAME varchar2(200);
+comment on column JT_TENDER_CANDIDATE_ANN.SECOND_BIDDER_NAME is '第二中标候选人名称';
+
+alter table JT_TENDER_CANDIDATE_ANN ADD SECOND_BIDDER_CODE varchar2(18);
+comment on column JT_TENDER_CANDIDATE_ANN.SECOND_BIDDER_CODE is '第二中标候选人统一社会信用代码';
+
+alter table JT_TENDER_CANDIDATE_ANN ADD THIRD_BIDDER_NAME varchar2(200);
+comment on column JT_TENDER_CANDIDATE_ANN.THIRD_BIDDER_NAME is '第三中标候选人名称';
+
+alter table JT_TENDER_CANDIDATE_ANN ADD THIRD_BIDDER_CODE varchar2(18);
+comment on column JT_TENDER_CANDIDATE_ANN.THIRD_BIDDER_CODE is '第三中标候选人统一社会信用代码';
+
+alter table JT_WIN_RESULT_ANNO ADD BIDDER_REGION_CODE varchar2(6);
+comment on column JT_WIN_RESULT_ANNO.BIDDER_REGION_CODE is '中标投标人企业注册所在地';
+
+alter table JT_WIN_RESULT_ANNO ADD BIDDER_PROPERTY varchar2(2);
+comment on column JT_WIN_RESULT_ANNO.BIDDER_PROPERTY is '中标投标人企业性质';
+
+alter table JT_WIN_RESULT_ANNO ADD PROJECT_LEAD varchar2(1000);
+comment on column JT_WIN_RESULT_ANNO.PROJECT_LEAD is '项目负责人';
+
+alter table JT_WIN_RESULT_ANNO ADD PROJECT_LEAD_ID varchar2(50);
+comment on column JT_WIN_RESULT_ANNO.PROJECT_LEAD_ID is '项目负责人身份证号码';
+
+alter table JT_TENDER_FILE_CLARI_MODI ADD TEMPLATE_NO varchar2(100);
+comment on column JT_TENDER_FILE_CLARI_MODI.TEMPLATE_NO is '范本编号';
+
+alter table JT_CONTRACT_PERFORMANCE ADD CONTRACT_CODE varchar2(600);
+comment on column JT_CONTRACT_PERFORMANCE.CONTRACT_CODE is '合同编号';
+
+
+
+
+--特殊处理，数据规范40漏掉字段
+alter table ZJ_PROJECT ADD OPERATION_NAME varchar2(200);
+comment on column ZJ_PROJECT.OPERATION_NAME is '信息录入人员';
+
+alter table SL_PROJECT ADD OPERATION_NAME varchar2(200);
+comment on column SL_PROJECT.OPERATION_NAME is '信息录入人员';
+
+alter table JT_PROJECT ADD OPERATION_NAME varchar2(200);
+comment on column JT_PROJECT.OPERATION_NAME is '信息录入人员';
+
+alter table GY_PROJECT ADD OPERATION_NAME varchar2(200);
+comment on column GY_PROJECT.OPERATION_NAME is '信息录入人员';
+
+alter table YG_PROJECT ADD OPERATION_NAME varchar2(200);
+comment on column YG_PROJECT.OPERATION_NAME is '信息录入人员';
+
+alter table XX_PROJECT ADD OPERATION_NAME varchar2(200);
+comment on column XX_PROJECT.OPERATION_NAME is '信息录入人员';
+
+alter table GY_CONTRACT_PERFORMANCE ADD CONTRACT_CODE varchar2(600);
+comment on column JT_CONTRACT_PERFORMANCE.CONTRACT_CODE is '合同编号';
+
+alter table YG_CONTRACT_PERFORMANCE ADD CONTRACT_CODE varchar2(600);
+comment on column JT_CONTRACT_PERFORMANCE.CONTRACT_CODE is '合同编号';
+
+alter table XX_CONTRACT_PERFORMANCE ADD CONTRACT_CODE varchar2(600);
+comment on column JT_CONTRACT_PERFORMANCE.CONTRACT_CODE is '合同编号';
+
+
+--电子保函
+alter table zj_letter_of_guarantee ADD PROPOSER varchar2(200);
+comment on column zj_letter_of_guarantee.PROPOSER is '申请人员';
+
+alter table zj_letter_of_guarantee ADD PROPOSER_PHONE varchar2(200);
+comment on column zj_letter_of_guarantee.PROPOSER_PHONE is '申请人员联系方式';
+
+alter table zj_letter_of_guarantee ADD PROPOSER_CARD_TYPE varchar2(2);
+comment on column zj_letter_of_guarantee.PROPOSER_CARD_TYPE is '证件类型';
+
+alter table zj_letter_of_guarantee ADD PROPOSER_CODE varchar2(200);
+comment on column zj_letter_of_guarantee.PROPOSER_CODE is '证件号码';
+
+alter table zj_letter_of_guarantee ADD PURCHASE_ACCOUN varchar2(600);
+comment on column zj_letter_of_guarantee.PURCHASE_ACCOUN is '支付账号';
+
+alter table zj_letter_of_guarantee ADD RATE number;
+comment on column zj_letter_of_guarantee.RATE is '费率';
+
+alter table zj_letter_of_guarantee ADD GUARANTEE_URL varchar2(2000);
+comment on column zj_letter_of_guarantee.GUARANTEE_URL is '电子保单文件下载地址';
+
+alter table zj_letter_of_guarantee ADD GUARANTEE_MD5 varchar2(32);
+comment on column zj_letter_of_guarantee.GUARANTEE_MD5 is '电子保单文件md5码';
+
+
+alter table sl_letter_of_guarantee ADD PROPOSER varchar2(200);
+comment on column sl_letter_of_guarantee.PROPOSER is '申请人员';
+
+alter table sl_letter_of_guarantee ADD PROPOSER_PHONE varchar2(200);
+comment on column sl_letter_of_guarantee.PROPOSER_PHONE is '申请人员联系方式';
+
+alter table sl_letter_of_guarantee ADD PROPOSER_CARD_TYPE varchar2(2);
+comment on column sl_letter_of_guarantee.PROPOSER_CARD_TYPE is '证件类型';
+
+alter table sl_letter_of_guarantee ADD PROPOSER_CODE varchar2(200);
+comment on column sl_letter_of_guarantee.PROPOSER_CODE is '证件号码';
+
+alter table sl_letter_of_guarantee ADD PURCHASE_ACCOUN varchar2(600);
+comment on column sl_letter_of_guarantee.PURCHASE_ACCOUN is '支付账号';
+
+alter table sl_letter_of_guarantee ADD RATE number;
+comment on column sl_letter_of_guarantee.RATE is '费率';
+
+alter table sl_letter_of_guarantee ADD GUARANTEE_URL varchar2(2000);
+comment on column sl_letter_of_guarantee.GUARANTEE_URL is '电子保单文件下载地址';
+
+alter table sl_letter_of_guarantee ADD GUARANTEE_MD5 varchar2(32);
+comment on column sl_letter_of_guarantee.GUARANTEE_MD5 is '电子保单文件md5码';
+
+
+alter table jt_letter_of_guarantee ADD PROPOSER varchar2(200);
+comment on column jt_letter_of_guarantee.PROPOSER is '申请人员';
+
+alter table jt_letter_of_guarantee ADD PROPOSER_PHONE varchar2(200);
+comment on column jt_letter_of_guarantee.PROPOSER_PHONE is '申请人员联系方式';
+
+alter table jt_letter_of_guarantee ADD PROPOSER_CARD_TYPE varchar2(2);
+comment on column jt_letter_of_guarantee.PROPOSER_CARD_TYPE is '证件类型';
+
+alter table jt_letter_of_guarantee ADD PROPOSER_CODE varchar2(200);
+comment on column jt_letter_of_guarantee.PROPOSER_CODE is '证件号码';
+
+alter table jt_letter_of_guarantee ADD PURCHASE_ACCOUN varchar2(600);
+comment on column jt_letter_of_guarantee.PURCHASE_ACCOUN is '支付账号';
+
+alter table jt_letter_of_guarantee ADD RATE number;
+comment on column jt_letter_of_guarantee.RATE is '费率';
+
+alter table jt_letter_of_guarantee ADD GUARANTEE_URL varchar2(2000);
+comment on column jt_letter_of_guarantee.GUARANTEE_URL is '电子保单文件下载地址';
+
+alter table jt_letter_of_guarantee ADD GUARANTEE_MD5 varchar2(32);
+comment on column jt_letter_of_guarantee.GUARANTEE_MD5 is '电子保单文件md5码';
+
+
+alter table gy_letter_of_guarantee ADD PROPOSER varchar2(200);
+comment on column gy_letter_of_guarantee.PROPOSER is '申请人员';
+
+alter table gy_letter_of_guarantee ADD PROPOSER_PHONE varchar2(200);
+comment on column gy_letter_of_guarantee.PROPOSER_PHONE is '申请人员联系方式';
+
+alter table gy_letter_of_guarantee ADD PROPOSER_CARD_TYPE varchar2(2);
+comment on column gy_letter_of_guarantee.PROPOSER_CARD_TYPE is '证件类型';
+
+alter table gy_letter_of_guarantee ADD PROPOSER_CODE varchar2(200);
+comment on column gy_letter_of_guarantee.PROPOSER_CODE is '证件号码';
+
+alter table gy_letter_of_guarantee ADD PURCHASE_ACCOUN varchar2(600);
+comment on column gy_letter_of_guarantee.PURCHASE_ACCOUN is '支付账号';
+
+alter table gy_letter_of_guarantee ADD RATE number;
+comment on column gy_letter_of_guarantee.RATE is '费率';
+
+alter table gy_letter_of_guarantee ADD GUARANTEE_URL varchar2(2000);
+comment on column gy_letter_of_guarantee.GUARANTEE_URL is '电子保单文件下载地址';
+
+alter table gy_letter_of_guarantee ADD GUARANTEE_MD5 varchar2(32);
+comment on column gy_letter_of_guarantee.GUARANTEE_MD5 is '电子保单文件md5码';
+
+
+alter table gy_letter_of_guarantee ADD PROPOSER varchar2(200);
+comment on column yg_letter_of_guarantee.PROPOSER is '申请人员';
+
+alter table yg_letter_of_guarantee ADD PROPOSER_PHONE varchar2(200);
+comment on column yg_letter_of_guarantee.PROPOSER_PHONE is '申请人员联系方式';
+
+alter table yg_letter_of_guarantee ADD PROPOSER_CARD_TYPE varchar2(2);
+comment on column yg_letter_of_guarantee.PROPOSER_CARD_TYPE is '证件类型';
+
+alter table yg_letter_of_guarantee ADD PROPOSER_CODE varchar2(200);
+comment on column yg_letter_of_guarantee.PROPOSER_CODE is '证件号码';
+
+alter table yg_letter_of_guarantee ADD PURCHASE_ACCOUN varchar2(600);
+comment on column yg_letter_of_guarantee.PURCHASE_ACCOUN is '支付账号';
+
+alter table yg_letter_of_guarantee ADD RATE number;
+comment on column yg_letter_of_guarantee.RATE is '费率';
+
+alter table yg_letter_of_guarantee ADD GUARANTEE_URL varchar2(2000);
+comment on column yg_letter_of_guarantee.GUARANTEE_URL is '电子保单文件下载地址';
+
+alter table yg_letter_of_guarantee ADD GUARANTEE_MD5 varchar2(32);
+comment on column yg_letter_of_guarantee.GUARANTEE_MD5 is '电子保单文件md5码';
+
+
+alter table gy_letter_of_guarantee ADD PROPOSER varchar2(200);
+comment on column xx_letter_of_guarantee.PROPOSER is '申请人员';
+
+alter table xx_letter_of_guarantee ADD PROPOSER_PHONE varchar2(200);
+comment on column xx_letter_of_guarantee.PROPOSER_PHONE is '申请人员联系方式';
+
+alter table xx_letter_of_guarantee ADD PROPOSER_CARD_TYPE varchar2(2);
+comment on column xx_letter_of_guarantee.PROPOSER_CARD_TYPE is '证件类型';
+
+alter table xx_letter_of_guarantee ADD PROPOSER_CODE varchar2(200);
+comment on column xx_letter_of_guarantee.PROPOSER_CODE is '证件号码';
+
+alter table xx_letter_of_guarantee ADD PURCHASE_ACCOUN varchar2(600);
+comment on column xx_letter_of_guarantee.PURCHASE_ACCOUN is '支付账号';
+
+alter table xx_letter_of_guarantee ADD RATE number;
+comment on column xx_letter_of_guarantee.RATE is '费率';
+
+alter table xx_letter_of_guarantee ADD GUARANTEE_URL varchar2(2000);
+comment on column xx_letter_of_guarantee.GUARANTEE_URL is '电子保单文件下载地址';
+
+alter table xx_letter_of_guarantee ADD GUARANTEE_MD5 varchar2(32);
+comment on column xx_letter_of_guarantee.GUARANTEE_MD5 is '电子保单文件md5码';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

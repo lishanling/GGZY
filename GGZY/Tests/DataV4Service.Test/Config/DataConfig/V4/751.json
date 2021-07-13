@@ -1,0 +1,339 @@
+{
+  "DataNo": "751",
+  "DataName": "TRANSFER_ENTE_INFO",
+  "DataCnName": "转让标的企业信息",
+  "Fields": [
+    {
+      "Name": "PROJECT_CODE",
+      "CnName": "项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "BID_CODE",
+      "CnName": "标的编号",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "SUBJECT_COMPANY_NAME",
+      "CnName": "转让标的企业名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 300
+        }
+      ]
+    },
+    {
+      "Name": "SELL_PERCENT",
+      "CnName": "本次拟转让产（股）权比例（%）",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 4
+        }
+      ]
+    },
+    {
+      "Name": "SUBJECT_COMPANY_CODE",
+      "CnName": "标的企业社会信用代码/组织机构代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "ZONE",
+      "CnName": "转让标的企业所在地区",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 6
+        }
+      ]
+    },
+    {
+      "Name": "CLASS_VER_CODE",
+      "CnName": "分类版本代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        }
+      ]
+    },
+    {
+      "Name": "INDUSTRY_CODE",
+      "CnName": "转让标的企业所属行业码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    },
+    {
+      "Name": "ECONOMY_TYPE",
+      "CnName": "转让标的企业经济类型",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "37"
+        }
+      ]
+    },
+    {
+      "Name": "EMPLOYEE_QUANTITY",
+      "CnName": "转让标的企业职工人数",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 5
+        }
+      ]
+    },
+    {
+      "Name": "HAS_CONTAIN_GROUND",
+      "CnName": "转让标的企业是否含有国有划拨土地",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "CQ_TRUE_OR_FALSE"
+        }
+      ]
+    },
+    {
+      "Name": "LAST_AUDIT_YEAR",
+      "CnName": "审计年度（上年度）",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 4
+        }
+      ]
+    },
+    {
+      "Name": "LAST_AUDIT_UNIT",
+      "CnName": "审计机构（上年度）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 300
+        }
+      ]
+    },
+    {
+      "Name": "LAST_AUDIT_ASSET",
+      "CnName": "资产总额（上年度）",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "LAST_AUDIT_DEBT",
+      "CnName": "负债总额（上年度）",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "LAST_AUDIT_EQUITY",
+      "CnName": "净资产（所有者权益）（上年度）",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "LAST_AUDIT_EARNING",
+      "CnName": "营业收入（上年度）",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "LAST_AUDIT_PROFIT",
+      "CnName": "利润总额（上年度）",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "LAST_AUDIT_NETPROFIT",
+      "CnName": "净利润（上年度）",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "FINANCE_REPORT_DATE",
+      "CnName": "报表日期",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "FINANCE_REPORT_TYPE",
+      "CnName": "报表类型",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "36"
+        }
+      ]
+    },
+    {
+      "Name": "TOTAL_CAPITAL",
+      "CnName": "资产总额",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "TOTAL_DEBT",
+      "CnName": "负债总额",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "OWENERSHIP_INTEREST",
+      "CnName": "净资产（所有者权益）",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "BUSINESS_INCOME",
+      "CnName": "营业收入",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "BUSINESS_PROFIT",
+      "CnName": "利润总额",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "NET_PROFIT",
+      "CnName": "净利润",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 16,
+          "DecimalFigures": 6
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

@@ -1,0 +1,28 @@
+﻿
+
+<div class="main-content">
+    <div class="main-content-inner">
+        <div id="breadcrumbs" class="breadcrumbs">
+            <div class="content-tabs">
+                <a id="hideMenu" class="roll-nav roll-left-0 J_tabLeft">
+                    <i class="fa fa-align-justify"></i>
+                </a>
+                <button class="roll-nav roll-left J_tabLeft">
+                    <i class="fa fa-backward"></i>
+                </button>
+                <nav class="page-tabs J_menuTabs">
+                    <div class="page-tabs-content">
+                        <a href="javascript:;" class="active J_menuTab" data-id="@Url.Action("AdminIndex","Home")">首页</a>
+                    </div>
+                </nav>
+                <button class="roll-nav roll-right J_tabRight">
+                    <i class="fa fa-forward"></i>
+                </button>
+                @*<a href="@Url.Action("SignOut","Ajax")" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>*@
+            </div>
+        </div>
+        <div class="J_mainContent" id="content-main" style="height: calc(100% - 40px)">
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="@Url.Action("AdminIndex","Home")" frameborder="0" data-id="@Url.Action("AdminIndex","Home")" seamless></iframe>
+        </div>
+    </div>
+</div>

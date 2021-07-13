@@ -1,0 +1,188 @@
+{
+    "DataName": "ZJ_EXPERT_FINE_SCORE",
+    "DataCnName": "评标专家成员对各投标人的技术文件的细项评分",
+    "IsZXSJ": true,
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "ZJ_TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODE",
+            "CnName": "标段（包）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 23
+                }
+            ]
+        },
+        {
+            "Name": "UNIFIED_DEAL_CODE",
+            "CnName": "统一交易标识码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 40
+                }
+            ]
+        },
+      {
+        "Name": "BEGIN_TIME",
+        "CnName": "评审开始时间",
+        "Validators": [
+          {
+            "ValidatorName": "NotNull"
+          },
+          {
+            "ValidatorName": "DateMatch",
+            "Format": "yyyyMMddHHmmss"
+          }
+        ]
+      },
+        {
+            "Name": "END_TIME",
+            "CnName": "评审结束时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "EXPERT_ID_CARD",
+            "CnName": "评标专家身份证",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "BIDDER_NAME",
+            "CnName": "投标人名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "BIDDER_ORG_CODE",
+            "CnName": "投标人组织机构代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "BIDDER_CREDIT_CODE",
+            "CnName": "投标人社会统一信用代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "EVALUATION_TECH_ITEM_NAME",
+            "CnName": "技术文件评审子项名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "EVALUATION_TECH_ITEM_SCORE",
+            "CnName": "技术文件评审子项得分",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "EVALUATION_TECH_ITEM_WEIGHT",
+            "CnName": "技术文件评审子项权重",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "EVALUATION_BIDDER_SCORE",
+            "CnName": "技术文件的总评分",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 12,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "REASON_SUB_REVIEW",
+            "CnName": "子项评审申述理由",
+            "Validators": []
+        }
+    ],
+    "Validators": []
+}

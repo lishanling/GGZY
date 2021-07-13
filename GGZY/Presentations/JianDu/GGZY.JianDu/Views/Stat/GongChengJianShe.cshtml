@@ -1,0 +1,127 @@
+﻿
+@using GGZY.Core.Models
+@{
+    ViewBag.Title = "GongChengJianShe";
+    Layout = null;
+    var con = ViewBag.SearchCondition as SearchCondition ?? new SearchCondition() { Type = "A05" };
+}
+@model GeneralResult<GGZY.Services.Infrastructure.Model.JianDu.GongChengTongJiModel>
+<style>
+    #tool-bar .typea {
+        text-decoration: none;
+        margin-left: 20px;
+        vertical-align: middle;
+    }
+
+    #tool-bar .cur {
+        background-color: #E9403D;
+        color: white;
+        padding: 2px 6px;
+        border-radius: 3px;
+    }
+
+    #tool-bar form {
+        display: inline-block;
+        margin-left: 20px
+    }
+
+        #tool-bar  label {
+            padding: 2px 6px;
+            vertical-align: middle;
+            margin-right: 10px
+        }
+
+        #tool-bar form label.cur {
+            background-color: #E9403D;
+            color: white;
+            border-radius: 3px;
+        }
+
+        #tool-bar form input[type=submit] {
+            vertical-align: middle;
+        }
+    #data {
+        width: 100%;
+        overflow: auto;
+    }
+        #data table {
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            /*border-left: 1px solid;*/
+            /*border: 1px solid #ddd;*/
+            display: table;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+ 
+            #data table tr {
+                display: table;
+                width: 100%;
+                table-layout: fixed;
+            }
+
+            #data table th {
+                /*white-space: nowrap;
+                word-break: keep-all;
+                text-overflow: ellipsis;
+                overflow: hidden;*/
+                /*width: 200px;
+                padding: 8px;*/
+                line-height: 1.42857143;
+                vertical-align: top;
+                border-top: 1px solid #ddd;
+                /*border-right: 1px solid #ddd;*/
+                text-align: left;
+            }
+
+            #data table td {
+                white-space: nowrap;
+                word-break: keep-all;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                /*width: 200px;
+                padding: 8px;*/
+                line-height: 1.42857143;
+                vertical-align: top;
+                border-top: 1px solid #ddd;
+                /*border-right: 1px solid #ddd;*/
+            }
+    #data table > tbody > tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+    #data table thead tr, tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+    /*#data table th, #data table td {
+        border-top: 1px solid;
+        border-right: 1px solid;
+        max-width: 200px;
+        height: 50px;
+        white-space:pre-line;
+
+        overflow: hidden;
+
+        text-overflow:ellipsis;
+    }*/
+</style>
+<div id="tool-bar">
+    <label>统计日期:</label>
+
+    <a class="typea @(con.KeyWord=="sy"?"cur":"")" href="@Url.Action("GongChengJianShe","Stat",new{vn="GongChengJianShe",KeyWord="sy",con.Type})">上月</a>
+    <a class="typea @(con.KeyWord=="by"?"cur":"")" href="@Url.Action("GongChengJianShe","Stat",new{vn="GongChengJianShe",KeyWord="by",con.Type})">本月</a>
+    <a class="typea @(con.KeyWord=="sn"?"cur":"")" href="@Url.Action("GongChengJianShe","Stat",new{vn="GongChengJianShe",KeyWord="sn",con.Type})">上年</a>
+    <a class="typea @(con.KeyWord=="bn"?"cur":"")" href="@Url.Action("GongChengJianShe","Stat",new{vn="GongChengJianShe",KeyWord="bn",con.Type})">本年</a>
+    <form method="post" action="@Url.Action("GongChengJianShe","Stat",new{vn="GongChengJianShe",con.Type})">
+        <label class="@(string.IsNullOrWhiteSpace(con.KeyWord)?"cur":"")">时间区间</label>
+        <input type="date" name="BeginTime" />
+        <input type="date" name="EndTime" />
+        <input type="submit" value="查询" />
+    </form>
+    <a class="typea" href="@Url.Action("Export","Stat",con)" target="_blank">导出</a>
+</div>
+<div id="data" >
+    @Html.Partial(string.Format("GongChengJianShe_{0}", con.Type), Model)
+</div>

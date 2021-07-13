@@ -1,0 +1,1875 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{606ADB22-BB8A-42E2-AD9B-FDD454A5DF27}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GGZY.JianDu</RootNamespace>
+    <AssemblyName>GGZY.JianDu</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GatClueInfoController.cs" />
+    <Compile Include="Controllers\GatBidderController.cs" />
+    <Compile Include="Controllers\GatSupervisionPointController.cs" />
+    <Compile Include="Controllers\GatViolationPointController.cs" />
+    <Compile Include="Controllers\GoodReputationController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\GatLaunchTransferController.cs" />
+    <Compile Include="Controllers\OpertionRecordController.cs" />
+    <Compile Include="Controllers\JdProjectController.cs" />
+    <Compile Include="Controllers\ProjectController.tool.cs">
+      <DependentUpon>JdProjectController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\GatProjectQueryController.cs" />
+    <Compile Include="Controllers\GatProjectTranInfoController.cs" />
+    <Compile Include="Controllers\PtComplainController.cs" />
+    <Compile Include="Controllers\PtComplainController.tool.cs">
+      <DependentUpon>PtComplainController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PtZxtsController.cs" />
+    <Compile Include="Controllers\PtZxtsController.tool.cs">
+      <DependentUpon>PtZxtsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PtZxtsDepconfigController.cs" />
+    <Compile Include="Controllers\PtZxtsDepconfigController.tool.cs">
+      <DependentUpon>PtZxtsDepconfigController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PunishController.cs" />
+    <Compile Include="Controllers\RecordBiddingWriteController.cs" />
+    <Compile Include="Controllers\RecordBiddingWriteController.tool.cs">
+      <DependentUpon>RecordBiddingWriteController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RecordBiddocNormalController.cs" />
+    <Compile Include="Controllers\RecordBiddocNormalController.tool.cs">
+      <DependentUpon>RecordBiddocNormalController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RecordClassifyController.cs" />
+    <Compile Include="Controllers\RecordClassifyController.tool.cs" />
+    <Compile Include="Controllers\RecordClassifyNormalController.cs" />
+    <Compile Include="Controllers\RecordClassifyNormalController.tool.cs">
+      <DependentUpon>RecordClassifyNormalController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RecordContractController.cs" />
+    <Compile Include="Controllers\RecordContractController.tool.cs">
+      <DependentUpon>RecordContractController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RecordCreditDeductionController.cs" />
+    <Compile Include="Controllers\RecordCreditDeductionController.tool.cs">
+      <DependentUpon>RecordCreditDeductionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RecordHandleResultController.cs" />
+    <Compile Include="Controllers\RecordHandleResultController.tool.cs">
+      <DependentUpon>RecordHandleResultController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RecordResidentialBiddocController.cs" />
+    <Compile Include="Controllers\RecordResidentialBiddocController.tool.cs">
+      <DependentUpon>RecordResidentialBiddocController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RecordReviewController.cs" />
+    <Compile Include="Controllers\RecordReviewController.tool.cs">
+      <DependentUpon>RecordReviewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RecordWrittenController.cs" />
+    <Compile Include="Controllers\RecordWrittenController.tool.cs">
+      <DependentUpon>RecordWrittenController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SectionController.cs" />
+    <Compile Include="Controllers\StatController.cs" />
+    <Compile Include="Controllers\SysDicController.cs" />
+    <Compile Include="Controllers\TAfcLogController.cs" />
+    <Compile Include="Controllers\TAfcLogController.tool.cs">
+      <DependentUpon>TAfcLogController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TAfcProjectController.cs" />
+    <Compile Include="Controllers\TAfcProjectController.tool.cs">
+      <DependentUpon>TAfcProjectController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TenderProjectController.cs" />
+    <Compile Include="Controllers\TenderProjectController.tool.cs">
+      <DependentUpon>TenderProjectController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TMessageController.cs" />
+    <Compile Include="Controllers\TMessageController.tool.cs">
+      <DependentUpon>TMessageController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TMultimediaDataController.cs" />
+    <Compile Include="Controllers\TMultimediaDataController.tool.cs">
+      <DependentUpon>TMultimediaDataController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TNoticeController.cs" />
+    <Compile Include="Controllers\TNoticeController.tool.cs">
+      <DependentUpon>TNoticeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TProjectDataController.cs" />
+    <Compile Include="Controllers\TProjectDataController.tool.cs">
+      <DependentUpon>TProjectDataController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TransRecordController.cs" />
+    <Compile Include="Controllers\TSuperviseController.cs" />
+    <Compile Include="Controllers\TSuperviseController.partial.cs">
+      <DependentUpon>TSuperviseController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TUserBindAccountController.cs" />
+    <Compile Include="Controllers\TUserController.cs" />
+    <Compile Include="Controllers\TUserController.tool.cs">
+      <DependentUpon>TUserController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TUserDepartmentController.cs" />
+    <Compile Include="Controllers\TUserPopedomV2Controller.cs" />
+    <Compile Include="Controllers\TUserRoleV2Controller.cs" />
+    <Compile Include="Controllers\TUserTradeplatformController.cs" />
+    <Compile Include="Controllers\VVideobasicinfoController.cs" />
+    <Compile Include="Controllers\VVideobasicinfoController.tool.cs">
+      <DependentUpon>VVideobasicinfoController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ZjBidDocCharactCodeController.cs" />
+    <Compile Include="Controllers\ZjBidDocCharactCodeController.tool.cs">
+      <DependentUpon>ZjBidDocCharactCodeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RECORD_CREDIT_DEDUCTION_REQUEST.cs" />
+    <Compile Include="Models\RECORD_WRITTEN_REQUEST.cs" />
+    <Compile Include="Models\TENDER_PROJECT_REQUEST.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\SQL\2021全年节假日.txt" />
+    <Content Include="App_Data\SQL\住建招标文件备案旧附件数据兼容处理.txt" />
+    <Content Include="App_Data\SQL\监督平台协同账号绑定.txt" />
+    <Content Include="Cert\Passport加密公钥.xml" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Infrastructure\Templates\TSCL\法人_不予受理通知书_不符条件.txt" />
+    <Content Include="Infrastructure\Templates\TSCL\法人_不予受理通知书_非本部门.txt" />
+    <Content Include="Infrastructure\Templates\TSCL\自然人_不予受理通知书_不符条件.txt" />
+    <Content Include="Infrastructure\Templates\TSCL\自然人_不予受理通知书_非本部门.txt" />
+    <Content Include="static\common\css\allbgs.png" />
+    <Content Include="static\common\css\app-blue.css" />
+    <Content Include="static\common\css\app-green.css" />
+    <Content Include="static\common\css\app-lynch.css" />
+    <Content Include="static\common\css\app-midnight-blue.css" />
+    <Content Include="static\common\css\app-purple.css" />
+    <Content Include="static\common\css\app-red.css" />
+    <Content Include="static\common\css\base.css" />
+    <Content Include="static\common\css\base.html" />
+    <Content Include="static\common\css\Error404.css" />
+    <Content Include="static\common\css\fonts.css" />
+    <Content Include="static\common\css\fonts\filemanager.svg" />
+    <Content Include="static\common\css\jp-menu.css" />
+    <Content Include="static\common\css\loading.html" />
+    <Content Include="static\common\css\vendor.css" />
+    <Content Include="static\common\fonts\fontawesome-webfont.svg" />
+    <Content Include="static\common\fonts\fontawesome-webfont93e3.svg" />
+    <Content Include="static\common\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="static\common\fonts\icomoon.svg" />
+    <Content Include="static\common\fonts\icomoon\icomoon.svg" />
+    <Content Include="static\common\images\add_user.jpg" />
+    <Content Include="static\common\images\colorful4.jpg" />
+    <Content Include="static\common\images\dog.jpg" />
+    <Content Include="static\common\images\flat-avatar.png" />
+    <Content Include="static\common\images\flat.png" />
+    <Content Include="static\common\images\Loading002.gif" />
+    <Content Include="static\common\images\profile-cover.jpg" />
+    <Content Include="static\common\images\success.jpg" />
+    <Content Include="static\common\js\loadingJs.js" />
+    <Content Include="static\common\js\md5.js" />
+    <Content Include="static\common\js\md5.min.js" />
+    <Content Include="static\common\js\vendor.js" />
+    <Content Include="static\common\js\vendor.source.js" />
+    <Content Include="static\common\js\web.js" />
+    <Content Include="static\common\voice\default.wav" />
+    <Content Include="static\modules\Punish\index.js" />
+    <Content Include="static\modules\SltScoreLog\SltScoreLog.list.tool.js" />
+    <Content Include="static\modules\SltStaffLog\SltStaffLog.list.tool.js" />
+    <Content Include="static\modules\Stat\GCJS.A05.js" />
+    <Content Include="static\modules\Stat\GCJS.A10.js" />
+    <Content Include="static\modules\Stat\GCJS.A03_A04.js" />
+    <Content Include="static\modules\Stat\GCJS.A08.js" />
+    <Content Include="static\modules\Stat\GCJS.css" />
+    <Content Include="static\modules\ZjBidDocCharactCode\ZjBidDocCharactCode.similar.js" />
+    <Content Include="static\plugin\awesome\4.4\.gitignore" />
+    <Content Include="static\plugin\awesome\4.4\css\font-awesome.css" />
+    <Content Include="static\plugin\awesome\4.4\css\font-awesome.min.css" />
+    <Content Include="static\plugin\awesome\4.4\font-awesome.css" />
+    <Content Include="static\plugin\awesome\4.4\font-awesome.min.css" />
+    <Content Include="static\plugin\awesome\4.4\fonts\fontawesome-webfont.svg" />
+    <Content Include="static\plugin\awesome\4.4\HELP-US-OUT.txt" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\css\prettify.css" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\css\pygments.css" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\css\site.css" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\ico\favicon.ico" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\img\contribution-sample.png" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\img\fort_awesome.jpg" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\img\glyphicons-halflings.png" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\js\backbone.min.js" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\js\bootstrap-2.3.1.min.js" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\js\bootstrap-222.min.js" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\js\jquery-1.7.1.min.js" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\js\prettify.min.js" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\js\site.js" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\js\underscore.min.js" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\js\ZeroClipboard-1.1.7.min.js" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\js\ZeroClipboard-1.1.7.swf" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\design.html" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\css\prettify.css" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\css\pygments.css" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\ico\favicon.ico" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\img\algolia.png" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\img\logo-themeisle.png" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\img\logo-wpbeginner.png" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\js\html5shiv.js" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\js\prettify.min.js" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\js\respond.min.js" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\js\search.js" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\js\site.js" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\js\ZeroClipboard-1.1.7.min.js" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\js\ZeroClipboard-1.1.7.swf" />
+    <Content Include="static\plugin\awesome\4.4\src\cheatsheet.html" />
+    <Content Include="static\plugin\awesome\4.4\src\community.html" />
+    <Content Include="static\plugin\awesome\4.4\src\design.html" />
+    <Content Include="static\plugin\awesome\4.4\src\examples.html" />
+    <Content Include="static\plugin\awesome\4.4\src\icons.html" />
+    <Content Include="static\plugin\awesome\4.4\src\index.html" />
+    <Content Include="static\plugin\awesome\4.4\src\license.html" />
+    <Content Include="static\plugin\awesome\4.4\src\test.html" />
+    <Content Include="static\plugin\awesome\4.4\src\thanks.html" />
+    <Content Include="static\plugin\awesome\4.4\src\whats-new.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\ads\fusion.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\brand-adblock-warning.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\brand-license.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\code\license.css" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\community\getting-support.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\community\project-milestones.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\community\reporting-bugs.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\community\requesting-new-icons.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\community\submitting-pull-requests.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\examples\animated.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\examples\basic.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\examples\bootstrap.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\examples\bordered-pulled.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\examples\custom.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\examples\fixed-width.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\examples\larger.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\examples\list.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\examples\rotated-flipped.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\examples\stacked.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\footer.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\brand.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\chart.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\currency.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\directional.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\file-type.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\form-control.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\gender.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\hand.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\medical.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\new.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\payment.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\spinner.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\text-editor.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\transportation.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\video-player.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\icons\web-application.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\jumbotron-carousel.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\jumbotron.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\modals\download.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\navbar.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\new-features.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\new-naming.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\new-upgrading.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\stripe-ad.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\stripe-social.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\tell-me-thanks.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\tests\rotated-flipped-inside-anchor.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\tests\rotated-flipped-inside-btn.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\tests\rotated-flipped.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\tests\stacked-inside-anchor.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\tests\stacked-with-text.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\tests\stacked.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\thanks-to.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\why.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_layouts\base.html" />
+    <Content Include="static\plugin\awesome\4.4\src\_layouts\icon.html" />
+    <Content Include="static\plugin\bootstrapTable\bootstrap-table-contextmenu.js" />
+    <Content Include="static\plugin\bootstrapTable\bootstrap-table-contextmenu.min.js" />
+    <Content Include="static\plugin\bootstrapTable\bootstrap-table-en-US.js" />
+    <Content Include="static\plugin\bootstrapTable\bootstrap-table-export.js" />
+    <Content Include="static\plugin\bootstrapTable\bootstrap-table-zh-CN.js" />
+    <Content Include="static\plugin\bootstrapTable\tableExport.js" />
+    <Content Include="static\plugin\bootstrapTree\bootstrap-treeview.css" />
+    <Content Include="static\plugin\bootstrapTree\bootstrap-treeview.js" />
+    <Content Include="static\plugin\city-picker\css\city-picker.css" />
+    <Content Include="static\plugin\city-picker\images\drop-arrow.png" />
+    <Content Include="static\plugin\city-picker\js\city-picker.data.js" />
+    <Content Include="static\plugin\city-picker\js\city-picker.data.min.js" />
+    <Content Include="static\plugin\city-picker\js\city-picker.js" />
+    <Content Include="static\plugin\city-picker\js\city-picker.min.js" />
+    <Content Include="static\plugin\echarts3\echarts.common.min.js" />
+    <Content Include="static\plugin\echarts3\echarts.min.js" />
+    <Content Include="static\plugin\icheck-1.x\.gitignore" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\banner.jpg" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\custom.css" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\icheck.png" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\ie\arrow-bottom.png" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\ie\arrow-top.png" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\ie\header-line.png" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\ie\icon-fork.png" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\ie\icon-github.png" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\ie\icon-lab.png" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\ie\icon-options.png" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\ie\icon-star.png" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\montserrat-bold.svg" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\montserrat-regular.svg" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\normalize.css" />
+    <Content Include="static\plugin\icheck-1.x\demo\index.html" />
+    <Content Include="static\plugin\icheck-1.x\demo\js\custom.js" />
+    <Content Include="static\plugin\icheck-1.x\demo\js\custom.min.js" />
+    <Content Include="static\plugin\icheck-1.x\demo\js\jquery.js" />
+    <Content Include="static\plugin\icheck-1.x\demo\js\zepto.js" />
+    <Content Include="static\plugin\icheck-1.x\icheck-init.js" />
+    <Content Include="static\plugin\icheck-1.x\icheck.js" />
+    <Content Include="static\plugin\icheck-1.x\icheck.min.js" />
+    <Content Include="static\plugin\icheck-1.x\skins\all.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\aero%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\aero.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\aero.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\blue%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\blue.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\blue.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\flat%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\flat.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\flat.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\green%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\green.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\green.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\grey%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\grey.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\grey.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\orange%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\orange.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\orange.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\pink%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\pink.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\pink.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\purple%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\purple.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\purple.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\red%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\red.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\red.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\yellow%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\yellow.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\yellow.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\flat\_all.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\futurico\futurico%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\futurico\futurico.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\futurico\futurico.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\aero.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\blue.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\green.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\grey.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\line%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\line.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\line.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\orange.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\pink.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\purple.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\red.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\yellow.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\line\_all.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\aero%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\aero.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\aero.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\blue%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\blue.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\blue.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\green%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\green.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\green.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\grey%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\grey.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\grey.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\minimal%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\minimal.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\minimal.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\orange%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\orange.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\orange.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\pink%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\pink.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\pink.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\purple%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\purple.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\purple.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\red%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\red.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\red.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\yellow%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\yellow.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\yellow.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\minimal\_all.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\polaris\polaris%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\polaris\polaris.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\polaris\polaris.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\aero%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\aero.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\aero.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\blue%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\blue.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\blue.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\green%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\green.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\green.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\grey%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\grey.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\grey.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\orange%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\orange.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\orange.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\pink%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\pink.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\pink.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\purple%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\purple.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\purple.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\red%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\red.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\red.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\square%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\square.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\square.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\yellow%402x.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\yellow.css" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\yellow.png" />
+    <Content Include="static\plugin\icheck-1.x\skins\square\_all.css" />
+    <Content Include="static\plugin\jquery-combox\jquery.combox.js" />
+    <Content Include="static\plugin\jquery-combox\styles\fonts\icomoon.svg" />
+    <Content Include="static\plugin\jquery-combox\styles\style.css" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\additional-methods.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\additional-methods.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\jquery.validate.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\jquery.validate.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ar.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ar.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_bg.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_bg.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_bn_BD.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_bn_BD.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ca.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ca.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_cs.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_cs.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_da.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_da.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_de.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_de.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_el.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_el.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_es.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_es.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_es_AR.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_es_AR.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_es_PE.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_es_PE.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_et.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_et.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_eu.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_eu.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_fa.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_fa.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_fi.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_fi.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_fr.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_fr.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ge.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ge.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_gl.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_gl.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_he.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_he.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_hr.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_hr.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_hu.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_hu.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_hy_AM.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_hy_AM.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_id.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_id.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_is.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_is.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_it.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_it.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ja.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ja.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ka.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ka.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_kk.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_kk.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ko.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ko.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_lt.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_lt.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_lv.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_lv.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_mk.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_mk.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_my.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_my.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_nl.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_nl.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_no.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_no.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_pl.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_pl.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_pt_BR.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_pt_BR.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_pt_PT.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_pt_PT.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ro.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ro.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ru.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_ru.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_si.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_si.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_sk.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_sk.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_sl.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_sl.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_sr.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_sr.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_sr_lat.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_sr_lat.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_sv.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_sv.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_th.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_th.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_tj.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_tj.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_tr.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_tr.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_uk.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_uk.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_vi.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_vi.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_zh.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_zh.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_zh_TW.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\messages_zh_TW.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\methods_de.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\methods_de.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\methods_es_CL.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\methods_es_CL.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\methods_fi.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\methods_fi.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\methods_nl.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\methods_nl.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\methods_pt.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\localization\methods_pt.min.js" />
+    <Content Include="static\plugin\jquery-validation\1.14.0\validation-methods.js" />
+    <Content Include="static\plugin\js-menu\contabs.js" />
+    <Content Include="static\plugin\js-menu\menuTab-blue.css" />
+    <Content Include="static\plugin\js-menu\menuTab-green.css" />
+    <Content Include="static\plugin\js-menu\menuTab-lynch.css" />
+    <Content Include="static\plugin\js-menu\menuTab-midnight-blue.css" />
+    <Content Include="static\plugin\js-menu\menuTab-purple.css" />
+    <Content Include="static\plugin\js-menu\menuTab-red.css" />
+    <Content Include="static\plugin\jstree\32px.png" />
+    <Content Include="static\plugin\jstree\40px.png" />
+    <Content Include="static\plugin\jstree\jstree.min.css" />
+    <Content Include="static\plugin\jstree\jstree.min.js" />
+    <Content Include="static\plugin\jstree\style.css" />
+    <Content Include="static\plugin\jstree\style.min.css" />
+    <Content Include="static\plugin\jstree\throbber.gif" />
+    <Content Include="static\plugin\layui\dist\css\layim.css" />
+    <Content Include="static\plugin\layui\dist\css\layui.css" />
+    <Content Include="static\plugin\layui\dist\css\layui.mobile.css" />
+    <Content Include="static\plugin\layui\dist\css\manager.css" />
+    <Content Include="static\plugin\layui\dist\css\modules\code.css" />
+    <Content Include="static\plugin\layui\dist\css\modules\laydate\default\laydate.css" />
+    <Content Include="static\plugin\layui\dist\css\modules\layer\default\icon-ext.png" />
+    <Content Include="static\plugin\layui\dist\css\modules\layer\default\icon.png" />
+    <Content Include="static\plugin\layui\dist\css\modules\layer\default\layer.css" />
+    <Content Include="static\plugin\layui\dist\css\modules\layer\default\loading-0.gif" />
+    <Content Include="static\plugin\layui\dist\css\modules\layer\default\loading-1.gif" />
+    <Content Include="static\plugin\layui\dist\css\modules\layer\default\loading-2.gif" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\html\chatlog.html" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\html\find.html" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\html\msgbox.html" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\layim.css" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\mobile\layim.css" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\skin\1.jpg" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\skin\2.jpg" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\skin\3.jpg" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\skin\4.jpg" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\skin\5.jpg" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\skin\logo.jpg" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\voice\default.mp3" />
+    <Content Include="static\plugin\layui\dist\font\iconfont.svg" />
+    <Content Include="static\plugin\layui\dist\images\face\0.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\1.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\10.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\11.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\12.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\13.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\14.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\15.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\16.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\17.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\18.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\19.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\2.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\20.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\21.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\22.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\23.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\24.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\25.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\26.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\27.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\28.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\29.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\3.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\30.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\31.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\32.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\33.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\34.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\35.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\36.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\37.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\38.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\39.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\4.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\40.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\41.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\42.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\43.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\44.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\45.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\46.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\47.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\48.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\49.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\5.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\50.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\51.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\52.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\53.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\54.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\55.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\56.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\57.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\58.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\59.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\6.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\60.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\61.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\62.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\63.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\64.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\65.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\66.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\67.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\68.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\69.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\7.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\70.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\71.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\8.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\9.gif" />
+    <Content Include="static\plugin\layui\dist\images\face\notify.png" />
+    <Content Include="static\plugin\layui\dist\layui.all.js" />
+    <Content Include="static\plugin\layui\dist\layui.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\carousel.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\code.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\element.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\flow.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\form.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\jquery.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\laydate.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\layedit.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\layer.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\layim.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\laypage.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\laytpl.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\mobile.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\table.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\tree.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\upload.js" />
+    <Content Include="static\plugin\layui\dist\lay\modules\util.js" />
+    <Content Include="static\plugin\layui\layer\layer.js" />
+    <Content Include="static\plugin\layui\layer\mobile\layer.js" />
+    <Content Include="static\plugin\layui\layer\mobile\need\layer.css" />
+    <Content Include="static\plugin\layui\layer\theme\default\icon-ext.png" />
+    <Content Include="static\plugin\layui\layer\theme\default\icon.png" />
+    <Content Include="static\plugin\layui\layer\theme\default\layer.css" />
+    <Content Include="static\plugin\layui\layer\theme\default\loading-0.gif" />
+    <Content Include="static\plugin\layui\layer\theme\default\loading-1.gif" />
+    <Content Include="static\plugin\layui\layer\theme\default\loading-2.gif" />
+    <Content Include="static\plugin\layui\laytpl\laytpl.js" />
+    <Content Include="static\plugin\layui\sockjs.js" />
+    <Content Include="static\plugin\select2\css\select2-bootstrap.css" />
+    <Content Include="static\plugin\select2\css\select2-bootstrap.min.css" />
+    <Content Include="static\plugin\select2\css\select2.css" />
+    <Content Include="static\plugin\select2\css\select2.min.css" />
+    <Content Include="static\plugin\select2\js\i18n\af.js" />
+    <Content Include="static\plugin\select2\js\i18n\ar.js" />
+    <Content Include="static\plugin\select2\js\i18n\az.js" />
+    <Content Include="static\plugin\select2\js\i18n\bg.js" />
+    <Content Include="static\plugin\select2\js\i18n\bs.js" />
+    <Content Include="static\plugin\select2\js\i18n\ca.js" />
+    <Content Include="static\plugin\select2\js\i18n\cs.js" />
+    <Content Include="static\plugin\select2\js\i18n\da.js" />
+    <Content Include="static\plugin\select2\js\i18n\de.js" />
+    <Content Include="static\plugin\select2\js\i18n\dsb.js" />
+    <Content Include="static\plugin\select2\js\i18n\el.js" />
+    <Content Include="static\plugin\select2\js\i18n\en.js" />
+    <Content Include="static\plugin\select2\js\i18n\es.js" />
+    <Content Include="static\plugin\select2\js\i18n\et.js" />
+    <Content Include="static\plugin\select2\js\i18n\eu.js" />
+    <Content Include="static\plugin\select2\js\i18n\fa.js" />
+    <Content Include="static\plugin\select2\js\i18n\fi.js" />
+    <Content Include="static\plugin\select2\js\i18n\fr.js" />
+    <Content Include="static\plugin\select2\js\i18n\gl.js" />
+    <Content Include="static\plugin\select2\js\i18n\he.js" />
+    <Content Include="static\plugin\select2\js\i18n\hi.js" />
+    <Content Include="static\plugin\select2\js\i18n\hr.js" />
+    <Content Include="static\plugin\select2\js\i18n\hsb.js" />
+    <Content Include="static\plugin\select2\js\i18n\hu.js" />
+    <Content Include="static\plugin\select2\js\i18n\hy.js" />
+    <Content Include="static\plugin\select2\js\i18n\id.js" />
+    <Content Include="static\plugin\select2\js\i18n\is.js" />
+    <Content Include="static\plugin\select2\js\i18n\it.js" />
+    <Content Include="static\plugin\select2\js\i18n\ja.js" />
+    <Content Include="static\plugin\select2\js\i18n\km.js" />
+    <Content Include="static\plugin\select2\js\i18n\ko.js" />
+    <Content Include="static\plugin\select2\js\i18n\lt.js" />
+    <Content Include="static\plugin\select2\js\i18n\lv.js" />
+    <Content Include="static\plugin\select2\js\i18n\mk.js" />
+    <Content Include="static\plugin\select2\js\i18n\ms.js" />
+    <Content Include="static\plugin\select2\js\i18n\nb.js" />
+    <Content Include="static\plugin\select2\js\i18n\nl.js" />
+    <Content Include="static\plugin\select2\js\i18n\pl.js" />
+    <Content Include="static\plugin\select2\js\i18n\ps.js" />
+    <Content Include="static\plugin\select2\js\i18n\pt-BR.js" />
+    <Content Include="static\plugin\select2\js\i18n\pt.js" />
+    <Content Include="static\plugin\select2\js\i18n\ro.js" />
+    <Content Include="static\plugin\select2\js\i18n\ru.js" />
+    <Content Include="static\plugin\select2\js\i18n\sk.js" />
+    <Content Include="static\plugin\select2\js\i18n\sl.js" />
+    <Content Include="static\plugin\select2\js\i18n\sr-Cyrl.js" />
+    <Content Include="static\plugin\select2\js\i18n\sr.js" />
+    <Content Include="static\plugin\select2\js\i18n\sv.js" />
+    <Content Include="static\plugin\select2\js\i18n\th.js" />
+    <Content Include="static\plugin\select2\js\i18n\tk.js" />
+    <Content Include="static\plugin\select2\js\i18n\tr.js" />
+    <Content Include="static\plugin\select2\js\i18n\uk.js" />
+    <Content Include="static\plugin\select2\js\i18n\vi.js" />
+    <Content Include="static\plugin\select2\js\i18n\zh-CN.js" />
+    <Content Include="static\plugin\select2\js\i18n\zh-TW.js" />
+    <Content Include="static\plugin\select2\js\select2.full.js" />
+    <Content Include="static\plugin\select2\js\select2.full.min.js" />
+    <Content Include="static\plugin\select2\js\select2.js" />
+    <Content Include="static\plugin\select2\js\select2.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ar-AR.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ar-AR.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-bg-BG.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-bg-BG.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ca-ES.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ca-ES.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-cs-CZ.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-cs-CZ.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-da-DK.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-da-DK.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-de-DE.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-de-DE.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-es-ES.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-es-ES.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-es-EU.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-es-EU.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-fa-IR.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-fa-IR.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-fi-FI.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-fi-FI.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-fr-FR.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-fr-FR.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-gl-ES.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-gl-ES.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-he-IL.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-he-IL.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-hr-HR.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-hr-HR.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-hu-HU.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-hu-HU.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-id-ID.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-id-ID.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-it-IT.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-it-IT.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ja-JP.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ja-JP.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ko-KR.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ko-KR.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-lt-LT.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-lt-LT.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-lt-LV.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-lt-LV.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-nb-NO.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-nb-NO.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-nl-NL.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-nl-NL.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-pl-PL.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-pl-PL.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-pt-BR.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-pt-BR.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-pt-PT.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-pt-PT.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ro-RO.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ro-RO.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ru-RU.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-ru-RU.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-sk-SK.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-sk-SK.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-sl-SI.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-sl-SI.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-sr-RS-Latin.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-sr-RS-Latin.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-sr-RS.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-sr-RS.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-sv-SE.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-sv-SE.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-th-TH.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-th-TH.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-tr-TR.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-tr-TR.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-uk-UA.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-uk-UA.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-vi-VN.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-vi-VN.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-zh-CN.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-zh-CN.min.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-zh-TW.js" />
+    <Content Include="static\plugin\summernote\lang\summernote-zh-TW.min.js" />
+    <Content Include="static\plugin\summernote\plugin\databasic\summernote-ext-databasic.css" />
+    <Content Include="static\plugin\summernote\plugin\databasic\summernote-ext-databasic.js" />
+    <Content Include="static\plugin\summernote\plugin\databasic\summernote-ext-databasic.min.css" />
+    <Content Include="static\plugin\summernote\plugin\databasic\summernote-ext-databasic.min.js" />
+    <Content Include="static\plugin\summernote\plugin\hello\summernote-ext-hello.js" />
+    <Content Include="static\plugin\summernote\plugin\hello\summernote-ext-hello.min.js" />
+    <Content Include="static\plugin\summernote\plugin\specialchars\summernote-ext-specialchars.js" />
+    <Content Include="static\plugin\summernote\plugin\specialchars\summernote-ext-specialchars.min.js" />
+    <Content Include="static\plugin\summernote\summernote.css" />
+    <Content Include="static\plugin\summernote\summernote.js" />
+    <Content Include="static\plugin\swagger\favicon-16x16.png" />
+    <Content Include="static\plugin\swagger\favicon-32x32.png" />
+    <Content Include="static\plugin\swagger\index.html" />
+    <Content Include="static\plugin\swagger\oauth2-redirect.html" />
+    <Content Include="static\plugin\swagger\swagger-ui-bundle.js" />
+    <Content Include="static\plugin\swagger\swagger-ui-standalone-preset.js" />
+    <Content Include="static\plugin\swagger\swagger-ui.css" />
+    <Content Include="static\plugin\swagger\swagger-ui.js" />
+    <Content Include="static\plugin\TableDnD\jquery.tablednd.js" />
+    <Content Include="static\plugin\TableDnD\tablednd.css" />
+    <Content Include="static\plugin\toastr\toastr.css" />
+    <Content Include="static\plugin\toastr\toastr.min.css" />
+    <Content Include="static\plugin\toastr\toastr.min.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\demo.css" />
+    <Content Include="static\plugin\webuploader-0.1.5\demo.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\fileupload.css" />
+    <Content Include="static\plugin\webuploader-0.1.5\fileupload.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\icons.png" />
+    <Content Include="static\plugin\webuploader-0.1.5\Uploader.swf" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.css" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.custom.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.custom.min.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.fis.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.flashonly.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.flashonly.min.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.html5only.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.html5only.min.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.min.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.noimage.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.noimage.min.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.nolog.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.nolog.min.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.withoutimage.js" />
+    <Content Include="static\plugin\webuploader-0.1.5\webuploader.withoutimage.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="只是公共资源监督后台站点源码.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="exportExcel\" />
+    <Folder Include="static\modules\Shared\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\cheatsheet\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\community\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\examples\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\get-started\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icons\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\adjust\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\adn\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\align-center\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\align-justify\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\align-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\align-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\ambulance\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\anchor\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\android\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\angle-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\angle-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\angle-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\angle-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\apple\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\archive\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\arrow-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\arrow-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\arrow-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\arrow-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\asterisk\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\backward\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\ban-circle\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bar-chart\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\barcode\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\beaker\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\beer\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bell-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bell\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bitbucket-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bitbucket\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bold\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bolt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bookmark-empty\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bookmark\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\book\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\briefcase\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\btc\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bug\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\building\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bullhorn\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\bullseye\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\calendar-empty\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\calendar\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\camera-retro\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\camera\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\caret-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\caret-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\caret-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\caret-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\certificate\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\check-empty\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\check-minus\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\check-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\check\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\chevron-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\chevron-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\chevron-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\chevron-sign-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\chevron-sign-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\chevron-sign-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\chevron-sign-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\chevron-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\circle-arrow-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\circle-arrow-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\circle-arrow-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\circle-arrow-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\circle-blank\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\circle\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\cloud-download\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\cloud-upload\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\cloud\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\cny\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\code-fork\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\code\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\coffee\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\cogs\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\cog\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\collapse-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\collapse-top\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\collapse\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\columns\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\comment-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\comments-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\comments\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\comment\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\compass\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\copy\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\credit-card\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\crop\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\css3\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\cut\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\dashboard\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\desktop\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\double-angle-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\double-angle-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\double-angle-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\double-angle-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\download-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\download\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\dribbble\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\dropbox\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\edit-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\edit\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\eject\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\ellipsis-horizontal\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\ellipsis-vertical\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\envelope-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\envelope\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\eraser\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\eur\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\exchange\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\exclamation-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\exclamation\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\expand-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\expand\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\external-link-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\external-link\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\eye-close\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\eye-open\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\facebook-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\facebook\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\facetime-video\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\fast-backward\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\fast-forward\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\female\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\fighter-jet\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\file-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\file-text-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\file-text\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\file\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\film\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\filter\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\fire-extinguisher\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\fire\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\flag-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\flag-checkered\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\flag\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\flickr\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\folder-close-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\folder-close\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\folder-open-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\folder-open\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\font\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\food\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\forward\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\foursquare\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\frown\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\fullscreen\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\gamepad\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\gbp\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\gift\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\github-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\github-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\github\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\gittip\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\glass\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\globe\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\google-plus-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\google-plus\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\group\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\h-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\hand-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\hand-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\hand-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\hand-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\hdd\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\headphones\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\heart-empty\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\heart\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\home\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\hospital\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\html5\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\inbox\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\indent-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\indent-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\info-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\info\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\inr\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\instagram\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\italic\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\jpy\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\keyboard\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\key\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\krw\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\laptop\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\leaf\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\legal\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\lemon\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\level-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\level-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\lightbulb\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\linkedin-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\linkedin\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\link\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\linux\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\list-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\list-ol\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\list-ul\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\list\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\location-arrow\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\lock\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\long-arrow-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\long-arrow-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\long-arrow-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\long-arrow-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\magic\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\magnet\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\mail-reply-all\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\male\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\map-marker\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\maxcdn\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\medkit\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\meh\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\microphone-off\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\microphone\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\minus-sign-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\minus-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\minus\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\mobile-phone\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\money\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\moon\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\move\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\music\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\off\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\ok-circle\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\ok-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\ok\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\paper-clip\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\paste\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\pause\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\pencil\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\phone-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\phone\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\picture\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\pinterest-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\pinterest\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\plane\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\play-circle\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\play-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\play\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\plus-sign-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\plus-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\plus\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\print\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\pushpin\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\puzzle-piece\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\qrcode\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\question-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\question\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\quote-left\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\quote-right\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\random\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\refresh\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\remove-circle\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\remove-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\remove\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\renren\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\reorder\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\repeat\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\reply-all\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\reply\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\resize-full\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\resize-horizontal\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\resize-small\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\resize-vertical\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\retweet\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\road\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\rocket\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\rss-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\rss\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\save\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\screenshot\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\search\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\share-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\share-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\share\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\shield\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\shopping-cart\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sign-blank\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\signal\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\signin\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\signout\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sitemap\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\skype\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\smile\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sort-by-alphabet-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sort-by-alphabet\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sort-by-attributes-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sort-by-attributes\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sort-by-order-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sort-by-order\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sort-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sort-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sort\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\spinner\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\stackexchange\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\star-empty\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\star-half-empty\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\star-half\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\star\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\step-backward\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\step-forward\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\stethoscope\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\stop\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\strikethrough\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\subscript\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\suitcase\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\sun\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\superscript\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\tablet\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\table\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\tags\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\tag\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\tasks\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\terminal\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\text-height\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\text-width\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\th-large\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\th-list\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\thumbs-down-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\thumbs-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\thumbs-up-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\thumbs-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\th\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\ticket\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\time\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\tint\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\trash\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\trello\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\trophy\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\truck\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\tumblr-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\tumblr\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\twitter-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\twitter\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\umbrella\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\underline\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\undo\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\unlink\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\unlock-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\unlock\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\upload-alt\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\upload\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\usd\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\user-md\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\user\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\vk\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\volume-down\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\volume-off\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\volume-up\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\warning-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\weibo\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\windows\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\wrench\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\xing-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\xing\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\youtube-play\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\youtube-sign\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\youtube\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\zoom-in\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\icon\zoom-out\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\license\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\test\" />
+    <Folder Include="static\plugin\awesome\4.4\src\3.2.1\whats-new\" />
+    <Folder Include="Views\ClueInfo\" />
+    <Folder Include="Views\GatBidder\" />
+    <Folder Include="Views\GatSupervisionPoint\" />
+    <Folder Include="Views\GatViolationPoint\" />
+    <Folder Include="Views\GoodReputation\" />
+    <Folder Include="Views\LaunchTransfer\" />
+    <Folder Include="Views\ProjectQuery\" />
+    <Folder Include="Views\ProjectTranInfo\" />
+    <Folder Include="Views\Review\" />
+    <Folder Include="Views\TUserBindAccount\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Log\log4net.config" />
+    <Content Include="Infrastructure\Templates\XMZBJH\交通工程建设项目报建登记表.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\交通工程建设项目报建登记表v9527.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\工程建设项目报建登记表.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\工程建设项目报建登记表v9527.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\水利工程项目报建登记表.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\水利工程项目报建登记表v9527.doc" />
+    <Content Include="App_Data\BascAudit\MC101_招标文件备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MC101_招标文件整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MC102_答疑澄清整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MC104_招标投标情况书面报告备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MC104_招标投标情况书面报告整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MG101_招标文件备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MG101_招标文件整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MG102_答疑澄清整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MG104_招标投标过程材料报备整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MG104_招标投标过程材料报备签收单.docx" />
+    <Content Include="App_Data\BascAudit\MJ101_招标文件备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MJ101_招标文件整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MJ102_补遗书整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MJ104_招标投标情况书面报告备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MJ104_招标投标情况书面报告整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MN101_招标文件备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MN101_招标文件整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MN102_答疑澄清整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MN104_招标投标过程材料报备整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MN104_招标投标过程材料报备签收单.docx" />
+    <Content Include="App_Data\BascAudit\MS101_招标文件备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MS101_招标文件整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MS102_答疑澄清整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MS104_招标投标过程材料报备整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MS104_招标投标过程材料报备签收单.docx" />
+    <Content Include="App_Data\BascAudit\MT101_招标文件备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MT101_招标文件整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MT102_答疑澄清整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MT1041_招标投标情况书面报告备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MT104_招标投标情况书面报告备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MT104_招标投标情况书面报告整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MX101_招标文件备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MX101_招标文件整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MX102_答疑澄清整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MX104_招标投标过程材料报备整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MX104_招标投标过程材料报备签收单.docx" />
+    <Content Include="App_Data\BascAudit\MY101_招标文件备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MY101_招标文件整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MY102_答疑澄清整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MY104_招标投标过程材料报备整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MY104_招标投标过程材料报备签收单.docx" />
+    <Content Include="App_Data\BascAudit\MZ101_招标文件备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MZ101_招标文件整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MZ102_答疑澄清整改意见书.docx" />
+    <Content Include="App_Data\BascAudit\MZ1041_招标投标情况书面报告备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MZ104_招标投标情况书面报告备案材料签收单.docx" />
+    <Content Include="App_Data\BascAudit\MZ104_招标投标情况书面报告整改意见书.docx" />
+    <Content Include="Infrastructure\Templates\TSCL\线下_投诉处理决定书.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\投诉处理决定书.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\法人_不予受理通知书_不符条件.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\法人_不予受理通知书_非本部门.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\法人_投诉延期处理说明书.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\法人_投诉撤回意见书.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\线下_法人_不予受理通知书_不符条件.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\线下_法人_不予受理通知书_非本部门.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\线下_自然人_不予受理通知书_不符条件.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\线下_自然人_不予受理通知书_非本部门.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\自然人_不予受理通知书_不符条件.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\自然人_不予受理通知书_非本部门.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\自然人_投诉延期处理说明书.doc" />
+    <Content Include="Infrastructure\Templates\TSCL\自然人_投诉撤回意见书.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\信息化项目报建登记表.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\信息化项目报建登记表v9527.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\农业工程项目报建登记表.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\农业工程项目报建登记表v9527.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\工业项目报建登记表.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\工业项目报建登记表v9527.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\海洋渔港项目报建登记表.doc" />
+    <Content Include="Infrastructure\Templates\XMZBJH\海洋渔港项目报建登记表v9527.doc" />
+    <Content Include="Infrastructure\Config\ueditor_config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CustomProfileZhouFtp.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile5.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfileZhou.pubxml" />
+    <Content Include="Views\Stat\GongChengJianShe.cshtml" />
+    <Content Include="Views\Stat\GongChengJianShe_A05.cshtml" />
+    <Content Include="Views\Stat\GongChengJianShe_A08.cshtml" />
+    <Content Include="Views\Stat\GongChengJianShe_A10.cshtml" />
+    <Content Include="Views\Stat\GongChengJianShe_A03_A04.cshtml" />
+    <Content Include="static\common\css\allbgs.psd" />
+    <Content Include="static\common\css\fonts\filemanager.eot" />
+    <Content Include="static\common\css\fonts\filemanager.ttf" />
+    <Content Include="static\common\css\fonts\filemanager.woff" />
+    <Content Include="static\common\fonts\fontawesome-webfont.eot" />
+    <Content Include="static\common\fonts\fontawesome-webfont.ttf" />
+    <Content Include="static\common\fonts\fontawesome-webfont.woff" />
+    <Content Include="static\common\fonts\fontawesome-webfont.woff2" />
+    <Content Include="static\common\fonts\fontawesome-webfont93e3.eot" />
+    <Content Include="static\common\fonts\fontawesome-webfont93e3.ttf" />
+    <Content Include="static\common\fonts\fontawesome-webfont93e3.woff" />
+    <Content Include="static\common\fonts\fontawesome-webfont93e3.woff2" />
+    <Content Include="static\common\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="static\common\fonts\FontAwesome.otf" />
+    <Content Include="static\common\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="static\common\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="static\common\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\common\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="static\common\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="static\common\fonts\icomoon\icomoon.eot" />
+    <Content Include="static\common\fonts\icomoon\icomoon.ttf" />
+    <Content Include="static\common\fonts\icomoon\icomoon.woff" />
+    <Content Include="static\common\fonts\icomoon\icomoond41d.eot" />
+    <Content Include="static\common\fonts\icomoon.eot" />
+    <Content Include="static\common\fonts\icomoon.ttf" />
+    <Content Include="static\common\fonts\icomoon.woff" />
+    <Content Include="static\common\fonts\icomoond41d.eot" />
+    <Content Include="static\common\js\md5.min.js.map" />
+    <Content Include="static\plugin\awesome\4.4\.npmignore" />
+    <Content Include="static\plugin\awesome\4.4\_config.yml" />
+    <Content Include="static\plugin\awesome\4.4\bower.json" />
+    <Content Include="static\plugin\awesome\4.4\component.json" />
+    <Content Include="static\plugin\awesome\4.4\composer.json" />
+    <Content Include="static\plugin\awesome\4.4\CONTRIBUTING.md" />
+    <Content Include="static\plugin\awesome\4.4\css\font-awesome.css.map" />
+    <Content Include="static\plugin\awesome\4.4\font-awesome.css.map" />
+    <Content Include="static\plugin\awesome\4.4\fonts\fontawesome-webfont.eot" />
+    <Content Include="static\plugin\awesome\4.4\fonts\fontawesome-webfont.ttf" />
+    <Content Include="static\plugin\awesome\4.4\fonts\fontawesome-webfont.woff" />
+    <Content Include="static\plugin\awesome\4.4\fonts\fontawesome-webfont.woff2" />
+    <Content Include="static\plugin\awesome\4.4\fonts\FontAwesome.otf" />
+    <Content Include="static\plugin\awesome\4.4\Gemfile" />
+    <Content Include="static\plugin\awesome\4.4\Gemfile.lock" />
+    <Content Include="static\plugin\awesome\4.4\less\animated.less" />
+    <Content Include="static\plugin\awesome\4.4\less\bordered-pulled.less" />
+    <Content Include="static\plugin\awesome\4.4\less\core.less" />
+    <Content Include="static\plugin\awesome\4.4\less\fixed-width.less" />
+    <Content Include="static\plugin\awesome\4.4\less\font-awesome.less" />
+    <Content Include="static\plugin\awesome\4.4\less\icons.less" />
+    <Content Include="static\plugin\awesome\4.4\less\larger.less" />
+    <Content Include="static\plugin\awesome\4.4\less\list.less" />
+    <Content Include="static\plugin\awesome\4.4\less\mixins.less" />
+    <Content Include="static\plugin\awesome\4.4\less\path.less" />
+    <Content Include="static\plugin\awesome\4.4\less\rotated-flipped.less" />
+    <Content Include="static\plugin\awesome\4.4\less\stacked.less" />
+    <Content Include="static\plugin\awesome\4.4\less\variables.less" />
+    <Content Include="static\plugin\awesome\4.4\package.json" />
+    <Content Include="static\plugin\awesome\4.4\README.md" />
+    <Content Include="static\plugin\awesome\4.4\scss\_animated.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_bordered-pulled.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_core.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_fixed-width.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_icons.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_larger.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_list.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_mixins.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_path.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_rotated-flipped.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_stacked.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\_variables.scss" />
+    <Content Include="static\plugin\awesome\4.4\scss\font-awesome.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\code\core.less" />
+    <Content Include="static\plugin\awesome\4.4\src\_includes\code\core.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\_plugins\flatten_icon_filters.rb" />
+    <Content Include="static\plugin\awesome\4.4\src\_plugins\icon_page_generator.rb" />
+    <Content Include="static\plugin\awesome\4.4\src\_plugins\site.rb" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\font\FontAwesome.otf" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\less\bootstrap.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\less\core.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\less\extras.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\less\font-awesome.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\less\icons.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\less\mixins.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\less\path.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\less\variables.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\scss\_bootstrap.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\scss\_core.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\scss\_extras.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\scss\_icons.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\scss\_path.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\scss\_variables.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\scss\font-awesome-ie7.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\font-awesome.zip" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\img\icon-flag.pdf" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\accordion.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\alerts.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\bootstrap.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\breadcrumbs.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\button-groups.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\buttons.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\carousel.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\close.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\code.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\component-animations.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\dropdowns.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\forms.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\grid.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\hero-unit.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\labels-badges.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\layouts.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\media.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\mixins.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\modals.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\navbar.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\navs.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\pager.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\pagination.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\popovers.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\progress-bars.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\reset.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-1200px-min.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-767px-max.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-768px-979px.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-navbar.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-utilities.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\responsive.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\scaffolding.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\sprites.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\tables.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\thumbnails.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\tooltip.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\type.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\utilities.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\variables.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\bootstrap-2.3.2\wells.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\lazy.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\mixins.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\responsive-1200px-min.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\responsive-767px-max.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\responsive-768px-979px.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\responsive-navbar.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\responsive.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\site.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\sticky-footer.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\assets\less\variables.less" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\CNAME" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\icons.yml" />
+    <Content Include="static\plugin\awesome\4.4\src\3.2.1\Makefile" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\animated.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\bordered-pulled.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\core.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\fixed-width.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\font-awesome.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\icons.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\larger.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\list.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\mixins.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\path.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\rotated-flipped.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\stacked.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\less\variables.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_animated.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_core.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_icons.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_larger.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_list.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_path.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_stacked.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\_variables.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\.csscomb.json" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\.csslintrc" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\alerts.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\badges.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\bootstrap.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\breadcrumbs.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\button-groups.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\buttons.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\carousel.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\close.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\code.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\component-animations.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\dropdowns.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\forms.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\glyphicons.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\grid.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\input-groups.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\jumbotron.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\labels.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\list-group.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\media.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\alerts.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\background-variant.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\border-radius.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\buttons.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\center-block.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\clearfix.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\forms.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\gradients.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\grid-framework.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\grid.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\hide-text.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\image.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\labels.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\list-group.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\nav-divider.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\nav-vertical-align.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\opacity.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\pagination.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\panels.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\progress-bar.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\reset-filter.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\reset-text.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\resize.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\responsive-visibility.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\size.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\tab-focus.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\table-row.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\text-emphasis.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\text-overflow.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins\vendor-prefixes.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\mixins.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\modals.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\navbar.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\navs.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\normalize.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\pager.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\pagination.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\panels.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\popovers.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\print.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\progress-bars.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\responsive-embed.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\responsive-utilities.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\scaffolding.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\tables.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\theme.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\thumbnails.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\tooltip.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\type.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\utilities.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\variables.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\bootstrap-3.3.5\wells.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\algolia.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\banner-ad.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\bootstrap\alerts.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\bootstrap\buttons.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\bootstrap\jumbotron.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\bootstrap\modals.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\bootstrap\navbar.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\bootstrap\type.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\bootstrap\variables.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\bootstrap\wells.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\bsap-ad.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\example-rating.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\feature-list.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\fontawesome-icon-list.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\footer.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\fusion-ad.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\jumbotron-carousel.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\layout.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\lazy.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\responsive\screen-lg.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\responsive\screen-md.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\responsive\screen-sm.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\responsive\screen-xs.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\search.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\social-buttons.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\stripe-ad.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\sumome.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site\textured-bg.less" />
+    <Content Include="static\plugin\awesome\4.4\src\assets\less\site.less" />
+    <Content Include="static\plugin\awesome\4.4\src\CNAME" />
+    <Content Include="static\plugin\awesome\4.4\src\icons.yml" />
+    <Content Include="static\plugin\awesome\4.4\src\Makefile" />
+    <Content Include="static\plugin\awesome\4.4\src\README.md-nobuild" />
+    <Content Include="static\plugin\icheck-1.x\bower.json" />
+    <Content Include="static\plugin\icheck-1.x\CHANGELOG.md" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\custom.styl" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\ie\custom.styl" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\montserrat-bold.eot" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\montserrat-bold.ttf" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\montserrat-bold.woff" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\montserrat-regular.eot" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\montserrat-regular.ttf" />
+    <Content Include="static\plugin\icheck-1.x\demo\css\montserrat-regular.woff" />
+    <Content Include="static\plugin\icheck-1.x\icheck.jquery.json" />
+    <Content Include="static\plugin\icheck-1.x\README.md" />
+    <Content Include="static\plugin\jquery-combox\styles\fonts\icomoon.eot" />
+    <Content Include="static\plugin\jquery-combox\styles\fonts\icomoon.ttf" />
+    <Content Include="static\plugin\jquery-combox\styles\fonts\icomoon.woff" />
+    <Content Include="static\plugin\jstree\style.less" />
+    <Content Include="static\plugin\layui\dist\css\modules\layim\html\getmsg.json" />
+    <Content Include="static\plugin\layui\dist\font\iconfont.eot" />
+    <Content Include="static\plugin\layui\dist\font\iconfont.ttf" />
+    <Content Include="static\plugin\layui\dist\font\iconfont.woff" />
+    <Content Include="static\plugin\summernote\font\summernote.eot" />
+    <Content Include="static\plugin\summernote\font\summernote.ttf" />
+    <Content Include="static\plugin\summernote\font\summernote.woff" />
+    <Content Include="static\plugin\swagger\swagger-ui-bundle.js.map" />
+    <Content Include="static\plugin\swagger\swagger-ui-standalone-preset.js.map" />
+    <Content Include="static\plugin\swagger\swagger-ui.css.map" />
+    <Content Include="static\plugin\swagger\swagger-ui.js.map" />
+    <Content Include="static\plugin\toastr\toastr.js.map" />
+    <Content Include="static\plugin\webuploader-0.1.5\README.md" />
+    <Content Include="Views\Shared\_LayoutBody.cshtml" />
+    <Content Include="Views\JdZjBidDocCharactCode\SoftwareAndHardwareSimilarView.cshtml" />
+    <Content Include="Views\Stat\GCJS_A03_A04.cshtml" />
+    <Content Include="Views\Stat\GCJS_A05.cshtml" />
+    <Content Include="Views\Stat\GCJS_A08.cshtml" />
+    <Content Include="Views\Stat\GCJS_A10.cshtml" />
+    <Content Include="Views\Punish\Index.cshtml" />
+    <Content Include="Views\Stat\GCJS_A04.cshtml" />
+    <Content Include="Views\Stat\GCJS_A03.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfileZhouDebug.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Businesses\GGZY.Services\GGZY.Services.csproj">
+      <Project>{d58153cc-37d4-41b2-bd52-570ebcfe80f0}</Project>
+      <Name>GGZY.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Businesses\GGZYFW.DbEntity\GGZYFW.DbEntity.csproj">
+      <Project>{45b1992f-6a13-49bb-aee3-e5ee708756aa}</Project>
+      <Name>GGZYFW.DbEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Businesses\GGZYJD.DbEntity\GGZYJD.DbEntity.csproj">
+      <Project>{6d6bb58c-e602-42aa-9108-38135dae9889}</Project>
+      <Name>GGZYJD.DbEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Dos.ORM\Dos.ORM.csproj">
+      <Project>{4bef1983-f275-4807-96ea-25b973bd6e94}</Project>
+      <Name>Dos.ORM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\GGZY.Core\GGZY.Core.csproj">
+      <Project>{e910c497-a03a-49e5-bfc5-d4f179673c2e}</Project>
+      <Name>GGZY.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GGZY.Framework\GGZY.Framework.csproj">
+      <Project>{a4f92c62-40b6-44fc-a00b-1cb923157103}</Project>
+      <Name>GGZY.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53679</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53393/Jd/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

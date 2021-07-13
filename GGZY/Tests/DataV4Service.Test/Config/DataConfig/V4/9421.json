@@ -1,0 +1,236 @@
+{
+  "DataNo": "9421",
+  "DataName": "GY_BIDDER_MARGIN_INFO",
+  "DataCnName": "投标保证金缴纳信息",
+  "IsZXSJ": true,
+  "GgfwDataNo": "9011",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "TenderProjectCodeMatch",
+          "TenderProjectTableName": "GY_TENDER_PROJECT"
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODE",
+      "CnName": "标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 23
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_NAME",
+      "CnName": "投标人名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 300
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_ORG_CODE",
+      "CnName": "投标人代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "UNION_ENTERPRISE_NAME",
+      "CnName": "联合体名称（如有）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 1000
+        }
+      ]
+    },
+    {
+      "Name": "UNION_ORGAN_SET_CODE",
+      "CnName": "联合体组织机构代码证（联合体招标时填写）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "MARGIN_PAY_FORM",
+      "CnName": "保证金递交方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "29"
+        }
+      ]
+    },
+    {
+      "Name": "MARGIN_RECEIVE_TIME",
+      "CnName": "保证金递交时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "MARGIN_BANK",
+      "CnName": "保证金缴纳基本户银行",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "MARGIN_ACCOUNT",
+      "CnName": "保证金缴纳基本户账号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "MARGIN_PAY",
+      "CnName": "保证金缴纳金额",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "YEAR_MARGIN",
+      "CnName": "年度保证金信息",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "PLATFORM_CODE",
+      "CnName": "交易系统标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "PUB_SERVICE_PLAT_CODE",
+      "CnName": "交易服务系统标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "DATA_TIMESTAMP",
+      "CnName": "数据时间戳",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "TRADE_PLAT",
+      "CnName": "交易平台或发布工具标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 11
+        }
+      ]
+    },
+    {
+      "Name": "PUB_SERVICE_PLAT",
+      "CnName": "公共服务平台标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 11
+        }
+      ]
+    }
+  ]
+}

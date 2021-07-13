@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="BaseXml" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+<!--本文件用于注册后台管理相关的Data Model-->
+	<alias>
+    <!--系统管理-->
+		<typeAlias alias="Sys_Department" type="StrongSoftManage.Model.SysManage.Sys_Department,StrongSoftManage.Model"/>
+    <typeAlias alias="Sys_PublicTypeInfo" type="StrongSoftManage.Model.SysManage.Sys_PublicTypeInfo,StrongSoftManage.Model"/>
+    <typeAlias alias="Sys_User" type="StrongSoftManage.Model.SysManage.Sys_User,StrongSoftManage.Model"/>
+    <typeAlias alias="Sys_Area" type="StrongSoftManage.Model.SysManage.Sys_Area,StrongSoftManage.Model"/>
+    <typeAlias alias="Sys_Menu" type="StrongSoftManage.Model.SysManage.Sys_Menu,StrongSoftManage.Model"/>
+    <typeAlias alias="Sys_UserRole" type="StrongSoftManage.Model.SysManage.Sys_UserRole,StrongSoftManage.Model"/>
+    <typeAlias alias="Sys_Popedom" type="StrongSoftManage.Model.SysManage.Sys_Popedom,StrongSoftManage.Model"/>
+    <typeAlias alias="Sys_Attachment" type="StrongSoftManage.Model.SysManage.Sys_Attachment,StrongSoftManage.Model"/>
+    <typeAlias alias="Sys_Log" type="StrongSoftManage.Model.SysManage.Sys_Log,StrongSoftManage.Model"/>
+    <typeAlias alias="Sys_Message" type="StrongSoftManage.Model.SysManage.Sys_Message,StrongSoftManage.Model"/>
+    <typeAlias alias="Sys_ModuleDepCofnig" type="StrongSoftManage.Model.SysManage.Sys_ModuleDepCofnig,StrongSoftManage.Model"/>
+  </alias>
+
+	<statements>
+		<select id="GetServerTime" resultClass="DateTime" parameterClass="string">
+			<![CDATA[
+     select sysdate from dual
+      ]]>
+		</select>
+    <select id="GetDrpInfoByPID">
+      <![CDATA[
+            SELECT PTIid As "id"
+            ,parenttypeid As "pId"
+            ,sign as "sign"
+            ,typename AS "name"
+            ,typevalue As "value"
+            ,typevalue2 as "typevalue2"
+            FROM sys_publictypeinfo
+            where sign =#sign# 
+      ]]>
+    </select>
+	</statements>
+</sqlMap>

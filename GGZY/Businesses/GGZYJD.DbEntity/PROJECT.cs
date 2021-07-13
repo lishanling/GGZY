@@ -1,0 +1,648 @@
+﻿using System;
+using System.Data;
+using Dos.ORM;
+
+namespace GGZYJD.DbEntity
+{
+    /// <summary>
+    /// 实体类PROJECT。(属性说明自动提取数据库字段的描述信息)
+    /// </summary>
+    [Table("PROJECT")]
+    [Serializable]
+    public partial class PROJECT : JdEntity
+    {
+        #region Model
+		private string _PROJECT_CODE;
+		private string _PROJECT_NAME;
+		private string _REGION_CODE;
+		private string _INVEST_PROJECT_CODE;
+		private string _ADDRESS;
+		private string _LEGAL_PERSON;
+		private string _INDUSTRIES_TYPE;
+		private string _FUND_SOURCE;
+		private string _CONTRIBUTION_SCALE;
+		private string _PROJECT_SCALE;
+		private string _CONTACTOR;
+		private string _CONTACT_INFORMATION;
+		private string _APPROVAL_NAME;
+		private string _APPROVAL_NUMBER;
+		private string _APPROVAL_AUTHORITY;
+		private DateTime? _CREATE_TIME;
+		private string _PLATFORM_CODE;
+		private string _PUB_SERVICE_PLAT_CODE;
+		private DateTime? _DATA_TIMESTAMP;
+		private string _CONSTRUCTION_ID;
+		private decimal? _M_ID;
+		private string _M_PROJECT_TYPE;
+		private string _M_JYCS;
+		private string _M_ISFR;
+		private string _M_ATT_PROJECT_APPROVAL_FILE;
+		private string _M_ATT_LICENSE_FILE;
+		private string _M_REMARK;
+		private decimal? _M_CREATOR;
+		private DateTime? _M_CREATE_TM;
+		private string _REGION_CITY;
+		private string _REGION_COUNTY;
+
+		/// <summary>
+		/// 项目编号
+		/// </summary>
+		public string PROJECT_CODE
+		{
+			get{ return _PROJECT_CODE; }
+			set
+			{
+				this.OnPropertyValueChange(_.PROJECT_CODE, _PROJECT_CODE, value);
+				this._PROJECT_CODE = value;
+			}
+		}
+		/// <summary>
+		/// 项目名称
+		/// </summary>
+		public string PROJECT_NAME
+		{
+			get{ return _PROJECT_NAME; }
+			set
+			{
+				this.OnPropertyValueChange(_.PROJECT_NAME, _PROJECT_NAME, value);
+				this._PROJECT_NAME = value;
+			}
+		}
+		/// <summary>
+		/// 项目所在行政区域代码
+		/// </summary>
+		public string REGION_CODE
+		{
+			get{ return _REGION_CODE; }
+			set
+			{
+				this.OnPropertyValueChange(_.REGION_CODE, _REGION_CODE, value);
+				this._REGION_CODE = value;
+			}
+		}
+		/// <summary>
+		/// 投资项目统一代码
+		/// </summary>
+		public string INVEST_PROJECT_CODE
+		{
+			get{ return _INVEST_PROJECT_CODE; }
+			set
+			{
+				this.OnPropertyValueChange(_.INVEST_PROJECT_CODE, _INVEST_PROJECT_CODE, value);
+				this._INVEST_PROJECT_CODE = value;
+			}
+		}
+		/// <summary>
+		/// 项目地址
+		/// </summary>
+		public string ADDRESS
+		{
+			get{ return _ADDRESS; }
+			set
+			{
+				this.OnPropertyValueChange(_.ADDRESS, _ADDRESS, value);
+				this._ADDRESS = value;
+			}
+		}
+		/// <summary>
+		/// 项目法人
+		/// </summary>
+		public string LEGAL_PERSON
+		{
+			get{ return _LEGAL_PERSON; }
+			set
+			{
+				this.OnPropertyValueChange(_.LEGAL_PERSON, _LEGAL_PERSON, value);
+				this._LEGAL_PERSON = value;
+			}
+		}
+		/// <summary>
+		/// 项目行业分类
+		/// </summary>
+		public string INDUSTRIES_TYPE
+		{
+			get{ return _INDUSTRIES_TYPE; }
+			set
+			{
+				this.OnPropertyValueChange(_.INDUSTRIES_TYPE, _INDUSTRIES_TYPE, value);
+				this._INDUSTRIES_TYPE = value;
+			}
+		}
+		/// <summary>
+		/// 资金来源
+		/// </summary>
+		public string FUND_SOURCE
+		{
+			get{ return _FUND_SOURCE; }
+			set
+			{
+				this.OnPropertyValueChange(_.FUND_SOURCE, _FUND_SOURCE, value);
+				this._FUND_SOURCE = value;
+			}
+		}
+		/// <summary>
+		/// 出资比例
+		/// </summary>
+		public string CONTRIBUTION_SCALE
+		{
+			get{ return _CONTRIBUTION_SCALE; }
+			set
+			{
+				this.OnPropertyValueChange(_.CONTRIBUTION_SCALE, _CONTRIBUTION_SCALE, value);
+				this._CONTRIBUTION_SCALE = value;
+			}
+		}
+		/// <summary>
+		/// 项目规模
+		/// </summary>
+		public string PROJECT_SCALE
+		{
+			get{ return _PROJECT_SCALE; }
+			set
+			{
+				this.OnPropertyValueChange(_.PROJECT_SCALE, _PROJECT_SCALE, value);
+				this._PROJECT_SCALE = value;
+			}
+		}
+		/// <summary>
+		/// 联系人
+		/// </summary>
+		public string CONTACTOR
+		{
+			get{ return _CONTACTOR; }
+			set
+			{
+				this.OnPropertyValueChange(_.CONTACTOR, _CONTACTOR, value);
+				this._CONTACTOR = value;
+			}
+		}
+		/// <summary>
+		/// 联系方式
+		/// </summary>
+		public string CONTACT_INFORMATION
+		{
+			get{ return _CONTACT_INFORMATION; }
+			set
+			{
+				this.OnPropertyValueChange(_.CONTACT_INFORMATION, _CONTACT_INFORMATION, value);
+				this._CONTACT_INFORMATION = value;
+			}
+		}
+		/// <summary>
+		/// 项目审批文件名称
+		/// </summary>
+		public string APPROVAL_NAME
+		{
+			get{ return _APPROVAL_NAME; }
+			set
+			{
+				this.OnPropertyValueChange(_.APPROVAL_NAME, _APPROVAL_NAME, value);
+				this._APPROVAL_NAME = value;
+			}
+		}
+		/// <summary>
+		/// 项目审批文号
+		/// </summary>
+		public string APPROVAL_NUMBER
+		{
+			get{ return _APPROVAL_NUMBER; }
+			set
+			{
+				this.OnPropertyValueChange(_.APPROVAL_NUMBER, _APPROVAL_NUMBER, value);
+				this._APPROVAL_NUMBER = value;
+			}
+		}
+		/// <summary>
+		/// 项目审批单位
+		/// </summary>
+		public string APPROVAL_AUTHORITY
+		{
+			get{ return _APPROVAL_AUTHORITY; }
+			set
+			{
+				this.OnPropertyValueChange(_.APPROVAL_AUTHORITY, _APPROVAL_AUTHORITY, value);
+				this._APPROVAL_AUTHORITY = value;
+			}
+		}
+		/// <summary>
+		/// 项目建立时间
+		/// </summary>
+		public DateTime? CREATE_TIME
+		{
+			get{ return _CREATE_TIME; }
+			set
+			{
+				this.OnPropertyValueChange(_.CREATE_TIME, _CREATE_TIME, value);
+				this._CREATE_TIME = value;
+			}
+		}
+		/// <summary>
+		/// 交易系统标识码
+		/// </summary>
+		public string PLATFORM_CODE
+		{
+			get{ return _PLATFORM_CODE; }
+			set
+			{
+				this.OnPropertyValueChange(_.PLATFORM_CODE, _PLATFORM_CODE, value);
+				this._PLATFORM_CODE = value;
+			}
+		}
+		/// <summary>
+		/// 公共服务平台标识码
+		/// </summary>
+		public string PUB_SERVICE_PLAT_CODE
+		{
+			get{ return _PUB_SERVICE_PLAT_CODE; }
+			set
+			{
+				this.OnPropertyValueChange(_.PUB_SERVICE_PLAT_CODE, _PUB_SERVICE_PLAT_CODE, value);
+				this._PUB_SERVICE_PLAT_CODE = value;
+			}
+		}
+		/// <summary>
+		/// 数据时间戳
+		/// </summary>
+		public DateTime? DATA_TIMESTAMP
+		{
+			get{ return _DATA_TIMESTAMP; }
+			set
+			{
+				this.OnPropertyValueChange(_.DATA_TIMESTAMP, _DATA_TIMESTAMP, value);
+				this._DATA_TIMESTAMP = value;
+			}
+		}
+		/// <summary>
+		/// 报建编号
+		/// </summary>
+		public string CONSTRUCTION_ID
+		{
+			get{ return _CONSTRUCTION_ID; }
+			set
+			{
+				this.OnPropertyValueChange(_.CONSTRUCTION_ID, _CONSTRUCTION_ID, value);
+				this._CONSTRUCTION_ID = value;
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? M_ID
+		{
+			get{ return _M_ID; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_ID, _M_ID, value);
+				this._M_ID = value;
+			}
+		}
+		/// <summary>
+		/// 项目类型
+		/// </summary>
+		public string M_PROJECT_TYPE
+		{
+			get{ return _M_PROJECT_TYPE; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_PROJECT_TYPE, _M_PROJECT_TYPE, value);
+				this._M_PROJECT_TYPE = value;
+			}
+		}
+		/// <summary>
+		/// 交易场所
+		/// </summary>
+		public string M_JYCS
+		{
+			get{ return _M_JYCS; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_JYCS, _M_JYCS, value);
+				this._M_JYCS = value;
+			}
+		}
+		/// <summary>
+		/// 业主是否法人/组织
+		/// </summary>
+		public string M_ISFR
+		{
+			get{ return _M_ISFR; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_ISFR, _M_ISFR, value);
+				this._M_ISFR = value;
+			}
+		}
+		/// <summary>
+		/// 附件立项批复文件（项目审批核准文件）
+		/// </summary>
+		public string M_ATT_PROJECT_APPROVAL_FILE
+		{
+			get{ return _M_ATT_PROJECT_APPROVAL_FILE; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_ATT_PROJECT_APPROVAL_FILE, _M_ATT_PROJECT_APPROVAL_FILE, value);
+				this._M_ATT_PROJECT_APPROVAL_FILE = value;
+			}
+		}
+		/// <summary>
+		/// 营业执照（图片）
+		/// </summary>
+		public string M_ATT_LICENSE_FILE
+		{
+			get{ return _M_ATT_LICENSE_FILE; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_ATT_LICENSE_FILE, _M_ATT_LICENSE_FILE, value);
+				this._M_ATT_LICENSE_FILE = value;
+			}
+		}
+		/// <summary>
+		/// 依据说明
+		/// </summary>
+		public string M_REMARK
+		{
+			get{ return _M_REMARK; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_REMARK, _M_REMARK, value);
+				this._M_REMARK = value;
+			}
+		}
+		/// <summary>
+		/// 创建人
+		/// </summary>
+		public decimal? M_CREATOR
+		{
+			get{ return _M_CREATOR; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_CREATOR, _M_CREATOR, value);
+				this._M_CREATOR = value;
+			}
+		}
+		/// <summary>
+		/// 创建时间
+		/// </summary>
+		public DateTime? M_CREATE_TM
+		{
+			get{ return _M_CREATE_TM; }
+			set
+			{
+				this.OnPropertyValueChange(_.M_CREATE_TM, _M_CREATE_TM, value);
+				this._M_CREATE_TM = value;
+			}
+		}
+		/// <summary>
+		/// 项目所在市
+		/// </summary>
+		public string REGION_CITY
+		{
+			get{ return _REGION_CITY; }
+			set
+			{
+				this.OnPropertyValueChange(_.REGION_CITY, _REGION_CITY, value);
+				this._REGION_CITY = value;
+			}
+		}
+		/// <summary>
+		/// 项目所在县
+		/// </summary>
+		public string REGION_COUNTY
+		{
+			get{ return _REGION_COUNTY; }
+			set
+			{
+				this.OnPropertyValueChange(_.REGION_COUNTY, _REGION_COUNTY, value);
+				this._REGION_COUNTY = value;
+			}
+		}
+		#endregion
+
+		#region Method
+        /// <summary>
+        /// 获取实体中的主键列
+        /// </summary>
+        public override Field[] GetPrimaryKeyFields()
+        {
+            return new Field[] {
+				_.M_ID,
+			};
+        }
+        /// <summary>
+        /// 获取列信息
+        /// </summary>
+        public override Field[] GetFields()
+        {
+            return new Field[] {
+				_.PROJECT_CODE,
+				_.PROJECT_NAME,
+				_.REGION_CODE,
+				_.INVEST_PROJECT_CODE,
+				_.ADDRESS,
+				_.LEGAL_PERSON,
+				_.INDUSTRIES_TYPE,
+				_.FUND_SOURCE,
+				_.CONTRIBUTION_SCALE,
+				_.PROJECT_SCALE,
+				_.CONTACTOR,
+				_.CONTACT_INFORMATION,
+				_.APPROVAL_NAME,
+				_.APPROVAL_NUMBER,
+				_.APPROVAL_AUTHORITY,
+				_.CREATE_TIME,
+				_.PLATFORM_CODE,
+				_.PUB_SERVICE_PLAT_CODE,
+				_.DATA_TIMESTAMP,
+				_.CONSTRUCTION_ID,
+				_.M_ID,
+				_.M_PROJECT_TYPE,
+				_.M_JYCS,
+				_.M_ISFR,
+				_.M_ATT_PROJECT_APPROVAL_FILE,
+				_.M_ATT_LICENSE_FILE,
+				_.M_REMARK,
+				_.M_CREATOR,
+				_.M_CREATE_TM,
+				_.REGION_CITY,
+				_.REGION_COUNTY,
+			};
+        }
+        /// <summary>
+        /// 获取值信息
+        /// </summary>
+        public override object[] GetValues()
+        {
+            return new object[] {
+				this._PROJECT_CODE,
+				this._PROJECT_NAME,
+				this._REGION_CODE,
+				this._INVEST_PROJECT_CODE,
+				this._ADDRESS,
+				this._LEGAL_PERSON,
+				this._INDUSTRIES_TYPE,
+				this._FUND_SOURCE,
+				this._CONTRIBUTION_SCALE,
+				this._PROJECT_SCALE,
+				this._CONTACTOR,
+				this._CONTACT_INFORMATION,
+				this._APPROVAL_NAME,
+				this._APPROVAL_NUMBER,
+				this._APPROVAL_AUTHORITY,
+				this._CREATE_TIME,
+				this._PLATFORM_CODE,
+				this._PUB_SERVICE_PLAT_CODE,
+				this._DATA_TIMESTAMP,
+				this._CONSTRUCTION_ID,
+				this._M_ID,
+				this._M_PROJECT_TYPE,
+				this._M_JYCS,
+				this._M_ISFR,
+				this._M_ATT_PROJECT_APPROVAL_FILE,
+				this._M_ATT_LICENSE_FILE,
+				this._M_REMARK,
+				this._M_CREATOR,
+				this._M_CREATE_TM,
+				this._REGION_CITY,
+				this._REGION_COUNTY,
+			};
+        }
+        #endregion
+
+		#region _Field
+        /// <summary>
+        /// 字段信息
+        /// </summary>
+        public class _
+        {
+			/// <summary>
+			/// * 
+			/// </summary>
+			public readonly static Field All = new Field("*", "PROJECT");
+            /// <summary>
+			/// 项目编号
+			/// </summary>
+			public readonly static Field PROJECT_CODE = new Field("PROJECT_CODE", "PROJECT", "项目编号");
+            /// <summary>
+			/// 项目名称
+			/// </summary>
+			public readonly static Field PROJECT_NAME = new Field("PROJECT_NAME", "PROJECT", "项目名称");
+            /// <summary>
+			/// 项目所在行政区域代码
+			/// </summary>
+			public readonly static Field REGION_CODE = new Field("REGION_CODE", "PROJECT", "项目所在行政区域代码");
+            /// <summary>
+			/// 投资项目统一代码
+			/// </summary>
+			public readonly static Field INVEST_PROJECT_CODE = new Field("INVEST_PROJECT_CODE", "PROJECT", "投资项目统一代码");
+            /// <summary>
+			/// 项目地址
+			/// </summary>
+			public readonly static Field ADDRESS = new Field("ADDRESS", "PROJECT", "项目地址");
+            /// <summary>
+			/// 项目法人
+			/// </summary>
+			public readonly static Field LEGAL_PERSON = new Field("LEGAL_PERSON", "PROJECT", "项目法人");
+            /// <summary>
+			/// 项目行业分类
+			/// </summary>
+			public readonly static Field INDUSTRIES_TYPE = new Field("INDUSTRIES_TYPE", "PROJECT", "项目行业分类");
+            /// <summary>
+			/// 资金来源
+			/// </summary>
+			public readonly static Field FUND_SOURCE = new Field("FUND_SOURCE", "PROJECT", "资金来源");
+            /// <summary>
+			/// 出资比例
+			/// </summary>
+			public readonly static Field CONTRIBUTION_SCALE = new Field("CONTRIBUTION_SCALE", "PROJECT", "出资比例");
+            /// <summary>
+			/// 项目规模
+			/// </summary>
+			public readonly static Field PROJECT_SCALE = new Field("PROJECT_SCALE", "PROJECT", "项目规模");
+            /// <summary>
+			/// 联系人
+			/// </summary>
+			public readonly static Field CONTACTOR = new Field("CONTACTOR", "PROJECT", "联系人");
+            /// <summary>
+			/// 联系方式
+			/// </summary>
+			public readonly static Field CONTACT_INFORMATION = new Field("CONTACT_INFORMATION", "PROJECT", "联系方式");
+            /// <summary>
+			/// 项目审批文件名称
+			/// </summary>
+			public readonly static Field APPROVAL_NAME = new Field("APPROVAL_NAME", "PROJECT", "项目审批文件名称");
+            /// <summary>
+			/// 项目审批文号
+			/// </summary>
+			public readonly static Field APPROVAL_NUMBER = new Field("APPROVAL_NUMBER", "PROJECT", "项目审批文号");
+            /// <summary>
+			/// 项目审批单位
+			/// </summary>
+			public readonly static Field APPROVAL_AUTHORITY = new Field("APPROVAL_AUTHORITY", "PROJECT", "项目审批单位");
+            /// <summary>
+			/// 项目建立时间
+			/// </summary>
+			public readonly static Field CREATE_TIME = new Field("CREATE_TIME", "PROJECT", "项目建立时间");
+            /// <summary>
+			/// 交易系统标识码
+			/// </summary>
+			public readonly static Field PLATFORM_CODE = new Field("PLATFORM_CODE", "PROJECT", "交易系统标识码");
+            /// <summary>
+			/// 公共服务平台标识码
+			/// </summary>
+			public readonly static Field PUB_SERVICE_PLAT_CODE = new Field("PUB_SERVICE_PLAT_CODE", "PROJECT", "公共服务平台标识码");
+            /// <summary>
+			/// 数据时间戳
+			/// </summary>
+			public readonly static Field DATA_TIMESTAMP = new Field("DATA_TIMESTAMP", "PROJECT", "数据时间戳");
+            /// <summary>
+			/// 报建编号
+			/// </summary>
+			public readonly static Field CONSTRUCTION_ID = new Field("CONSTRUCTION_ID", "PROJECT", "报建编号");
+            /// <summary>
+			/// 
+			/// </summary>
+			public readonly static Field M_ID = new Field("M_ID", "PROJECT", "");
+            /// <summary>
+			/// 项目类型
+			/// </summary>
+			public readonly static Field M_PROJECT_TYPE = new Field("M_PROJECT_TYPE", "PROJECT", "项目类型");
+            /// <summary>
+			/// 交易场所
+			/// </summary>
+			public readonly static Field M_JYCS = new Field("M_JYCS", "PROJECT", "交易场所");
+            /// <summary>
+			/// 业主是否法人/组织
+			/// </summary>
+			public readonly static Field M_ISFR = new Field("M_ISFR", "PROJECT", "业主是否法人/组织");
+            /// <summary>
+			/// 附件立项批复文件（项目审批核准文件）
+			/// </summary>
+			public readonly static Field M_ATT_PROJECT_APPROVAL_FILE = new Field("M_ATT_PROJECT_APPROVAL_FILE", "PROJECT", "附件立项批复文件（项目审批核准文件）");
+            /// <summary>
+			/// 营业执照（图片）
+			/// </summary>
+			public readonly static Field M_ATT_LICENSE_FILE = new Field("M_ATT_LICENSE_FILE", "PROJECT", "营业执照（图片）");
+            /// <summary>
+			/// 依据说明
+			/// </summary>
+			public readonly static Field M_REMARK = new Field("M_REMARK", "PROJECT", "依据说明");
+            /// <summary>
+			/// 创建人
+			/// </summary>
+			public readonly static Field M_CREATOR = new Field("M_CREATOR", "PROJECT", "创建人");
+            /// <summary>
+			/// 创建时间
+			/// </summary>
+			public readonly static Field M_CREATE_TM = new Field("M_CREATE_TM", "PROJECT", "创建时间");
+            /// <summary>
+			/// 项目所在市
+			/// </summary>
+			public readonly static Field REGION_CITY = new Field("REGION_CITY", "PROJECT", "项目所在市");
+            /// <summary>
+			/// 项目所在县
+			/// </summary>
+			public readonly static Field REGION_COUNTY = new Field("REGION_COUNTY", "PROJECT", "项目所在县");
+        }
+        #endregion
+	}
+}

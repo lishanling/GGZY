@@ -1,0 +1,119 @@
+{
+    "DataNo": "1107",
+    "DataName": "DEA_MEDI_WIN_BID_ANNO",
+    "DataCnName": "中标公告信息",
+    "Fields": [
+        {
+            "Name": "PROJECT_CODE",
+            "CnName": "项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        },
+        {
+            "Name": "PROJNAME",
+            "CnName": "项目名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "DRUGGROUP",
+            "CnName": "采购类别",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "9111"
+            }
+          ]
+        },
+        {
+            "Name": "NOTICE_NAME",
+            "CnName": "公告标题",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 600
+                }
+            ]
+        },
+        {
+            "Name": "NOTICE_CONTENT",
+            "CnName": "公告内容",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "NOTICE_SEND_TIME",
+            "CnName": "公告发布时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "NOTICE_MEDIA",
+            "CnName": "公告发布媒体",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 1000
+                }
+            ]
+        },
+        {
+            "Name": "URL",
+            "CnName": "公告源URL",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "NA_AREA",
+            "CnName": "采购区域",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

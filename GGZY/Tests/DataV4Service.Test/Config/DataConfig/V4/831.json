@@ -1,0 +1,481 @@
+{
+  "DataName": "SL_TENDER_PROJECT",
+  "DataCnName": "招标项目",
+  "IsZXSJ": true,
+  "GgfwDataNo": "501",
+  "Fields": [
+    {
+      "Name": "PROJECT_CODE",
+      "CnName": "项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 17
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        },
+        {
+          "ValidatorName": "AreaCodeMatch",
+          "Begin": 1
+        },
+        {
+          "ValidatorName": "UniqueValue"
+        },
+        {
+          "ValidatorName": "CannotModify"
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_SELF_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "IS_TO_LAW",
+      "CnName": "是否依法必须招标",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_PROJECT_NAME",
+      "CnName": "招标项目名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_PROJECT_TYPE",
+      "CnName": "招标项目类型",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    },
+    {
+      "Name": "REGION_CODE",
+      "CnName": "招标项目所在行政区域代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        },
+        {
+          "ValidatorName": "AreaCodeMatch",
+          "Begin": 0
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_CONTENT",
+      "CnName": "招标内容与范围及招标方案说明",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "OWNER_NAME",
+      "CnName": "项目业主名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "TENDERER_NAME",
+      "CnName": "招标人名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "TENDERER_CODE_TYPE",
+      "CnName": "招标人类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "TENDERER_CODE",
+      "CnName": "招标人代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "TENDERER_ROLE",
+      "CnName": "招标人角色",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 2
+        }
+      ]
+    },
+    {
+      "Name": "ISUNION",
+      "CnName": "是否联合招标",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_AGENCY_NAME",
+      "CnName": "招标代理机构名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_AGENCY_CODE_TYPE",
+      "CnName": "招标代理机构类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_AGENCY_CODE",
+      "CnName": "招标代理机构代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_AGENCY_ROLE",
+      "CnName": "招标代理机构角色",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 2
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_MODE",
+      "CnName": "招标方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_ORGANIZE_FORM",
+      "CnName": "招标组织形式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        }
+      ]
+    },
+    {
+      "Name": "CREATE_TIME",
+      "CnName": "招标项目建立时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "SUPERVISE_DEPT_NAME",
+      "CnName": "监督部门名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "SUPERVISE_DEPT_CODE",
+      "CnName": "监督部门代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "APPROVE_DEPT_NAME",
+      "CnName": "审核部门名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "APPROVE_DEPT_CODE",
+      "CnName": "审核部门代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "REPORT_DUTY",
+      "CnName": "申报责任人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "TENDERER_REGION_CODE",
+      "CnName": "招标人企业注册所在地",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        },
+        {
+          "ValidatorName": "AreaCodeMatch",
+          "Begin": 0
+        }
+      ]
+    },
+    {
+      "Name": "TENDERER_PROPERTY",
+      "CnName": "招标人企业性质",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "10005"
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_AGENCY_REGION_CODE",
+      "CnName": "招标代理机构企业注册所在地",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        },
+        {
+          "ValidatorName": "AreaCodeMatch",
+          "Begin": 0
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_AGENCY_PROPERTY",
+      "CnName": "招标代理机构企业性质",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "10005"
+        }
+      ]
+    },
+    {
+      "Name": "OPERATION_NAME",
+      "CnName": "信息录入人员",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "TRADE_SYSTEM_NO",
+      "CnName": "交易系统编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 12
+        }
+      ]
+    },
+    {
+      "Name": "TRADE_SYSTEM_FEE",
+      "CnName": "交易系统平台使用费",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "TENDER_RECORD_CODE",
+      "CnName": "招标文件备案编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        },
+        {
+          "ValidatorName": "TenderRecordCodeMatch",
+          "ReviewType": "'MS101','MN101'"
+        }
+      ]
+    }
+  ],
+  "Validators": [
+    {
+      "ValidatorName": "TENDER_AGENCY_CODE_TYPE"
+    }
+  ]
+}

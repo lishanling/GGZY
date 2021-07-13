@@ -1,0 +1,230 @@
+{
+  "DataNo": "557",
+  "DataName": "PURCHASE_TENDER_LIST",
+  "DataCnName": "供应商名单",
+  "Fields": [
+    {
+      "Name": "PURCHASE_PROJECT_CODE",
+      "CnName": "采购项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_SECTION_CODE",
+      "CnName": "采购项目子包编号",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_NAME",
+      "CnName": "供应商名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "IS_LOST",
+      "CnName": "是否失信人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "TRUE_OR_FALSE"
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_CODE_TYPE",
+      "CnName": "供应商类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "2001"
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_ORG_CODE",
+      "CnName": "供应商代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_ROLE",
+      "CnName": "供应商角色",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 2
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "26"
+        }
+      ]
+    },
+    {
+      "Name": "IS_COMMIT_MARGIN",
+      "CnName": "是否提交保证金",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "TRUE_OR_FALSE"
+        }
+      ]
+    },
+    {
+      "Name": "MARGIN_PAY_FORM",
+      "CnName": "保证金递交方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "29"
+        }
+      ]
+    },
+    {
+      "Name": "PRICE_FORM_CODE",
+      "CnName": "价款形式代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "PRICE_FORM_CODE"
+        }
+      ]
+    },
+    {
+      "Name": "OTHER_BID_PRICE",
+      "CnName": "费率或其它类型报价",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "MARGIN_RECEIVE_TIME",
+      "CnName": "保证金递交时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "BID_PRICE",
+      "CnName": "报价金额",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "PRICE_CURRENCY",
+      "CnName": "报价币种",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    },
+    {
+      "Name": "PRICE_UNIT",
+      "CnName": "报价单位",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "PRICE_UNIT"
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

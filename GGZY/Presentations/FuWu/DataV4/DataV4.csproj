@@ -1,0 +1,800 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B0F0572-878B-48FF-A7A8-FA6DA7A8DF6B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataV4</RootNamespace>
+    <AssemblyName>DataV4</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44324</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Services\DataService.asmx" />
+    <Content Include="SQL\公共服务平台新增逻辑删除字段.txt" />
+    <Content Include="SQL\公共服务附件字段.txt" />
+    <Content Include="SQL\字典新增SQL语句.txt" />
+    <Content Include="SQL\数据规范4.0-交通SQL语句.txt" />
+    <Content Include="SQL\数据规范4.0-住建SQL语句.txt" />
+    <Content Include="SQL\数据规范4.0-信息SQL语句.txt" />
+    <Content Include="SQL\数据规范4.0-公共服务新增字段.txt" />
+    <Content Include="SQL\数据规范4.0-工业SQL语句.txt" />
+    <Content Include="SQL\数据规范4.0-标后数据SQL语句.txt" />
+    <Content Include="SQL\数据规范4.0-水利SQL语句.txt" />
+    <Content Include="SQL\数据规范4.0-渔港SQL语句.txt" />
+    <Content Include="SQL\数据规范4.0-行政监督新增字段.txt" />
+    <Content Include="SQL\数据规范4.0-通用SQL语句.txt" />
+    <Content Include="SQL\数据规范4.1修改字段SQL语句-服务平台.txt" />
+    <Content Include="SQL\数据规范4.1修改字段SQL语句-监督平台.txt" />
+    <Content Include="SQL\数据规范4.1新增评标方式和回避原因.txt" />
+    <Content Include="SQL\新增评标场地表.txt" />
+    <Content Include="SQL\渔港等新增行业的项目和招标项目新增字段.txt" />
+    <Content Include="SQL\电子保函专项数据新增.txt" />
+    <Content Include="SQL\行政监督平台新增逻辑删除字段.txt" />
+    <Content Include="SQL\行政监督附件字段.txt" />
+    <Content Include="V4\Query\Query.aspx" />
+    <Content Include="V4\Query\QueryList.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="这是数据规范4.0上报程序.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DataService.asmx.cs">
+      <DependentUpon>DataService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="V4\Query\Query.aspx.cs">
+      <DependentUpon>Query.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="V4\Query\Query.aspx.designer.cs">
+      <DependentUpon>Query.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="V4\Query\QueryList.aspx.cs">
+      <DependentUpon>QueryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="V4\Query\QueryList.aspx.designer.cs">
+      <DependentUpon>QueryList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\DataConfig\tpc.json" />
+    <Content Include="Config\DataConfig\V3\100.json" />
+    <Content Include="Config\DataConfig\V3\1000.json" />
+    <Content Include="Config\DataConfig\V3\1001.json" />
+    <Content Include="Config\DataConfig\V3\101.json" />
+    <Content Include="Config\DataConfig\V3\102.json" />
+    <Content Include="Config\DataConfig\V3\103.json" />
+    <Content Include="Config\DataConfig\V3\104.json" />
+    <Content Include="Config\DataConfig\V3\105.json" />
+    <Content Include="Config\DataConfig\V3\1050.json" />
+    <Content Include="Config\DataConfig\V3\1051.json" />
+    <Content Include="Config\DataConfig\V3\1052.json" />
+    <Content Include="Config\DataConfig\V3\106.json" />
+    <Content Include="Config\DataConfig\V3\107.json" />
+    <Content Include="Config\DataConfig\V3\108.json" />
+    <Content Include="Config\DataConfig\V3\109.json" />
+    <Content Include="Config\DataConfig\V3\110.json" />
+    <Content Include="Config\DataConfig\V3\1104.json" />
+    <Content Include="Config\DataConfig\V3\1105.json" />
+    <Content Include="Config\DataConfig\V3\1106.json" />
+    <Content Include="Config\DataConfig\V3\1107.json" />
+    <Content Include="Config\DataConfig\V3\1108.json" />
+    <Content Include="Config\DataConfig\V3\1109.json" />
+    <Content Include="Config\DataConfig\V3\111.json" />
+    <Content Include="Config\DataConfig\V3\1110.json" />
+    <Content Include="Config\DataConfig\V3\1111.json" />
+    <Content Include="Config\DataConfig\V3\1112.json" />
+    <Content Include="Config\DataConfig\V3\1113.json" />
+    <Content Include="Config\DataConfig\V3\1114.json" />
+    <Content Include="Config\DataConfig\V3\1115.json" />
+    <Content Include="Config\DataConfig\V3\1116.json" />
+    <Content Include="Config\DataConfig\V3\1117.json" />
+    <Content Include="Config\DataConfig\V3\1118.json" />
+    <Content Include="Config\DataConfig\V3\1119.json" />
+    <Content Include="Config\DataConfig\V3\112.json" />
+    <Content Include="Config\DataConfig\V3\1120.json" />
+    <Content Include="Config\DataConfig\V3\1121.json" />
+    <Content Include="Config\DataConfig\V3\113.json" />
+    <Content Include="Config\DataConfig\V3\114.json" />
+    <Content Include="Config\DataConfig\V3\115.json" />
+    <Content Include="Config\DataConfig\V3\117.json" />
+    <Content Include="Config\DataConfig\V3\118.json" />
+    <Content Include="Config\DataConfig\V3\1800.json" />
+    <Content Include="Config\DataConfig\V3\1801.json" />
+    <Content Include="Config\DataConfig\V3\1900.json" />
+    <Content Include="Config\DataConfig\V3\208.json" />
+    <Content Include="Config\DataConfig\V3\212.json" />
+    <Content Include="Config\DataConfig\V3\213.json" />
+    <Content Include="Config\DataConfig\V3\300.json" />
+    <Content Include="Config\DataConfig\V3\302.json" />
+    <Content Include="Config\DataConfig\V3\303.json" />
+    <Content Include="Config\DataConfig\V3\304.json" />
+    <Content Include="Config\DataConfig\V3\305.json" />
+    <Content Include="Config\DataConfig\V3\306.json" />
+    <Content Include="Config\DataConfig\V3\400.json" />
+    <Content Include="Config\DataConfig\V3\402.json" />
+    <Content Include="Config\DataConfig\V3\404.json" />
+    <Content Include="Config\DataConfig\V3\500.json" />
+    <Content Include="Config\DataConfig\V3\501.json" />
+    <Content Include="Config\DataConfig\V3\502.json" />
+    <Content Include="Config\DataConfig\V3\503.json" />
+    <Content Include="Config\DataConfig\V3\504.json" />
+    <Content Include="Config\DataConfig\V3\505.json" />
+    <Content Include="Config\DataConfig\V3\506.json" />
+    <Content Include="Config\DataConfig\V3\507.json" />
+    <Content Include="Config\DataConfig\V3\508.json" />
+    <Content Include="Config\DataConfig\V3\509.json" />
+    <Content Include="Config\DataConfig\V3\510.json" />
+    <Content Include="Config\DataConfig\V3\511.json" />
+    <Content Include="Config\DataConfig\V3\512.json" />
+    <Content Include="Config\DataConfig\V3\513.json" />
+    <Content Include="Config\DataConfig\V3\514.json" />
+    <Content Include="Config\DataConfig\V3\515.json" />
+    <Content Include="Config\DataConfig\V3\516.json" />
+    <Content Include="Config\DataConfig\V3\517.json" />
+    <Content Include="Config\DataConfig\V3\519.json" />
+    <Content Include="Config\DataConfig\V3\520.json" />
+    <Content Include="Config\DataConfig\V3\521.json" />
+    <Content Include="Config\DataConfig\V3\522.json" />
+    <Content Include="Config\DataConfig\V3\523.json" />
+    <Content Include="Config\DataConfig\V3\550.json" />
+    <Content Include="Config\DataConfig\V3\551.json" />
+    <Content Include="Config\DataConfig\V3\552.json" />
+    <Content Include="Config\DataConfig\V3\553.json" />
+    <Content Include="Config\DataConfig\V3\554.json" />
+    <Content Include="Config\DataConfig\V3\556.json" />
+    <Content Include="Config\DataConfig\V3\557.json" />
+    <Content Include="Config\DataConfig\V3\600.json" />
+    <Content Include="Config\DataConfig\V3\601.json" />
+    <Content Include="Config\DataConfig\V3\650.json" />
+    <Content Include="Config\DataConfig\V3\651.json" />
+    <Content Include="Config\DataConfig\V3\652.json" />
+    <Content Include="Config\DataConfig\V3\653.json" />
+    <Content Include="Config\DataConfig\V3\654.json" />
+    <Content Include="Config\DataConfig\V3\655.json" />
+    <Content Include="Config\DataConfig\V3\656.json" />
+    <Content Include="Config\DataConfig\V3\657.json" />
+    <Content Include="Config\DataConfig\V3\658.json" />
+    <Content Include="Config\DataConfig\V3\659.json" />
+    <Content Include="Config\DataConfig\V3\660.json" />
+    <Content Include="Config\DataConfig\V3\700.json" />
+    <Content Include="Config\DataConfig\V3\701.json" />
+    <Content Include="Config\DataConfig\V3\750.json" />
+    <Content Include="Config\DataConfig\V3\751.json" />
+    <Content Include="Config\DataConfig\V3\752.json" />
+    <Content Include="Config\DataConfig\V3\753.json" />
+    <Content Include="Config\DataConfig\V3\800.json" />
+    <Content Include="Config\DataConfig\V3\801.json" />
+    <Content Include="Config\DataConfig\V3\802.json" />
+    <Content Include="Config\DataConfig\V3\803.json" />
+    <Content Include="Config\DataConfig\V3\804.json" />
+    <Content Include="Config\DataConfig\V3\805.json" />
+    <Content Include="Config\DataConfig\V3\806.json" />
+    <Content Include="Config\DataConfig\V3\807.json" />
+    <Content Include="Config\DataConfig\V3\808.json" />
+    <Content Include="Config\DataConfig\V3\809.json" />
+    <Content Include="Config\DataConfig\V3\810.json" />
+    <Content Include="Config\DataConfig\V3\811.json" />
+    <Content Include="Config\DataConfig\V3\812.json" />
+    <Content Include="Config\DataConfig\V3\813.json" />
+    <Content Include="Config\DataConfig\V3\814.json" />
+    <Content Include="Config\DataConfig\V3\815.json" />
+    <Content Include="Config\DataConfig\V3\816.json" />
+    <Content Include="Config\DataConfig\V3\817.json" />
+    <Content Include="Config\DataConfig\V3\818.json" />
+    <Content Include="Config\DataConfig\V3\819.json" />
+    <Content Include="Config\DataConfig\V3\820.json" />
+    <Content Include="Config\DataConfig\V3\821.json" />
+    <Content Include="Config\DataConfig\V3\822.json" />
+    <Content Include="Config\DataConfig\V3\823.json" />
+    <Content Include="Config\DataConfig\V3\824.json" />
+    <Content Include="Config\DataConfig\V3\825.json" />
+    <Content Include="Config\DataConfig\V3\826.json" />
+    <Content Include="Config\DataConfig\V3\827.json" />
+    <Content Include="Config\DataConfig\V3\830.json" />
+    <Content Include="Config\DataConfig\V3\831.json" />
+    <Content Include="Config\DataConfig\V3\832.json" />
+    <Content Include="Config\DataConfig\V3\833.json" />
+    <Content Include="Config\DataConfig\V3\834.json" />
+    <Content Include="Config\DataConfig\V3\835.json" />
+    <Content Include="Config\DataConfig\V3\836.json" />
+    <Content Include="Config\DataConfig\V3\837.json" />
+    <Content Include="Config\DataConfig\V3\838.json" />
+    <Content Include="Config\DataConfig\V3\839.json" />
+    <Content Include="Config\DataConfig\V3\840.json" />
+    <Content Include="Config\DataConfig\V3\841.json" />
+    <Content Include="Config\DataConfig\V3\842.json" />
+    <Content Include="Config\DataConfig\V3\843.json" />
+    <Content Include="Config\DataConfig\V3\844.json" />
+    <Content Include="Config\DataConfig\V3\845.json" />
+    <Content Include="Config\DataConfig\V3\846.json" />
+    <Content Include="Config\DataConfig\V3\847.json" />
+    <Content Include="Config\DataConfig\V3\848.json" />
+    <Content Include="Config\DataConfig\V3\849.json" />
+    <Content Include="Config\DataConfig\V3\850.json" />
+    <Content Include="Config\DataConfig\V3\851.json" />
+    <Content Include="Config\DataConfig\V3\852.json" />
+    <Content Include="Config\DataConfig\V3\853.json" />
+    <Content Include="Config\DataConfig\V3\854.json" />
+    <Content Include="Config\DataConfig\V3\855.json" />
+    <Content Include="Config\DataConfig\V3\856.json" />
+    <Content Include="Config\DataConfig\V3\857.json" />
+    <Content Include="Config\DataConfig\V3\858.json" />
+    <Content Include="Config\DataConfig\V3\860.json" />
+    <Content Include="Config\DataConfig\V3\861.json" />
+    <Content Include="Config\DataConfig\V3\862.json" />
+    <Content Include="Config\DataConfig\V3\863.json" />
+    <Content Include="Config\DataConfig\V3\864.json" />
+    <Content Include="Config\DataConfig\V3\865.json" />
+    <Content Include="Config\DataConfig\V3\866.json" />
+    <Content Include="Config\DataConfig\V3\867.json" />
+    <Content Include="Config\DataConfig\V3\868.json" />
+    <Content Include="Config\DataConfig\V3\869.json" />
+    <Content Include="Config\DataConfig\V3\870.json" />
+    <Content Include="Config\DataConfig\V3\871.json" />
+    <Content Include="Config\DataConfig\V3\872.json" />
+    <Content Include="Config\DataConfig\V3\873.json" />
+    <Content Include="Config\DataConfig\V3\874.json" />
+    <Content Include="Config\DataConfig\V3\875.json" />
+    <Content Include="Config\DataConfig\V3\876.json" />
+    <Content Include="Config\DataConfig\V3\877.json" />
+    <Content Include="Config\DataConfig\V3\878.json" />
+    <Content Include="Config\DataConfig\V3\879.json" />
+    <Content Include="Config\DataConfig\V3\880.json" />
+    <Content Include="Config\DataConfig\V3\881.json" />
+    <Content Include="Config\DataConfig\V3\882.json" />
+    <Content Include="Config\DataConfig\V3\883.json" />
+    <Content Include="Config\DataConfig\V3\884.json" />
+    <Content Include="Config\DataConfig\V3\885.json" />
+    <Content Include="Config\DataConfig\V3\886.json" />
+    <Content Include="Config\DataConfig\V3\887.json" />
+    <Content Include="Config\DataConfig\V3\888.json" />
+    <Content Include="Config\DataConfig\V3\889.json" />
+    <Content Include="Config\DataConfig\V3\890.json" />
+    <Content Include="Config\DataConfig\V3\891.json" />
+    <Content Include="Config\DataConfig\V3\892.json" />
+    <Content Include="Config\DataConfig\V3\893.json" />
+    <Content Include="Config\DataConfig\V3\894.json" />
+    <Content Include="Config\DataConfig\V3\895.json" />
+    <Content Include="Config\DataConfig\V3\896.json" />
+    <Content Include="Config\DataConfig\V3\897.json" />
+    <Content Include="Config\DataConfig\V3\898.json" />
+    <Content Include="Config\DataConfig\V3\899.json" />
+    <Content Include="Config\DataConfig\V3\900.json" />
+    <Content Include="Config\DataConfig\V3\901.json" />
+    <Content Include="Config\DataConfig\V3\902.json" />
+    <Content Include="Config\DataConfig\V3\903.json" />
+    <Content Include="Config\DataConfig\V3\904.json" />
+    <Content Include="Config\DataConfig\V3\905.json" />
+    <Content Include="Config\DataConfig\V3\906.json" />
+    <Content Include="Config\DataConfig\V3\907.json" />
+    <Content Include="Config\DataConfig\V3\908.json" />
+    <Content Include="Config\DataConfig\V3\909.json" />
+    <Content Include="Config\DataConfig\V4\9001.json" />
+    <Content Include="Config\DataConfig\V4\9002.json" />
+    <Content Include="Config\DataConfig\V4\9003.json" />
+    <Content Include="Config\DataConfig\V4\9004.json" />
+    <Content Include="Config\DataConfig\V4\9005.json" />
+    <Content Include="Config\DataConfig\V4\9006.json" />
+    <Content Include="Config\DataConfig\V4\9007.json" />
+    <Content Include="Config\DataConfig\V4\9008.json" />
+    <Content Include="Config\DataConfig\V4\9009.json" />
+    <Content Include="Config\DataConfig\V4\9010.json" />
+    <Content Include="Config\DataConfig\V4\9011.json" />
+    <Content Include="Config\DataConfig\V4\9012.json" />
+    <Content Include="Config\DataConfig\V4\9013.json" />
+    <Content Include="Config\DataConfig\V4\9014.json" />
+    <Content Include="Config\DataConfig\V4\9015.json" />
+    <Content Include="Config\DataConfig\V4\9016.json" />
+    <Content Include="Config\DataConfig\V4\9017.json" />
+    <Content Include="Config\DataConfig\V4\9018.json" />
+    <Content Include="Config\DataConfig\V4\9019.json" />
+    <Content Include="Config\DataConfig\V4\9020.json" />
+    <Content Include="Config\DataConfig\V4\500.json" />
+    <Content Include="Config\DataConfig\V4\501.json" />
+    <Content Include="Config\DataConfig\V4\502.json" />
+    <Content Include="Config\DataConfig\V4\503.json" />
+    <Content Include="Config\DataConfig\V4\504.json" />
+    <Content Include="Config\DataConfig\V4\505.json" />
+    <Content Include="Config\DataConfig\V4\506.json" />
+    <Content Include="Config\DataConfig\V4\507.json" />
+    <Content Include="Config\DataConfig\V4\508.json" />
+    <Content Include="Config\DataConfig\V4\509.json" />
+    <Content Include="Config\DataConfig\V4\510.json" />
+    <Content Include="Config\DataConfig\V4\511.json" />
+    <Content Include="Config\DataConfig\V4\512.json" />
+    <Content Include="Config\DataConfig\V4\513.json" />
+    <Content Include="Config\DataConfig\V4\514.json" />
+    <Content Include="Config\DataConfig\V4\515.json" />
+    <Content Include="Config\DataConfig\V4\516.json" />
+    <Content Include="Config\DataConfig\V4\517.json" />
+    <Content Include="Config\DataConfig\V4\519.json" />
+    <Content Include="Config\DataConfig\V4\520.json" />
+    <Content Include="Config\DataConfig\V4\521.json" />
+    <Content Include="Config\DataConfig\V4\522.json" />
+    <Content Include="Config\DataConfig\V4\523.json" />
+    <Content Include="Config\DataConfig\V4\550.json" />
+    <Content Include="Config\DataConfig\V4\551.json" />
+    <Content Include="Config\DataConfig\V4\552.json" />
+    <Content Include="Config\DataConfig\V4\553.json" />
+    <Content Include="Config\DataConfig\V4\800.json" />
+    <Content Include="Config\DataConfig\V4\801.json" />
+    <Content Include="Config\DataConfig\V4\802.json" />
+    <Content Include="Config\DataConfig\V4\803.json" />
+    <Content Include="Config\DataConfig\V4\804.json" />
+    <Content Include="Config\DataConfig\V4\805.json" />
+    <Content Include="Config\DataConfig\V4\806.json" />
+    <Content Include="Config\DataConfig\V4\807.json" />
+    <Content Include="Config\DataConfig\V4\808.json" />
+    <Content Include="Config\DataConfig\V4\809.json" />
+    <Content Include="Config\DataConfig\V4\810.json" />
+    <Content Include="Config\DataConfig\V4\811.json" />
+    <Content Include="Config\DataConfig\V4\812.json" />
+    <Content Include="Config\DataConfig\V4\813.json" />
+    <Content Include="Config\DataConfig\V4\814.json" />
+    <Content Include="Config\DataConfig\V4\815.json" />
+    <Content Include="Config\DataConfig\V4\816.json" />
+    <Content Include="Config\DataConfig\V4\817.json" />
+    <Content Include="Config\DataConfig\V4\818.json" />
+    <Content Include="Config\DataConfig\V4\819.json" />
+    <Content Include="Config\DataConfig\V4\820.json" />
+    <Content Include="Config\DataConfig\V4\821.json" />
+    <Content Include="Config\DataConfig\V4\822.json" />
+    <Content Include="Config\DataConfig\V4\823.json" />
+    <Content Include="Config\DataConfig\V4\824.json" />
+    <Content Include="Config\DataConfig\V4\825.json" />
+    <Content Include="Config\DataConfig\V4\826.json" />
+    <Content Include="Config\DataConfig\V4\827.json" />
+    <Content Include="Config\DataConfig\V4\830.json" />
+    <Content Include="Config\DataConfig\V4\831.json" />
+    <Content Include="Config\DataConfig\V4\832.json" />
+    <Content Include="Config\DataConfig\V4\833.json" />
+    <Content Include="Config\DataConfig\V4\834.json" />
+    <Content Include="Config\DataConfig\V4\835.json" />
+    <Content Include="Config\DataConfig\V4\836.json" />
+    <Content Include="Config\DataConfig\V4\837.json" />
+    <Content Include="Config\DataConfig\V4\838.json" />
+    <Content Include="Config\DataConfig\V4\839.json" />
+    <Content Include="Config\DataConfig\V4\840.json" />
+    <Content Include="Config\DataConfig\V4\841.json" />
+    <Content Include="Config\DataConfig\V4\842.json" />
+    <Content Include="Config\DataConfig\V4\843.json" />
+    <Content Include="Config\DataConfig\V4\844.json" />
+    <Content Include="Config\DataConfig\V4\845.json" />
+    <Content Include="Config\DataConfig\V4\846.json" />
+    <Content Include="Config\DataConfig\V4\847.json" />
+    <Content Include="Config\DataConfig\V4\848.json" />
+    <Content Include="Config\DataConfig\V4\849.json" />
+    <Content Include="Config\DataConfig\V4\850.json" />
+    <Content Include="Config\DataConfig\V4\851.json" />
+    <Content Include="Config\DataConfig\V4\852.json" />
+    <Content Include="Config\DataConfig\V4\853.json" />
+    <Content Include="Config\DataConfig\V4\854.json" />
+    <Content Include="Config\DataConfig\V4\855.json" />
+    <Content Include="Config\DataConfig\V4\856.json" />
+    <Content Include="Config\DataConfig\V4\857.json" />
+    <Content Include="Config\DataConfig\V4\858.json" />
+    <Content Include="Config\DataConfig\V4\860.json" />
+    <Content Include="Config\DataConfig\V4\861.json" />
+    <Content Include="Config\DataConfig\V4\862.json" />
+    <Content Include="Config\DataConfig\V4\863.json" />
+    <Content Include="Config\DataConfig\V4\864.json" />
+    <Content Include="Config\DataConfig\V4\865.json" />
+    <Content Include="Config\DataConfig\V4\866.json" />
+    <Content Include="Config\DataConfig\V4\867.json" />
+    <Content Include="Config\DataConfig\V4\868.json" />
+    <Content Include="Config\DataConfig\V4\869.json" />
+    <Content Include="Config\DataConfig\V4\870.json" />
+    <Content Include="Config\DataConfig\V4\871.json" />
+    <Content Include="Config\DataConfig\V4\872.json" />
+    <Content Include="Config\DataConfig\V4\873.json" />
+    <Content Include="Config\DataConfig\V4\874.json" />
+    <Content Include="Config\DataConfig\V4\875.json" />
+    <Content Include="Config\DataConfig\V4\876.json" />
+    <Content Include="Config\DataConfig\V4\877.json" />
+    <Content Include="Config\DataConfig\V4\878.json" />
+    <Content Include="Config\DataConfig\V4\879.json" />
+    <Content Include="Config\DataConfig\V4\880.json" />
+    <Content Include="Config\DataConfig\V4\881.json" />
+    <Content Include="Config\DataConfig\V4\882.json" />
+    <Content Include="Config\DataConfig\V4\883.json" />
+    <Content Include="Config\DataConfig\V4\884.json" />
+    <Content Include="Config\DataConfig\V4\885.json" />
+    <Content Include="Config\DataConfig\V4\886.json" />
+    <Content Include="Config\DataConfig\V4\887.json" />
+    <Content Include="Config\DataConfig\V4\888.json" />
+    <Content Include="Config\DataConfig\V4\889.json" />
+    <Content Include="Config\DataConfig\V4\890.json" />
+    <Content Include="Config\DataConfig\V4\891.json" />
+    <Content Include="Config\DataConfig\V4\892.json" />
+    <Content Include="Config\DataConfig\V4\893.json" />
+    <Content Include="Config\DataConfig\V4\894.json" />
+    <Content Include="Config\DataConfig\V4\895.json" />
+    <Content Include="Config\DataConfig\V4\896.json" />
+    <Content Include="Config\DataConfig\V4\897.json" />
+    <Content Include="Config\DataConfig\V4\898.json" />
+    <Content Include="Config\DataConfig\V4\899.json" />
+    <Content Include="Config\DataConfig\V4\900.json" />
+    <Content Include="Config\DataConfig\V4\901.json" />
+    <Content Include="Config\DataConfig\V4\902.json" />
+    <Content Include="Config\DataConfig\V4\903.json" />
+    <Content Include="Config\DataConfig\V4\904.json" />
+    <Content Include="Config\DataConfig\V4\905.json" />
+    <Content Include="Config\DataConfig\V4\906.json" />
+    <Content Include="Config\DataConfig\V4\907.json" />
+    <Content Include="Config\DataConfig\V4\908.json" />
+    <Content Include="Config\DataConfig\V4\909.json" />
+    <Content Include="Config\DataConfig\V4\9101.json" />
+    <Content Include="Config\DataConfig\V4\9102.json" />
+    <Content Include="Config\DataConfig\V4\9103.json" />
+    <Content Include="Config\DataConfig\V4\9104.json" />
+    <Content Include="Config\DataConfig\V4\9105.json" />
+    <Content Include="Config\DataConfig\V4\9106.json" />
+    <Content Include="Config\DataConfig\V4\9107.json" />
+    <Content Include="Config\DataConfig\V4\9108.json" />
+    <Content Include="Config\DataConfig\V4\9109.json" />
+    <Content Include="Config\DataConfig\V4\9110.json" />
+    <Content Include="Config\DataConfig\V4\9111.json" />
+    <Content Include="Config\DataConfig\V4\9112.json" />
+    <Content Include="Config\DataConfig\V4\9113.json" />
+    <Content Include="Config\DataConfig\V4\9114.json" />
+    <Content Include="Config\DataConfig\V4\9115.json" />
+    <Content Include="Config\DataConfig\V4\9116.json" />
+    <Content Include="Config\DataConfig\V4\9117.json" />
+    <Content Include="Config\DataConfig\V4\9118.json" />
+    <Content Include="Config\DataConfig\V4\9201.json" />
+    <Content Include="Config\DataConfig\V4\9202.json" />
+    <Content Include="Config\DataConfig\V4\9203.json" />
+    <Content Include="Config\DataConfig\V4\9204.json" />
+    <Content Include="Config\DataConfig\V4\9205.json" />
+    <Content Include="Config\DataConfig\V4\9206.json" />
+    <Content Include="Config\DataConfig\V4\9207.json" />
+    <Content Include="Config\DataConfig\V4\9208.json" />
+    <Content Include="Config\DataConfig\V4\9209.json" />
+    <Content Include="Config\DataConfig\V4\9210.json" />
+    <Content Include="Config\DataConfig\V4\9211.json" />
+    <Content Include="Config\DataConfig\V4\9212.json" />
+    <Content Include="Config\DataConfig\V4\9213.json" />
+    <Content Include="Config\DataConfig\V4\9214.json" />
+    <Content Include="Config\DataConfig\V4\9215.json" />
+    <Content Include="Config\DataConfig\V4\9216.json" />
+    <Content Include="Config\DataConfig\V4\9217.json" />
+    <Content Include="Config\DataConfig\V4\9218.json" />
+    <Content Include="Config\DataConfig\V4\9219.json" />
+    <Content Include="Config\DataConfig\V4\9301.json" />
+    <Content Include="Config\DataConfig\V4\9302.json" />
+    <Content Include="Config\DataConfig\V4\9303.json" />
+    <Content Include="Config\DataConfig\V4\9304.json" />
+    <Content Include="Config\DataConfig\V4\9305.json" />
+    <Content Include="Config\DataConfig\V4\9306.json" />
+    <Content Include="Config\DataConfig\V4\9307.json" />
+    <Content Include="Config\DataConfig\V4\9308.json" />
+    <Content Include="Config\DataConfig\V4\9309.json" />
+    <Content Include="Config\DataConfig\V4\9310.json" />
+    <Content Include="Config\DataConfig\V4\9311.json" />
+    <Content Include="Config\DataConfig\V4\9312.json" />
+    <Content Include="Config\DataConfig\V4\9313.json" />
+    <Content Include="Config\DataConfig\V4\9314.json" />
+    <Content Include="Config\DataConfig\V4\9315.json" />
+    <Content Include="Config\DataConfig\V4\9316.json" />
+    <Content Include="Config\DataConfig\V4\9317.json" />
+    <Content Include="Config\DataConfig\V4\9318.json" />
+    <Content Include="Config\DataConfig\V4\9319.json" />
+    <Content Include="Config\DataConfig\V4\9400.json" />
+    <Content Include="Config\DataConfig\V4\9401.json" />
+    <Content Include="Config\DataConfig\V4\9402.json" />
+    <Content Include="Config\DataConfig\V4\9403.json" />
+    <Content Include="Config\DataConfig\V4\9404.json" />
+    <Content Include="Config\DataConfig\V4\9405.json" />
+    <Content Include="Config\DataConfig\V4\9406.json" />
+    <Content Include="Config\DataConfig\V4\9407.json" />
+    <Content Include="Config\DataConfig\V4\9408.json" />
+    <Content Include="Config\DataConfig\V4\9409.json" />
+    <Content Include="Config\DataConfig\V4\9410.json" />
+    <Content Include="Config\DataConfig\V4\9411.json" />
+    <Content Include="Config\DataConfig\V4\9412.json" />
+    <Content Include="Config\DataConfig\V4\9413.json" />
+    <Content Include="Config\DataConfig\V4\9414.json" />
+    <Content Include="Config\DataConfig\V4\9415.json" />
+    <Content Include="Config\DataConfig\V4\9416.json" />
+    <Content Include="Config\DataConfig\V4\9417.json" />
+    <Content Include="Config\DataConfig\V4\9418.json" />
+    <Content Include="Config\DataConfig\V4\9419.json" />
+    <Content Include="Config\DataConfig\V4\9420.json" />
+    <Content Include="Config\DataConfig\V4\9421.json" />
+    <Content Include="Config\DataConfig\V4\9422.json" />
+    <Content Include="Config\DataConfig\V4\9423.json" />
+    <Content Include="Config\DataConfig\V4\9424.json" />
+    <Content Include="Config\DataConfig\V4\9425.json" />
+    <Content Include="Config\DataConfig\V4\9426.json" />
+    <Content Include="Config\DataConfig\V4\9427.json" />
+    <Content Include="Config\DataConfig\V4\9428.json" />
+    <Content Include="Config\DataConfig\V4\9429.json" />
+    <Content Include="Config\DataConfig\V4\9430.json" />
+    <Content Include="Config\DataConfig\V4\9431.json" />
+    <Content Include="Config\DataConfig\V4\9432.json" />
+    <Content Include="Config\DataConfig\V4\9433.json" />
+    <Content Include="Config\DataConfig\V4\9434.json" />
+    <Content Include="Config\DataConfig\V4\9435.json" />
+    <Content Include="Config\DataConfig\V4\9436.json" />
+    <Content Include="Config\DataConfig\V4\9437.json" />
+    <Content Include="Config\DataConfig\V4\9438.json" />
+    <Content Include="Config\DataConfig\V4\9439.json" />
+    <Content Include="Config\DataConfig\V4\9500.json" />
+    <Content Include="Config\DataConfig\V4\9501.json" />
+    <Content Include="Config\DataConfig\V4\9502.json" />
+    <Content Include="Config\DataConfig\V4\9503.json" />
+    <Content Include="Config\DataConfig\V4\9504.json" />
+    <Content Include="Config\DataConfig\V4\9505.json" />
+    <Content Include="Config\DataConfig\V4\9506.json" />
+    <Content Include="Config\DataConfig\V4\9507.json" />
+    <Content Include="Config\DataConfig\V4\9508.json" />
+    <Content Include="Config\DataConfig\V4\9509.json" />
+    <Content Include="Config\DataConfig\V4\9510.json" />
+    <Content Include="Config\DataConfig\V4\9511.json" />
+    <Content Include="Config\DataConfig\V4\9512.json" />
+    <Content Include="Config\DataConfig\V4\9513.json" />
+    <Content Include="Config\DataConfig\V4\9514.json" />
+    <Content Include="Config\DataConfig\V4\9515.json" />
+    <Content Include="Config\DataConfig\V4\9516.json" />
+    <Content Include="Config\DataConfig\V4\9517.json" />
+    <Content Include="Config\DataConfig\V4\9518.json" />
+    <Content Include="Config\DataConfig\V4\9519.json" />
+    <Content Include="Config\DataConfig\V4\9520.json" />
+    <Content Include="Config\DataConfig\V4\9521.json" />
+    <Content Include="Config\DataConfig\V4\9522.json" />
+    <Content Include="Config\DataConfig\V4\9523.json" />
+    <Content Include="Config\DataConfig\V4\9524.json" />
+    <Content Include="Config\DataConfig\V4\9525.json" />
+    <Content Include="Config\DataConfig\V4\9526.json" />
+    <Content Include="Config\DataConfig\V4\9527.json" />
+    <Content Include="Config\DataConfig\V4\9528.json" />
+    <Content Include="Config\DataConfig\V4\9529.json" />
+    <Content Include="Config\DataConfig\V4\9530.json" />
+    <Content Include="Config\DataConfig\V4\9531.json" />
+    <Content Include="Config\DataConfig\V4\9532.json" />
+    <Content Include="Config\DataConfig\V4\9533.json" />
+    <Content Include="Config\DataConfig\V4\9534.json" />
+    <Content Include="Config\DataConfig\V4\9535.json" />
+    <Content Include="Config\DataConfig\V4\9536.json" />
+    <Content Include="Config\DataConfig\V4\9537.json" />
+    <Content Include="Config\DataConfig\V4\9538.json" />
+    <Content Include="Config\DataConfig\V4\9539.json" />
+    <Content Include="Config\DataConfig\V4\9600.json" />
+    <Content Include="Config\DataConfig\V4\9601.json" />
+    <Content Include="Config\DataConfig\V4\9602.json" />
+    <Content Include="Config\DataConfig\V4\9603.json" />
+    <Content Include="Config\DataConfig\V4\9604.json" />
+    <Content Include="Config\DataConfig\V4\9605.json" />
+    <Content Include="Config\DataConfig\V4\9606.json" />
+    <Content Include="Config\DataConfig\V4\9607.json" />
+    <Content Include="Config\DataConfig\V4\9608.json" />
+    <Content Include="Config\DataConfig\V4\9609.json" />
+    <Content Include="Config\DataConfig\V4\9610.json" />
+    <Content Include="Config\DataConfig\V4\9611.json" />
+    <Content Include="Config\DataConfig\V4\9612.json" />
+    <Content Include="Config\DataConfig\V4\9613.json" />
+    <Content Include="Config\DataConfig\V4\9614.json" />
+    <Content Include="Config\DataConfig\V4\9615.json" />
+    <Content Include="Config\DataConfig\V4\9616.json" />
+    <Content Include="Config\DataConfig\V4\9617.json" />
+    <Content Include="Config\DataConfig\V4\9618.json" />
+    <Content Include="Config\DataConfig\V4\9619.json" />
+    <Content Include="Config\DataConfig\V4\9620.json" />
+    <Content Include="Config\DataConfig\V4\9621.json" />
+    <Content Include="Config\DataConfig\V4\9622.json" />
+    <Content Include="Config\DataConfig\V4\9623.json" />
+    <Content Include="Config\DataConfig\V4\9624.json" />
+    <Content Include="Config\DataConfig\V4\9625.json" />
+    <Content Include="Config\DataConfig\V4\9626.json" />
+    <Content Include="Config\DataConfig\V4\9627.json" />
+    <Content Include="Config\DataConfig\V4\9628.json" />
+    <Content Include="Config\DataConfig\V4\9629.json" />
+    <Content Include="Config\DataConfig\V4\9630.json" />
+    <Content Include="Config\DataConfig\V4\9631.json" />
+    <Content Include="Config\DataConfig\V4\9632.json" />
+    <Content Include="Config\DataConfig\V4\9633.json" />
+    <Content Include="Config\DataConfig\V4\9634.json" />
+    <Content Include="Config\DataConfig\V4\9635.json" />
+    <Content Include="Config\DataConfig\V4\9636.json" />
+    <Content Include="Config\DataConfig\V4\9637.json" />
+    <Content Include="Config\DataConfig\V4\9638.json" />
+    <Content Include="Config\DataConfig\V4\9639.json" />
+    <Content Include="NLog.config" />
+    <Content Include="Config\DataConfig\V4\100.json" />
+    <Content Include="Config\DataConfig\V4\101.json" />
+    <Content Include="Config\DataConfig\V4\102.json" />
+    <Content Include="Config\DataConfig\V4\103.json" />
+    <Content Include="Config\DataConfig\V4\104.json" />
+    <Content Include="Config\DataConfig\V4\105.json" />
+    <Content Include="Config\DataConfig\V4\106.json" />
+    <Content Include="Config\DataConfig\V4\107.json" />
+    <Content Include="Config\DataConfig\V4\108.json" />
+    <Content Include="Config\DataConfig\V4\109.json" />
+    <Content Include="Config\DataConfig\V4\110.json" />
+    <Content Include="Config\DataConfig\V4\111.json" />
+    <Content Include="Config\DataConfig\V4\112.json" />
+    <Content Include="Config\DataConfig\V4\113.json" />
+    <Content Include="Config\DataConfig\V4\114.json" />
+    <Content Include="Config\DataConfig\V4\115.json" />
+    <Content Include="Config\DataConfig\V4\117.json" />
+    <Content Include="Config\DataConfig\V4\118.json" />
+    <Content Include="Config\DataConfig\V4\208.json" />
+    <Content Include="Config\DataConfig\V4\212.json" />
+    <Content Include="Config\DataConfig\V4\213.json" />
+    <Content Include="Config\DataConfig\V4\300.json" />
+    <Content Include="Config\DataConfig\V4\302.json" />
+    <Content Include="Config\DataConfig\V4\303.json" />
+    <Content Include="Config\DataConfig\V4\304.json" />
+    <Content Include="Config\DataConfig\V4\305.json" />
+    <Content Include="Config\DataConfig\V4\306.json" />
+    <Content Include="Config\DataConfig\V4\400.json" />
+    <Content Include="Config\DataConfig\V4\402.json" />
+    <Content Include="Config\DataConfig\V4\404.json" />
+    <Content Include="Config\DataConfig\V4\1000.json" />
+    <Content Include="Config\DataConfig\V4\1001.json" />
+    <Content Include="Config\DataConfig\V4\1050.json" />
+    <Content Include="Config\DataConfig\V4\1051.json" />
+    <Content Include="Config\DataConfig\V4\1052.json" />
+    <Content Include="Config\DataConfig\V4\1104.json" />
+    <Content Include="Config\DataConfig\V4\1105.json" />
+    <Content Include="Config\DataConfig\V4\1106.json" />
+    <Content Include="Config\DataConfig\V4\1107.json" />
+    <Content Include="Config\DataConfig\V4\1108.json" />
+    <Content Include="Config\DataConfig\V4\1109.json" />
+    <Content Include="Config\DataConfig\V4\1110.json" />
+    <Content Include="Config\DataConfig\V4\1111.json" />
+    <Content Include="Config\DataConfig\V4\1112.json" />
+    <Content Include="Config\DataConfig\V4\1113.json" />
+    <Content Include="Config\DataConfig\V4\1114.json" />
+    <Content Include="Config\DataConfig\V4\1115.json" />
+    <Content Include="Config\DataConfig\V4\1116.json" />
+    <Content Include="Config\DataConfig\V4\1117.json" />
+    <Content Include="Config\DataConfig\V4\1118.json" />
+    <Content Include="Config\DataConfig\V4\1119.json" />
+    <Content Include="Config\DataConfig\V4\1120.json" />
+    <Content Include="Config\DataConfig\V4\1121.json" />
+    <Content Include="Config\DataConfig\V4\1800.json" />
+    <Content Include="Config\DataConfig\V4\1801.json" />
+    <Content Include="Config\DataConfig\V4\1900.json" />
+    <Content Include="Config\DataConfig\V4\554.json" />
+    <Content Include="Config\DataConfig\V4\556.json" />
+    <Content Include="Config\DataConfig\V4\557.json" />
+    <Content Include="Config\DataConfig\V4\600.json" />
+    <Content Include="Config\DataConfig\V4\601.json" />
+    <Content Include="Config\DataConfig\V4\650.json" />
+    <Content Include="Config\DataConfig\V4\651.json" />
+    <Content Include="Config\DataConfig\V4\652.json" />
+    <Content Include="Config\DataConfig\V4\653.json" />
+    <Content Include="Config\DataConfig\V4\654.json" />
+    <Content Include="Config\DataConfig\V4\655.json" />
+    <Content Include="Config\DataConfig\V4\656.json" />
+    <Content Include="Config\DataConfig\V4\657.json" />
+    <Content Include="Config\DataConfig\V4\658.json" />
+    <Content Include="Config\DataConfig\V4\659.json" />
+    <Content Include="Config\DataConfig\V4\660.json" />
+    <Content Include="Config\DataConfig\V4\700.json" />
+    <Content Include="Config\DataConfig\V4\701.json" />
+    <Content Include="Config\DataConfig\V4\750.json" />
+    <Content Include="Config\DataConfig\V4\751.json" />
+    <Content Include="Config\DataConfig\V4\752.json" />
+    <Content Include="Config\DataConfig\V4\753.json" />
+    <Content Include="Config\DataConfig\V4\9021.json" />
+    <Content Include="Config\DataConfig\V4\9640.json" />
+    <Content Include="Config\DataConfig\V4\9119.json" />
+    <Content Include="Config\DataConfig\V4\9220.json" />
+    <Content Include="Config\DataConfig\V4\9320.json" />
+    <Content Include="Config\DataConfig\V4\9440.json" />
+    <Content Include="Config\DataConfig\V4\9540.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Businesses\GGZY.DataV4Service\GGZY.DataV4Service.csproj">
+      <Project>{638f5626-e6f6-42a0-abce-82baece0086f}</Project>
+      <Name>GGZY.DataV4Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56693</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44324/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties config_4dataconfig_4v4_49202_1json__JsonSchema=" " config_4dataconfig_4v4_49433_1json__JsonSchema="http://json-schema.org/draft-04/schema" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

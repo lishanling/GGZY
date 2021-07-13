@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5820D069-9037-481E-B01A-C91AC7EBD130}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GGZY.SchedulerService</RootNamespace>
+    <AssemblyName>GGZY.SchedulerService</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\GHOST\Desktop\版本发布\统一任务调度中心\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GGZY.SchedulerService.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=3.0.7.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Quartz.3.0.7\lib\net452\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=4.2.1.215, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Topshelf.4.2.1\lib\net452\Topshelf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JobFactory\AssemblyQualifiedTypeNameConverter.cs" />
+    <Compile Include="JobFactory\JobCollection.cs" />
+    <Compile Include="JobFactory\JobSettings.cs" />
+    <Compile Include="JobFactory\JobWrapper.cs" />
+    <Compile Include="MainService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Log\log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Businesses\GGZY.Services\GGZY.Services.csproj">
+      <Project>{d58153cc-37d4-41b2-bd52-570ebcfe80f0}</Project>
+      <Name>GGZY.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Businesses\GGZYJD.DbEntity\GGZYJD.DbEntity.csproj">
+      <Project>{6d6bb58c-e602-42aa-9108-38135dae9889}</Project>
+      <Name>GGZYJD.DbEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Dos.ORM\Dos.ORM.csproj">
+      <Project>{4bef1983-f275-4807-96ea-25b973bd6e94}</Project>
+      <Name>Dos.ORM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\GGZY.Core\GGZY.Core.csproj">
+      <Project>{e910c497-a03a-49e5-bfc5-d4f179673c2e}</Project>
+      <Name>GGZY.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.AfcProjectSupervise\GGZY.Scheduler.AfcProjectSupervise.csproj">
+      <Project>{a9c8a1fe-227b-40a1-b588-53265fce1cd1}</Project>
+      <Name>GGZY.Scheduler.AfcProjectSupervise</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.BeianService\GGZY.Scheduler.BeianService.csproj">
+      <Project>{cabf2acf-fe1d-4fe1-b846-c44784b40da7}</Project>
+      <Name>GGZY.Scheduler.BeianService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.Clue01Service\GGZY.Scheduler.Clue01Service.csproj">
+      <Project>{e36a053d-54a3-404a-ab95-52103e305e0a}</Project>
+      <Name>GGZY.Scheduler.Clue01Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.Clue02Service\GGZY.Scheduler.Clue02Service.csproj">
+      <Project>{a31f1145-c8d5-4603-9a46-9bd4961347ec}</Project>
+      <Name>GGZY.Scheduler.Clue02Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.GB01Service\GGZY.Scheduler.GB01Service.csproj">
+      <Project>{4f459b6d-eb4f-413e-8b10-6e594157f7e2}</Project>
+      <Name>GGZY.Scheduler.GB01Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.HardwareService\GGZY.Scheduler.HardwareService.csproj">
+      <Project>{bb4c4e93-d856-4bab-8d48-f03c0316f266}</Project>
+      <Name>GGZY.Scheduler.HardwareService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.LD11Service\GGZY.Scheduler.LD11Service.csproj">
+      <Project>{ab78960a-3105-40a7-9ce9-be3f17242e03}</Project>
+      <Name>GGZY.Scheduler.LD11Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.LD12Service\GGZY.Scheduler.LD12Service.csproj">
+      <Project>{a6478517-8008-43ab-b8f9-7e42bdf36196}</Project>
+      <Name>GGZY.Scheduler.LD12Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.LD13Service\GGZY.Scheduler.LD13Service.csproj">
+      <Project>{2503a418-fa30-48cf-853e-b30d8d18fc56}</Project>
+      <Name>GGZY.Scheduler.LD13Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.SupervisionAgainService\GGZY.Scheduler.SupervisionAgainService.csproj">
+      <Project>{ccfb01fe-d7f2-4917-97c7-fbd365dd33fb}</Project>
+      <Name>GGZY.Scheduler.SupervisionAgainService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.SupervisionService\GGZY.Scheduler.SupervisionService.csproj">
+      <Project>{52ec0d46-ef75-4cb1-a6db-f336a870bf68}</Project>
+      <Name>GGZY.Scheduler.SupervisionService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.WGCJ01Service\GGZY.Scheduler.WGCJ01Service.csproj">
+      <Project>{0f0c458b-3647-44b1-a44b-53338604c819}</Project>
+      <Name>GGZY.Scheduler.WGCJ01Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZY.Scheduler.ZxtsSupervise\GGZY.Scheduler.ZxtsSupervise.csproj">
+      <Project>{99ee9a16-b69c-42d3-a832-4c5841ddd478}</Project>
+      <Name>GGZY.Scheduler.ZxtsSupervise</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="初始化.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,416 @@
+{
+  "DataNo": "507",
+  "DataName": "TENDER_LIST",
+  "DataCnName": "投标人名单",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        },
+        {
+          "ValidatorName": "TenderProjectCodeMatch",
+          "TenderProjectTableName": "TENDER_PROJECT"
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODE",
+      "CnName": "标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 23
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_NAME",
+      "CnName": "投标人名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 300
+        }
+      ]
+    },
+    {
+      "Name": "IS_LOST",
+      "CnName": "是否失信人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "TRUE_OR_FALSE"
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_CODE_TYPE",
+      "CnName": "投标人类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "2001"
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_ORG_CODE",
+      "CnName": "投标人代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_ROLE",
+      "CnName": "投标人角色",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 2
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "26"
+        }
+      ]
+    },
+    {
+      "Name": "BID_MANAGER",
+      "CnName": "投标单位项目负责人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "PM_CODE",
+      "CnName": "项目负责人证件号码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "PM_CERTIFICATES",
+      "CnName": "项目负责人相关证书和编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "IS_COMMIT_MARGIN",
+      "CnName": "是否提交保证金",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "TRUE_OR_FALSE"
+        }
+      ]
+    },
+    {
+      "Name": "MARGIN_PAY_FORM",
+      "CnName": "保证金递交方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "29"
+        }
+      ]
+    },
+    {
+      "Name": "PRICE_FORM_CODE",
+      "CnName": "价款形式代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "PRICE_FORM_CODE"
+        }
+      ]
+    },
+    {
+      "Name": "OTHER_BID_PRICE",
+      "CnName": "费率或其它类型报价",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "MARGIN_RECEIVE_TIME",
+      "CnName": "保证金递交时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "UNION_ENTERPRISE_NAME",
+      "CnName": "联合体名称（如有）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 1000
+        }
+      ]
+    },
+    {
+      "Name": "UNION_ORGAN_SET_CODE",
+      "CnName": "联合体组织机构代码证（联合体招标时填写）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "UNION_CONTACT_NAME",
+      "CnName": "联合体联系人（如有）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 3000
+        }
+      ]
+    },
+    {
+      "Name": "UNION_CONTACT_PHONE",
+      "CnName": "联合体联系电话（如有）",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_INFO_VERSION",
+      "CnName": "投标人信息版本",
+      "Validators": [
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "BID_PRICE",
+      "CnName": "投标报价金额",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "PRICE_CURRENCY",
+      "CnName": "投标报价币种",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    },
+    {
+      "Name": "PRICE_UNIT",
+      "CnName": "投标报价单位",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "PRICE_UNIT"
+        }
+      ]
+    },
+    {
+      "Name": "TIME_LIMIT",
+      "CnName": "投标工期",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 4
+        }
+      ]
+    },
+    {
+      "Name": "CHECKIN_TIME",
+      "CnName": "投标文件递交时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_REGION_CODE",
+      "CnName": "投标人企业注册所在地",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        },
+        {
+          "ValidatorName": "AreaCodeMatch",
+          "Begin": 0
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_PROPERTY",
+      "CnName": "投标人企业性质",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "10005"
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_OPERATION_PERSON",
+      "CnName": "投标操作人员",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        },
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_OPERATION_PERSON_ID",
+      "CnName": "投标操作人员身份证",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_OPERATION_PERSON_CON",
+      "CnName": "投标操作人联系方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    }
+  ],
+  "Validators": [],
+  "RepeatCols": [ "BIDDER_NAME", "TENDER_PROJECT_CODE", "BID_SECTION_CODE", "BID_MANAGER" ]
+}

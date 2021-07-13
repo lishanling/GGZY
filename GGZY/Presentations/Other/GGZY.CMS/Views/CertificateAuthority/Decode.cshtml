@@ -1,0 +1,132 @@
+﻿@using GGZY.Services.Infrastructure.Helper
+@{
+    ViewBag.Title = "CA解密";
+    Layout = "~/Views/Shared/_LayoutBody.cshtml";
+    var m = DateTime.Now.Minute;
+    var guid = Guid.NewGuid().ToString("N");
+    var uploadUrl = string.Empty;
+    if (Request.Url != null)
+    {
+        var baseUrl = Request.Url.ToString().Replace(Request.Url.AbsolutePath, "");
+
+        uploadUrl = baseUrl + Url.Action("DecodeUpload", "CertificateAuthority", new { guid });
+
+        if (!Request.IsLocal||Request.Url.ToString().IndexOf("114.115.162.77")>-1)
+        {
+            uploadUrl = uploadUrl.Replace(string.Format(":{0}", Request.Url.Port), "");
+        }
+    }
+    var accept = ConfigHelper.AppSettings.AcceptImg.Replace("*", "");
+
+}
+@section scripts{
+    <script src="~/static/common/js/jquery.base64.js"></script>
+
+    <script src="~/static/modules/CertificateAuthority/Decode.js"></script>
+
+}
+@section styles
+{
+    <style>
+        #decode_base64_txt, #encode_base64_txt {
+            word-wrap: break-word;
+            /*max-width: 80%*/
+        }
+    </style>
+}
+
+<input type="hidden" name="guid" id="guid" value="@guid" />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">CA解密</h3>
+    </div>
+    <div class="panel-body">
+        <div id="search-collapse-decode" class="collapse" style="display: block">
+            <div class="accordion-inner">
+                <div class="form form-horizontal well clearfix">
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        1 上传需要解密的文件
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        2 点击开始解密
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        3 通过消息框 打开 统一选择客户端
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        4 插入CA锁
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        5 点击启动已安装的CA客户端<span style="color: red">（启动不成功，需要重新安装）</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        6 CA客户端加密成功，自动关闭
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        7 点击确定 <span style="color: blue">解密成功，会自动下载或者预览解密后的文件</span>
+                    </div>
+
+                </div>
+
+                <form id="searchForm-decode" class="form form-horizontal well clearfix" action="" method="post">
+
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        <label class="label-item single-overflow pull-left" title="需要解密的文件地址">需要解密的文件地址 </label>
+                        <input id="url" name="url" class=" form-control" type="text" value="" maxlength="257" placeholder="" autocomplete="off" readonly="readonly" />
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                        <label class="label-item single-overflow pull-left" title="上传加密文件">上传加密文件 </label>
+                        <input id="file" name="file" type="file" value="" onchange="uploadFile(this)" accept="@accept"/>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <label class="label-item single-overflow pull-left" title="解密数字信封文件">解密数字信封文件 </label>
+                        <input id="operation" name="operation" class=" form-control" type="text" value="unenvelope_file" maxlength="257" placeholder="" autocomplete="off" readonly="readonly" />
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <label class="label-item single-overflow pull-left" title="解密后的文件上传地址">解密后的文件上传地址 </label>
+                        <input id="upload_url" name="upload_url" class=" form-control" type="text" value="@(uploadUrl)" maxlength="257" placeholder="" autocomplete="off" readonly="readonly" />
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6" style="display: none">
+                        <label class="label-item single-overflow pull-left" title="自定义参数">自定义参数(完成解密后原文回传到服务器) </label>
+                        <input id="params" name="params" class=" form-control" type="text" value="@(DateTime.Now.ToString("yyyyMMddHHmmss"))" maxlength="257" placeholder="" autocomplete="off" />
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div style="margin-top: 26px">
+                            <a id="decode" class="btn btn-primary btn-rounded  btn-bordered btn-sm"><i class="fa fa-unlock"></i>开始解密</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="panel panel-primary" id="panel-decode" style="display: none">
+    <div class="panel-heading">
+        <h3 class="panel-title">CA解密</h3>
+    </div>
+    <div class="panel-body">
+        <form id="inputForm" class="form-horizontal" action="" method="post">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="width-15 active">
+                            <label class="pull-right" title="明文"><font color="red"> </font>明文:</label>
+                        </td>
+                        <td style="width: 85%">
+                            <textarea id="decode_txt" style="width: 100%; height: 100px; resize: none;" readonly="readonly"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="width-15 active">
+                            <label class="pull-right" title="密文"><font color="red"> </font>密文:</label>
+                        </td>
+                        <td style="width: 85%">
+                            <textarea id="decode_base64_txt" style="width: 100%; height: 200px; resize: none;" readonly="readonly"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

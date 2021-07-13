@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14F95AA6-1AC9-4E4B-8B0D-DF1A87965B45}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GGZY.JianDu.Portal</RootNamespace>
+    <AssemblyName>GGZY.JianDu.Portal</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GGZY.JianDu\Controllers\JdProjectController.cs">
+      <Link>Controllers\JdProjectController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\OpertionRecordController.cs">
+      <Link>Controllers\OpertionRecordController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\ProjectController.tool.cs">
+      <Link>Controllers\ProjectController.tool.cs</Link>
+      <DependentUpon>JdProjectController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\PtZxtsController.cs">
+      <Link>Controllers\PtZxtsController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\PtZxtsController.tool.cs">
+      <Link>Controllers\PtZxtsController.tool.cs</Link>
+      <DependentUpon>PtZxtsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordBiddingWriteController.cs">
+      <Link>Controllers\RecordBiddingWriteController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordBiddingWriteController.tool.cs">
+      <Link>Controllers\RecordBiddingWriteController.tool.cs</Link>
+      <DependentUpon>RecordBiddingWriteController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordBiddocNormalController.cs">
+      <Link>Controllers\RecordBiddocNormalController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordBiddocNormalController.tool.cs">
+      <Link>Controllers\RecordBiddocNormalController.tool.cs</Link>
+      <DependentUpon>RecordBiddocNormalController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordClassifyNormalController.cs">
+      <Link>Controllers\RecordClassifyNormalController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordClassifyNormalController.tool.cs">
+      <Link>Controllers\RecordClassifyNormalController.tool.cs</Link>
+      <DependentUpon>RecordClassifyNormalController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordContractController.cs">
+      <Link>Controllers\RecordContractController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordContractController.tool.cs">
+      <Link>Controllers\RecordContractController.tool.cs</Link>
+      <DependentUpon>RecordContractController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordCreditDeductionController.cs">
+      <Link>Controllers\RecordCreditDeductionController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordCreditDeductionController.tool.cs">
+      <Link>Controllers\RecordCreditDeductionController.tool.cs</Link>
+      <DependentUpon>RecordCreditDeductionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordHandleResultController.cs">
+      <Link>Controllers\RecordHandleResultController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordHandleResultController.tool.cs">
+      <Link>Controllers\RecordHandleResultController.tool.cs</Link>
+      <DependentUpon>RecordHandleResultController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordResidentialBiddocController.cs">
+      <Link>Controllers\RecordResidentialBiddocController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordResidentialBiddocController.tool.cs">
+      <Link>Controllers\RecordResidentialBiddocController.tool.cs</Link>
+      <DependentUpon>RecordResidentialBiddocController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordReviewController.cs">
+      <Link>Controllers\RecordReviewController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordReviewController.tool.cs">
+      <Link>Controllers\RecordReviewController.tool.cs</Link>
+      <DependentUpon>RecordReviewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordWrittenController.cs">
+      <Link>Controllers\RecordWrittenController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\RecordWrittenController.tool.cs">
+      <Link>Controllers\RecordWrittenController.tool.cs</Link>
+      <DependentUpon>RecordWrittenController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\SectionController.cs">
+      <Link>Controllers\SectionController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\TAfcProjectController.cs">
+      <Link>Controllers\TAfcProjectController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\TAfcProjectController.tool.cs">
+      <Link>Controllers\TAfcProjectController.tool.cs</Link>
+      <DependentUpon>TAfcProjectController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\TenderProjectController.cs">
+      <Link>Controllers\TenderProjectController.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Controllers\TenderProjectController.tool.cs">
+      <Link>Controllers\TenderProjectController.tool.cs</Link>
+      <DependentUpon>TenderProjectController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Models\RECORD_CREDIT_DEDUCTION_REQUEST.cs">
+      <Link>Models\RECORD_CREDIT_DEDUCTION_REQUEST.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Models\RECORD_WRITTEN_Request.cs">
+      <Link>Models\RECORD_WRITTEN_Request.cs</Link>
+    </Compile>
+    <Compile Include="..\GGZY.JianDu\Models\TENDER_PROJECT_REQUEST.cs">
+      <Link>Models\TENDER_PROJECT_REQUEST.cs</Link>
+    </Compile>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AfcRecordController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\ComplaintController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LinkageSupervisionController.cs" />
+    <Compile Include="Controllers\PrincipalController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ProjectSupervisionController.cs" />
+    <Compile Include="Controllers\SocialSupervisionController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\JdAccountController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="这是公共资源监督门户站点源码.txt" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Infrastructure\Models\" />
+    <Folder Include="Views\Cache\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Log\log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Templates\投诉书模板.docx" />
+    <Content Include="Infrastructure\Config\ueditor_config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfileZhou.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Businesses\GGZY.Services\GGZY.Services.csproj">
+      <Project>{d58153cc-37d4-41b2-bd52-570ebcfe80f0}</Project>
+      <Name>GGZY.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Businesses\GGZYFW.DbEntity\GGZYFW.DbEntity.csproj">
+      <Project>{45b1992f-6a13-49bb-aee3-e5ee708756aa}</Project>
+      <Name>GGZYFW.DbEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Businesses\GGZYJD.DbEntity\GGZYJD.DbEntity.csproj">
+      <Project>{6d6bb58c-e602-42aa-9108-38135dae9889}</Project>
+      <Name>GGZYJD.DbEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Dos.ORM\Dos.ORM.csproj">
+      <Project>{4bef1983-f275-4807-96ea-25b973bd6e94}</Project>
+      <Name>Dos.ORM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\GGZY.Core\GGZY.Core.csproj">
+      <Project>{e910c497-a03a-49e5-bfc5-d4f179673c2e}</Project>
+      <Name>GGZY.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Assist\PullData\PullData.csproj">
+      <Project>{4241e9d3-dfb7-41f3-b0e6-aac2515b1a2c}</Project>
+      <Name>PullData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GGZY.Framework\GGZY.Framework.csproj">
+      <Project>{a4f92c62-40b6-44fc-a00b-1cb923157103}</Project>
+      <Name>GGZY.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64925</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64925/JdPortal/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

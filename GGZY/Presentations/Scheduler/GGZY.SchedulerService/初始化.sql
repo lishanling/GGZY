@@ -1,0 +1,292 @@
+﻿CREATE OR REPLACE FORCE VIEW V_BD_HARDWARE AS 
+/*筛选出不重复的硬件信息与投标人信息组合*/
+SELECT "TENDER_PROJECT_CODE","CPU_ID","MAC_ADDRESS","HARD_DISK_SERIAL_NUMBER","BIDDER_NAME"
+FROM
+(select distinct
+                  TENDER_PROJECT_CODE,
+                  CPU_ID,
+                  MAC_ADDRESS,
+                  HARD_DISK_SERIAL_NUMBER,
+                  BIDDER_NAME
+         from
+                          BID_DOC_CHARACT_CODE T
+         WHERE
+                  T.CPU_ID !='-'
+                  AND MAC_ADDRESS !='-'
+                  AND HARD_DISK_SERIAL_NUMBER !='-'
+                  AND T.CPU_ID !='/'
+                  AND MAC_ADDRESS !='/'
+                  AND HARD_DISK_SERIAL_NUMBER !='/'
+                  AND T.CPU_ID !='无'
+                  AND MAC_ADDRESS !='无'
+                  AND HARD_DISK_SERIAL_NUMBER !='无'
+                  )
+WITH READ ONLY;
+
+
+CREATE TABLE BD_HARDWARE_MULTI AS
+/*疑似围标串标的重复硬件信息*/
+SELECT SEQ_BD_HARDWARE_MULTI.NEXTVAL AS ID,t1.TENDER_PROJECT_CODE,t1.CPU_ID,t1.MAC_ADDRESS,t1.HARD_DISK_SERIAL_NUMBER
+FROM
+         ( select
+                  TENDER_PROJECT_CODE,
+                  CPU_ID,
+                  MAC_ADDRESS,
+                  HARD_DISK_SERIAL_NUMBER,
+                  ROW_NUMBER() OVER(PARTITION BY TENDER_PROJECT_CODE,CPU_ID,MAC_ADDRESS,HARD_DISK_SERIAL_NUMBER ORDER BY
+                                    BIDDER_NAME) RN
+         from
+                  V_BD_HARDWARE t
+         ) t1
+WHERE
+         t1.RN=2;
+
+CREATE TABLE BD_HAREDWARE_RESULT AS
+SELECT BDC.TENDER_PROJECT_CODE,
+       BDC.BID_SECTION_CODE,
+       BDC.CPU_ID,
+       BDC.HARD_DISK_SERIAL_NUMBER,
+       BDC.MAC_ADDRESS,
+       BDC.BIDDER_NAME,
+       BDC.BIDDER_ORG_CODE,
+       BDC.M_TM
+  FROM BID_DOC_CHARACT_CODE BDC
+ INNER JOIN BD_HARDWARE_MULTI R
+    ON BDC.CPU_ID = R.CPU_ID
+   AND BDC.MAC_ADDRESS = R.MAC_ADDRESS
+   AND BDC.HARD_DISK_SERIAL_NUMBER = R.HARD_DISK_SERIAL_NUMBER
+   AND BDC.TENDER_PROJECT_CODE = R.TENDER_PROJECT_CODE;
+      
+
+CREATE OR REPLACE VIEW V_TENDERER_BIDDER AS 
+/*投标人在某招标人项目的中标次数*/           
+SELECT PT.TENDERER_NAME, PT.WIN_BIDDER_NAME, COUNT(1) AS COUNT
+  FROM (select P.TENDERER_NAME, T.WIN_BIDDER_NAME
+          FROM WIN_RESULT_ANNO t
+         INNER JOIN TENDER_PROJECT P
+            ON T.TENDER_PROJECT_CODE = P.TENDER_PROJECT_CODE 
+            AND T.WIN_BIDDER_NAME NOT IN ('-','无','详见公告','详见正文','/','详细请见正文','详细见正文','详细见公告内容','详见中标结果公告')
+            ) PT
+ GROUP BY PT.TENDERER_NAME, PT.WIN_BIDDER_NAME
+HAVING COUNT(*) > 3 ORDER BY COUNT DESC
+WITH READ ONLY;
+
+ CREATE OR REPLACE VIEW V_TENDERER_BIDDER_DETAIL AS
+ /*招标项目-招标人-中标人 重复中标详情*/
+ select P.TENDERER_NAME,
+       P.TENDERER_CODE,
+       T.WIN_BIDDER_NAME,
+       T.WIN_BIDDER_CODE,
+       P.TENDER_PROJECT_NAME,
+       P.TENDER_PROJECT_CODE,
+       T.BID_SECTION_CODE,
+       S.BID_SECTION_NAME
+  FROM WIN_RESULT_ANNO t
+ INNER JOIN TENDER_PROJECT P
+    ON T.TENDER_PROJECT_CODE = P.TENDER_PROJECT_CODE
+INNER JOIN SECTION S ON S.BID_SECTION_CODE=T.BID_SECTION_CODE
+ INNER JOIN V_TENDERER_BIDDER V
+    ON V.WIN_BIDDER_NAME = T.WIN_BIDDER_NAME
+   AND V.TENDERER_NAME = P.TENDERER_NAME
+  WITH READ ONLY;
+
+  --------------2020-08-04------------------------------
+insert into BD_VIOLATION_POINT_DETAIL (ID, NAME, CODE, DESCRIPTION, RULE_DESCRIPTION, RESULT_MSG, SCORE, POINT_TYPE, CHECK_EXPRESSION, RESULT_EXPRESSION, CHECK_TIME,
+                                       SORT, IS_ENABLE, CREATE_TIME, IS_DELETE)
+values (4, '代理-同一投标人多次中标', 'WG080201', '通过筛选被同一个投标人2次以上中标的代理机构，为行业部门提供线索', '同一代理机构下的不同项目，存在一个单位中标2次以上或者法人相同的单位中标2次以上',
+'投标人多次中标同一个代理机构的不同项目', 0.7000, 1, null, null, null, 0, 1, SYSDATE, 0);
+
+insert into BD_VIOLATION_POINT_DETAIL (ID, NAME, CODE, DESCRIPTION, RULE_DESCRIPTION, RESULT_MSG, SCORE, POINT_TYPE, CHECK_EXPRESSION, RESULT_EXPRESSION, CHECK_TIME, SORT, IS_ENABLE, CREATE_TIME, IS_DELETE)
+values (5, '金额异常', 'WG0201', '非依法招标项目标段包个数1个，招标金额低于400万的项目与项目总投资金额比较相差大于200万，排查可能存在规避招标项目的情况。', 
+'筛选“电子公共服务平台”项目招标金额低于400万，“在线审批平台”该项目总投资金额高于400万，的项目，总投资金额-招标金额>=200万时，则提示',
+'疑为该项目规避招标', 0.6000, 0, null, null, to_date('07-08-2020 08:32:58', 'dd-mm-yyyy hh24:mi:ss'), 0, 1, to_date('06-08-2020 17:47:14', 'dd-mm-yyyy hh24:mi:ss'), 0);
+
+
+
+CREATE OR REPLACE VIEW V_TENDERAGENCY_BIDDER AS 
+/*投标人在代理公司所有项目的中标次数*/           
+SELECT PT.Tender_Agency_Name, PT.WIN_BIDDER_NAME, COUNT(1) AS COUNT
+  FROM (select P.Tender_Agency_Name, T.WIN_BIDDER_NAME
+          FROM WIN_RESULT_ANNO t
+         INNER JOIN TENDER_PROJECT P
+            ON T.TENDER_PROJECT_CODE = P.TENDER_PROJECT_CODE 
+            AND T.WIN_BIDDER_NAME NOT IN ('-','无','详见公告','详见正文','/','详细请见正文','详细见正文','详细见公告内容','详见中标结果公告')
+            ) PT
+ GROUP BY PT.Tender_Agency_Name, PT.WIN_BIDDER_NAME
+HAVING COUNT(*) > 3 ORDER BY COUNT DESC
+WITH READ ONLY;
+
+ CREATE OR REPLACE VIEW V_TENDERAGENCY_BIDDER_DETAIL AS
+ /*招标项目-代理公司-中标人 重复中标详情*/
+ select P.Tender_Agency_Name,
+       P.Tender_Agency_CODE,
+       T.WIN_BIDDER_NAME,
+       T.WIN_BIDDER_CODE,
+       P.TENDER_PROJECT_NAME,
+       P.TENDER_PROJECT_CODE,
+       T.BID_SECTION_CODE,
+       S.BID_SECTION_NAME
+  FROM WIN_RESULT_ANNO t
+ INNER JOIN TENDER_PROJECT P
+    ON T.TENDER_PROJECT_CODE = P.TENDER_PROJECT_CODE
+INNER JOIN SECTION S ON S.BID_SECTION_CODE=T.BID_SECTION_CODE
+ INNER JOIN V_TENDERAGENCY_BIDDER V
+    ON V.WIN_BIDDER_NAME = T.WIN_BIDDER_NAME
+   AND V.Tender_Agency_Name = P.Tender_Agency_Name
+  WITH READ ONLY;
+
+---------------------------2020-08-13----------------
+
+CREATE OR REPLACE VIEW V_PROJECT_REGISTER AS
+/*项目、招标项目、标段信息完整性关联分析，主要用于监督点数据分析*/
+SELECT P.M_ID AS M_KEY,
+       P.PROJECT_CODE,
+       P.PROJECT_NAME,
+       TP.TENDER_PROJECT_CODE,
+       SEC.BID_SECTION_CODE,
+       SEC.BID_SECTION_NAME,
+       TP.TENDER_PROJECT_NAME,
+       TP.TENDER_PROJECT_TYPE,
+       P.REGION_CODE,
+       TP.TENDER_ORGANIZE_FORM,
+       NVL(P.M_TM,TO_DATE('20100101','yyyyMMdd')) M_TM
+  FROM PROJECT P
+ INNER JOIN TENDER_PROJECT TP
+    ON P.PROJECT_CODE = TP.PROJECT_CODE
+ INNER JOIN SECTION SEC
+    ON SEC.TENDER_PROJECT_CODE = TP.TENDER_PROJECT_CODE
+ WHERE P.PROJECT_CODE IS NOT NULL
+   AND TP.TENDER_PROJECT_CODE IS NOT NULL
+   AND SEC.BID_SECTION_CODE IS NOT NULL
+   WITH READ ONLY;
+
+
+   ------------------------------20200817-----------------------
+   CREATE OR REPLACE VIEW V_BIDDER_STATISTICS AS
+/*投标人信息统计分析*/
+SELECT T.*,P.TENDER_PROJECT_NAME,S.BID_SECTION_NAME FROM 
+(
+SELECT MAX(M_ID) AS M_ID,
+       TENDER_PROJECT_CODE,
+       BID_SECTION_CODE,
+       COUNT(1) AS COUNT,
+       MAX(M_TM) AS M_TM,
+       MAX(CHECKIN_TIME) AS CHECKIN_TIME,
+       MAX(DATA_TIMESTAMP) AS DATA_TIMESTAMP
+  FROM TENDER_LIST
+ GROUP BY TENDER_PROJECT_CODE, BID_SECTION_CODE) T
+ LEFT JOIN TENDER_PROJECT P ON T.TENDER_PROJECT_CODE=P.TENDER_PROJECT_CODE
+ LEFT JOIN SECTION S ON T.BID_SECTION_CODE=S.BID_SECTION_CODE
+ WITH READ ONLY;
+
+
+ CREATE OR REPLACE VIEW V_TENDER_FILE_CLARI_MODI AS 
+/*招标文件信息，按招标项目编号获取最新一条数据*/
+SELECT TENDER_PROJECT_CODE,
+       BID_SECTION_CODE,
+       UNIFIED_DEAL_CODES,
+       DOC_NO,
+       BID_DOC_REFER_END_TIME,
+       VALID_PERIOD,
+       BID_DOC_REFER_METHOD,
+       MARGIN_PAY_TYPE,
+       MARGIN_AMOUNT,
+       MARGIN_CURRENCY,
+       MARGIN_AMOUNT_UNIT,
+       CONTROL_PRICE,
+       CONTROL_PRICE_CURRENCY,
+       CONTROL_PRICE_UNIT,
+       EVALUATING_METHOD,
+       BID_OPEN_TIME,
+       BID_OPEN_PLACE,
+       BID_OPEN_TYPE,
+       QUAL_TYPE,
+       CLARIFY_TIME,
+       IS_POSTPONE,
+       POST_OPEN_TIME,
+       POST_OPEN_ADDRESS,
+       SUBMIT_TIME,
+       DATA_TIMESTAMP,
+       M_KEY,
+       M_DATA_SOURCE,
+       M_TM,
+       DOC_NAME,
+       M_ID,
+       M_ATT_TENDER_FILE,
+       M_ATT_TENDER_FILE_ATTACHS,
+       M_IS_HISTORY,
+       M_CREATE_TM,
+       M_MONEY_UPDATE,
+       PRICE_FORM_CODE,
+       MARGIN_PERCENT,
+       EVALUATION_TYPE FROM TENDER_FILE_CLARI_MODI M WHERE EXISTS
+(SELECT 1 FROM
+(
+SELECT M_ID,
+ROW_NUMBER() OVER(PARTITION BY TENDER_PROJECT_CODE ORDER BY
+                                    M_TM DESC) RN
+FROM  TENDER_FILE_CLARI_MODI) T
+WHERE T.RN=1 AND T.M_ID=M.M_ID);
+
+
+CREATE OR REPLACE VIEW  V_BID_EVALUATION_EXPERT AS
+/*评标专家类别分析统计*/
+SELECT TENDER_PROJECT_CODE,BID_SECTION_CODE,EXPERT_TYPE,COUNT(1) AS COUNT 
+FROM BID_EVALUATION_EXPERT GROUP BY TENDER_PROJECT_CODE,BID_SECTION_CODE,EXPERT_TYPE;
+
+------------------------------2020-09-08----------------------
+
+UPDATE Warn_Expression_Detail SET LIMIT_DAY=30;
+
+--------------------------------2020-09-09--------------------------------
+
+/*==============================================================*/
+/* Table: RECORD_REVIEW_SUPERVISE                               */
+/*==============================================================*/
+create table RECORD_REVIEW_SUPERVISE 
+(
+   ID                   VARCHAR2(50)         not null,
+   TENDER_PROJECT_CODE  VARCHAR2(20),
+   TENDER_PROJECT_NAME  VARCHAR2(1200),
+   RECORD_ID            NUMBER,
+   REVIEW_CODE          VARCHAR2(50),
+   STATUS               NUMBER,
+   SUPERVISE_TIME       DATE,
+   SUPERVISE_TYPE       VARCHAR(50),
+   SUPERVISE_WAY        VARCHAR(50),
+   M_TM                 DATE                 default SYSDATE,
+   constraint PK_RECORD_REVIEW_SUPERVISE primary key (ID)
+);
+
+comment on table RECORD_REVIEW_SUPERVISE is
+'项目备案监察状态';
+
+comment on column RECORD_REVIEW_SUPERVISE.ID is
+'主键ID';
+
+comment on column RECORD_REVIEW_SUPERVISE.TENDER_PROJECT_CODE is
+'招标项目编号';
+
+comment on column RECORD_REVIEW_SUPERVISE.TENDER_PROJECT_NAME is
+'招标项目名称';
+
+comment on column RECORD_REVIEW_SUPERVISE.RECORD_ID is
+'备案记录ID';
+
+comment on column RECORD_REVIEW_SUPERVISE.REVIEW_CODE is
+'备案记录编号';
+
+comment on column RECORD_REVIEW_SUPERVISE.STATUS is
+'督查状态（0：绿灯 1：红灯）';
+
+comment on column RECORD_REVIEW_SUPERVISE.SUPERVISE_TIME is
+'监察时间';
+
+comment on column RECORD_REVIEW_SUPERVISE.SUPERVISE_TYPE is
+'督查类型';
+
+comment on column RECORD_REVIEW_SUPERVISE.SUPERVISE_WAY is
+'督查方式';
+
+comment on column RECORD_REVIEW_SUPERVISE.M_TM is
+'创建时间';

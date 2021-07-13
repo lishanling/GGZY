@@ -1,0 +1,135 @@
+{
+  "DataNo": "552",
+  "DataName": "CORRECTION_ITEM",
+  "DataCnName": "更正事项",
+  "Fields": [
+    {
+      "Name": "PURCHASE_PROJECT_CODE",
+      "CnName": "采购项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_PROJECT_NAME",
+      "CnName": "采购项目名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "PURCHASE_SECTION_CODE",
+      "CnName": "采购项目子包编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "TERMINATION_BULLETIN_TITLE",
+      "CnName": "公告标题",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "TERMINATION_BULLETIN_CONTENT",
+      "CnName": "公告内容",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "MODIFICATION_START_TIME",
+      "CnName": "发布时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "IS_POSTPONE",
+      "CnName": "是否延期",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "TRUE_OR_FALSE"
+        }
+      ]
+    },
+    {
+      "Name": "POST_BID_CLOSING_TIME",
+      "CnName": "延期后投标（提交响应文件）截止时间",
+      "Validators": [
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "URL",
+      "CnName": "公告源URL",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

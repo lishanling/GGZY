@@ -1,0 +1,94 @@
+{
+    "DataNo": "112",
+    "DataName": "QUALI_PERSON_QUALI",
+    "DataCnName": "执业人员资格信息",
+    "Fields": [
+        {
+            "Name": "QUAL_NAME",
+            "CnName": "执业资格名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 100
+                }
+            ]
+        },
+        {
+            "Name": "QUAL_TYPE",
+            "CnName": "执业资格类型",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                },
+                {
+                    "ValidatorName": "DomainMatch",
+                    "Type": "27"
+                }
+            ]
+        },
+        {
+            "Name": "ID_CARD",
+            "CnName": "执业人员证件号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "ID_CARD_TYPE",
+            "CnName": "执业人员身份证件类型",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 2
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "7"
+            }
+          ]
+        },
+        {
+            "Name": "CERT_NO",
+            "CnName": "执业资格证书编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "CERT_END_DATE",
+            "CnName": "执业资格注册有效期止",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

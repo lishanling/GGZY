@@ -1,0 +1,31 @@
+{
+    "DataNo": "101",
+    "DataName": "TENDER_EX_INFO",
+    "DataCnName": "招标人扩展信息",
+    "Fields": [
+        {
+            "Name": "LEGAL_CODE",
+            "CnName": "主体代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "CUSTOM_DEFINITION_DATAITEM",
+            "CnName": "自定义数据项",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 5000
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

@@ -1,0 +1,100 @@
+{
+    "DataNo": "106",
+    "DataName": "SUPPLIER_EX_INFO",
+    "DataCnName": "供应商扩展信息",
+    "Fields": [
+        {
+            "Name": "LEGAL_CODE",
+            "CnName": "主体代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "QUAL_LEVEL",
+            "CnName": "资质等级",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 2
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "17"
+            }
+          ]
+        },
+        {
+            "Name": "QUAL_NAME",
+            "CnName": "资质名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "QUAL_TYPE",
+            "CnName": "资质序列、行业和专业类别",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                }
+            ]
+        },
+        {
+            "Name": "QUAL_CERT_NO",
+            "CnName": "资质证书编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "QUAL_CERT_END_DATE",
+            "CnName": "资质证书失效日期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "CUSTOM_DEFINITION_DATAITEM",
+            "CnName": "自定义数据项",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 5000
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

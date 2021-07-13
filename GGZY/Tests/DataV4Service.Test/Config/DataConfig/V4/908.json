@@ -1,0 +1,171 @@
+{
+    "DataName": "JT_PERFORMANCE",
+    "DataCnName": "履约",
+    "IsZXSJ": true,
+    "GgfwDataNo": "522",
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "JT_TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODE",
+            "CnName": "标段（包）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 23
+                }
+            ]
+        },
+        {
+            "Name": "UNIFIED_DEAL_CODE",
+            "CnName": "统一交易标识码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 40
+                }
+            ]
+        },
+        {
+            "Name": "PERFORMANCE_REPORT_NAME",
+            "CnName": "履约情况报告名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 600
+                }
+            ]
+        },
+        {
+            "Name": "TENDERER_NAME",
+            "CnName": "业主/招标人名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "TENDERER_CODE",
+            "CnName": "业主/招标人代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "PERFORMANCE_PARTY_NAME",
+            "CnName": "履约人名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "PERFORMANCE_PARTY_CODE",
+            "CnName": "履约人代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "SETTLE_PRICE",
+            "CnName": "合同结算金额",
+            "Validators": [
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 14,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "FINISH_TIME",
+            "CnName": "合同完成时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "CONTRACT_CHANGE_CONTENT",
+            "CnName": "合同变更内容",
+            "Validators": []
+        },
+        {
+            "Name": "ACTUALLY_PERIOD",
+            "CnName": "实际履约期限",
+            "Validators": [
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 4
+                }
+            ]
+        },
+        {
+            "Name": "PERFORMANCE_CONTENT",
+            "CnName": "履约内容",
+            "Validators": []
+        },
+        {
+            "Name": "REPORT_ISSUE_TIME",
+            "CnName": "履约报告出具时间",
+            "Validators": [
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

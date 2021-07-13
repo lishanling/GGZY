@@ -1,0 +1,243 @@
+{
+    "DataName": "SL_QUALI_INQUERY_CLARI",
+    "DataCnName": "资格预审/资格预审澄清",
+    "IsZXSJ": true,
+    "GgfwDataNo": "514",
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 20
+            },
+            {
+              "ValidatorName": "TenderProjectCodeMatch",
+              "TenderProjectTableName": "SL_TENDER_PROJECT"
+            }
+          ]
+        },
+        {
+            "Name": "BID_SECTION_CODES",
+            "CnName": "相关标段（包）编号",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            }
+          ]
+        },
+        {
+            "Name": "UNIFIED_DEAL_CODES",
+            "CnName": "相关统一交易标识码",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            }
+          ]
+        },
+        {
+            "Name": "DOC_CODE",
+            "CnName": "文件编号",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "MaxLength": 50
+            }
+          ]
+        },
+        {
+            "Name": "DOC_NAME",
+            "CnName": "文件名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 600
+                }
+            ]
+        },
+        {
+            "Name": "APPLICANT_QUALIFICATIONS",
+            "CnName": "申请资格",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            }
+          ]
+        },
+        {
+            "Name": "APPLICATION_VALID_TIME",
+            "CnName": "申请有效期",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "MaxLength": 200
+            }
+          ]
+        },
+        {
+            "Name": "DOC_SUBMIT_END_TIME",
+            "CnName": "申请文件递交截止时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "DOC_SUBMIT_METHOD",
+            "CnName": "申请文件递交方法",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "MaxLength": 50
+            }
+          ]
+        },
+        {
+            "Name": "DOC_OPEN_TIME",
+            "CnName": "文件开启时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "DOC_OPEN_METHOD",
+            "CnName": "文件开启方式",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "MaxLength": 50
+            }
+          ]
+        },
+        {
+            "Name": "EVALUATION_METHOD",
+            "CnName": "评审办法",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            }
+          ]
+        },
+        {
+            "Name": "CLARIFY_CONTENT",
+            "CnName": "对文件澄清与修改的主要内容",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            }
+          ]
+        },
+        {
+            "Name": "IS_POSTPONE",
+            "CnName": "是否延期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "POST_OPEN_TIME",
+            "CnName": "延期后开标时间",
+            "Validators": [
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "POST_OPEN_ADDRESS",
+            "CnName": "延期后开标地点",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "TENDER_CLARIFY_CONTENT",
+            "CnName": "对资格预审澄清与修改的主要内容",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            }
+          ]
+        },
+        {
+            "Name": "TENDER_SUBMIT_TIME",
+            "CnName": "递交时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "SUBMIT_TIME",
+            "CnName": "上传时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "URL",
+            "CnName": "文件源URL",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "MaxLength": 500
+            }
+          ]
+        }
+    ],
+    "Validators": []
+}

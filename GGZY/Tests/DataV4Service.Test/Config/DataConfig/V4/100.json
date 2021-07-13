@@ -1,0 +1,446 @@
+{
+  "DataNo": "100",
+  "DataName": "LEGAL_PERSON_BASE",
+  "DataCnName": "法人基本信息",
+  "Fields": [
+    {
+      "Name": "LEGAL_NAME",
+      "CnName": "法人名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "BIDDER_CODE_TYPE",
+      "CnName": "法人类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "2001"
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_CODE",
+      "CnName": "法人代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_ROLE",
+      "CnName": "法人角色",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "26"
+        }
+      ]
+    },
+    {
+      "Name": "LICENSE_NO",
+      "CnName": "营业执照号码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "LICENSE_END_DATE",
+      "CnName": "营业执照失效日期",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "TAX_CERT_NO",
+      "CnName": "国税税务登记证证号",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "TAX_CERT_END_DATE",
+      "CnName": "国税税务登记证失效日期",
+      "Validators": [
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "LOCAL_TAX_CERT_NO",
+      "CnName": "地税税务登记证证号",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "LOCAL_TAX_CERT_END_DATE",
+      "CnName": "地税税务登记证失效日期",
+      "Validators": [
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "ORGAN_NO",
+      "CnName": "组织机构代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 9
+        }
+      ]
+    },
+    {
+      "Name": "ORGAN_CERT_END_DATE",
+      "CnName": "组织机构代码证失效日期",
+      "Validators": [
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_REPRESENT",
+      "CnName": "法定代表人姓名",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_TYPE",
+      "CnName": "法人机构类别",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "25"
+        }
+      ]
+    },
+    {
+      "Name": "REPRESENT_PHONE",
+      "CnName": "法人代表联系电话",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 15
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_INDUSTRY",
+      "CnName": "法人机构行业代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    },
+    {
+      "Name": "CREDIT_RATE",
+      "CnName": "资信等级",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "COUNTRY_REGION",
+      "CnName": "国别/地区",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_UNIT_ADDRESS",
+      "CnName": "法人机构地址",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 300
+        }
+      ]
+    },
+    {
+      "Name": "REGION_CODE",
+      "CnName": "行政区域代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        },
+        {
+          "ValidatorName": "AreaCodeMatch",
+          "Begin": 0
+        }
+      ]
+    },
+    {
+      "Name": "REGISTER_PROVINCE",
+      "CnName": "注册地-省",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "REGISTER_CITY",
+      "CnName": "注册地-市",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "BASIC_BANK",
+      "CnName": "基本户开户银行",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "BASIC_BRANCH_BANK",
+      "CnName": "基本户开户支行号",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "BASIC_ACCOUNT_NO",
+      "CnName": "基本户账号",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "BASIC_ACCOUNT_NAME",
+      "CnName": "基本户账户名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "REG_CAPITAL",
+      "CnName": "注册资本",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 14,
+          "DecimalFigures": 6
+        }
+      ]
+    },
+    {
+      "Name": "REG_CAP_CURRENCY",
+      "CnName": "注册资本币种",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    },
+    {
+      "Name": "REG_UNIT",
+      "CnName": "注册资本单位",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "PRICE_UNIT"
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_CONTACT",
+      "CnName": "联系人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_CONTACT_PHONE",
+      "CnName": "联系人电话",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_CONTACT_ADDRESS",
+      "CnName": "联系人地址",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_WEB",
+      "CnName": "单位网站",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_ZIP_CODE",
+      "CnName": "邮政编码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_EMAIL",
+      "CnName": "电子邮箱",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "LEGAL_STATUS",
+      "CnName": "法人业务状态",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "1101"
+        }
+      ]
+    }
+  ],
+  "Validators": [
+    {
+      "ValidatorName": "TAX_CERT_NO"
+    }
+  ],
+  "RepeatCols": [ "LEGAL_NAME", "LEGAL_CODE", "M_DATA_SOURCE" ]
+}

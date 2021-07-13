@@ -1,0 +1,331 @@
+--服务平台
+--创建表
+CREATE TABLE EVALUATION_PLACE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(2000),
+UNIFIED_DEAL_CODES   VARCHAR2(2000),
+IS_REMOTE   VARCHAR2(1),
+IS_BRANCH   VARCHAR2(1),
+PLACE   VARCHAR2(500),
+OFFICE   VARCHAR2(500),
+SEATS   VARCHAR2(1000),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table EVALUATION_PLACE is '评标场地'; 
+comment on column EVALUATION_PLACE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column EVALUATION_PLACE.BID_SECTION_CODE is '相关标段（包）编号'; 
+comment on column EVALUATION_PLACE.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column EVALUATION_PLACE.IS_REMOTE is '是否远程异地评标'; 
+comment on column EVALUATION_PLACE.IS_BRANCH is '是否分会场'; 
+comment on column EVALUATION_PLACE.PLACE is '交易中心'; 
+comment on column EVALUATION_PLACE.OFFICE is '评标室'; 
+comment on column EVALUATION_PLACE.SEATS is '席位'; 
+comment on column EVALUATION_PLACE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column EVALUATION_PLACE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column EVALUATION_PLACE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column EVALUATION_PLACE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column EVALUATION_PLACE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_EVALUATION_PLACE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--监督平台
+--创建表
+CREATE TABLE ZJ_EVALUATION_PLACE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(2000),
+UNIFIED_DEAL_CODES   VARCHAR2(2000),
+IS_REMOTE   VARCHAR2(1),
+IS_BRANCH   VARCHAR2(1),
+PLACE   VARCHAR2(500),
+OFFICE   VARCHAR2(500),
+SEATS   VARCHAR2(1000),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table ZJ_EVALUATION_PLACE is '评标场地'; 
+comment on column ZJ_EVALUATION_PLACE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column ZJ_EVALUATION_PLACE.BID_SECTION_CODE is '相关标段（包）编号'; 
+comment on column ZJ_EVALUATION_PLACE.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column ZJ_EVALUATION_PLACE.IS_REMOTE is '是否远程异地评标'; 
+comment on column ZJ_EVALUATION_PLACE.IS_BRANCH is '是否分会场'; 
+comment on column ZJ_EVALUATION_PLACE.PLACE is '交易中心'; 
+comment on column ZJ_EVALUATION_PLACE.OFFICE is '评标室'; 
+comment on column ZJ_EVALUATION_PLACE.SEATS is '席位'; 
+comment on column ZJ_EVALUATION_PLACE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column ZJ_EVALUATION_PLACE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column ZJ_EVALUATION_PLACE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column ZJ_EVALUATION_PLACE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column ZJ_EVALUATION_PLACE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_ZJ_EVALUATION_PLACE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+--创建表
+CREATE TABLE SL_EVALUATION_PLACE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(2000),
+UNIFIED_DEAL_CODES   VARCHAR2(2000),
+IS_REMOTE   VARCHAR2(1),
+IS_BRANCH   VARCHAR2(1),
+PLACE   VARCHAR2(500),
+OFFICE   VARCHAR2(500),
+SEATS   VARCHAR2(1000),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table SL_EVALUATION_PLACE is '评标场地'; 
+comment on column SL_EVALUATION_PLACE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column SL_EVALUATION_PLACE.BID_SECTION_CODE is '相关标段（包）编号'; 
+comment on column SL_EVALUATION_PLACE.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column SL_EVALUATION_PLACE.IS_REMOTE is '是否远程异地评标'; 
+comment on column SL_EVALUATION_PLACE.IS_BRANCH is '是否分会场'; 
+comment on column SL_EVALUATION_PLACE.PLACE is '交易中心'; 
+comment on column SL_EVALUATION_PLACE.OFFICE is '评标室'; 
+comment on column SL_EVALUATION_PLACE.SEATS is '席位'; 
+comment on column SL_EVALUATION_PLACE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column SL_EVALUATION_PLACE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column SL_EVALUATION_PLACE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column SL_EVALUATION_PLACE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column SL_EVALUATION_PLACE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_SL_EVALUATION_PLACE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+
+--创建表
+CREATE TABLE JT_EVALUATION_PLACE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(2000),
+UNIFIED_DEAL_CODES   VARCHAR2(2000),
+IS_REMOTE   VARCHAR2(1),
+IS_BRANCH   VARCHAR2(1),
+PLACE   VARCHAR2(500),
+OFFICE   VARCHAR2(500),
+SEATS   VARCHAR2(1000),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table JT_EVALUATION_PLACE is '评标场地'; 
+comment on column JT_EVALUATION_PLACE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column JT_EVALUATION_PLACE.BID_SECTION_CODE is '相关标段（包）编号'; 
+comment on column JT_EVALUATION_PLACE.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column JT_EVALUATION_PLACE.IS_REMOTE is '是否远程异地评标'; 
+comment on column JT_EVALUATION_PLACE.IS_BRANCH is '是否分会场'; 
+comment on column JT_EVALUATION_PLACE.PLACE is '交易中心'; 
+comment on column JT_EVALUATION_PLACE.OFFICE is '评标室'; 
+comment on column JT_EVALUATION_PLACE.SEATS is '席位'; 
+comment on column JT_EVALUATION_PLACE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column JT_EVALUATION_PLACE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column JT_EVALUATION_PLACE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column JT_EVALUATION_PLACE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column JT_EVALUATION_PLACE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_JT_EVALUATION_PLACE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+
+--创建表
+CREATE TABLE GY_EVALUATION_PLACE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(2000),
+UNIFIED_DEAL_CODES   VARCHAR2(2000),
+IS_REMOTE   VARCHAR2(1),
+IS_BRANCH   VARCHAR2(1),
+PLACE   VARCHAR2(500),
+OFFICE   VARCHAR2(500),
+SEATS   VARCHAR2(1000),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table GY_EVALUATION_PLACE is '评标场地'; 
+comment on column GY_EVALUATION_PLACE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column GY_EVALUATION_PLACE.BID_SECTION_CODE is '相关标段（包）编号'; 
+comment on column GY_EVALUATION_PLACE.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column GY_EVALUATION_PLACE.IS_REMOTE is '是否远程异地评标'; 
+comment on column GY_EVALUATION_PLACE.IS_BRANCH is '是否分会场'; 
+comment on column GY_EVALUATION_PLACE.PLACE is '交易中心'; 
+comment on column GY_EVALUATION_PLACE.OFFICE is '评标室'; 
+comment on column GY_EVALUATION_PLACE.SEATS is '席位'; 
+comment on column GY_EVALUATION_PLACE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column GY_EVALUATION_PLACE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column GY_EVALUATION_PLACE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column GY_EVALUATION_PLACE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column GY_EVALUATION_PLACE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_GY_EVALUATION_PLACE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+
+--创建表
+CREATE TABLE YG_EVALUATION_PLACE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(2000),
+UNIFIED_DEAL_CODES   VARCHAR2(2000),
+IS_REMOTE   VARCHAR2(1),
+IS_BRANCH   VARCHAR2(1),
+PLACE   VARCHAR2(500),
+OFFICE   VARCHAR2(500),
+SEATS   VARCHAR2(1000),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_EVALUATION_PLACE is '评标场地'; 
+comment on column YG_EVALUATION_PLACE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_EVALUATION_PLACE.BID_SECTION_CODE is '相关标段（包）编号'; 
+comment on column YG_EVALUATION_PLACE.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column YG_EVALUATION_PLACE.IS_REMOTE is '是否远程异地评标'; 
+comment on column YG_EVALUATION_PLACE.IS_BRANCH is '是否分会场'; 
+comment on column YG_EVALUATION_PLACE.PLACE is '交易中心'; 
+comment on column YG_EVALUATION_PLACE.OFFICE is '评标室'; 
+comment on column YG_EVALUATION_PLACE.SEATS is '席位'; 
+comment on column YG_EVALUATION_PLACE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_EVALUATION_PLACE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_EVALUATION_PLACE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_EVALUATION_PLACE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_EVALUATION_PLACE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_EVALUATION_PLACE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE XX_EVALUATION_PLACE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(2000),
+UNIFIED_DEAL_CODES   VARCHAR2(2000),
+IS_REMOTE   VARCHAR2(1),
+IS_BRANCH   VARCHAR2(1),
+PLACE   VARCHAR2(500),
+OFFICE   VARCHAR2(500),
+SEATS   VARCHAR2(1000),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table XX_EVALUATION_PLACE is '评标场地'; 
+comment on column XX_EVALUATION_PLACE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column XX_EVALUATION_PLACE.BID_SECTION_CODE is '相关标段（包）编号'; 
+comment on column XX_EVALUATION_PLACE.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column XX_EVALUATION_PLACE.IS_REMOTE is '是否远程异地评标'; 
+comment on column XX_EVALUATION_PLACE.IS_BRANCH is '是否分会场'; 
+comment on column XX_EVALUATION_PLACE.PLACE is '交易中心'; 
+comment on column XX_EVALUATION_PLACE.OFFICE is '评标室'; 
+comment on column XX_EVALUATION_PLACE.SEATS is '席位'; 
+comment on column XX_EVALUATION_PLACE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column XX_EVALUATION_PLACE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column XX_EVALUATION_PLACE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column XX_EVALUATION_PLACE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column XX_EVALUATION_PLACE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_XX_EVALUATION_PLACE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;

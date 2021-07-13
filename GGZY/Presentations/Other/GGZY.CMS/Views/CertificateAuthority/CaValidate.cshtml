@@ -1,0 +1,65 @@
+﻿@using GGZY.Services.Infrastructure.Helper
+@{
+    ViewBag.Title = "CA测试";
+    Layout = "~/Views/Shared/_LayoutBody.cshtml";
+    var guid = Guid.NewGuid().ToString("N");
+}
+@section styles
+{
+
+    <link id="theme-tab" href="~/static/plugin/js-menu/menuTab-blue.css" rel="stylesheet" />
+    <style type="text/css">
+        .wrapper-content, .main-content, .main-content-inner {
+            height: calc(100% - 1px);
+        }
+    </style>
+}
+@section scripts
+{
+
+    @*<script src="~/static/plugin/js-menu/contabs.js"></script>*@
+    <script type="text/javascript">
+        $(function() {
+            $(".J_menuTab").click(function() {
+                $(".J_menuTab").removeClass("active");
+                $(this).addClass("active");
+                var idx = $(this).index();
+                console.log(idx);
+                $(".J_iframe").hide();
+                $(".J_iframe").eq(idx).show();
+            });
+            $(".J_menuTab:first").click();
+        })
+    </script>
+}
+<div class="main-content">
+    <div class="main-content-inner">
+        <div id="breadcrumbs" class="breadcrumbs">
+            <div class="content-tabs">
+                @*<a id="hideMenu" class="roll-nav roll-left-0 J_tabLeft">
+            <i class="fa fa-align-justify"></i>
+        </a>
+        <button class="roll-nav roll-left J_tabLeft">
+                <i class="fa fa-backward"></i>
+            </button>*@
+               
+                <nav class="page-tabs J_menuTabs">
+            <div class="page-tabs-content">
+                <a href="javascript:;" class="active J_menuTab" data-id="@Url.Action("Sign",new{guid})"><i class="fa fa-align-justify"></i> 签章</a>
+                <a href="javascript:;" class=" J_menuTab" data-id="@Url.Action("Encode",new{guid})"><i class="fa fa-align-justify"></i> 加密</a>
+                <a href="javascript:;" class=" J_menuTab" data-id="@Url.Action("Decode",new{guid})"><i class="fa fa-align-justify"></i> 解密</a>
+            </div>
+        </nav>
+                @*<button class="roll-nav roll-right J_tabRight">
+            <i class="fa fa-forward"></i>
+        </button>
+        <a href="@(Url.Action("SignOut","Account"))" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>*@
+            </div>
+        </div>
+        <div class="J_mainContent" id="content-main" style="height: calc(100% - 40px)">
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="@Url.Action("Sign",new{guid})" frameborder="0" data-id="@Url.Action("Sign",new{guid})" seamless></iframe>
+            <iframe class="J_iframe" name="iframe1" width="100%" height="100%" src="@Url.Action("Encode",new{guid})" frameborder="0" data-id="@Url.Action("Encode",new{guid})" seamless></iframe>
+            <iframe class="J_iframe" name="iframe2" width="100%" height="100%" src="@Url.Action("Decode",new{guid})" frameborder="0" data-id="@Url.Action("Decode",new{guid})" seamless></iframe>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,177 @@
+{
+    "DataNo": "302",
+    "DataName": "BLACK_LIST",
+    "DataCnName": "黑名单信息",
+    "Fields": [
+        {
+            "Name": "BLACKLIST_CODE",
+            "CnName": "黑名单标识号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 36
+                }
+            ]
+        },
+        {
+            "Name": "BODY_NAME",
+            "CnName": "主体名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "BODY_CODE",
+            "CnName": "主体代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "BODY_TYPE",
+            "CnName": "主体类别",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "2001"
+            }
+          ]
+        },
+        {
+            "Name": "BODY_ROLE",
+            "CnName": "主体角色",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 2
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "26"
+            }
+          ]
+        },
+        {
+            "Name": "RECORD_REASON",
+            "CnName": "处罚原因",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "RECORD_DATE",
+            "CnName": "处罚日期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "GOVERNMENT",
+            "CnName": "处罚部门",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "DOCUMENT_CODE",
+            "CnName": "处理文件文号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "REVOCATION_STATUS",
+            "CnName": "是否撤销",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "EnumMatch",
+              "EnumType": "TRUE_OR_FALSE"
+            }
+
+          ]
+        },
+        {
+            "Name": "CONFINED_ACTION",
+            "CnName": "限制行为",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "MaxLength": 2
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "1007"
+            }
+          ]
+        },
+        {
+            "Name": "SCOPE",
+            "CnName": "公开范围",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

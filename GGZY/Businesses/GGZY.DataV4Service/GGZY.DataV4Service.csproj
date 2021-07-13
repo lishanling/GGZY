@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{638F5626-E6F6-42A0-ABCE-82BAECE0086F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GGZY.DataV4Service</RootNamespace>
+    <AssemblyName>GGZY.DataV4Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.7.0\lib\net40-client\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Constant.cs" />
+    <Compile Include="Common\DESEncrypt.cs" />
+    <Compile Include="Common\Domain.cs" />
+    <Compile Include="Common\QueueRequest.cs" />
+    <Compile Include="Common\Sms\ISmsClass.cs" />
+    <Compile Include="Common\Sms\SmsChinaWJ.cs" />
+    <Compile Include="Common\WebUtil.cs" />
+    <Compile Include="DataConfigManager.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="DataConfig.cs" />
+    <Compile Include="DataOperator.cs" />
+    <Compile Include="Db\DAO.cs" />
+    <Compile Include="Db\DAOFactory.cs" />
+    <Compile Include="Dto\FieldValidator.cs" />
+    <Compile Include="Dto\TableColumn.cs" />
+    <Compile Include="Dto\ValidatorDictionary.cs" />
+    <Compile Include="Exceptions\StrongException.cs" />
+    <Compile Include="Exceptions\ThrowHelper.cs" />
+    <Compile Include="Extend\DataTableHelper.cs" />
+    <Compile Include="Extend\DateTimeHelper.cs" />
+    <Compile Include="Extend\DictionaryHelper.cs" />
+    <Compile Include="Extend\ObjectExtend.cs" />
+    <Compile Include="Extend\XMLHelper.cs" />
+    <Compile Include="Logger\QueueLogRecord.cs" />
+    <Compile Include="Logger\StrongLogger.cs" />
+    <Compile Include="Model\T_ATTACHMENT.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\AbstractValidator.cs" />
+    <Compile Include="Validators\Context\Field\AbstractFieldValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\AreaCodeMatchFieldValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\CannotModifyDataValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\DateMatchFieldValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\DomainMatchDataValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\EnumMatchFieldValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\LengthMatchFieldValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\NumberMatchFieldValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\REPROT_CODE_MatchFieldValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\SpecificValueFieldValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\TenderProjectCodeMatchFieldValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\TenderRecordCodeMatchValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\UniqueValueValidator.cs" />
+    <Compile Include="Validators\Context\Table\AbstractTableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\BID_AMOUNT_TableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\CONTRACT_RECKON_PRICE_TableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\INVEST_PROJECT_CODE_TableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\LEGAL_PERSON_BASETableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\POST_OPEN_TableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\SendMsgTableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\TAX_CERT_NO_TableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\TenderNoticeValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\TENDER_AGENCY_CODE_TYPE_TableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\TENDER_AGENCY_TableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\TENDER_FILE_CLARI_MODITableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\TENDER_PROJECTTableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\TENDER_PROJECT_TYPE_TableValidator.cs" />
+    <Compile Include="Validators\Context\Table\Imp\T_ASKANSWERTableValidator.cs" />
+    <Compile Include="Validators\IDataValidator.cs" />
+    <Compile Include="Validators\Context\Field\Imp\NotNullDataValidator.cs" />
+    <Compile Include="Validators\DataValidatorManager.cs" />
+    <Compile Include="Validators\Title\AbstractTitleValidator.cs" />
+    <Compile Include="Validators\Title\CaKeyValidator.cs" />
+    <Compile Include="Validators\Title\DataCnValidator.cs" />
+    <Compile Include="Validators\Title\DataEnValidator.cs" />
+    <Compile Include="Validators\Title\DataKeyValidator.cs" />
+    <Compile Include="Validators\Title\DataNoValidator.cs" />
+    <Compile Include="Validators\Title\DataTypeValidator.cs" />
+    <Compile Include="Validators\Title\Context5FieldValidator.cs" />
+    <Compile Include="Validators\Title\RouteWayValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="这是数据规范4.0各地市数据上报过来的服务.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Dos.ORM\Dos.ORM.csproj">
+      <Project>{4bef1983-f275-4807-96ea-25b973bd6e94}</Project>
+      <Name>Dos.ORM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

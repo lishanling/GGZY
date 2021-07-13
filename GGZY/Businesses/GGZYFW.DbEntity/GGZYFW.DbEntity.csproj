@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45B1992F-6A13-49BB-AEE3-E5EE708756AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GGZYFW.DbEntity</RootNamespace>
+    <AssemblyName>GGZYFW.DbEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\GGZYFW.DbEntity.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MV_TJ_ALLCREATE_XZJD.partial.cs">
+      <DependentUpon>MV_TJ_ALLCREATE_XZJD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TENDER_LIST_STATISTICS.cs" />
+    <Compile Include="T_MAC.cs" />
+    <Compile Include="T_MAC_RESULT_FIRST.cs" />
+    <Compile Include="T_MAC_RESULT_SECOND.cs" />
+    <Compile Include="T_MAC_RESULT_THIRD.cs" />
+    <Compile Include="V_BIG_LEGAL_BASE.cs" />
+    <Compile Include="AAH.cs" />
+    <Compile Include="AA_PROJECT_NAME.cs" />
+    <Compile Include="ADMIN_SUPER_ITEM_INFO.cs" />
+    <Compile Include="AGENCY_APR_INFO.cs" />
+    <Compile Include="AGENCY_QA_TABLE.cs" />
+    <Compile Include="AHWH_BSZX.cs" />
+    <Compile Include="AHWH_DOCUMENT.cs" />
+    <Compile Include="AHWH_GZLY.cs" />
+    <Compile Include="AHWH_NEWS.cs" />
+    <Compile Include="AHWH_XZFW.cs" />
+    <Compile Include="ANOMALY_INFO.cs" />
+    <Compile Include="ASSIGNEE_EX_INFO.cs" />
+    <Compile Include="ASSIST_CORRECT_INFO.cs" />
+    <Compile Include="AVOID_ENTERPRISE_LIST.cs" />
+    <Compile Include="AWARD_INFO.cs" />
+    <Compile Include="BD_HARDWARE_MULTI.cs" />
+    <Compile Include="BD_HAREDWARE_RESULT.cs" />
+    <Compile Include="BD_INQUIRE_RECORD.cs" />
+    <Compile Include="BD_VIOLATION_BASIC.cs" />
+    <Compile Include="BD_VIOLATION_ENTITY.cs" />
+    <Compile Include="BD_VIOLATION_HISTORY.cs" />
+    <Compile Include="BD_VIOLATION_POINT.cs" />
+    <Compile Include="BD_VIOLATION_POINT_DETAIL.cs" />
+    <Compile Include="BD_VIOLATION_RECORD.cs" />
+    <Compile Include="BHXX_COMPLETE_ACCEPT.cs" />
+    <Compile Include="BHXX_COMPLET_ACCEPT_REVIEW.cs" />
+    <Compile Include="BHXX_CONSTRUCT_ALTER.cs" />
+    <Compile Include="BHXX_CONSTRUCT_PERMITS.cs" />
+    <Compile Include="BHXX_CONTRACT_MEMBER.cs" />
+    <Compile Include="BHXX_PERFORMANCE_CONDITION.cs" />
+    <Compile Include="BHXX_PERFORMANCE_MEMBER.cs" />
+    <Compile Include="BHXX_SCENE_MANAGER_INFO.cs" />
+    <Compile Include="BHXX_SCENE_SUPERVISOR_INFO.cs" />
+    <Compile Include="BH_ATTACHMENT.cs" />
+    <Compile Include="BH_GUARANTEE_RESULT.cs" />
+    <Compile Include="BH_JIEKOU_LOG.cs" />
+    <Compile Include="BH_JIEKOU_USER.cs" />
+    <Compile Include="BH_OFD_SEND_LOG.cs" />
+    <Compile Include="BH_ORDERID_NUM.cs" />
+    <Compile Include="BH_RECEIVE_CLAIM.cs" />
+    <Compile Include="BH_SEND_APPLICATION_FORM.cs" />
+    <Compile Include="BH_SEND_CLAIM_FORM.cs" />
+    <Compile Include="BH_SIGN_ATTACHMENT.cs" />
+    <Compile Include="BH_SMS_INFO.cs" />
+    <Compile Include="BIDDER_CREDIT_INFO.cs" />
+    <Compile Include="BIDDER_MAKE_TOOL_INFO.cs" />
+    <Compile Include="BIDDER_MARGIN_INFO.cs" />
+    <Compile Include="BIDDER_PERFORMANCE.cs" />
+    <Compile Include="BIDDER_PROJECT_MEMBER.cs" />
+    <Compile Include="BIDDER_QUALIFICATION.cs" />
+    <Compile Include="BIDER_EX_INFO.cs" />
+    <Compile Include="BID_DEAL_ANNOUNCE.cs" />
+    <Compile Include="BID_DOC_CHARACT_CODE.cs" />
+    <Compile Include="BID_EVALUATION_EXPERT.cs" />
+    <Compile Include="BID_EVALUATION_EXPERT_DEL.cs" />
+    <Compile Include="BID_INVITE_LIST.cs" />
+    <Compile Include="BID_OPENING_RECORD.cs" />
+    <Compile Include="BID_OPEN_DETAIL.cs" />
+    <Compile Include="BID_VIOLATION.cs" />
+    <Compile Include="BID_WINNING_NOTICE.cs" />
+    <Compile Include="BID_WORK_CONTROL.cs" />
+    <Compile Include="BID_ZJRJ_CODE.cs" />
+    <Compile Include="BLACK_LIST.cs" />
+    <Compile Include="CAINFO.cs" />
+    <Compile Include="CAINFO.sequence.cs">
+      <DependentUpon>CAINFO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CALC_SQL.cs" />
+    <Compile Include="CA_IMG.cs" />
+    <Compile Include="COMPARE_SELECT_ANN.cs" />
+    <Compile Include="COMPARE_SELECT_RESULT.cs" />
+    <Compile Include="COMPLAINT_INFO.cs" />
+    <Compile Include="CONTRACT_PERFORMANCE.cs" />
+    <Compile Include="CORRECTION_ITEM.cs" />
+    <Compile Include="CREDIT_ASSESSMENT.cs" />
+    <Compile Include="CREDIT_ATTACHMENTS.cs" />
+    <Compile Include="DATA_ANALYSE.cs" />
+    <Compile Include="DB_SYSTEM.cs" />
+    <Compile Include="DEAL_BEHAVIOR_INFO.cs" />
+    <Compile Include="DEAL_LAND_INFO.cs" />
+    <Compile Include="DEA_CARBON_QUOTA_SELL_ANNO.cs" />
+    <Compile Include="DEA_CARBON_QUOTA_SELL_RESULT.cs" />
+    <Compile Include="DEA_MEDI_CHANGE_ANNO.cs" />
+    <Compile Include="DEA_MEDI_FIXED_PURCHASE_ANNO.cs" />
+    <Compile Include="DEA_MEDI_FIXED_PURCHASE_DETAIL.cs" />
+    <Compile Include="DEA_MEDI_FIXED_PURCHASE_LIST.cs" />
+    <Compile Include="DEA_MEDI_NEGO_PURCHASE_ANNO.cs" />
+    <Compile Include="DEA_MEDI_NEGO_PURCHASE_DETAIL.cs" />
+    <Compile Include="DEA_MEDI_NEGO_PURCHASE_LIST.cs" />
+    <Compile Include="DEA_MEDI_NET_PURCHASE_ANNO.cs" />
+    <Compile Include="DEA_MEDI_NET_PURCHASE_DETAIL.cs" />
+    <Compile Include="DEA_MEDI_NET_PURCHASE_LIST.cs" />
+    <Compile Include="DEA_MEDI_OTHER_PURCHASE_ANNO.cs" />
+    <Compile Include="DEA_MEDI_PURCHASE_ORDER.cs" />
+    <Compile Include="DEA_MEDI_TENDER_ANNO.cs" />
+    <Compile Include="DEA_MEDI_TENDER_DETAIL.cs" />
+    <Compile Include="DEA_MEDI_TENDER_LIST.cs" />
+    <Compile Include="DEA_MEDI_WIN_BID_ANNO.cs" />
+    <Compile Include="DEA_MEDI_WIN_BID_DETAIL.cs" />
+    <Compile Include="DEA_MEDI_WIN_BID_LIST.cs" />
+    <Compile Include="DEA_SEWAGE_ASSIGNEE_LIST.cs" />
+    <Compile Include="DEA_SEWAGE_PAID_TRANSFER_ANNO.cs" />
+    <Compile Include="DEA_SEWAGE_PAID_TRANSFER_RES.cs" />
+    <Compile Include="DGG.cs" />
+    <Compile Include="DOS_SEQ.cs" />
+    <Compile Include="DSJ_AREA.cs" />
+    <Compile Include="ECA_PCAX.cs" />
+    <Compile Include="ENTER_CREDTI_INFO.cs" />
+    <Compile Include="EVALUATION_BUILD_APPLY.cs" />
+    <Compile Include="EVALUATION_REPORT.cs" />
+    <Compile Include="EVALUATION_RESULT.cs" />
+    <Compile Include="EVALUATION_RESULTS.cs" />
+    <Compile Include="EVALUATION_RESULTS_BIDDER.cs" />
+    <Compile Include="EVALUATION_RESULTS_SCORE.cs" />
+    <Compile Include="EVALUATION_SCORE_DETAIL.cs" />
+    <Compile Include="EXPERT_BID_EVALUATION.cs" />
+    <Compile Include="EXPERT_CREDIT_RECORD.cs" />
+    <Compile Include="EXPERT_EVALUATION.cs" />
+    <Compile Include="EXPLOR_BID_AUCTION_TRANS_ANN.cs" />
+    <Compile Include="EXPLOR_BID_AUC_TRANS_RES_ANN.cs" />
+    <Compile Include="EXPLOR_TRANS_PUB_INFO.cs" />
+    <Compile Include="EXT_SERVICE_ADVICE.cs" />
+    <Compile Include="EXT_SERVICE_ADVICE.sequence.cs">
+      <DependentUpon>EXT_SERVICE_ADVICE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EX_TRAIN_AND_TEST.cs" />
+    <Compile Include="FHHG.cs" />
+    <Compile Include="FwEntity.cs" />
+    <Compile Include="GET_DATA_LOG.cs" />
+    <Compile Include="GGFW_PRODUCT_ANALYSIS.cs" />
+    <Compile Include="GGFW_S.cs" />
+    <Compile Include="GGFW_STUDENT.cs" />
+    <Compile Include="GGZY_QUARTZ_TASK.cs" />
+    <Compile Include="GTEMPP.cs" />
+    <Compile Include="IDENT_INFORMATION.cs" />
+    <Compile Include="INDIVIDUAL_ASSIGNEE_EX_INFO.cs" />
+    <Compile Include="INDIVIDUAL_BASE.cs" />
+    <Compile Include="INDIVIDUAL_BIDER_EX_INFO.cs" />
+    <Compile Include="INDIVIDUAL_SUPPLIER_EX_INFO.cs" />
+    <Compile Include="INDIVIDUAL_SUPPPLIER_EX_INFO.cs" />
+    <Compile Include="LEGAL_PERSON_BASE.sequence.cs" />
+    <Compile Include="LEGAL_PERSON_BASE.cs" />
+    <Compile Include="LEGAL_PERSON_TRADE_PERFORM.cs" />
+    <Compile Include="LETTER_OF_GUARANTEE.cs" />
+    <Compile Include="LISTING_PUB_INFO.cs" />
+    <Compile Include="LISTING_PUB_INFO_PRE.cs" />
+    <Compile Include="LIST_PUB_INFO.cs" />
+    <Compile Include="LOGIN_LOG.cs" />
+    <Compile Include="LOG_PROCESSING.cs" />
+    <Compile Include="LOG_REPORT.cs" />
+    <Compile Include="MAK_PER.cs" />
+    <Compile Include="MCHG_PROG_MGT.cs" />
+    <Compile Include="MINING_ATTACHMENTS.cs" />
+    <Compile Include="MINING_BID_AUCTION_TRANS_ANN.cs" />
+    <Compile Include="MINING_BID_AUC_TRANS_RES_ANN.cs" />
+    <Compile Include="MINING_DISTRICT_RANGE_PUB.cs" />
+    <Compile Include="MINING_DISTRIVT_RANGE_PUB.cs" />
+    <Compile Include="MINING_TRANS_PUB_INFO.cs" />
+    <Compile Include="MV_ALLRESULT.cs" />
+    <Compile Include="MV_GCJSLY_RANK.cs" />
+    <Compile Include="MV_GGXX_HISTORY_XZJD.cs" />
+    <Compile Include="MV_GGXX_XZJD.cs" />
+    <Compile Include="MV_HISTORY_DISHI.cs" />
+    <Compile Include="MV_JYTJ_ALL.cs" />
+    <Compile Include="MV_JYTJ_RANGE.cs" />
+    <Compile Include="MV_JYXX_HISTORY.cs" />
+    <Compile Include="MV_JYXX.cs" />
+    <Compile Include="MV_NOTICE_COUNT.cs" />
+    <Compile Include="MV_REAL_DATA_STATISTICS.cs" />
+    <Compile Include="MV_TENDER_LIST_COUNT.cs" />
+    <Compile Include="MV_TJ_ALLCREATE.cs" />
+    <Compile Include="MV_TJ_ALLCREATE_XZJD_HOUR.cs" />
+    <Compile Include="MV_TJ_ALLRESULT.cs" />
+    <Compile Include="MV_TJ_ALLRESULT_XZJD.cs" />
+    <Compile Include="MV_TJ_ALLCREATE_XZJD.cs" />
+    <Compile Include="MV_TJ_ALLTB.cs" />
+    <Compile Include="MV_USER_TENDER_LIST.cs" />
+    <Compile Include="MV_WANZHENGLV_CQGQ.cs" />
+    <Compile Include="MV_WANZHENGLV_CQSW.cs" />
+    <Compile Include="MV_WANZHENGLV_GCJS.cs" />
+    <Compile Include="MV_WANZHENGLV_TDKYQT.cs" />
+    <Compile Include="MV_WANZHENGLV_ZFCG.cs" />
+    <Compile Include="MZTUSER.cs" />
+    <Compile Include="M_CLOBTEST.cs" />
+    <Compile Include="NON_OIL_GAS_EXPLOR_REG_ANN.cs" />
+    <Compile Include="NON_OIL_GAS_MINING_REG_ANN.cs" />
+    <Compile Include="OBJECTION.cs" />
+    <Compile Include="OBJECTION_REPLY.cs" />
+    <Compile Include="OIL_GAS_EXPLOR_REG_ANN.cs" />
+    <Compile Include="OIL_GAS_MINING_REG_ANN.cs" />
+    <Compile Include="OTHER_ABNORMITY_REPORT.cs" />
+    <Compile Include="OTHER_TRADE_PUB_INFO.cs" />
+    <Compile Include="OTHER_TRADE_RESULT_INFO.cs" />
+    <Compile Include="PAYMENT_AUDIT.cs" />
+    <Compile Include="PAYMENT_MANAGE.cs" />
+    <Compile Include="PERFORMANCE.cs" />
+    <Compile Include="PERFORMANCE_INFO.cs" />
+    <Compile Include="PRACTITION_CREDTI_INFO.cs" />
+    <Compile Include="PRODUCT_ANALYSIS.cs" />
+    <Compile Include="PRODUCT_CLASSIFY.cs" />
+    <Compile Include="PRODUCT_COMPONENT_DATA.cs" />
+    <Compile Include="PRODUCT_DATA.cs" />
+    <Compile Include="PRODUCT_EQP.cs" />
+    <Compile Include="PRODUCT_MATERIAL.cs" />
+    <Compile Include="PRODUCT_PARAMETER.cs" />
+    <Compile Include="PRODUCT_PART_TABLE.cs" />
+    <Compile Include="PRODUCT_VALUE.cs" />
+    <Compile Include="PROJECT.cs" />
+    <Compile Include="PROJECT_ALERTING_INFO.cs" />
+    <Compile Include="PROJECT_ATTACHMENTS.cs" />
+    <Compile Include="PROJECT_PERFORMANCE.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PRO_EXT_DET_REC.cs" />
+    <Compile Include="PRO_EX_RESULT.cs" />
+    <Compile Include="PRO_TPOTIOT.cs" />
+    <Compile Include="PRT_LOG.cs" />
+    <Compile Include="PRT_MENU.cs" />
+    <Compile Include="PRT_ROLE.cs" />
+    <Compile Include="PRT_ROLE_MENU.cs" />
+    <Compile Include="PRT_USER.cs" />
+    <Compile Include="PT_ARTICLE.cs" />
+    <Compile Include="PT_ATYPE.cs" />
+    <Compile Include="PT_COMMENT.cs" />
+    <Compile Include="PT_LINK.cs" />
+    <Compile Include="PT_TJ_BG.cs" />
+    <Compile Include="PT_TJ_DATA.cs" />
+    <Compile Include="PT_TJ_MAIN.cs" />
+    <Compile Include="PT_TJ_TM.cs" />
+    <Compile Include="PURCHASE_AGENT_EX_INFO.cs" />
+    <Compile Include="PURCHASE_BIDDING_RECORD.cs" />
+    <Compile Include="PURCHASE_CONTRACT.cs" />
+    <Compile Include="PURCHASE_EX_INFO.cs" />
+    <Compile Include="PURCHASE_PROJECT.cs" />
+    <Compile Include="PURCHASE_QUALI_INQUERY_ANN.cs" />
+    <Compile Include="PURCHASE_TENDER_LIST.cs" />
+    <Compile Include="QUALI_INQUERY_APP_FILE.cs" />
+    <Compile Include="QUALI_INQUERY_CLARI.cs" />
+    <Compile Include="QUALI_INQUERY_RESULT.cs" />
+    <Compile Include="QUALI_PERSON_BASE.cs" />
+    <Compile Include="QUALI_PERSON_PERFORME.cs" />
+    <Compile Include="QUALI_PERSON_QUALI.cs" />
+    <Compile Include="REJECTED_BID_INFO.cs" />
+    <Compile Include="SECTION.cs" />
+    <Compile Include="SECTION.partial.cs">
+      <DependentUpon>SECTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SLT_SCORE.cs" />
+    <Compile Include="SLT_SCORE_BAK.cs" />
+    <Compile Include="SLT_SCORE_HISTORY_LOG.cs" />
+    <Compile Include="SLT_STAFF.cs" />
+    <Compile Include="SLT_STAFF_LOG.cs" />
+    <Compile Include="SLT_SCORE_LOG.cs" />
+    <Compile Include="SOCIAL_CREDIT_INFO.cs" />
+    <Compile Include="STATICS_SQL.cs" />
+    <Compile Include="STATICS_SQL_RECORD.cs" />
+    <Compile Include="STATL_SUM.cs" />
+    <Compile Include="STOCK_LISTING_PUB_INFO.cs" />
+    <Compile Include="STOCK_LISTING_PUB_INFO_PRE.cs" />
+    <Compile Include="STOCK_TRADE_RESULT_INFO.cs" />
+    <Compile Include="STOCK_TRADE_RESULT_PRE.cs" />
+    <Compile Include="ST_PPTN_R.cs" />
+    <Compile Include="ST_RIVER_R.cs" />
+    <Compile Include="ST_RSVR_R.cs" />
+    <Compile Include="ST_STBPRP_B.cs" />
+    <Compile Include="ST_TIDE_R.cs" />
+    <Compile Include="SUPERVISION_ATTACHMENTS.cs" />
+    <Compile Include="SUPPLIER_EX_INFO.cs" />
+    <Compile Include="SYS_AREA.cs" />
+    <Compile Include="SYS_AREA_QUANGUO.cs" />
+    <Compile Include="SYS_ATTACHMENT.cs" />
+    <Compile Include="SYS_ATTACHMENT.sequence.cs">
+      <DependentUpon>SYS_ATTACHMENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_AUDIT.cs" />
+    <Compile Include="SYS_AUDIT_INFO.cs" />
+    <Compile Include="SYS_DEPARTMENT.cs" />
+    <Compile Include="SYS_DIC.cs" />
+    <Compile Include="SYS_DOCUMENTS.cs" />
+    <Compile Include="SYS_INFO.cs" />
+    <Compile Include="SYS_LOG.cs" />
+    <Compile Include="SYS_MENU.cs" />
+    <Compile Include="SYS_POPEDOM.cs" />
+    <Compile Include="SYS_PUBLICTYPEINFO.cs" />
+    <Compile Include="SYS_SEQ.cs" />
+    <Compile Include="SYS_TREE.cs" />
+    <Compile Include="SYS_URL.cs" />
+    <Compile Include="SYS_USER.cs" />
+    <Compile Include="SYS_USERROLE.cs" />
+    <Compile Include="TABLE_FLIED.cs" />
+    <Compile Include="TB_FAVORITE.cs" />
+    <Compile Include="TB_PARTICIPATE.cs" />
+    <Compile Include="TB_REPLACE.cs" />
+    <Compile Include="TB_TABLECONFIG.cs" />
+    <Compile Include="TB_TABLEFIELDCONFIG.cs" />
+    <Compile Include="TCP_SYSTEM.cs" />
+    <Compile Include="TENDERER_EX_INFO.cs" />
+    <Compile Include="TENDER_ABNORMITY_REPORT.cs" />
+    <Compile Include="TENDER_AGENT_EX_INFO.cs" />
+    <Compile Include="TENDER_ANN_QUA_INQUERY_ANN.cs" />
+    <Compile Include="TENDER_ANN_QUA_INQUERY_ANN.partial.cs">
+      <DependentUpon>TENDER_ANN_QUA_INQUERY_ANN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TENDER_ANN_QUA_INQUERY_ANN1206.cs" />
+    <Compile Include="TENDER_CANDIDATE.cs" />
+    <Compile Include="TENDER_CANDIDATE_ANNOUNCE.cs" />
+    <Compile Include="TENDER_EVALUATION.cs" />
+    <Compile Include="TENDER_EX_INFO.cs" />
+    <Compile Include="TENDER_FILE_BUYYER_INFO.cs" />
+    <Compile Include="TENDER_FILE_CLARI_MODI.cs" />
+    <Compile Include="TENDER_FILE_EVALUATION.cs" />
+    <Compile Include="TENDER_FLOW_MARK.cs" />
+    <Compile Include="TENDER_INVITATION.cs" />
+    <Compile Include="TENDER_LIST.cs" />
+    <Compile Include="TENDER_PROJECT.cs" />
+    <Compile Include="TENDER_PROJECT_DEL.cs" />
+    <Compile Include="TENDER_PROJECT_GD.cs" />
+    <Compile Include="TENDER_QUALIFICATION.cs" />
+    <Compile Include="TEST.cs" />
+    <Compile Include="TEST_TABLE.cs" />
+    <Compile Include="THE_EEL_EXPERT.cs" />
+    <Compile Include="THE_EEL_ROW.cs" />
+    <Compile Include="THE_EEL_ROW_RESULT.cs" />
+    <Compile Include="THE_EEL_SET_AND_AUTH.cs" />
+    <Compile Include="TPA_QA_TABLE.cs" />
+    <Compile Include="TPEW_INFO.cs" />
+    <Compile Include="TRADE_CENTER.cs" />
+    <Compile Include="TRADE_RESULT_INFO.cs" />
+    <Compile Include="TRADE_RESULT_INFO_PRE.cs" />
+    <Compile Include="TRANSFEROR_EX_INFO.cs" />
+    <Compile Include="TRANSFER_ENTE_HAREHOLDER.cs" />
+    <Compile Include="TRANSFER_ENTE_HOLDER_PRE.cs" />
+    <Compile Include="TRANSFER_ENTE_INFO.cs" />
+    <Compile Include="TRANSFER_ENTE_INFO_PRE.cs" />
+    <Compile Include="TS_INFO.cs" />
+    <Compile Include="T_ANSWER_ANN.cs" />
+    <Compile Include="T_ASKANSWER.cs" />
+    <Compile Include="T_ASKANSWER.sequence.cs">
+      <DependentUpon>T_ASKANSWER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_ASKANSWER_REPLY.cs" />
+    <Compile Include="T_ATTACHMENT.cs" />
+    <Compile Include="T_AUDIT.cs" />
+    <Compile Include="T_AUDIT_DETAIL.cs" />
+    <Compile Include="T_BASE_TRADE_CENTER.cs" />
+    <Compile Include="T_CA_ACCESS.cs" />
+    <Compile Include="T_CA_PLOY.cs" />
+    <Compile Include="T_CERTIFICATE.cs" />
+    <Compile Include="T_DOWNLOADLIST.cs" />
+    <Compile Include="T_EC2_AMENDBULLETIN.cs" />
+    <Compile Include="T_EC2_BIDDERINFO.cs" />
+    <Compile Include="T_EC2_BIDINVITE.cs" />
+    <Compile Include="T_EC2_BIDSECTION.cs" />
+    <Compile Include="T_EC2_GOODSOPENBIDLIST.cs" />
+    <Compile Include="T_EC2_OPENBIDRECORD.cs" />
+    <Compile Include="T_EC2_PROJECT.cs" />
+    <Compile Include="T_EC2_PROJECTOPENBIDLIST.cs" />
+    <Compile Include="T_EC2_QUALIFYBULLETIN.cs" />
+    <Compile Include="T_EC2_SERVICEOPENBIDLIST.cs" />
+    <Compile Include="T_EC2_TENDERAGENCYINFO.cs" />
+    <Compile Include="T_EC2_TENDERBULLETIN.cs" />
+    <Compile Include="T_EC2_TENDERERINFO.cs" />
+    <Compile Include="T_EC2_TENDERPROJECT.cs" />
+    <Compile Include="T_EC2_WINBID.cs" />
+    <Compile Include="T_EC2_WINBIDBULLETIN.cs" />
+    <Compile Include="T_EC2_WINCANDIDATEBULLETIN.cs" />
+    <Compile Include="T_FINDPWD.cs" />
+    <Compile Include="T_FJJ_ATTACHMENTSET.cs" />
+    <Compile Include="T_FR_BASE.cs" />
+    <Compile Include="T_GQ_PUBLISH.cs" />
+    <Compile Include="T_INDEXSHOW_SET.cs" />
+    <Compile Include="T_JIEKOU_USER.cs" />
+    <Compile Include="T_JYPT_ACCESS.cs" />
+    <Compile Include="T_MEDICAL.cs" />
+    <Compile Include="T_MEDICAL_TEST.cs" />
+    <Compile Include="T_MEDICAL_TOTLE.cs" />
+    <Compile Include="T_MENU.cs" />
+    <Compile Include="T_MESSAGE.cs" />
+    <Compile Include="T_MESSAGE_TEXT.cs" />
+    <Compile Include="T_MODIFY_APPLICATION.cs" />
+    <Compile Include="T_MSSM.cs" />
+    <Compile Include="T_NOTICE.cs" />
+    <Compile Include="T_OPERNOTICE.cs" />
+    <Compile Include="T_OPER_ASK.cs" />
+    <Compile Include="T_POPEDOM.cs" />
+    <Compile Include="T_PUSHZP_LOG.cs" />
+    <Compile Include="T_ROWID.cs" />
+    <Compile Include="T_RP.cs" />
+    <Compile Include="T_RP_DBCONFIG.cs" />
+    <Compile Include="T_RP_FIELD.cs" />
+    <Compile Include="T_RP_MENU.cs" />
+    <Compile Include="T_RP_ST_TREE.cs" />
+    <Compile Include="T_RP_ST_TREE_NODE.cs" />
+    <Compile Include="T_SEQ.cs" />
+    <Compile Include="T_SEQ_LOG.cs" />
+    <Compile Include="T_SERVICE_DATAKEY.cs" />
+    <Compile Include="T_SERVICE_LOG.cs" />
+    <Compile Include="T_SERVICE_TCID.cs" />
+    <Compile Include="T_SIGN_CA.cs" />
+    <Compile Include="T_SIGN_LOG.cs" />
+    <Compile Include="T_SMS_LOG.cs" />
+    <Compile Include="T_SSO_AUTHORIZATION.cs" />
+    <Compile Include="T_SSO_AUTHORIZATION.sequence.cs">
+      <DependentUpon>T_SSO_AUTHORIZATION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_SSO_INFO.cs" />
+    <Compile Include="T_SSO_INFO_SQ.cs" />
+    <Compile Include="T_SSO_JYCENTER.cs" />
+    <Compile Include="T_SW_PUBLISH.cs" />
+    <Compile Include="T_SYS_MESSAGE.cs" />
+    <Compile Include="T_TABLE_FIELD.cs" />
+    <Compile Include="T_TIMELINESS_COUNT.cs" />
+    <Compile Include="T_TJ_ALLTB_UPLOAD.cs" />
+    <Compile Include="T_TRANS_LOG.cs" />
+    <Compile Include="T_TUISONG.cs" />
+    <Compile Include="T_TUISONG_TOTAL.cs" />
+    <Compile Include="T_UPLOAD.cs" />
+    <Compile Include="T_UPLOAD_ERROR.cs" />
+    <Compile Include="T_UPLOAD_ERROR_LOG.cs" />
+    <Compile Include="T_UPLOAD_OK_LOG.cs" />
+    <Compile Include="T_USER.cs" />
+    <Compile Include="T_USER.sequence.cs">
+      <DependentUpon>T_USER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_USERROLE.cs" />
+    <Compile Include="T_USER_BAK.cs" />
+    <Compile Include="T_USER_BAN.cs" />
+    <Compile Include="T_USER_MENU.cs" />
+    <Compile Include="T_USER_POPEDOM.cs" />
+    <Compile Include="T_USER_QYZC.cs" />
+    <Compile Include="T_USER_ROLE.cs" />
+    <Compile Include="T_USER_TRADEPLATFORM.cs" />
+    <Compile Include="T_USER_URL.cs" />
+    <Compile Include="T_XIEHUI_UPLOAD_LOG.cs" />
+    <Compile Include="T_YC_LOG.cs" />
+    <Compile Include="T_ZT_BIDDERCONTRACT.cs" />
+    <Compile Include="T_ZT_LEGAL.cs" />
+    <Compile Include="T_ZT_ORGANQUAL.cs" />
+    <Compile Include="T_ZT_PERSON.cs" />
+    <Compile Include="T_ZT_PRACTICEQUAL.cs" />
+    <Compile Include="T_ZT_PRACTITIONER.cs" />
+    <Compile Include="T_ZT_PRACTITIONERACHIEVEMENT.cs" />
+    <Compile Include="T_ZT_PURCHASINGAGENT.cs" />
+    <Compile Include="T_ZT_TRANSFER.cs" />
+    <Compile Include="T_ZT_TRANSFEREE.cs" />
+    <Compile Include="UNIFY_APP.const.cs">
+      <DependentUpon>UNIFY_APP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UNIFY_AUTHS.cs" />
+    <Compile Include="UNIFY_USER.cs" />
+    <Compile Include="UNIFY_APP.cs" />
+    <Compile Include="USE_AFTER_SALE.cs" />
+    <Compile Include="VIOLATING_LAWS_RULES_INFO.cs" />
+    <Compile Include="V_BIG_DAILI.cs" />
+    <Compile Include="V_BIG_JG.cs" />
+    <Compile Include="V_BIG_ALLRESULT.cs" />
+    <Compile Include="V_BIG_PROXY.cs" />
+    <Compile Include="V_GGINFO.cs" />
+    <Compile Include="V_PROJECT_REGISTER.cs" />
+    <Compile Include="V_UNIFY_USER.cs" />
+    <Compile Include="WARN_EXPRESSION.cs" />
+    <Compile Include="WARN_EXPRESSION_DETAIL.cs" />
+    <Compile Include="WARN_FEEDBACK.cs" />
+    <Compile Include="WARN_RECORD.cs" />
+    <Compile Include="WARN_RESULT.cs" />
+    <Compile Include="WARN_TEMPLATE.cs" />
+    <Compile Include="WIN_RESULT_ANNO.cs" />
+    <Compile Include="WIN_RESULT_ANNO.partial.cs">
+      <DependentUpon>WIN_RESULT_ANNO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WITHDRAW_BLACK_LIST.cs" />
+    <Compile Include="YDPB_EVAL_APPLY_Record.cs" />
+    <Compile Include="YD_EVA_ROOM.cs" />
+    <Compile Include="YD_REQUISITION.cs" />
+    <Compile Include="YD_ROOMSET.cs" />
+    <Compile Include="ZJPRI_BAD_BEHAVIOR.cs" />
+    <Compile Include="ZJPRI_COMPREHENSIVE.cs" />
+    <Compile Include="ZJPRI_CONSTRUCT_CERTIFI.cs" />
+    <Compile Include="ZJPRI_CONSTRUCT_ENTER_INFO.cs" />
+    <Compile Include="ZJPRI_CONSTRUCT_INTERMEDIATE.cs" />
+    <Compile Include="ZJPRI_CONSTRUCT_KEYPERSON.cs" />
+    <Compile Include="ZJPRI_CONSTRUCT_QUALI_INFO.cs" />
+    <Compile Include="ZJPRI_EMPLOYEES_INFO.cs" />
+    <Compile Include="ZJPRI_EMPLOYEES_QUALI.cs" />
+    <Compile Include="ZJPRI_EXT_COMPANY.cs" />
+    <Compile Include="ZJPRI_EXT_PEOPLE.cs" />
+    <Compile Include="ZJPRI_EXT_SELFPROVE.cs" />
+    <Compile Include="ZJPRI_GOOD_BEHAVIOR.cs" />
+    <Compile Include="ZJPRI_REGISTER_PERSON.cs" />
+    <Compile Include="ZJ_AWARD_INFO.cs" />
+    <Compile Include="ZJ_ENTERPRISE_CERTIFICATE_INFO.cs" />
+    <Compile Include="ZJ_ENTERPRISE_CREDIT_SCORE.cs" />
+    <Compile Include="ZJ_ENTERPRISE_QUALIFICATION.cs" />
+    <Compile Include="ZJ_LEGAL_PERSON_BASE.cs" />
+    <Compile Include="ZJ_QUALI_PERSON_BASE.cs" />
+    <Compile Include="ZJ_QUALI_PERSON_PERFORME.cs" />
+    <Compile Include="ZJ_QUALI_PERSON_QUALI.cs" />
+    <Compile Include="ZJ_VIOLATING_LAWS_RULES_INFO.cs" />
+    <Compile Include="ZP_FAQ.cs" />
+    <Compile Include="ZP_USER.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Dos.ORM\Dos.ORM.csproj">
+      <Project>{4bef1983-f275-4807-96ea-25b973bd6e94}</Project>
+      <Name>Dos.ORM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

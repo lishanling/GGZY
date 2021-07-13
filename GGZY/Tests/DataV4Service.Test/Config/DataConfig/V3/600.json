@@ -1,0 +1,408 @@
+{
+  "DataNo": "600",
+  "DataName": "DEAL_BEHAVIOR_INFO",
+  "DataCnName": "出让公告信息",
+  "Fields": [
+    {
+      "Name": "ANNOUNCEMENT_GUID",
+      "CnName": "项目编号ID",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "LAND_PROJECT_NAME",
+      "CnName": "项目名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "ANNOUNCEMENT_TITLE",
+      "CnName": "公示标题",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "ANNOUNCEMENT_CONNECT",
+      "CnName": "公示内容",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "LAND_DISTRICT",
+      "CnName": "项目所在行政区划代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 9
+        }
+      ]
+    },
+    {
+      "Name": "TRA_PLACE_CODE",
+      "CnName": "交易发生行政区域代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 6
+        }
+      ]
+    },
+    {
+      "Name": "TRA_AGENCY_NAME",
+      "CnName": "交易机构名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "TRA_AGENCY_CODE",
+      "CnName": "交易机构代码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "URL",
+      "CnName": "公告源URL",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "END_DATE",
+      "CnName": "截止日期",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "CREATE_TIME",
+      "CnName": "创建时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "PUBLISHING_TIME",
+      "CnName": "发布时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "SUPPLY_TYPE",
+      "CnName": "供应方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "7002"
+        }
+      ]
+    },
+    {
+      "Name": "CHANGE_TIME",
+      "CnName": "修改日期",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "RETREAT_TIME",
+      "CnName": "撤回时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "ANNOUNCEMENT_UNIT",
+      "CnName": "公示单位",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "ANNOUNCEMENT_START_TIME",
+      "CnName": "公示开始时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "ANNOUNCEMENT_DEADLINE",
+      "CnName": "公示结束时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "FIELD_NUM",
+      "CnName": "宗地数量",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 10
+        }
+      ]
+    },
+    {
+      "Name": "LISTING_START_TIME",
+      "CnName": "招拍挂开始时间",
+      "Validators": [
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmm"
+        }
+      ]
+    },
+    {
+      "Name": "LISTING_DEADLINE",
+      "CnName": "招拍挂结束时间",
+      "Validators": [
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmm"
+        }
+      ]
+    },
+    {
+      "Name": "LISTING_TYPE",
+      "CnName": "招拍挂类型",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "7001"
+        }
+      ]
+    },
+    {
+      "Name": "ANNOUNCEMENT_TYPE",
+      "CnName": "公示类型",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "20"
+        }
+      ]
+    },
+    {
+      "Name": "LIAISON_UNIT",
+      "CnName": "联系单位",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "UNIT_ADDRESS",
+      "CnName": "单位地址",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "ZIP_CODE",
+      "CnName": "邮政编码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 10
+        }
+      ]
+    },
+    {
+      "Name": "CONTACT_PERSON",
+      "CnName": "联系人",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "CONTACT_NUMBER",
+      "CnName": "联系电话",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "EMAIL",
+      "CnName": "电子邮箱",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "CANCEL_REASON",
+      "CnName": "撤销原因",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 4000
+        }
+      ]
+    },
+    {
+      "Name": "ANNOUNCEMENT_CODE",
+      "CnName": "公示编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

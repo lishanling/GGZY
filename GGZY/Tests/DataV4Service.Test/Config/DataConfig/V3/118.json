@@ -1,0 +1,31 @@
+{
+    "DataNo": "118",
+    "DataName": "INDIVIDUAL_BIDER_EX_INFO",
+    "DataCnName": "竞得人扩展信息(自然人)",
+    "Fields": [
+        {
+            "Name": "LEGAL_CODE",
+            "CnName": "主体代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "CUSTOM_DEFINITION_DATAITEM",
+            "CnName": "自定义数据项",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 5000
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

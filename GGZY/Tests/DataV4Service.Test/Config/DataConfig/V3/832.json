@@ -1,0 +1,249 @@
+{
+    "DataName": "SL_SECTION",
+    "DataCnName": "标段(包)",
+    "IsZXSJ": true,
+    "GgfwDataNo": "502",
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "SL_TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODE",
+            "CnName": "标段（包）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 23
+                },
+                {
+                    "ValidatorName": "AreaCodeMatch",
+                    "Begin": 1
+                },
+                {
+                    "ValidatorName": "UniqueValue"
+                },
+                {
+                    "ValidatorName": "CannotModify"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_NAME",
+            "CnName": "标段（包）名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "UNIFIED_DEAL_CODE",
+            "CnName": "统一交易标识码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 40
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CONTENT",
+            "CnName": "标段（包）内容",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "BID_ECTION_NUM",
+            "CnName": "标段（包）招标次数",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 1
+                }
+            ]
+        },
+        {
+            "Name": "TENDER_PROJECT_CLASSIFY_CODE",
+            "CnName": "标段（包）分类代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 30
+                }
+            ]
+        },
+        {
+            "Name": "BID_TENDER_MODE",
+            "CnName": "标段（包）招标方式",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "REGION_CODE",
+            "CnName": "标段（包）所在行政区域代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                },
+                {
+                    "ValidatorName": "AreaCodeMatch",
+                    "Begin": 0
+                }
+            ]
+        },
+        {
+            "Name": "TRA_PLACE_CODE",
+            "CnName": "交易发生行政区域代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                }
+            ]
+        },
+        {
+            "Name": "CONTRACT_RECKON_PRICE",
+            "CnName": "标段合同估算价",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 14,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "CURRENCY_CODE",
+            "CnName": "标段合同估算价币种代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 3
+                }
+            ]
+        },
+        {
+            "Name": "PRICE_UNIT",
+            "CnName": "标段合同估算价单位",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                },
+                {
+                    "ValidatorName": "EnumMatch",
+                    "EnumType": "PRICE_UNIT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_QUALIFICATION",
+            "CnName": "投标人资格条件",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "BEGIN_DATE",
+            "CnName": "计划开工日期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "LIMITE_TIME",
+            "CnName": "工期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 5
+                }
+            ]
+        },
+        {
+            "Name": "CREATE_TIME",
+            "CnName": "标段(包)建立时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        }
+    ],
+    "Validators": [
+        {
+            "ValidatorName": "CONTRACT_RECKON_PRICE"
+        }
+    ]
+}

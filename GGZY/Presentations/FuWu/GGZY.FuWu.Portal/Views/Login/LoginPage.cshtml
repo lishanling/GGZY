@@ -1,0 +1,123 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "LoginPage";
+}
+@model GGZY.Services.Infrastructure.Model.FuWu.FwOAuthModel
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>登录 - 统一用户系统</title>
+    <link href="~/static/styles/Login/LoginPage.css" rel="stylesheet" />
+    <link href="~/static/styles/el/eltabs.css" rel="stylesheet" />
+    <link href="~/static/styles/el/elform.css" rel="stylesheet" />
+    <link href="~/static/styles/el/elinput.css" rel="stylesheet" />
+    <link href="~/static/styles/el/elbutton.css" rel="stylesheet" />
+    <script src="~/static/common/jquery.min.js"></script>
+    <script src="~/static/common/md5.js"></script>
+    <script src="~/static/common/devplus.js"></script>
+    <script src="~/static/modules/CertificateAuthorization/ca.js"></script>
+    <script src="~/static/modules/Login/loginPage.js"></script>
+    <script type="text/javascript">
+        @if (!string.IsNullOrWhiteSpace(Request.ApplicationPath)&&!string.IsNullOrWhiteSpace(Request.ApplicationPath.TrimStart('/')))
+        {
+            @:dp.baseUrl = "@(Request.ApplicationPath)";
+            @:dp.ajaxBaseUrl="@(Request.ApplicationPath)";
+        }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div class="login o-page">
+            <div class="login-box">
+                <div class="title"></div>
+                <div class="form-login">
+                    <div class="el-tabs el-tabs--top el-tabs--border-card">
+                        <div class="el-tabs__header is-top">
+                            <div class="el-tabs__nav-wrap is-top">
+                                <div class="el-tabs__nav-scroll">
+                                    <div role="tablist" class="el-tabs__nav is-top" style="transform: translateX(0px);">
+                                        <div id="tab-first" aria-controls="pane-first" role="tab" aria-selected="true" tabindex="0" class="el-tabs__item is-top is-active">账号密码</div>
+                                        <div id="tab-second" aria-controls="pane-second" role="tab" tabindex="-1" class="el-tabs__item is-top">统一身份认证</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="el-tabs__content">
+                            <div role="tabpanel" id="pane-first" aria-labelledby="tab-first" class="el-tab-pane account-login">
+                                <div class="el-form">
+                                    <div class="el-form-item item-p is-required">
+
+                                        <div class="el-form-item__content">
+                                            <div class="el-input">
+                                                @*el-input--prefix*@
+                                                <input type="text" autocomplete="off" class="el-input__inner" id="name" name="name" placeholder="用户名">
+                                                <span class="el-input__prefix">
+                                                    <i class="el-input__icon el-icon-user"></i>
+                                                </span>
+                                            </div>
+                                            <button type="button" class="el-button el-button--text" style="display: none">
+                                                <span>立即注册</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="el-form-item item-p is-required">
+
+                                        <div class="el-form-item__content">
+                                            <div class="el-input">
+                                                @*el-input--prefix*@
+                                                <input type="password" autocomplete="off" class="el-input__inner" id="pwd" placeholder="密码">
+                                                <input type="hidden" autocomplete="off" class="el-input__inner" id="md5Pwd" name="md5Pwd">
+                                                <span class="el-input__prefix"><i class="el-input__icon el-icon-unlock"></i></span>
+                                            </div>
+                                            <button type="button" class="el-button el-button--text" style="display: none"><span>忘记密码</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="el-form-item is-required">
+
+                                        <div class="el-form-item__content">
+                                            <div class="form-code el-input el-input-group el-input-group--append">
+                                                <input type="text" autocomplete="off" class="el-input__inner" id="code" name="Code" placeholder="验证码">
+                                                <span class="el-input__prefix"><i class="el-icon-mobile"></i></span>
+                                                <div class="el-input-group__append"><img id="imgCode" src="@(Url.Action("CreateValidateCode"))" alt=""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="el-form-item login-btn">
+
+                                        <div class="el-form-item__content">
+                                            <button type="button" class="el-button el-button--primary" id="btnLogin" ><span>登 录</span></button>
+                                            <div class="describe">账号密码只针对招标代理机构发布招标公告使用，投标人只能用CA登录没有账号密码。</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" aria-hidden="true" id="pane-second" aria-labelledby="tab-second" class="el-tab-pane ca-login" style="display: none;">
+                                <button type="button" class="el-button el-button--primary" id="btnCaSign"><span>证 书 登 录</span></button>
+                                <div class="info">
+                                    <p> 1.请下载安装“ <a href="https://ggzyfw.fujian.gov.cn/Website/Packages/%E7%A6%8F%E5%BB%BA%E7%9C%81%E5%85%AC%E5%85%B1%E8%B5%84%E6%BA%90%E4%BA%A4%E6%98%93%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E8%9E%8D%E5%90%88%E5%AE%A2%E6%88%B7%E7%AB%AF.zip?m=48">福建省公共资源交易数字证书融合客户端(版本号：V5.3)</a> ” </p>
+                                    <p>2.登录前请插入 CA介质</p>
+                                    <p>3.如未注册，请点击“立即注册”</p>
+                                    <p>4.支持IE9以上或者Chrome浏览器</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="auth">
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(c => c.client_id)
+                        @Html.HiddenFor(c => c.redirect_uri)
+                        @Html.HiddenFor(c => c.state)
+                        @Html.HiddenFor(c => c.response_type)
+                        @Html.HiddenFor(c => c.grant_type)
+                        @Html.HiddenFor(c => c.client_secret)
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

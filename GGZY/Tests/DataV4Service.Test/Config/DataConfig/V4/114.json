@@ -1,0 +1,120 @@
+{
+    "DataNo": "114",
+    "DataName": "INDIVIDUAL_BASE",
+    "DataCnName": "自然人基本信息",
+    "Fields": [
+        {
+            "Name": "ID_CARD_TYPE",
+            "CnName": "身份证件类型",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 2
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "7"
+            }
+          ]
+        },
+        {
+            "Name": "ID_CARD",
+            "CnName": "主体代码（身份证件号）",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "ID_CARD_END_DATE",
+            "CnName": "身份证件失效日期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "PERSON_NAME",
+            "CnName": "姓名",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        },
+        {
+            "Name": "CONTACT",
+            "CnName": "联系电话",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 20
+                }
+            ]
+        },
+        {
+            "Name": "BANK_ACCOUNT",
+            "CnName": "银行账户",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 50
+                }
+            ]
+        },
+        {
+            "Name": "BANK_NAME",
+            "CnName": "开户行",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 100
+                }
+            ]
+        },
+        {
+            "Name": "ZIP_CODE",
+            "CnName": "邮编",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                }
+            ]
+        },
+        {
+            "Name": "ADDRESS",
+            "CnName": "地址",
+            "Validators": [
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 100
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

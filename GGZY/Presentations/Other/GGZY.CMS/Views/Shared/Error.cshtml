@@ -1,0 +1,46 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>亲,错误啦~</title>
+    <link href="~/static/common/css/Error404.css" rel="stylesheet" />
+</head>
+<body style="background-color:#FFFFFF">
+    <div class="demo">
+        <p><span>这</span><span>绝对</span><span>是个意外</span></p>
+        <p>处理你的请求时出错 (´･ω･`)</p>
+        @if (Request.IsLocal)
+        {
+            @Model.Exception
+        }
+        else
+        {
+            <div style="color: #32cd32;display: none">
+                @Model.Exception
+            </div>
+        }
+
+    </div>
+</body>
+</html>
+
+
+
+@*<!DOCTYPE html>
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width" />
+        <title>错误</title>
+    </head>
+    <body>
+        <hgroup>
+            <h1>错误。</h1>
+            <h2>处理你的请求时出错。</h2>
+        </hgroup>
+    </body>
+    </html>*@

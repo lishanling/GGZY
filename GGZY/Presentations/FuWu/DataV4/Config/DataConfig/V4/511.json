@@ -1,0 +1,248 @@
+{
+  "DataNo": "511",
+  "DataName": "TENDER_CANDIDATE_ANNOUNCE",
+  "DataCnName": "中标候选人公示",
+  "Fields": [
+    {
+      "Name": "TENDER_PROJECT_CODE",
+      "CnName": "招标项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        },
+        {
+          "ValidatorName": "TenderProjectCodeMatch",
+          "TenderProjectTableName": "TENDER_PROJECT"
+        }
+      ]
+    },
+    {
+      "Name": "BID_SECTION_CODES",
+      "CnName": "相关标段（包）编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "相关统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "PUBLICITY_NAME",
+      "CnName": "公示标题",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "PUBLICITY_CONTENT",
+      "CnName": "公示内容",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "PUBLICITY_REFER_TIME",
+      "CnName": "公示提交时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "NOTICE_MEDIA",
+      "CnName": "公示发布媒体",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 1000
+        }
+      ]
+    },
+    {
+      "Name": "URL",
+      "CnName": "公示源URL",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    },
+    {
+      "Name": "PUBLICITY_TYPE",
+      "CnName": "公示类型",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "13"
+        }
+      ]
+    },
+    {
+      "Name": "PUBLICITY_START_TIME",
+      "CnName": "公示开始时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "PUBLICITY_END_TIME",
+      "CnName": "公示结束时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "OBJECTION_METHOD",
+      "CnName": "提出异议的渠道和方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "OTHER_CONTENT",
+      "CnName": "其他内容",
+      "Validators": []
+    },
+    {
+      "Name": "BULLETIN_DUTY",
+      "CnName": "公示发布责任人",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "EXAMINER_NAME",
+      "CnName": "交易平台数据验证责任人姓名",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "FIRST_BIDDER_NAME",
+      "CnName": "第一中标候选人名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "FIRST_BIDDER_CODE",
+      "CnName": "第一中标候选人统一社会信用代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "SECOND_BIDDER_NAME",
+      "CnName": "第二中标候选人名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "SECOND_BIDDER_CODE",
+      "CnName": "第二中标候选人统一社会信用代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "THIRD_BIDDER_NAME",
+      "CnName": "第三中标候选人名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "THIRD_BIDDER_CODE",
+      "CnName": "第三中标候选人统一社会信用代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixLength": 18
+        }
+      ]
+    }
+  ],
+  "Validators": [],
+  "RepeatCols": [ "PUBLICITY_NAME", "TENDER_PROJECT_CODE", "URL" ]
+}

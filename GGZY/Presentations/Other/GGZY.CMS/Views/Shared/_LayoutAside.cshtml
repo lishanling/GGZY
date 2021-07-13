@@ -1,0 +1,50 @@
+﻿<aside id="sidebar">
+    <div class="tab-content">
+        <div id="page-wrapper">
+            <div id="nav-col" class="nav-col">
+                <section id="col-left" class="nano">
+                    <div id="col-left-inner" class="nano-content">
+                        <div id="user-left-box" class="clearfix hidden-sm hidden-xs" style="display:none">
+                            <a href="#"><img src="~/static/common/images/flat-avatar.png" /></a>
+                            <div class="user-box">
+                                <span class="name">
+                                    管理员
+                                </span>
+                                <a id="user-link" href="#" class="dropdown-toggle">
+                                    <font>管理员,部门管理员<b class="caret"></b></font>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="collapse navbar-collapse navbar-ex1-collapse tab-content" id="sidebar-nav">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <ul id="user-menu" class="submenu">
+                                        <li>
+                                            <a class="J_menuItem" href="~/a/sys/user/imageEdit">修改头像</a>
+                                        </li>
+                                        <li>
+                                            <a class="J_menuItem" href="~/a/sys/user/info">个人资料</a>
+                                        </li>
+                                        <li>
+                                            <a class="J_menuItem" href="~/a/iim/contact/index">我的通讯录</a>
+                                        </li>
+                                        <li>
+                                            <a class="J_menuItem" href="~/a/iim/mailBox/list">信箱</a>
+                                        </li>
+                                        <li>
+                                            <a href="javaScript:changeStyle()">切换成左侧菜单</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("SignOut","Home")">安全退出</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            @Html.Partial("_LayoutMenuItem")
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</aside>

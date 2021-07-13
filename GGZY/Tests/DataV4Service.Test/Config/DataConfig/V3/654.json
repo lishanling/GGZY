@@ -1,0 +1,232 @@
+{
+    "DataNo": "654",
+    "DataName": "EXPLOR_TRANS_PUB_INFO",
+    "DataCnName": "其他方式出让矿业权公开信息（探矿权出让公开信息）",
+    "Fields": [
+        {
+            "Name": "NA_APP_NAME",
+            "CnName": "项目名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        },
+        {
+            "Name": "PUBLISHING_TIME",
+            "CnName": "发布时间",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMddHHmmss"
+                }
+            ]
+        },
+        {
+            "Name": "UNIFIED_DEAL_CODE",
+            "CnName": "统一交易标识码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 40
+                }
+            ]
+        },
+        {
+            "Name": "REGION_CODE",
+            "CnName": "项目所在行政区域代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                },
+                {
+                    "ValidatorName": "AreaCodeMatch",
+                    "Begin": 0
+                }
+            ]
+        },
+        {
+            "Name": "TRA_PLACE_CODE",
+            "CnName": "交易发生行政区域代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 6
+                }
+            ]
+        },
+        {
+            "Name": "TRA_AGENCY_NAME",
+            "CnName": "交易机构名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "TRA_AGENCY_CODE",
+            "CnName": "交易机构代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "NA_APPLY_PERSON",
+            "CnName": "申请人",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "APPLY_TYPE",
+            "CnName": "申请人类别",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "2001"
+            }
+          ]
+        },
+        {
+            "Name": "APPLY_CODE",
+            "CnName": "申请人代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 18
+                }
+            ]
+        },
+        {
+            "Name": "APPLY_ROLE",
+            "CnName": "申请人角色",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 2
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "26"
+            }
+          ]
+        },
+        {
+            "Name": "NA_PERAMBULATE_COMP",
+            "CnName": "勘查单位",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "NA_GOV_NAME",
+            "CnName": "审批机关",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 40
+                }
+            ]
+        },
+        {
+            "Name": "IN_MINE_COME",
+            "CnName": "勘查矿种",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "NumberMatch",
+              "IntegerFigures": 5
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "8001"
+            }
+          ]
+        },
+        {
+            "Name": "DT_RECIVE_DATE",
+            "CnName": "受理日期",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "DateMatch",
+                    "Format": "yyyyMMdd"
+                }
+            ]
+        },
+        {
+            "Name": "URL",
+            "CnName": "公告源URL",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 500
+                }
+            ]
+        }
+    ],
+    "Validators": []
+}

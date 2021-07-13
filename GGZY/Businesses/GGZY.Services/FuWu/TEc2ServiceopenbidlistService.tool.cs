@@ -1,0 +1,320 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Dos.ORM;
+using GGZY.Core.Models;
+using GGZY.Services.Base;
+using GGZYFW.DbEntity;
+
+namespace GGZY.Services.FuWu
+{
+    public partial class TEc2ServiceopenbidlistService : BaseServiceT<T_EC2_SERVICEOPENBIDLIST>
+    {
+        #region 接口实现
+        
+		public List<T_EC2_SERVICEOPENBIDLIST> FindList(T_EC2_SERVICEOPENBIDLIST model)
+        {
+            var condition = ConditionBuilder(model);
+            var list = FindList(condition);
+            return list;
+        }
+
+        public BootstrapTableResult<T_EC2_SERVICEOPENBIDLIST> PageList(T_EC2_SERVICEOPENBIDLIST model, SearchCondition search)
+        {
+            var condition = ConditionBuilder(model);
+            var count =  Count(condition);
+       var pageList =PageList(condition,search, T_EC2_SERVICEOPENBIDLIST._.SERVICEOPENBIDLISTCODE.Desc).ToBootstrapTableList(count);
+
+            
+            return pageList;
+        }
+
+       
+		/// <summary>
+        /// 查看
+        /// </summary>
+      /// <param name="SERVICEOPENBIDLISTCODE">开标明细（服务）编号</param>
+      /// <param name="BIDSECTIONCODE">标段（包）编号</param>
+        /// <returns></returns>
+       public GeneralResult ViewByPk(string SERVICEOPENBIDLISTCODE,string BIDSECTIONCODE)
+
+        
+        {
+            var result = new GeneralResult();
+			var condition=new WhereClipBuilder();
+			condition.And(T_EC2_SERVICEOPENBIDLIST._.SERVICEOPENBIDLISTCODE == SERVICEOPENBIDLISTCODE);
+			condition.And(T_EC2_SERVICEOPENBIDLIST._.BIDSECTIONCODE == BIDSECTIONCODE);
+			
+			  var dbModel = FirstOrNull(condition);
+            if (dbModel == null)
+            {
+                result.SetFail(OBJECT_NOT_EXIST);
+            }
+            else
+            {
+                result.SetSuccess(dbModel);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 编辑
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public GeneralResult Edit(T_EC2_SERVICEOPENBIDLIST model)
+        {
+            var result = new GeneralResult();
+            try
+            {
+		var viewResult=ViewByPk(model.SERVICEOPENBIDLISTCODE,model.BIDSECTIONCODE);
+	
+	if(viewResult.Success  && viewResult.Data is T_EC2_SERVICEOPENBIDLIST entity)
+	{		
+		entity.Attach();
+		entity.SERVICEOPENBIDLISTCODE=model.SERVICEOPENBIDLISTCODE;
+		entity.OPENBIDRECORDCODE=model.OPENBIDRECORDCODE;
+		entity.BIDSECTIONCODE=model.BIDSECTIONCODE;
+		entity.ISUNION=model.ISUNION;
+		entity.UNIONCODETYPE=model.UNIONCODETYPE;
+		entity.UNIONCODE=model.UNIONCODE;
+		entity.UNIONNAME=model.UNIONNAME;
+		entity.UNIONMEMBERBASICINFOVERSION=model.UNIONMEMBERBASICINFOVERSION;
+		entity.BIDDERCODETYPE=model.BIDDERCODETYPE;
+		entity.BIDDERCODE=model.BIDDERCODE;
+		entity.BIDDERNAME=model.BIDDERNAME;
+		entity.BIDDERBASICINFOVERSION=model.BIDDERBASICINFOVERSION;
+		entity.DURATION=model.DURATION;
+		entity.BIDAMOUNT=model.BIDAMOUNT;
+		entity.CURRENCYCODE=model.CURRENCYCODE;
+		entity.PRICEUNIT=model.PRICEUNIT;
+		entity.OTHERBIDPRICE=model.OTHERBIDPRICE;
+		entity.RESPONSIBLENAME=model.RESPONSIBLENAME;
+		entity.RESPONSIBLECODETYPE=model.RESPONSIBLECODETYPE;
+		entity.RESPONSIBLECODE=model.RESPONSIBLECODE;
+		entity.OTHEROPENBIDCONTENT=model.OTHEROPENBIDCONTENT;
+		entity.VERSION=model.VERSION;
+		entity.OPENTYPE=model.OPENTYPE;
+		entity.EXAMINERNAME=model.EXAMINERNAME;
+		entity.EXAMINERCODETYPE=model.EXAMINERCODETYPE;
+		entity.EXAMINERCODE=model.EXAMINERCODE;
+		entity.VERIFYTIME=model.VERIFYTIME;
+		entity.DATA_SOURCE=model.DATA_SOURCE;
+		entity.CREATE_TIME=model.CREATE_TIME;
+		Update(entity);
+		result.SetSuccess(entity);
+	}
+	else
+	{
+		result.SetFail(viewResult.Msg);
+	}
+            }
+            catch (Exception e)
+            {
+                result.SetFail(e.Message, e);
+            }
+            return result; 
+        }
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public GeneralResult Add(T_EC2_SERVICEOPENBIDLIST model)
+        {
+            var result = new GeneralResult();
+            try
+            {
+                Insert(model);
+                result.SetSuccess(model);
+            }
+            catch (Exception e)
+            {
+                result.SetFail(e.Message, e);
+            }
+            return result; 
+        }
+		
+		
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public GeneralResult Delete(params string[] ids)
+        {
+            GeneralResult result = new GeneralResult();
+            try
+            {
+                List<string>idArr=new List<string>();
+                foreach (var id in ids)
+                {
+                    idArr.AddRange(id.Split(','));
+                }
+				
+                if (idArr.Any())
+                {
+                    Delete(T_EC2_SERVICEOPENBIDLIST._.SERVICEOPENBIDLISTCODE.SelectIn(idArr));
+                    result.SetSuccess(ids);
+                }
+                else
+                {
+                    result.SetFail($"请选择要删除的记录");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                result.SetFail(e.Message, e);
+            }
+            return result;
+        }
+		
+		/// <summary>
+        /// 导入
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public GeneralResult Import(List<T_EC2_SERVICEOPENBIDLIST> model)
+		{
+            GeneralResult result = new GeneralResult();
+            try
+            {
+               
+                result.SetSuccess(model);
+            }
+            catch (Exception e)
+            {
+                result.SetFail(e.Message, e);
+            }
+            return result;			
+		}
+
+      
+        #endregion
+
+        #region Utils
+       	protected WhereClipBuilder ConditionBuilder(T_EC2_SERVICEOPENBIDLIST model)
+	{
+		WhereClipBuilder condition = new WhereClipBuilder();
+				if(!string.IsNullOrWhiteSpace(model.SERVICEOPENBIDLISTCODE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.SERVICEOPENBIDLISTCODE.Contain(model.SERVICEOPENBIDLISTCODE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.OPENBIDRECORDCODE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.OPENBIDRECORDCODE.Contain(model.OPENBIDRECORDCODE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.BIDSECTIONCODE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.BIDSECTIONCODE.Contain(model.BIDSECTIONCODE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.ISUNION))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.ISUNION.Contain(model.ISUNION));
+				}
+				if(!string.IsNullOrWhiteSpace(model.UNIONCODETYPE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.UNIONCODETYPE.Contain(model.UNIONCODETYPE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.UNIONCODE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.UNIONCODE.Contain(model.UNIONCODE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.UNIONNAME))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.UNIONNAME.Contain(model.UNIONNAME));
+				}
+				if(!string.IsNullOrWhiteSpace(model.UNIONMEMBERBASICINFOVERSION))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.UNIONMEMBERBASICINFOVERSION.Contain(model.UNIONMEMBERBASICINFOVERSION));
+				}
+				if(!string.IsNullOrWhiteSpace(model.BIDDERCODETYPE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.BIDDERCODETYPE.Contain(model.BIDDERCODETYPE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.BIDDERCODE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.BIDDERCODE.Contain(model.BIDDERCODE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.BIDDERNAME))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.BIDDERNAME.Contain(model.BIDDERNAME));
+				}
+				if(model.BIDDERBASICINFOVERSION!=null)
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.BIDDERBASICINFOVERSION==(model.BIDDERBASICINFOVERSION));
+				}
+				if(!string.IsNullOrWhiteSpace(model.DURATION))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.DURATION.Contain(model.DURATION));
+				}
+				if(model.BIDAMOUNT!=null)
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.BIDAMOUNT==(model.BIDAMOUNT));
+				}
+				if(!string.IsNullOrWhiteSpace(model.CURRENCYCODE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.CURRENCYCODE.Contain(model.CURRENCYCODE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.PRICEUNIT))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.PRICEUNIT.Contain(model.PRICEUNIT));
+				}
+				if(!string.IsNullOrWhiteSpace(model.OTHERBIDPRICE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.OTHERBIDPRICE.Contain(model.OTHERBIDPRICE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.RESPONSIBLENAME))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.RESPONSIBLENAME.Contain(model.RESPONSIBLENAME));
+				}
+				if(!string.IsNullOrWhiteSpace(model.RESPONSIBLECODETYPE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.RESPONSIBLECODETYPE.Contain(model.RESPONSIBLECODETYPE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.RESPONSIBLECODE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.RESPONSIBLECODE.Contain(model.RESPONSIBLECODE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.OTHEROPENBIDCONTENT))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.OTHEROPENBIDCONTENT.Contain(model.OTHEROPENBIDCONTENT));
+				}
+				if(model.VERSION!=null)
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.VERSION==(model.VERSION));
+				}
+				if(!string.IsNullOrWhiteSpace(model.OPENTYPE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.OPENTYPE.Contain(model.OPENTYPE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.EXAMINERNAME))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.EXAMINERNAME.Contain(model.EXAMINERNAME));
+				}
+				if(!string.IsNullOrWhiteSpace(model.EXAMINERCODETYPE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.EXAMINERCODETYPE.Contain(model.EXAMINERCODETYPE));
+				}
+				if(!string.IsNullOrWhiteSpace(model.EXAMINERCODE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.EXAMINERCODE.Contain(model.EXAMINERCODE));
+				}
+				if(model.VERIFYTIME!=null)
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.VERIFYTIME==(model.VERIFYTIME));
+				}
+				if(!string.IsNullOrWhiteSpace(model.DATA_SOURCE))
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.DATA_SOURCE.Contain(model.DATA_SOURCE));
+				}
+				if(model.CREATE_TIME!=null)
+				{
+				  condition.And(T_EC2_SERVICEOPENBIDLIST._.CREATE_TIME==(model.CREATE_TIME));
+				}
+		return condition;
+	}
+        #endregion
+    }
+}

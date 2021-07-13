@@ -1,0 +1,251 @@
+alter table YG_PROJECT ADD OTHER_UPDATE_TIME DATE;
+alter table YG_TENDER_PROJECT ADD OTHER_UPDATE_TIME DATE;
+
+alter table GY_PROJECT ADD OTHER_UPDATE_TIME DATE;
+alter table GY_TENDER_PROJECT ADD OTHER_UPDATE_TIME DATE;
+
+alter table XX_PROJECT ADD OTHER_UPDATE_TIME DATE;
+alter table XX_TENDER_PROJECT ADD OTHER_UPDATE_TIME DATE;
+
+
+alter table zj_PERFORMANCE add CONTRACT_CODE varchar2(600);
+alter table sl_performance add CONTRACT_CODE varchar2(600);
+alter table jt_performance add CONTRACT_CODE varchar2(600);
+
+
+-- Create table
+create table YG_PERFORMANCE
+(
+  m_id                    NUMBER PRIMARY KEY,
+  data_key                VARCHAR2(50),
+  m_data_source           VARCHAR2(50),
+  m_tm                    DATE,
+  m_creator               NUMBER,
+  m_is_history            NUMBER,
+  m_createby              NUMBER,
+  m_create_tm             DATE,
+  tender_project_code     VARCHAR2(20),
+  bid_section_code        VARCHAR2(23),
+  unified_deal_code       VARCHAR2(40),
+  performance_report_name VARCHAR2(600),
+  tenderer_name           VARCHAR2(200),
+  tenderer_code           VARCHAR2(18),
+  performance_party_name  VARCHAR2(200),
+  performance_party_code  VARCHAR2(18),
+  settle_price            NUMBER(20,6),
+  finish_time             DATE,
+  contract_change_content CLOB,
+  actually_period         NUMBER(4),
+  performance_content     CLOB,
+  report_issue_time       DATE,
+  platform_code           VARCHAR2(18),
+  pub_service_plat_code   VARCHAR2(18),
+  data_timestamp          DATE,
+  trade_plat              VARCHAR2(11),
+  pub_service_plat        VARCHAR2(11),
+  m_version               VARCHAR2(3),
+  contract_code           VARCHAR2(600)
+);
+-- Add comments to the columns 
+comment on column YG_PERFORMANCE.tender_project_code
+  is '招标项目编号';
+comment on column YG_PERFORMANCE.bid_section_code
+  is '标段（包）编号';
+comment on column YG_PERFORMANCE.unified_deal_code
+  is '统一交易标识码';
+comment on column YG_PERFORMANCE.performance_report_name
+  is '履约情况报告名称';
+comment on column YG_PERFORMANCE.tenderer_name
+  is '业主/招标人名称';
+comment on column YG_PERFORMANCE.tenderer_code
+  is '业主/招标人代码';
+comment on column YG_PERFORMANCE.performance_party_name
+  is '履约人名称';
+comment on column YG_PERFORMANCE.performance_party_code
+  is '履约人代码';
+comment on column YG_PERFORMANCE.settle_price
+  is '合同结算金额';
+comment on column YG_PERFORMANCE.finish_time
+  is '合同完成时间';
+comment on column YG_PERFORMANCE.contract_change_content
+  is '合同变更内容';
+comment on column YG_PERFORMANCE.actually_period
+  is '实际履约期限';
+comment on column YG_PERFORMANCE.performance_content
+  is '履约内容';
+comment on column YG_PERFORMANCE.report_issue_time
+  is '履约报告出具时间';
+comment on column YG_PERFORMANCE.platform_code
+  is '交易系统标识码';
+comment on column YG_PERFORMANCE.pub_service_plat_code
+  is '交易服务系统标识码';
+comment on column YG_PERFORMANCE.data_timestamp
+  is '数据时间戳';
+
+ --创建序列
+create sequence seq_YG_PERFORMANCE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+-- Create table
+create table GY_PERFORMANCE
+(
+  m_id                    NUMBER PRIMARY KEY,
+  data_key                VARCHAR2(50),
+  m_data_source           VARCHAR2(50),
+  m_tm                    DATE,
+  m_creator               NUMBER,
+  m_is_history            NUMBER,
+  m_createby              NUMBER,
+  m_create_tm             DATE,
+  tender_project_code     VARCHAR2(20),
+  bid_section_code        VARCHAR2(23),
+  unified_deal_code       VARCHAR2(40),
+  performance_report_name VARCHAR2(600),
+  tenderer_name           VARCHAR2(200),
+  tenderer_code           VARCHAR2(18),
+  performance_party_name  VARCHAR2(200),
+  performance_party_code  VARCHAR2(18),
+  settle_price            NUMBER(20,6),
+  finish_time             DATE,
+  contract_change_content CLOB,
+  actually_period         NUMBER(4),
+  performance_content     CLOB,
+  report_issue_time       DATE,
+  platform_code           VARCHAR2(18),
+  pub_service_plat_code   VARCHAR2(18),
+  data_timestamp          DATE,
+  trade_plat              VARCHAR2(11),
+  pub_service_plat        VARCHAR2(11),
+  m_version               VARCHAR2(3),
+  contract_code           VARCHAR2(600)
+);
+-- Add comments to the columns 
+comment on column GY_PERFORMANCE.tender_project_code
+  is '招标项目编号';
+comment on column GY_PERFORMANCE.bid_section_code
+  is '标段（包）编号';
+comment on column GY_PERFORMANCE.unified_deal_code
+  is '统一交易标识码';
+comment on column GY_PERFORMANCE.performance_report_name
+  is '履约情况报告名称';
+comment on column GY_PERFORMANCE.tenderer_name
+  is '业主/招标人名称';
+comment on column GY_PERFORMANCE.tenderer_code
+  is '业主/招标人代码';
+comment on column GY_PERFORMANCE.performance_party_name
+  is '履约人名称';
+comment on column GY_PERFORMANCE.performance_party_code
+  is '履约人代码';
+comment on column GY_PERFORMANCE.settle_price
+  is '合同结算金额';
+comment on column GY_PERFORMANCE.finish_time
+  is '合同完成时间';
+comment on column GY_PERFORMANCE.contract_change_content
+  is '合同变更内容';
+comment on column GY_PERFORMANCE.actually_period
+  is '实际履约期限';
+comment on column GY_PERFORMANCE.performance_content
+  is '履约内容';
+comment on column GY_PERFORMANCE.report_issue_time
+  is '履约报告出具时间';
+comment on column GY_PERFORMANCE.platform_code
+  is '交易系统标识码';
+comment on column GY_PERFORMANCE.pub_service_plat_code
+  is '交易服务系统标识码';
+comment on column GY_PERFORMANCE.data_timestamp
+  is '数据时间戳';
+
+ --创建序列
+create sequence seq_GY_PERFORMANCE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+
+-- Create table
+create table XX_PERFORMANCE
+(
+  m_id                    NUMBER PRIMARY KEY,
+  data_key                VARCHAR2(50),
+  m_data_source           VARCHAR2(50),
+  m_tm                    DATE,
+  m_creator               NUMBER,
+  m_is_history            NUMBER,
+  m_createby              NUMBER,
+  m_create_tm             DATE,
+  tender_project_code     VARCHAR2(20),
+  bid_section_code        VARCHAR2(23),
+  unified_deal_code       VARCHAR2(40),
+  performance_report_name VARCHAR2(600),
+  tenderer_name           VARCHAR2(200),
+  tenderer_code           VARCHAR2(18),
+  performance_party_name  VARCHAR2(200),
+  performance_party_code  VARCHAR2(18),
+  settle_price            NUMBER(20,6),
+  finish_time             DATE,
+  contract_change_content CLOB,
+  actually_period         NUMBER(4),
+  performance_content     CLOB,
+  report_issue_time       DATE,
+  platform_code           VARCHAR2(18),
+  pub_service_plat_code   VARCHAR2(18),
+  data_timestamp          DATE,
+  trade_plat              VARCHAR2(11),
+  pub_service_plat        VARCHAR2(11),
+  m_version               VARCHAR2(3),
+  contract_code           VARCHAR2(600)
+);
+-- Add comments to the columns 
+comment on column XX_PERFORMANCE.tender_project_code
+  is '招标项目编号';
+comment on column XX_PERFORMANCE.bid_section_code
+  is '标段（包）编号';
+comment on column XX_PERFORMANCE.unified_deal_code
+  is '统一交易标识码';
+comment on column XX_PERFORMANCE.performance_report_name
+  is '履约情况报告名称';
+comment on column XX_PERFORMANCE.tenderer_name
+  is '业主/招标人名称';
+comment on column XX_PERFORMANCE.tenderer_code
+  is '业主/招标人代码';
+comment on column XX_PERFORMANCE.performance_party_name
+  is '履约人名称';
+comment on column XX_PERFORMANCE.performance_party_code
+  is '履约人代码';
+comment on column XX_PERFORMANCE.settle_price
+  is '合同结算金额';
+comment on column XX_PERFORMANCE.finish_time
+  is '合同完成时间';
+comment on column XX_PERFORMANCE.contract_change_content
+  is '合同变更内容';
+comment on column XX_PERFORMANCE.actually_period
+  is '实际履约期限';
+comment on column XX_PERFORMANCE.performance_content
+  is '履约内容';
+comment on column XX_PERFORMANCE.report_issue_time
+  is '履约报告出具时间';
+comment on column XX_PERFORMANCE.platform_code
+  is '交易系统标识码';
+comment on column XX_PERFORMANCE.pub_service_plat_code
+  is '交易服务系统标识码';
+comment on column XX_PERFORMANCE.data_timestamp
+  is '数据时间戳';
+
+ --创建序列
+create sequence seq_XX_PERFORMANCE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;

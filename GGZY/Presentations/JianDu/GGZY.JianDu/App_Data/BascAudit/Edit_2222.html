@@ -1,0 +1,188 @@
+﻿<h4 style="background-color:#ECECEC; height:30px;line-height:30px;text-align:left;color:#4D86D4;padding-left:40px; font-size:14px;margin:0 0 10px 0;">
+    <span>澄清、修改内容</span>
+</h4>
+<div class="box clearfix" style="margin: 0 auto; ">
+    <table class="DataTable" style="margin:0 auto;">
+        <colgroup>
+            <col style="width:270px;" />
+            <col style="width:315px;" />
+            <col style="width:270px;" />
+            <col/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>是否延期</th>
+                <td>{IS_POSTPONE}</td>
+                <th>投标截止时间</th>
+                <td>{DEADLINE_BIDDING2}</td>
+            </tr>
+            <tr>
+                <th>延期后开标时间</th>
+                <td>{POST_OPEN_TIME}</td>
+                <th>延期后开标地点</th>
+                <td>{POST_OPEN_ADDRESS}</td>
+            </tr>
+            <tr>
+                <th>澄清、修改截止时间</th>
+                <td>{CLARIFY_END_TIME}</td>
+                <th>保证金提交截止时间</th>
+                <td>{DEPOSIT_END_TIME}</td>
+            </tr>
+            <tr>
+                <th>澄清、修改公示标题</th>
+                <td colspan="3">{CLARIFY_TITLE}</td>
+            </tr>
+            <tr>
+                <th>澄清、修改内容</th>
+                <td colspan="3">
+                    {CLARIFY_CONTENT}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 style="background-color:#ECECEC; height:30px;line-height:30px;text-align:left;color:#4D86D4;padding-left:40px; font-size:14px;margin:10px 0 0 0;">
+    <span>澄清、修改材料</span>
+</h4>
+
+
+
+<div class="box clearfix" style="margin: 0 auto;" id="mainDD">
+    <div class="title">第一章：招标公告</div>
+    <table class="DataTable" style="margin:0 auto;">
+        <colgroup>
+            <col style="width:270px;" />
+            <col style="width:315px;" />
+            <col style="width:270px;" />
+            <col/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>招标类型</th>
+                <td id="bjbhDiv">{TENDER_TYPE}</td>
+                <th>招标控制价</th>
+                <td>{CONTROL_PRICE}<span>&nbsp;{CONTROL_UNIT}</span><span>&nbsp;{CONTROL_CURRENCY_CODE}</span></td>
+            </tr>
+            <tr>
+                <th>招标范围及内容</th>
+                <td colspan="3">{TENDER_CONTENT}</td>
+            </tr>
+            <tr>
+                <th>确定企业资质及等级的相关依据</th>
+                <td colspan="3">{ENTERPRISE_QUALIFI_BASIC}</td>
+            </tr>
+            <tr>
+                <th>确定注册建造师及等级的相关依据</th>
+                <td colspan="3">{REGISTER_CON_BASIC}</td>
+            </tr>
+            <tr>
+                <th>确定类似工程业绩的相关依据</th>
+                <td colspan="3">
+                    {SIMILAR_PROJECT_BASIC}
+                </td>
+            </tr>
+            <tr>
+                <th>总工期</th>
+                <td>{ALL_LIMITE_TIME}</td>
+                <th>定额工期</th>
+                <td>{QUOTA_LIMIT_TIME}<span style="margin-left:10px;">日历天</span></td>
+            </tr>
+            <tr>
+                <th>投标人资质等级要求</th>
+                <td colspan="3">{BIDDER_QUALIFI_REQUIRE}</td>
+            </tr>
+            <tr>
+                <th>注册建造师等级要求</th>
+                <td colspan="3">{REGISTER_CON_REQUIRE}</td>
+            </tr>
+            <tr>
+                <th>是否联合体投标</th>
+                <td>{SYNDICATED_FLAG}</td>
+                <th>是否应用综合评价分值</th>
+                <td>{IS_COMPREHENSIVE_SCORE}</td>
+            </tr>
+            <tr>
+                <th>类型业绩要求</th>
+                <td>{TYPE_PERFORM_REQUIRE}</td>
+                <th>投标保证金金额</th>
+                <td>{MARGIN_AMOUNT} <span>&nbsp;{MARGIN_UNIT}</span><span>&nbsp;{MARGIN_CURRENCY_CODE}</span></td>
+            </tr>
+            <tr>
+                <th>招标文件获取方法</th>
+                <td>{TENDER_DOC_GET_METHOD}</td>
+                <th>招标文件获取开始时间</th>
+                <td>{DOC_GET_START_TIME}</td>
+            </tr>
+            <tr>
+                <th>招标文件获取截止时间</th>
+                <td>{DOC_GET_END_TIME}</td>
+                <th>投标文件递交截止时间</th>
+                <td>{BID_DOC_REFER_END_TIME}</td>
+            </tr>
+            <tr>
+                <th>投标文件递交方法</th>
+                <td colspan="3">{BID_DOC_REFER_METHOD}</td>
+            </tr>
+            <tr>
+                <th>工程量清单编制单位</th>
+                <td>{QUANTITIES_DRAW_UNIT}</td>
+                <th>工程量清单审查单位</th>
+                <td>{QUANTITIES_AUDIT_UNIT}</td>
+            </tr>
+            <tr>
+                <th>招标控制价编制单位</th>
+                <td>{CONTROL_PRICE_DRAW_UNIT}</td>
+                <th>招标控制价审核单位</th>
+                <td>{CONTROL_PRICE_AUDIT_UNIT}</td>
+            </tr>
+            <tr>
+                <th>招标公告</th>
+                <td colspan="3">{TENDER_NOTICE}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="title">第二章：投标须知</div>
+    <table class="DataTable" style="margin:0 auto;">
+        <colgroup>
+            <col style="width:270px;" />
+            <col style="width:315px;" />
+            <col style="width:270px;" />
+            <col/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>投标截止时间</th>
+                <td>{DEADLINE_BIDDING}</td>
+                <th>开标时间</th>
+                <td>{BID_OPEN_TIME}</td>
+            </tr>
+            <tr>
+                <th>履约担保金额</th>
+                <td>{PERFORM_PRICE}<span>&nbsp;{PERFORM_UNIT}</span><span>&nbsp;{PERFORM_CURRENCY_CODE}</span></td>
+                <th>合同签订时间</th>
+                <td>{CONTRACT_SIGN_TIME}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="title">第三章：评标标准和办法</div>
+    <table class="DataTable" style="margin:0 auto 10px auto;">
+        <colgroup>
+            <col style="width:270px;" />
+            <col style="width:315px;" />
+            <col style="width:270px;" />
+            <col/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>评标委员会成员人数</th>
+                <td>{ALL_EXPERT_NUM}</td>
+                <th>其中，工程造价类专家人数</th>
+                <td>{EXPERT_NUM}</td>
+            </tr>
+            <tr>
+                <th>评标办法</th>
+                <td colspan="3">{EVALUATING_METHOD}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

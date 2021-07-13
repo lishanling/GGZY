@@ -1,0 +1,25 @@
+﻿-- 兼容旧数据，区分招标条件备案以及招标文件备案
+
+ALTER TABLE RECORD_ATTACHMENT ADD CATEGORY NUMBER;
+comment on column RECORD_ATTACHMENT.category
+  is '附件类别，1：招标条件备案附件  2：招标文件备案附件';
+
+
+update record_attachment r
+   set r.CATEGORY = 1
+ where r.attfile_typecode in ('MT101_F01',
+                              'MT101_F02',
+                              'MT101_F03',
+                              'MT101_F04',
+                              'MT101_F06',
+                              'MZ101_F01',
+                              'MZ101_F02',
+                              'MZ101_F03',
+                              'MZ101_F04',
+                              'MZ101_F06');
+
+update record_attachment r
+   set r.CATEGORY = 2
+ where r.attfile_typecode in
+       ('MT101_F05', 'MT101_F07', 'MT101_F08', 'MT101_F09', 'MZ101_F05');
+

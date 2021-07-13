@@ -1,0 +1,297 @@
+{
+  "DataNo": "1000",
+  "DataName": "DEA_CARBON_QUOTA_SELL_ANNO",
+  "DataCnName": "排放配额有偿出售公告信息",
+  "Fields": [
+    {
+      "Name": "NOTICE_SEND_TIME",
+      "CnName": "公告发布时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODES",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 2000
+        },
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "industry_Code",
+      "CnName": "所属行业分类",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 3
+        }
+      ]
+    },
+    {
+      "Name": "CA_QUOTA_NAME",
+      "CnName": "公告名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "CA_QUOTA_CODE",
+      "CnName": "公告编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 50
+        }
+      ]
+    },
+    {
+      "Name": "CA_QUOTA_BEGINDATE",
+      "CnName": "配额有效开始日期",
+      "Validators": [
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "CA_QUOTA_ENDDATE",
+      "CnName": "配额有效截止日期",
+      "Validators": [
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMdd"
+        }
+      ]
+    },
+    {
+      "Name": "IN_BUY_KIND",
+      "CnName": "出让方式",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "9544"
+        }
+      ]
+    },
+    {
+      "Name": "CA_QUOTA_QTY",
+      "CnName": "出让数量",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 15,
+          "DecimalFigures": 5
+        }
+      ]
+    },
+    {
+      "Name": "CA_QUOTA_PRICE",
+      "CnName": "保留价格",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 2
+        }
+      ]
+    },
+    {
+      "Name": "TRADING_BEGINTIME",
+      "CnName": "竞价开始时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "TRADING_ENDTIME",
+      "CnName": "竞价结束时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "SALE_COMM_TYPE",
+      "CnName": "出让方佣金基数类型",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "9545"
+        }
+      ]
+    },
+    {
+      "Name": "SALE_COMM_RATE",
+      "CnName": "出让方佣金比例",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 2
+        }
+      ]
+    },
+    {
+      "Name": "BUY_COMM_TYPE",
+      "CnName": "受让方佣金基数类型",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 1
+        },
+        {
+          "ValidatorName": "DomainMatch",
+          "Type": "9545"
+        }
+      ]
+    },
+    {
+      "Name": "BUY_COMM_RATE",
+      "CnName": "受让方佣金比例",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 12,
+          "DecimalFigures": 2
+        }
+      ]
+    },
+    {
+      "Name": "TRADING_NOTICE",
+      "CnName": "出让权益说明",
+      "Validators": []
+    },
+    {
+      "Name": "MARGIN_PAY",
+      "CnName": "保证金",
+      "Validators": [
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 8
+        }
+      ]
+    },
+    {
+      "Name": "MARGIN_PAY_ACCOUNT",
+      "CnName": "保证金缴纳账户",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "ANNOUNCEMENT_CONNECT",
+      "CnName": "公告内容",
+      "Validators": []
+    },
+    {
+      "Name": "SELL_COMM_NAME",
+      "CnName": "出让人名称",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 200
+        }
+      ]
+    },
+    {
+      "Name": "SELL_ORG_CODE",
+      "CnName": "出让人信用代码",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 18
+        }
+      ]
+    },
+    {
+      "Name": "TENDERER_CONTACTOR",
+      "CnName": "出让人联系人",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 100
+        }
+      ]
+    },
+    {
+      "Name": "TENDERER_PHONE_NUMBER",
+      "CnName": "出让人联系电话",
+      "Validators": [
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "URL",
+      "CnName": "公告源URL",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 500
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

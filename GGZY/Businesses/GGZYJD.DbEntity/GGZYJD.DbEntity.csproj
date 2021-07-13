@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D6BB58C-E602-42AA-9108-38135DAE9889}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GGZYJD.DbEntity</RootNamespace>
+    <AssemblyName>GGZYJD.DbEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\GGZYJD.DbEntity.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AUDIT_OPTIONS.cs" />
+    <Compile Include="AWARD_INFO.cs" />
+    <Compile Include="Data_Statistics.cs" />
+    <Compile Include="dblink\DBLINK_DZJYPT_MV_TJ_ALLCREATE_XZJD.cs" />
+    <Compile Include="GOOD_GET_URL_LOG.cs" />
+    <Compile Include="GOOD_ITEM_INFO.cs" />
+    <Compile Include="GOOD_TEMP_PARAM.cs" />
+    <Compile Include="JC_TRANS_DETAIL.cs" />
+    <Compile Include="JC_TRANS_ENTITY.cs" />
+    <Compile Include="JC_TRANS_PERSON.cs" />
+    <Compile Include="JC_TRANS_PROJECT.cs" />
+    <Compile Include="JC_TRANS_RECORD.cs" />
+    <Compile Include="JC_TRANS_RESULT.cs" />
+    <Compile Include="JT_GENRAL_CON_TENDER_FILE_01.cs" />
+    <Compile Include="OPERTION_RECORD.sequence.cs" />
+    <Compile Include="PROJECT.tool.cs">
+      <DependentUpon>PROJECT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PT_COMPLAIN.partial.cs">
+      <DependentUpon>PT_COMPLAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PT_ZXTS_LOOK_INTO_CHK.cs" />
+    <Compile Include="PT_ZXTS_LOOK_INTO.cs" />
+    <Compile Include="RECORD_REVIEW_SUPERVISE.cs" />
+    <Compile Include="REVIEW_LOG.sequence.cs">
+      <DependentUpon>REVIEW_LOG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_OPERS.sequence.cs">
+      <DependentUpon>REVIEW_OPERS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dblink\DBLINK_DZJYPT_SECTION.cs" />
+    <Compile Include="T_COPYSEND.cs" />
+    <Compile Include="T_PUNISH .cs" />
+    <Compile Include="T_SUPERVISE_FORWARD.cs" />
+    <Compile Include="T_SUPERVISE_LOG.cs" />
+    <Compile Include="T_SUPERVISE_RESULT.cs" />
+    <Compile Include="T_SUPERVISE_RESULT_LOG.cs" />
+    <Compile Include="T_SUPERVISE_FEEDBACK.cs" />
+    <Compile Include="T_SUPERVISE.cs" />
+    <Compile Include="T_NOTICE.sequence.cs">
+      <DependentUpon>T_NOTICE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_USER_DEPARTMENT.partial.cs">
+      <DependentUpon>T_USER_DEPARTMENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\V_ZXTS_LOOK_INTO_FEEDBACKCOUNT.cs" />
+    <Compile Include="Views\V_ZXTS_LOOK_INTO_COUNT.cs" />
+    <Compile Include="PT_ZXTS_LOOK_INTO_FEEDBACK.cs" />
+    <Compile Include="PT_ZXTS_BTSR.sequence.cs">
+      <DependentUpon>PT_ZXTS_BTSR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PT_ZXTS_DEPCONFIG.sequence.cs">
+      <DependentUpon>PT_ZXTS_DEPCONFIG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RECORD_ATTACHMENT.sequence.cs" />
+    <Compile Include="RECORD_BIDDING_WRITE.sequence.cs" />
+    <Compile Include="RECORD_BIDDOC_NORMAL.sequence.cs" />
+    <Compile Include="RECORD_CLASSIFY.sequence.cs" />
+    <Compile Include="RECORD_CLASSIFY_NORMAL.sequence.cs" />
+    <Compile Include="RECORD_CONTRACT.sequence.cs" />
+    <Compile Include="RECORD_CREDIT_DEDUCTION.sequence.cs" />
+    <Compile Include="RECORD_HANDLE_RESULT.sequence.cs" />
+    <Compile Include="RECORD_LOG.sequence.cs" />
+    <Compile Include="RECORD_RESIDENTIAL_BIDDOC.sequence.cs" />
+    <Compile Include="RECORD_REVIEW.sequence.cs" />
+    <Compile Include="RECORD_REVIEW2.cs" />
+    <Compile Include="RECORD_SECTION_INFO.sequence.cs" />
+    <Compile Include="RECORD_WRITTEN.sequence.cs" />
+    <Compile Include="REVIEW_INSTANCE.sequence.cs" />
+    <Compile Include="SECTION.sequence.cs">
+      <DependentUpon>SECTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TENDER_PROJECT.tool.cs">
+      <DependentUpon>TENDER_PROJECT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRADE_CENTER.sequence.cs">
+      <DependentUpon>TRADE_CENTER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_FIXED_ENTERPRISE.partial.cs">
+      <DependentUpon>T_AFC_FIXED_ENTERPRISE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_PROJECT.sequence.cs">
+      <DependentUpon>T_AFC_PROJECT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_XMCODE_ENTERPRISE.cs" />
+    <Compile Include="T_AFC_FIXED_ENTERPRISE.cs" />
+    <Compile Include="T_AFC_FIXED_RECORD.cs" />
+    <Compile Include="T_AFC_FIXED.partial.cs">
+      <DependentUpon>T_AFC_FIXED.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_FIXED_RECORD.partial.cs">
+      <DependentUpon>T_AFC_FIXED_RECORD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_SECONDARY_ENTERPRISE.cs" />
+    <Compile Include="T_AFC_SECONDARY_ENTERPRISE.partial.cs">
+      <DependentUpon>T_AFC_SECONDARY_ENTERPRISE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_SECONDARY_PROJECT.cs" />
+    <Compile Include="T_AFC_SECONDARY.partial.cs">
+      <DependentUpon>T_AFC_SECONDARY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_SECONDARY_PROJECT.partial.cs">
+      <DependentUpon>T_AFC_SECONDARY_PROJECT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_XMCODE.partial.cs">
+      <DependentUpon>T_AFC_XMCODE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_XMCODE_ENTERPRISE.partial.cs">
+      <DependentUpon>T_AFC_XMCODE_ENTERPRISE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_XMCODE_RECORD.cs" />
+    <Compile Include="T_AFC_XMCODE_RECORD.partial.cs">
+      <DependentUpon>T_AFC_XMCODE_RECORD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_GENERAL_ATTRIBUTE_V2.cs" />
+    <Compile Include="BASC_RESULT.cs" />
+    <Compile Include="BLACK_LIST.cs" />
+    <Compile Include="GETDATALOG.cs" />
+    <Compile Include="GTEMPP.cs" />
+    <Compile Include="GY_AVOID_ENTERPRISE_LIST.cs" />
+    <Compile Include="GY_BIDDER_CREDIT_INFO.cs" />
+    <Compile Include="GY_BIDDER_MAKE_TOOL_INFO.cs" />
+    <Compile Include="GY_BIDDER_MARGIN_INFO.cs" />
+    <Compile Include="GY_BIDDER_PERFORMANCE.cs" />
+    <Compile Include="GY_BIDDER_PROJECT_MEMBER.cs" />
+    <Compile Include="GY_BIDDER_QUALIFICATION.cs" />
+    <Compile Include="GY_BID_DOC_CHARACT_CODE.cs" />
+    <Compile Include="GY_BID_EVALUATION_EXPERT.cs" />
+    <Compile Include="GY_BID_INVITE_LIST.cs" />
+    <Compile Include="GY_BID_OPENING_RECORD.cs" />
+    <Compile Include="GY_BID_OPEN_DETAIL.cs" />
+    <Compile Include="GY_BID_WINNING_NOTICE.cs" />
+    <Compile Include="GY_CONTRACT_PERFORMANCE.cs" />
+    <Compile Include="GY_EVALUATION_BUILD_APPLY.cs" />
+    <Compile Include="GY_EVALUATION_REPORT.cs" />
+    <Compile Include="GY_EVALUATION_RESULT.cs" />
+    <Compile Include="GY_EVALUATION_SCORE_DETAIL.cs" />
+    <Compile Include="GY_LETTER_OF_GUARANTEE.cs" />
+    <Compile Include="GY_OBJECTION.cs" />
+    <Compile Include="GY_OBJECTION_REPLY.cs" />
+    <Compile Include="GY_PROJECT.cs" />
+    <Compile Include="GY_QUALI_INQUERY_APP_FILE.cs" />
+    <Compile Include="GY_QUALI_INQUERY_CLARI.cs" />
+    <Compile Include="GY_QUALI_INQUERY_RESULT.cs" />
+    <Compile Include="GY_REJECTED_BID_INFO.cs" />
+    <Compile Include="GY_SECTION.cs" />
+    <Compile Include="GY_TENDER_ABNORMITY_REPORT.cs" />
+    <Compile Include="GY_TENDER_CANDIDATE.cs" />
+    <Compile Include="GY_TENDER_CANDIDATE_ANN.cs" />
+    <Compile Include="GY_TENDER_FILE_BUYYER_INFO.cs" />
+    <Compile Include="GY_TENDER_FILE_CLARI_MODI.cs" />
+    <Compile Include="GY_TENDER_FILE_EVALUATION.cs" />
+    <Compile Include="GY_TENDER_INVITATION.cs" />
+    <Compile Include="GY_TENDER_LIST.cs" />
+    <Compile Include="GY_TENDER_PROJECT.cs" />
+    <Compile Include="GY_TENDER_QUALIFICATION.cs" />
+    <Compile Include="GY_TENDER_QUA_INQUERY_ANN.cs" />
+    <Compile Include="GY_WIN_RESULT_ANNO.cs" />
+    <Compile Include="JdEntity.cs" />
+    <Compile Include="JT_AVOID_ENTERPRISE_LIST.cs" />
+    <Compile Include="JT_BIDDER_CREDIT_INFO.cs" />
+    <Compile Include="JT_BIDDER_MAKE_TOOL_INFO.cs" />
+    <Compile Include="JT_BIDDER_MARGIN_INFO.cs" />
+    <Compile Include="JT_BIDDER_PERFORMANCE.cs" />
+    <Compile Include="JT_BIDDER_PROJECT_MEMBER.cs" />
+    <Compile Include="JT_BIDDER_QUALIFICATION.cs" />
+    <Compile Include="JT_BID_DOC_CHARACT_CODE.cs" />
+    <Compile Include="JT_BID_EVALUATION_EXPERT.cs" />
+    <Compile Include="JT_BID_INVITE_LIST.cs" />
+    <Compile Include="JT_BID_OPENING_RECORD.cs" />
+    <Compile Include="JT_BID_OPEN_DETAIL.cs" />
+    <Compile Include="JT_BID_WINNING_NOTICE.cs" />
+    <Compile Include="JT_CIVIL_CON_TENDER_FILE.cs" />
+    <Compile Include="JT_CONSTRUCT_TENDER_FILE.cs" />
+    <Compile Include="JT_CONSULT_SUBMIT_REPORT.cs" />
+    <Compile Include="JT_CONTRACT_PERFORMANCE.cs" />
+    <Compile Include="JT_CONTRUCT_SUPER_TIME.cs" />
+    <Compile Include="JT_DESIGNER_APPROACH_TIME.cs" />
+    <Compile Include="JT_DESIGN_MAIN_LIVING.cs" />
+    <Compile Include="JT_ENGIN_CON_TENDER_FILE.cs" />
+    <Compile Include="JT_EQUIP_MIN_MACHINERY.cs" />
+    <Compile Include="JT_EVALUATION_BUILD_APPLY.cs" />
+    <Compile Include="JT_EVALUATION_REPORT.cs" />
+    <Compile Include="JT_EVALUATION_RESULT.cs" />
+    <Compile Include="JT_EVALUATION_SCORE_DETAIL.cs" />
+    <Compile Include="JT_GENRAL_CON_TENDER_FILE.cs" />
+    <Compile Include="JT_GEN_SUPER_TENDER_FILE.cs" />
+    <Compile Include="JT_GEN_SURVEY_TENDER_FILE.cs" />
+    <Compile Include="JT_HIGHWAY_OTHER_CONTENT.cs" />
+    <Compile Include="JT_LETTER_OF_GUARANTEE.cs" />
+    <Compile Include="JT_MACH_ELE_TENDER_FILE.cs" />
+    <Compile Include="JT_MAIN_PROJECT_REQUIRE.cs" />
+    <Compile Include="JT_MIN_REQUIRE_PERSONNEL.cs" />
+    <Compile Include="JT_OBJECTION.cs" />
+    <Compile Include="JT_OBJECTION_REPLY.cs" />
+    <Compile Include="JT_ORD_MAIN_TENDER_FILE.cs" />
+    <Compile Include="JT_OTHER_REQUIRE_PERSONNEL.cs" />
+    <Compile Include="JT_OWNER_DOC_WORKPLAN.cs" />
+    <Compile Include="JT_PERFORMANCE.cs" />
+    <Compile Include="JT_PORT_CON_TENDER_FILE.cs" />
+    <Compile Include="JT_PORT_SUPER_TENDER_FILE.cs" />
+    <Compile Include="JT_PROJECT.cs" />
+    <Compile Include="JT_QUALIFICATION_REQUIRE.cs" />
+    <Compile Include="JT_QUALI_INQUERY_APP_FILE.cs" />
+    <Compile Include="JT_QUALI_INQUERY_CLARI.cs" />
+    <Compile Include="JT_QUALI_INQUERY_RESULT.cs" />
+    <Compile Include="JT_REJECTED_BID_INFO.cs" />
+    <Compile Include="JT_SECTION.cs" />
+    <Compile Include="JT_SUBGRADE_TENDER_FILE.cs" />
+    <Compile Include="JT_SUB_SUP_TENDER_FILE.cs" />
+    <Compile Include="JT_SUPER_TENDER_FILE.cs" />
+    <Compile Include="JT_SURVEY_TENDER_FILE.cs" />
+    <Compile Include="JT_TENDER_ABNORMITY_REPORT.cs" />
+    <Compile Include="JT_TENDER_CANDIDATE.cs" />
+    <Compile Include="JT_TENDER_CANDIDATE_ANN.cs" />
+    <Compile Include="JT_TENDER_EVALUATION.cs" />
+    <Compile Include="JT_TENDER_FILE_BUYYER_INFO.cs" />
+    <Compile Include="JT_TENDER_FILE_CLARI_MODI.cs" />
+    <Compile Include="JT_TENDER_FILE_EVALUATION.cs" />
+    <Compile Include="JT_TENDER_INVITATION.cs" />
+    <Compile Include="JT_TENDER_LIST.cs" />
+    <Compile Include="JT_TENDER_PROJECT.cs" />
+    <Compile Include="JT_TENDER_QUALIFICATION.cs" />
+    <Compile Include="JT_TENDER_QUA_INQUERY_ANN.cs" />
+    <Compile Include="JT_TEST_BID_TENDER_FILE.cs" />
+    <Compile Include="JT_TEST_TENDER_FILE.cs" />
+    <Compile Include="JT_VEHICLE_REQUIREMENT.cs" />
+    <Compile Include="JT_WIN_RESULT_ANNO.cs" />
+    <Compile Include="LEGAL_PERSON_BASE.cs" />
+    <Compile Include="LOGIN_LOG.cs" />
+    <Compile Include="MGR_LOG.cs" />
+    <Compile Include="MV_GCJS_GGXX.cs" />
+    <Compile Include="MV_GCJS_GGXX_HISTORY.cs" />
+    <Compile Include="OPERTION_RECORD.cs" />
+    <Compile Include="PROJECT.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PT_ARTICLE.cs" />
+    <Compile Include="PT_ATYPE.cs" />
+    <Compile Include="PT_COMMENT.cs" />
+    <Compile Include="PT_COMPLAIN.cs" />
+    <Compile Include="PT_EXPOSURE.cs" />
+    <Compile Include="PT_LINK.cs" />
+    <Compile Include="PT_TXTEDIT.cs" />
+    <Compile Include="PT_ZXTS.cs" />
+    <Compile Include="PT_ZXTS.sequence.cs">
+      <DependentUpon>PT_ZXTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PT_ZXTS_BTSR.cs" />
+    <Compile Include="PT_ZXTS_DEPCONFIG.cs" />
+    <Compile Include="PT_ZXTS_LOG.cs" />
+    <Compile Include="PT_ZXTS_LOG.sequence.cs">
+      <DependentUpon>PT_ZXTS_LOG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PT_ZXTS_OLD.cs" />
+    <Compile Include="PT_ZXTS_OLD2.cs" />
+    <Compile Include="PT_ZXTS_REVOKE.cs" />
+    <Compile Include="PT_ZXTS_REVOKE.sequence.cs">
+      <DependentUpon>PT_ZXTS_REVOKE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RECORD_ATTACHMENT.cs" />
+    <Compile Include="RECORD_BIDDING_WRITE.cs" />
+    <Compile Include="RECORD_BIDDOC_NORMAL.cs" />
+    <Compile Include="RECORD_CLASSIFY.cs" />
+    <Compile Include="RECORD_CLASSIFY_NORMAL.cs" />
+    <Compile Include="RECORD_CONTRACT.cs" />
+    <Compile Include="RECORD_CREDIT_DEDUCTION.cs" />
+    <Compile Include="RECORD_HANDLE_RESULT.cs" />
+    <Compile Include="RECORD_LOG.cs" />
+    <Compile Include="RECORD_RESIDENTIAL_BIDDOC.cs" />
+    <Compile Include="RECORD_REVIEW.cs" />
+    <Compile Include="RECORD_SECTION_INFO.cs" />
+    <Compile Include="RECORD_WRITTEN.cs" />
+    <Compile Include="REVIEW_BUTTON.cs" />
+    <Compile Include="REVIEW_DEPCONFIG.cs" />
+    <Compile Include="REVIEW_INSTANCE.cs" />
+    <Compile Include="REVIEW_LOG.cs" />
+    <Compile Include="REVIEW_MAIN.cs" />
+    <Compile Include="REVIEW_NODE.cs" />
+    <Compile Include="REVIEW_OPERS.cs" />
+    <Compile Include="SECTION.cs" />
+    <Compile Include="SL_AVOID_ENTERPRISE_LIST.cs" />
+    <Compile Include="SL_BIDDER_CREDIT_INFO.cs" />
+    <Compile Include="SL_BIDDER_MAKE_TOOL_INFO.cs" />
+    <Compile Include="SL_BIDDER_MARGIN_INFO.cs" />
+    <Compile Include="SL_BIDDER_PERFORMANCE.cs" />
+    <Compile Include="SL_BIDDER_PROJECT_MEMBER.cs" />
+    <Compile Include="SL_BIDDER_QUALIFICATION.cs" />
+    <Compile Include="SL_BIDDER_QUALIFI_REQUIRE.cs" />
+    <Compile Include="SL_BID_DOC_CHARACT_CODE.cs" />
+    <Compile Include="SL_BID_EVALUATION_EXPERT.cs" />
+    <Compile Include="SL_BID_INVITE_LIST.cs" />
+    <Compile Include="SL_BID_OPENING_RECORD.cs" />
+    <Compile Include="SL_BID_OPEN_DETAIL.cs" />
+    <Compile Include="SL_BID_WINNING_NOTICE.cs" />
+    <Compile Include="SL_CONSTRUCT_BIDOC_REQUIRE.cs" />
+    <Compile Include="SL_CONSTRUCT_SUPER_REQUIRE.cs" />
+    <Compile Include="SL_CONTRACT_PERFORMANCE.cs" />
+    <Compile Include="SL_EVALUATION_BUILD_APPLY.cs" />
+    <Compile Include="SL_EVALUATION_REPORT.cs" />
+    <Compile Include="SL_EVALUATION_RESULT.cs" />
+    <Compile Include="SL_EVALUATION_SCORE_DETAIL.cs" />
+    <Compile Include="SL_ITEM_CONTROL_PRICE.cs" />
+    <Compile Include="SL_LETTER_OF_GUARANTEE.cs" />
+    <Compile Include="SL_MINIMUM_EQUIP_REQUIRE.cs" />
+    <Compile Include="SL_OBJECTION.cs" />
+    <Compile Include="SL_OBJECTION_REPLY.cs" />
+    <Compile Include="SL_OTHER_REQUIRE.cs" />
+    <Compile Include="SL_PERFORMANCE.cs" />
+    <Compile Include="SL_PROJECT.cs" />
+    <Compile Include="SL_QUALI_INQUERY_APP_FILE.cs" />
+    <Compile Include="SL_QUALI_INQUERY_CLARI.cs" />
+    <Compile Include="SL_QUALI_INQUERY_RESULT.cs" />
+    <Compile Include="SL_REJECTED_BID_INFO.cs" />
+    <Compile Include="SL_SECTION.cs" />
+    <Compile Include="SL_SURVEY_DESIGN_REQUIRE.cs" />
+    <Compile Include="SL_TENDER_ABNORMITY_REPORT.cs" />
+    <Compile Include="SL_TENDER_CANDIDATE.cs" />
+    <Compile Include="SL_TENDER_CANDIDATE_ANN.cs" />
+    <Compile Include="SL_TENDER_EVALUATION.cs" />
+    <Compile Include="SL_TENDER_FILE_BUYYER_INFO.cs" />
+    <Compile Include="SL_TENDER_FILE_CLARI_MODI.cs" />
+    <Compile Include="SL_TENDER_FILE_EVALUATION.cs" />
+    <Compile Include="SL_TENDER_INVITATION.cs" />
+    <Compile Include="SL_TENDER_LIST.cs" />
+    <Compile Include="SL_TENDER_PROJECT.cs" />
+    <Compile Include="SL_TENDER_QUALIFICATION.cs" />
+    <Compile Include="SL_TENDER_QUA_INQUERY_ANN.cs" />
+    <Compile Include="SL_WIN_RESULT_ANNO.cs" />
+    <Compile Include="SYS_AREA.cs" />
+    <Compile Include="SYS_AREA_QUANGUO.cs" />
+    <Compile Include="SYS_ATTACHMENT.cs" />
+    <Compile Include="SYS_ATTACHMENT.sequence.cs">
+      <DependentUpon>SYS_ATTACHMENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_DATA_LOG.cs" />
+    <Compile Include="SYS_DEPARTMENT.cs" />
+    <Compile Include="SYS_DIC.cs" />
+    <Compile Include="SYS_DICNEW.cs" />
+    <Compile Include="SYS_DOCUMENTS.cs" />
+    <Compile Include="SYS_INFO.cs" />
+    <Compile Include="SYS_LOG.cs" />
+    <Compile Include="SYS_MENU.cs" />
+    <Compile Include="SYS_POPEDOM.cs" />
+    <Compile Include="SYS_PUBLICTYPEINFO.cs" />
+    <Compile Include="SYS_TREE.cs" />
+    <Compile Include="SYS_URL.cs" />
+    <Compile Include="SYS_USER.cs" />
+    <Compile Include="SYS_USERROLE.cs" />
+    <Compile Include="TB_FAVORITE.cs" />
+    <Compile Include="TB_REPLACE.cs" />
+    <Compile Include="TB_TABLECONFIG.cs" />
+    <Compile Include="TB_TABLEFIELDCONFIG.cs" />
+    <Compile Include="TENDER_DOC_TRANS_LOG.cs" />
+    <Compile Include="TENDER_FILE_BUYYER_INFO.cs" />
+    <Compile Include="TENDER_PROJECT.cs" />
+    <Compile Include="TENDER_PROJECT_DEL.cs" />
+    <Compile Include="TRADE_CENTER.cs" />
+    <Compile Include="TRADE_EVA_ROOM.cs" />
+    <Compile Include="T_ACCESSTOAPPLICATION.cs" />
+    <Compile Include="T_ACCESS_DATA.cs" />
+    <Compile Include="T_AFC_CHANGE.cs" />
+    <Compile Include="T_AFC_CHANGE.sequence.cs">
+      <DependentUpon>T_AFC_CHANGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_FIXED.cs" />
+    <Compile Include="T_AFC_LOG.cs" />
+    <Compile Include="T_AFC_LOG.sequence.cs">
+      <DependentUpon>T_AFC_LOG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFC_PROJECT.cs" />
+    <Compile Include="T_AFC_SECONDARY.cs" />
+    <Compile Include="T_ATTACHMENT.cs" />
+    <Compile Include="T_AFC_XMCODE.cs" />
+    <Compile Include="T_AUDIT.cs" />
+    <Compile Include="T_AUDIT_DETAIL.cs" />
+    <Compile Include="T_BASE_TRADE_CENTER.cs" />
+    <Compile Include="T_COMPLAIN.cs" />
+    <Compile Include="T_COMPLAINTS_PROCESS.cs" />
+    <Compile Include="T_CREDIT_BONUS.cs" />
+    <Compile Include="T_DISHONESTY_EXPOSURE.cs" />
+    <Compile Include="T_EVALUATION.cs" />
+    <Compile Include="T_EXPERT_BLACKLIST.cs" />
+    <Compile Include="T_EXPERT_EVALUATION_INFO.cs" />
+    <Compile Include="T_EXPERT_EXTRACTION.cs" />
+    <Compile Include="T_FINDPWD.cs" />
+    <Compile Include="T_FRAUD.cs" />
+    <Compile Include="T_FR_BASE.cs" />
+    <Compile Include="T_GQ_PUBLISH.cs" />
+    <Compile Include="T_HOLIDAY.cs" />
+    <Compile Include="T_ILLEGAL.cs" />
+    <Compile Include="T_JIEKOU_USER.cs" />
+    <Compile Include="T_MESSAGE.cs" />
+    <Compile Include="T_MP_PLAN.cs" />
+    <Compile Include="T_MP_PLAN_INFO.cs" />
+    <Compile Include="T_MSG_STATE.cs" />
+    <Compile Include="T_MULTIMEDIA_DATA.cs" />
+    <Compile Include="T_NOTICE.cs" />
+    <Compile Include="T_PC_NODE.cs" />
+    <Compile Include="T_PC_PATH.cs" />
+    <Compile Include="T_PEW_PINFO.cs" />
+    <Compile Include="T_PM_JDINFO.cs" />
+    <Compile Include="T_PM_JDINFO_LOG.cs" />
+    <Compile Include="T_PM_MSGMODEL.cs" />
+    <Compile Include="T_PM_RELATION.cs" />
+    <Compile Include="T_PROJECT_BROWSE.cs" />
+    <Compile Include="T_PROJECT_DATA.cs" />
+    <Compile Include="T_PROJECT_WARN.cs" />
+    <Compile Include="T_PRO_SUPERVISION.cs" />
+    <Compile Include="T_RECORD_OPERATION_ATTACHMENT.cs" />
+    <Compile Include="T_RECORD_PROJECTINFO.cs" />
+    <Compile Include="T_RECORD_REGULATOR.cs" />
+    <Compile Include="T_RECORD_REVIEW.cs" />
+    <Compile Include="T_RECORD_REVIEW_NEW.cs" />
+    <Compile Include="T_SEQ.cs" />
+    <Compile Include="T_SEQ.sequence.cs">
+      <DependentUpon>T_SEQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_SERVICE_LOG.cs" />
+    <Compile Include="T_SERVICE_TCID.cs" />
+    <Compile Include="T_SMS_LOG.cs" />
+    <Compile Include="T_SMS_LOG.sequence.cs">
+      <DependentUpon>T_SMS_LOG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_SMS_SEND.cs" />
+    <Compile Include="T_SMS_SEND.sequence.cs">
+      <DependentUpon>T_SMS_SEND.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_TABLE_FIELD.cs" />
+    <Compile Include="T_TENDER_PROJECT.cs" />
+    <Compile Include="T_TP_COLUMNS.cs" />
+    <Compile Include="T_TP_DATA.cs" />
+    <Compile Include="T_TP_MAIN.cs" />
+    <Compile Include="T_TP_NODE.cs" />
+    <Compile Include="T_TP_TACHE.cs" />
+    <Compile Include="T_TUISONG.cs" />
+    <Compile Include="T_TUISONG_TOTAL.cs" />
+    <Compile Include="T_UPDATEEMAIL.cs" />
+    <Compile Include="T_USER.cs" />
+    <Compile Include="T_USER.sequence.cs">
+      <DependentUpon>T_USER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_USER_BIND_ACCOUNT.cs" />
+    <Compile Include="T_USER_DEPARTMENT.cs" />
+    <Compile Include="T_USER_EXTEND.cs" />
+    <Compile Include="T_USER_EXTEND.sequence.cs">
+      <DependentUpon>T_USER_EXTEND.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_USER_MENU_V2.cs" />
+    <Compile Include="T_USER_MENU.cs" />
+    <Compile Include="T_USER_MSG.cs" />
+    <Compile Include="T_USER_POPEDOM_V2.cs" />
+    <Compile Include="T_USER_POPEDOM.cs" />
+    <Compile Include="T_USER_ROLE_V2.cs" />
+    <Compile Include="T_USER_ROLE.cs" />
+    <Compile Include="T_USER_TRADEPLATFORM.cs" />
+    <Compile Include="T_USER_URL.cs" />
+    <Compile Include="T_WCBTJ.cs" />
+    <Compile Include="V_GONGCHENG_TONGJI.cs" />
+    <Compile Include="V_VIDEOPOINTINFO.cs" />
+    <Compile Include="V_YDPB_ROOM_SEAT.cs" />
+    <Compile Include="V_VIDEOBASICINFO.cs" />
+    <Compile Include="V_YDPB_APPLY_ALL.cs" />
+    <Compile Include="V_YDPB_APPLY_TRADE.cs" />
+    <Compile Include="XX_AVOID_ENTERPRISE_LIST.cs" />
+    <Compile Include="XX_BIDDER_CREDIT_INFO.cs" />
+    <Compile Include="XX_BIDDER_MAKE_TOOL_INFO.cs" />
+    <Compile Include="XX_BIDDER_MARGIN_INFO.cs" />
+    <Compile Include="XX_BIDDER_PERFORMANCE.cs" />
+    <Compile Include="XX_BIDDER_PROJECT_MEMBER.cs" />
+    <Compile Include="XX_BIDDER_QUALIFICATION.cs" />
+    <Compile Include="XX_BID_DOC_CHARACT_CODE.cs" />
+    <Compile Include="XX_BID_EVALUATION_EXPERT.cs" />
+    <Compile Include="XX_BID_INVITE_LIST.cs" />
+    <Compile Include="XX_BID_OPENING_RECORD.cs" />
+    <Compile Include="XX_BID_OPEN_DETAIL.cs" />
+    <Compile Include="XX_BID_WINNING_NOTICE.cs" />
+    <Compile Include="XX_CONTRACT_PERFORMANCE.cs" />
+    <Compile Include="XX_EVALUATION_BUILD_APPLY.cs" />
+    <Compile Include="XX_EVALUATION_REPORT.cs" />
+    <Compile Include="XX_EVALUATION_RESULT.cs" />
+    <Compile Include="XX_EVALUATION_SCORE_DETAIL.cs" />
+    <Compile Include="XX_LETTER_OF_GUARANTEE.cs" />
+    <Compile Include="XX_OBJECTION.cs" />
+    <Compile Include="XX_OBJECTION_REPLY.cs" />
+    <Compile Include="XX_PROJECT.cs" />
+    <Compile Include="XX_QUALI_INQUERY_APP_FILE.cs" />
+    <Compile Include="XX_QUALI_INQUERY_CLARI.cs" />
+    <Compile Include="XX_QUALI_INQUERY_RESULT.cs" />
+    <Compile Include="XX_REJECTED_BID_INFO.cs" />
+    <Compile Include="XX_SECTION.cs" />
+    <Compile Include="XX_TENDER_ABNORMITY_REPORT.cs" />
+    <Compile Include="XX_TENDER_CANDIDATE.cs" />
+    <Compile Include="XX_TENDER_CANDIDATE_ANN.cs" />
+    <Compile Include="XX_TENDER_FILE_BUYYER_INFO.cs" />
+    <Compile Include="XX_TENDER_FILE_CLARI_MODI.cs" />
+    <Compile Include="XX_TENDER_FILE_EVALUATION.cs" />
+    <Compile Include="XX_TENDER_INVITATION.cs" />
+    <Compile Include="XX_TENDER_LIST.cs" />
+    <Compile Include="XX_TENDER_PROJECT.cs" />
+    <Compile Include="XX_TENDER_QUALIFICATION.cs" />
+    <Compile Include="XX_TENDER_QUA_INQUERY_ANN.cs" />
+    <Compile Include="XX_WIN_RESULT_ANNO.cs" />
+    <Compile Include="YDPB_EVAL_APPLY.cs" />
+    <Compile Include="YDPB_EVAL_APPLY.sequence.cs">
+      <DependentUpon>YDPB_EVAL_APPLY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YDPB_EVAL_APPLY_DETAIL.cs" />
+    <Compile Include="YDPB_EVAL_APPLY_DETAIL.sequence.cs">
+      <DependentUpon>YDPB_EVAL_APPLY_DETAIL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YDPB_EVAL_APPLY_RECORD.cs" />
+    <Compile Include="YDPB_EVAL_APPLY_RECORD.sequence.cs">
+      <DependentUpon>YDPB_EVAL_APPLY_RECORD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YDPB_EVAL_EXPERT_RECORD.cs" />
+    <Compile Include="YDPB_EVAL_EXPERT_RECORD.tool.cs">
+      <DependentUpon>YDPB_EVAL_EXPERT_RECORD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YDPB_EVAL_ROOM.cs" />
+    <Compile Include="YDPB_EVAL_ROOM.sequence.cs">
+      <DependentUpon>YDPB_EVAL_ROOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YDPB_EVAL_ROOM_CAMERA.cs" />
+    <Compile Include="YDPB_EVAL_ROOM_CAMERA.sequence.cs">
+      <DependentUpon>YDPB_EVAL_ROOM_CAMERA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YDPB_EVAL_ROOM_SEAT.cs" />
+    <Compile Include="YDPB_EVAL_ROOM_SEAT.sequence.cs">
+      <DependentUpon>YDPB_EVAL_ROOM_SEAT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YDPB_EVAL_ROOM_SEAT_RECORD.cs" />
+    <Compile Include="YDPB_EVAL_ROOM_SEAT_RECORD.sequence.cs">
+      <DependentUpon>YDPB_EVAL_ROOM_SEAT_RECORD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YDPB_FILE.cs" />
+    <Compile Include="YDPB_FILE.sequence.cs">
+      <DependentUpon>YDPB_FILE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YDPB_NOTIFY_CONFIG.cs" />
+    <Compile Include="YG_AVOID_ENTERPRISE_LIST.cs" />
+    <Compile Include="YG_BIDDER_CREDIT_INFO.cs" />
+    <Compile Include="YG_BIDDER_MAKE_TOOL_INFO.cs" />
+    <Compile Include="YG_BIDDER_MARGIN_INFO.cs" />
+    <Compile Include="YG_BIDDER_PERFORMANCE.cs" />
+    <Compile Include="YG_BIDDER_PROJECT_MEMBER.cs" />
+    <Compile Include="YG_BIDDER_QUALIFICATION.cs" />
+    <Compile Include="YG_BID_DOC_CHARACT_CODE.cs" />
+    <Compile Include="YG_BID_EVALUATION_EXPERT.cs" />
+    <Compile Include="YG_BID_INVITE_LIST.cs" />
+    <Compile Include="YG_BID_OPENING_RECORD.cs" />
+    <Compile Include="YG_BID_OPEN_DETAIL.cs" />
+    <Compile Include="YG_BID_WINNING_NOTICE.cs" />
+    <Compile Include="YG_CONTRACT_PERFORMANCE.cs" />
+    <Compile Include="YG_EVALUATION_BUILD_APPLY.cs" />
+    <Compile Include="YG_EVALUATION_REPORT.cs" />
+    <Compile Include="YG_EVALUATION_RESULT.cs" />
+    <Compile Include="YG_EVALUATION_SCORE_DETAIL.cs" />
+    <Compile Include="YG_LETTER_OF_GUARANTEE.cs" />
+    <Compile Include="YG_OBJECTION.cs" />
+    <Compile Include="YG_OBJECTION_REPLY.cs" />
+    <Compile Include="YG_PROJECT.cs" />
+    <Compile Include="YG_QUALI_INQUERY_APP_FILE.cs" />
+    <Compile Include="YG_QUALI_INQUERY_CLARI.cs" />
+    <Compile Include="YG_QUALI_INQUERY_RESULT.cs" />
+    <Compile Include="YG_REJECTED_BID_INFO.cs" />
+    <Compile Include="YG_SECTION.cs" />
+    <Compile Include="YG_TENDER_ABNORMITY_REPORT.cs" />
+    <Compile Include="YG_TENDER_CANDIDATE.cs" />
+    <Compile Include="YG_TENDER_CANDIDATE_ANN.cs" />
+    <Compile Include="YG_TENDER_FILE_BUYYER_INFO.cs" />
+    <Compile Include="YG_TENDER_FILE_CLARI_MODI.cs" />
+    <Compile Include="YG_TENDER_FILE_EVALUATION.cs" />
+    <Compile Include="YG_TENDER_INVITATION.cs" />
+    <Compile Include="YG_TENDER_LIST.cs" />
+    <Compile Include="YG_TENDER_PROJECT.cs" />
+    <Compile Include="YG_TENDER_QUALIFICATION.cs" />
+    <Compile Include="YG_TENDER_QUA_INQUERY_ANN.cs" />
+    <Compile Include="YG_WIN_RESULT_ANNO.cs" />
+    <Compile Include="YW_FLOW_SUBMIT.cs" />
+    <Compile Include="YW_FLOW_USER.cs" />
+    <Compile Include="ZJ_AVOID_ENTERPRISE_LIST.cs" />
+    <Compile Include="ZJ_BIDDER_CREDIT_INFO.cs" />
+    <Compile Include="ZJ_BIDDER_MAKE_TOOL_INFO.cs" />
+    <Compile Include="ZJ_BIDDER_MARGIN_INFO.cs" />
+    <Compile Include="ZJ_BIDDER_PERFORMANCE.cs" />
+    <Compile Include="ZJ_BIDDER_PROJECT_MEMBER.cs" />
+    <Compile Include="ZJ_BIDDER_QUALIFICATION.cs" />
+    <Compile Include="ZJ_BID_DOC_CHARACT_CODE.cs" />
+    <Compile Include="ZJ_BID_EVALUATION_EXPERT.cs" />
+    <Compile Include="ZJ_BID_INVITE_LIST.cs" />
+    <Compile Include="ZJ_BID_OPENING_RECORD.cs" />
+    <Compile Include="ZJ_BID_OPEN_DETAIL.cs" />
+    <Compile Include="ZJ_BID_WINNING_NOTICE.cs" />
+    <Compile Include="ZJ_CONTRACT_PERFORMANCE.cs" />
+    <Compile Include="ZJ_EVALUATION_BUILD_APPLY.cs" />
+    <Compile Include="ZJ_EVALUATION_REPORT.cs" />
+    <Compile Include="ZJ_EVALUATION_RESULT.cs" />
+    <Compile Include="ZJ_EVALUATION_SCORE_DETAIL.cs" />
+    <Compile Include="ZJ_EXPERT_FINE_SCORE.cs" />
+    <Compile Include="ZJ_LETTER_OF_GUARANTEE.cs" />
+    <Compile Include="ZJ_OBJECTION.cs" />
+    <Compile Include="ZJ_OBJECTION_REPLY.cs" />
+    <Compile Include="ZJ_PERFORMANCE.cs" />
+    <Compile Include="ZJ_PROJECT.cs" />
+    <Compile Include="ZJ_QUALI_INQUERY_APP_FILE.cs" />
+    <Compile Include="ZJ_QUALI_INQUERY_CLARI.cs" />
+    <Compile Include="ZJ_QUALI_INQUERY_RESULT.cs" />
+    <Compile Include="ZJ_RECORD_REVIEW_MT.cs" />
+    <Compile Include="ZJ_RECORD_REVIEW_MZ.cs" />
+    <Compile Include="ZJ_REJECTED_BID_INFO.cs" />
+    <Compile Include="ZJ_REVIEW_CONTENT.cs" />
+    <Compile Include="ZJ_SECTION.cs" />
+    <Compile Include="ZJ_TENDER_ABNORMITY_REPORT.cs" />
+    <Compile Include="ZJ_TENDER_CANDIDATE.cs" />
+    <Compile Include="ZJ_TENDER_CANDIDATE_ANN.cs" />
+    <Compile Include="ZJ_TENDER_EVALUATION.cs" />
+    <Compile Include="ZJ_TENDER_FILE_BUYYER_INFO.cs" />
+    <Compile Include="ZJ_TENDER_FILE_CLARI_MODI.cs" />
+    <Compile Include="ZJ_TENDER_FILE_EVALUATION.cs" />
+    <Compile Include="ZJ_TENDER_INVITATION.cs" />
+    <Compile Include="ZJ_TENDER_LIST.cs" />
+    <Compile Include="ZJ_TENDER_PROJECT.cs" />
+    <Compile Include="ZJ_TENDER_QUALIFICATION.cs" />
+    <Compile Include="ZJ_TENDER_QUA_INQUERY_ANN.cs" />
+    <Compile Include="ZJ_WIN_RESULT_ANNO.cs" />
+    <Compile Include="ZJ_WRITTEN_REPORT.cs" />
+    <Compile Include="ZY_JIEKOU_USER.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Dos.ORM\Dos.ORM.csproj">
+      <Project>{4bef1983-f275-4807-96ea-25b973bd6e94}</Project>
+      <Name>Dos.ORM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

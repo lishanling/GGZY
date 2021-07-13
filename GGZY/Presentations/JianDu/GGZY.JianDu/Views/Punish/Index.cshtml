@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "联合惩戒查询";
+    Layout = "~/Views/Shared/_LayoutBody.cshtml";
+}
+
+
+@section scripts{
+    @*<script>
+        $(function() {
+            
+            $('#search').click(function () {
+                jp.post('/Punish/Check',
+                    { code: $('#code').val(), name: $('#name').val() },
+                    function (data) {
+                        $('#mainTable').html(data);
+                    });
+            });
+        })
+    </script>*@
+    <script src="~/static/modules/Punish/index.js"></script>
+}
+
+@section styles{
+
+    <link href="~/static/modules/Stat/GCJS.css" rel="stylesheet" />
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">福建省公共资源交易电子行政监督平台联合惩戒信息查询</h3>
+    </div>
+    <div class="panel-body">
+        <div id="search-collapse" class="collapse" style="display: block">
+            <div class="accordion-inner">
+                <form id="searchForm" class="form form-horizontal well clearfix" action="" method="post">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <label class="label-item single-overflow pull-left" title="请输入招标项目编号">招标项目编号</label>
+                        <div class="col-xs-12">
+                            <input type="text" name="code" id="code" class="form-control" value="">
+                        </div>
+
+
+                    </div><div class="col-xs-12 col-sm-6 col-md-4">
+                              <label class="label-item single-overflow pull-left" title="请输入招标项目名称">招标项目名称</label>
+    <div class="col-xs-12">
+        <input type="text" name="name" id="name" class="form-control" value="">
+    </div>
+
+
+</div>
+                    
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div style="margin-top:26px">
+                            <a id="search" class="btn btn-primary btn-rounded  btn-bordered btn-sm"><i class="fa fa-search"></i> 查询</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <table id="mainTable" data-toolbar="#toolbar"></table>
+
+    </div>
+</div>
+
+

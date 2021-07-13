@@ -1,0 +1,97 @@
+﻿@using GGZY.Services.Infrastructure.Helper
+@{
+    ViewBag.Title = "CA签章";
+    Layout = "~/Views/Shared/_LayoutBody.cshtml";
+    var m = DateTime.Now.Minute;
+    var accept = ConfigHelper.AppSettings.AcceptImg.Replace("*","");
+
+
+}
+@section scripts{
+
+    <script src="~/static/modules/CertificateAuthority/Sign.js"></script>
+
+}
+@section styles
+{
+    <style>
+        #decode_base64_txt, #encode_base64_txt {
+            word-wrap: break-word;
+            /*max-width: 80%*/
+        }
+    </style>
+}
+<input type="hidden" name="guid" id="guid" value="" />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">CA签章</h3>
+    </div>
+    <div class="panel-body">
+        <div id="search-collapse-decode" class="collapse" style="display: block">
+            <div class="accordion-inner">
+
+                <div class="form form-horizontal well clearfix">
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        1 上传需要签章的文件
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        2 点击开始签章
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        3 通过消息框 打开 统一选择客户端
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        4 插入CA锁
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        5 点击启动已安装的CA客户端<span style="color: red">（启动不成功，需要重新安装）</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        6 CA客户端签章成功，自动关闭
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        7 点击确定 <span style="color: blue">签章成功，会自动下载或者预览签章后的文件</span>
+                    </div>
+
+                </div>
+                <form id="searchForm-decode" class="form form-horizontal well clearfix" action="" method="post">
+                    <div class="col-xs-12 col-sm-6 col-md-10">
+                        <label class="label-item single-overflow pull-left" title="上传签章文件">上传签章文件 </label>
+                        <input id="url" name="url" class=" form-control" type="text" value="" maxlength="257" placeholder="" autocomplete="off" readonly="readonly" />
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                        <label class="label-item single-overflow pull-left" title="上传签章文件">上传签章文件 </label>
+                        <input id="file" name="file" type="file" value="" onchange="uploadFile(this)" accept="@accept"/>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div style="margin-top: 26px">
+                            <a id="sign" class="btn btn-primary btn-rounded  btn-bordered btn-sm"><i class="fa fa-pencil"></i>开始签章</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="panel panel-primary" id="panel-decode" style="display: none">
+    <div class="panel-heading">
+        <h3 class="panel-title">CA签章</h3>
+    </div>
+    <div class="panel-body">
+        <form id="inputForm" class="form-horizontal" action="" method="post">
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td class="width-15 active">
+                        <label class="pull-right" title="密文"><font color="red"> </font>密文:</label>
+                    </td>
+                    <td style="width: 85%">
+                        <textarea id="sign_base64_txt" style="width: 100%; height: 200px; resize: none;"readonly="readonly"></textarea>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

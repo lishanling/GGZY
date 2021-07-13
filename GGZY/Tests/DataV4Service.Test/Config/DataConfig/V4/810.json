@@ -1,0 +1,263 @@
+{
+    "DataName": "ZJ_TENDER_CANDIDATE",
+    "DataCnName": "中标候选人",
+    "IsZXSJ": true,
+    "GgfwDataNo": "510",
+    "Fields": [
+        {
+            "Name": "TENDER_PROJECT_CODE",
+            "CnName": "招标项目编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 20
+                },
+                {
+                    "ValidatorName": "TenderProjectCodeMatch",
+                    "TenderProjectTableName": "ZJ_TENDER_PROJECT"
+                }
+            ]
+        },
+        {
+            "Name": "BID_SECTION_CODE",
+            "CnName": "标段（包）编号",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 23
+                }
+            ]
+        },
+        {
+            "Name": "UNIFIED_DEAL_CODE",
+            "CnName": "统一交易标识码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 40
+                }
+            ]
+        },
+        {
+            "Name": "WIN_CANDIDATE_NAME",
+            "CnName": "中标候选人名称",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "BIDDER_CODE_TYPE",
+            "CnName": "中标候选人类别",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "WIN_CANDIDATE_CODE",
+            "CnName": "中标候选人代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "MaxLength": 200
+                }
+            ]
+        },
+        {
+            "Name": "BIDDER_ROLE",
+            "CnName": "中标候选人角色",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 2
+                }
+            ]
+        },
+        {
+            "Name": "WIN_CANDIDATE_ORDER",
+            "CnName": "中标候选人排名",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 10
+                }
+            ]
+        },
+        {
+            "Name": "IS_FLOAT_RATE",
+            "CnName": "是否采用下浮率",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "EVALUATION_RESULT",
+            "CnName": "评分结果",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "PRICE_FORM_CODE",
+            "CnName": "价款形式代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "OTHER_BID_PRICE",
+            "CnName": "费率或其它类型报价",
+            "Validators": []
+        },
+        {
+            "Name": "SIMILAR_PROJECT_CANDIDATE",
+            "CnName": "中标候选人提供的类似工程业绩",
+            "Validators": []
+        },
+        {
+            "Name": "BID_PRICE",
+            "CnName": "投标价格",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "NumberMatch",
+                    "IntegerFigures": 14,
+                    "DecimalFigures": 6
+                }
+            ]
+        },
+        {
+            "Name": "PRICE_CURRENCY",
+            "CnName": "价格币种代码",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 3
+                }
+            ]
+        },
+        {
+            "Name": "PRICE_UINT",
+            "CnName": "价格单位",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                },
+                {
+                    "ValidatorName": "LengthMatch",
+                    "FixedLength": 1
+                }
+            ]
+        },
+        {
+            "Name": "QUALITY",
+            "CnName": "质量",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "EVALUATION_STATUS",
+            "CnName": "评标情况",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+            "Name": "WIN_CANDIDATE_QUALIFICATION",
+            "CnName": "中标候选人响应招标文件的资格能力条件",
+            "Validators": [
+                {
+                    "ValidatorName": "NotNull"
+                }
+            ]
+        },
+        {
+          "Name": "BIDDER_REGION_CODE",
+          "CnName": "中标候选人人企业注册所在地",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 6
+            },
+            {
+              "ValidatorName": "AreaCodeMatch",
+              "Begin": 0
+            }
+          ]
+        },
+        {
+          "Name": "BIDDER_PROPERTY",
+          "CnName": "中标候选人企业性质",
+          "Validators": [
+            {
+              "ValidatorName": "NotNull"
+            },
+            {
+              "ValidatorName": "LengthMatch",
+              "FixedLength": 1
+            },
+            {
+              "ValidatorName": "DomainMatch",
+              "Type": "10005"
+            }
+          ]
+        }
+    ],
+    "Validators": []
+}

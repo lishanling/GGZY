@@ -1,0 +1,71 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html style="overflow-x:auto;overflow-y:auto;">
+<head>
+    <title>公共资源交易信息数据管理平台 @(ViewBag.Title)</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="author" content="TODO" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=10" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <link rel="stylesheet" href="~/static/common/css/vendor.css" />
+    <link href="~/static/common/css/base.css?v=@(DateTime.Now.Ticks)" rel="stylesheet" />
+    <script src="~/static/common/js/vendor.js"></script>
+    <link href="~/static/plugin/awesome/4.4/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/static/plugin/jquery-validation/1.14.0/jquery.validate.js" type="text/javascript"></script>
+    <script src="~/static/plugin/jquery-validation/1.14.0/localization/messages_zh.min.js" type="text/javascript"></script>
+    <script src="~/static/plugin/jquery-validation/1.14.0/validation-methods.js" type="text/javascript"></script>
+    <link href="~/static/plugin/icheck-1.x/skins/square/_all.css" rel="stylesheet" />
+    <script src="~/static/plugin/icheck-1.x/icheck.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('input.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+        });
+
+
+    </script>
+    <link href="~/static/plugin/city-picker/css/city-picker.css" rel="stylesheet" type="text/css" />
+    <script src="~/static/plugin/city-picker/js/city-picker.data.js" type="text/javascript"></script>
+    <script src="~/static/plugin/city-picker/js/city-picker.js" type="text/javascript"></script>
+    <script src="~/static/plugin/layui/layer/layer.js"></script>
+    <script src="~/static/plugin/layui/laytpl/laytpl.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/static/plugin/webuploader-0.1.5/webuploader.css">
+    <link rel="stylesheet" type="text/css" href="~/static/plugin/webuploader-0.1.5/demo.css">
+    <script type="text/javascript" src="~/static/plugin/webuploader-0.1.5/webuploader.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/static/plugin/toastr/toastr.css">
+    <script type="text/javascript" src="~/static/plugin/toastr/toastr.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/static/plugin/select2/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/static/plugin/select2/css/select2-bootstrap.css">
+    <script type="text/javascript" src="~/static/plugin/select2/js/select2.min.js"></script>
+    <script type="text/javascript" src="~/static/plugin/select2/js/i18n/zh-CN.js"></script>
+    <link rel="stylesheet" id="theme" href="~/static/common/css/app-blue.css" />
+    <script src="~/static/common/js/web.js"></script>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="decorator" content="ani" />
+    <script src="~/static/plugin/bootstrapTable/bootstrap-table-zh-CN.js"></script>
+    <script src="~/static/plugin/bootstrapTable/bootstrap-table-contextmenu.js"></script>
+    <script src="~/static/plugin/bootstrapTable/bootstrap-table-export.js"></script>
+    <script src="~/static/plugin/bootstrapTable/tableExport.js"></script>
+    <link href="~/static/plugin/jstree/style.css" rel="stylesheet" type="text/css" />
+    <script src="~/static/plugin/jstree/jstree.min.js" type="text/javascript"></script>
+    @RenderSection("styles", required: false)
+    @RenderSection("scripts", required: false)
+</head>
+<body id="" class="" style="background: white">
+    <div class="wrapper wrapper-content">
+        @RenderBody()
+    </div>
+</body>
+</html>

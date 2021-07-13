@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<sqlMap xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" namespace="T_ATTACHMENT">
+	<alias>
+		<typeAlias alias="T_ATTACHMENT" type="StrongSoftManage.Model.T_ATTACHMENT,StrongSoftManage.Model" />
+	</alias>
+	<statements>
+
+		<!--根据主键, 判断是否存在记录-->
+		<select id="ExistsByID" resultClass="int" parameterClass="int">
+			<![CDATA[
+				SELECT count(1) FROM T_ATTACHMENT WHERE ID = #value#
+			]]>
+		</select>
+
+		<!--根据主键, 判断是否存在记录-->
+		<select id="ExistsByWhere" resultClass="int" parameterClass="string">
+			<![CDATA[
+				SELECT count(1) FROM T_ATTACHMENT where $value$
+			]]>
+		</select>
+
+		<!--增加一条数据-->
+		<insert id="Add" parameterClass="T_ATTACHMENT">
+			<![CDATA[
+				INSERT INTO T_ATTACHMENT(ID,SYSTEM_NO,TB_NAME,ATTACHMENT_SET_CODE,ATTACHMENT_COUNT,ATTACHMENT_NAME,ATTACHMENT_TYPE,ATTACHMENT_FILE_NAME,URL,CREATE_TIME,SAVE_FILE_NAME,M_KEY,M_DATA_SOURCE,CREATE_BY,TB_ID,ORDER_BY,REMARK,FILE_NAME,GUID,MD5) 
+				VALUES (SEQ_T_ATTACHMENT.Nextval,#SYSTEM_NO#,#TB_NAME#,#ATTACHMENT_SET_CODE#,#ATTACHMENT_COUNT#,#ATTACHMENT_NAME#,#ATTACHMENT_TYPE#,#ATTACHMENT_FILE_NAME#,#URL#,#CREATE_TIME#,#SAVE_FILE_NAME#,#M_KEY#,#M_DATA_SOURCE#,#CREATE_BY#,#TB_ID#,#ORDER_BY#,#REMARK#,#FILE_NAME#,#GUID#,#MD5#)
+			]]>
+			<selectKey type="post" resultClass="int" property="ID">
+				<![CDATA[
+					select SEQ_T_ATTACHMENT.Currval from dual
+				]]>
+			</selectKey>
+		</insert>
+
+		<!--修改一条数据-->
+		<update id="Update" parameterClass="T_ATTACHMENT">
+			<![CDATA[
+				UPDATE T_ATTACHMENT SET 
+					ID=#ID#,
+					SYSTEM_NO=#SYSTEM_NO#,
+					TB_NAME=#TB_NAME#,
+					ATTACHMENT_SET_CODE=#ATTACHMENT_SET_CODE#,
+					ATTACHMENT_COUNT=#ATTACHMENT_COUNT#,
+					ATTACHMENT_NAME=#ATTACHMENT_NAME#,
+					ATTACHMENT_TYPE=#ATTACHMENT_TYPE#,
+					ATTACHMENT_FILE_NAME=#ATTACHMENT_FILE_NAME#,
+					URL=#URL#,
+					CREATE_TIME=#CREATE_TIME#,
+					SAVE_FILE_NAME=#SAVE_FILE_NAME#,
+					M_KEY=#M_KEY#,
+					M_DATA_SOURCE=#M_DATA_SOURCE#,
+					CREATE_BY=#CREATE_BY#,
+					TB_ID=#TB_ID#,
+					ORDER_BY=#ORDER_BY#,
+					REMARK=#REMARK#,
+					FILE_NAME=#FILE_NAME#,
+					GUID=#GUID#,
+					MD5=#MD5#
+				WHERE ID = #ID#
+			]]>
+		</update>
+
+		<!--根据主键, 删除一条记录-->
+		<delete id="DeleteByID" parameterClass="int">
+			<![CDATA[
+				DELETE FROM T_ATTACHMENT WHERE ID = #value#
+			]]>
+		</delete>
+
+		<!--根据主键集（用,分割的字符串）, 删除多条记录-->
+		<delete id="DeleteList" parameterClass="string">
+			<![CDATA[
+				DELETE FROM T_ATTACHMENT WHERE ID IN ($value$)
+			]]>
+		</delete>
+
+		<!--批量删除, 请注意Where限制的条件-->
+		<delete id="DeleteByWhere" parameterClass="string">
+			<![CDATA[
+				DELETE FROM T_ATTACHMENT where $value$
+			]]>
+		</delete>
+
+		<!--根据主键, 得到一个对象实体-->
+		<select id="GetModelByID" resultClass="T_ATTACHMENT" parameterClass="int">
+			<![CDATA[
+				SELECT ID,SYSTEM_NO,TB_NAME,ATTACHMENT_SET_CODE,ATTACHMENT_COUNT,ATTACHMENT_NAME,ATTACHMENT_TYPE,ATTACHMENT_FILE_NAME,URL,CREATE_TIME,SAVE_FILE_NAME,M_KEY,M_DATA_SOURCE,CREATE_BY,TB_ID,ORDER_BY,REMARK,FILE_NAME,GUID,MD5 FROM T_ATTACHMENT WHERE rownum=1 and ID = #value#
+			]]>
+		</select>
+
+		<!--根据strWhere, 得到一个对象实体-->
+		<select id="GetModelByWhere" resultClass="T_ATTACHMENT" parameterClass="string">
+			<![CDATA[
+				SELECT ID,SYSTEM_NO,TB_NAME,ATTACHMENT_SET_CODE,ATTACHMENT_COUNT,ATTACHMENT_NAME,ATTACHMENT_TYPE,ATTACHMENT_FILE_NAME,URL,CREATE_TIME,SAVE_FILE_NAME,M_KEY,M_DATA_SOURCE,CREATE_BY,TB_ID,ORDER_BY,REMARK,FILE_NAME,GUID,MD5 FROM T_ATTACHMENT where rownum=1 and $value$
+			]]>
+		</select>
+
+		<!--根据strWhere, 得到对象实体集合-->
+		<select id="GetList" resultClass="T_ATTACHMENT" parameterClass="string">
+			<![CDATA[
+				SELECT ID,SYSTEM_NO,TB_NAME,ATTACHMENT_SET_CODE,ATTACHMENT_COUNT,ATTACHMENT_NAME,ATTACHMENT_TYPE,ATTACHMENT_FILE_NAME,URL,CREATE_TIME,SAVE_FILE_NAME,M_KEY,M_DATA_SOURCE,CREATE_BY,TB_ID,ORDER_BY,REMARK,FILE_NAME,GUID,MD5 FROM T_ATTACHMENT where $value$
+			]]>
+		</select>
+
+		<!--根据strWhere, 获取前几条记录-->
+		<select id="GetListTop" resultClass="T_ATTACHMENT">
+			<![CDATA[
+				SELECT * FROM (SELECT ID,SYSTEM_NO,TB_NAME,ATTACHMENT_SET_CODE,ATTACHMENT_COUNT,ATTACHMENT_NAME,ATTACHMENT_TYPE,ATTACHMENT_FILE_NAME,URL,CREATE_TIME,SAVE_FILE_NAME,M_KEY,M_DATA_SOURCE,CREATE_BY,TB_ID,ORDER_BY,REMARK,FILE_NAME,GUID,MD5 FROM T_ATTACHMENT WHERE $strWhere$) tmp WHERE rownum<=$top$
+			]]>
+		</select>
+
+	</statements>
+</sqlMap>
+

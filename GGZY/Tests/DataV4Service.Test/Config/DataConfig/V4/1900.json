@@ -1,0 +1,108 @@
+{
+  "DataNo": "1900",
+  "DataName": "OTHER_ABNORMITY_REPORT",
+  "DataCnName": "其他行业招标异常报告",
+  "Fields": [
+    {
+      "Name": "PROJECT_CODE",
+      "CnName": "项目编号",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 20
+        }
+      ]
+    },
+    {
+      "Name": "EXCEPITON_INDUSTRY",
+      "CnName": "报告所属行业",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 1
+        }
+      ]
+    },
+    {
+      "Name": "UNIFIED_DEAL_CODE",
+      "CnName": "统一交易标识码",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "FixedLength": 40
+        }
+      ]
+    },
+    {
+      "Name": "EXCEPITON_NAME",
+      "CnName": "报告名称",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "LengthMatch",
+          "MaxLength": 600
+        }
+      ]
+    },
+    {
+      "Name": "EXCEPITON_INFOR",
+      "CnName": "异常情况描述",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "APPROVAL_RESULT",
+      "CnName": "审批或核准结果",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        }
+      ]
+    },
+    {
+      "Name": "APPROVAL_TIME",
+      "CnName": "审批或核准时间",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "DateMatch",
+          "Format": "yyyyMMddHHmmss"
+        }
+      ]
+    },
+    {
+      "Name": "EXCEPITON_TYPE",
+      "CnName": "异常类型",
+      "Validators": [
+        {
+          "ValidatorName": "NotNull"
+        },
+        {
+          "ValidatorName": "NumberMatch",
+          "IntegerFigures": 1
+        },
+        {
+          "ValidatorName": "EnumMatch",
+          "EnumType": "EXCEPITON_TYPE"
+        }
+      ]
+    }
+  ],
+  "Validators": []
+}

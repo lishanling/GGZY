@@ -1,0 +1,66 @@
+﻿{
+  "Env": [
+    {
+      "Name": "测试服务器",
+      "ServerList": [
+        {
+          "Token": "strong9889",
+          "Host": "114.115.162.77:28888",
+          "NickName": "大力水脚",
+          "IIsFireUrl": "",
+          "DockerFireUrl": null,
+          "WindowsServiceFireUrl": null
+        }
+      ],
+      "LinuxServerList": [],
+      "IgnoreList": [
+        "/logs/",
+        ".config",
+        "web.config"
+      ],
+      "WindowsBackUpIgnoreList": [
+        "/logs/",
+        ".log"
+      ]
+    }
+  ],
+  "IIsConfig": {
+    "SdkType": "netframework",
+    "WebSiteName": "远程异地评标调度系统API",
+    "LastEnvName": "测试服务器",
+    "EnvPairList": [
+      {
+        "EnvName": "测试服务器",
+        "ConfigName": "远程异地评标调度系统API",
+        "DockerPort": null,
+        "DockerEnvName": null,
+        "DockerVolume": null,
+        "DockerOther": null
+      }
+    ]
+  },
+  "WindowsServiveConfig": {
+    "ServiceName": "",
+    "SdkType": null,
+    "LastEnvName": null,
+    "EnvPairList": [
+      {
+        "EnvName": "测试服务器",
+        "ConfigName": "",
+        "DockerPort": null,
+        "DockerEnvName": null,
+        "DockerVolume": null,
+        "DockerOther": null
+      }
+    ]
+  },
+  "DockerConfig": {
+    "Prot": "",
+    "AspNetCoreEnv": "",
+    "LastEnvName": null,
+    "RemoveDaysFromPublished": "10",
+    "Volume": "",
+    "Other": "",
+    "EnvPairList": []
+  }
+}

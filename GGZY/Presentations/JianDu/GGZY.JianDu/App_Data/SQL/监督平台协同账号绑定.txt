@@ -1,0 +1,25 @@
+-- Create table
+create table T_USER_BIND_ACCOUNT
+(
+  id          VARCHAR2(100) primary key,
+  credit_code VARCHAR2(18),
+  main_u_id   NUMBER,
+  child_u_id  NUMBER,
+  remark      VARCHAR2(2000)
+);
+
+-- Add comments to the table 
+comment on table T_USER_BIND_ACCOUNT
+  is '账号绑定关联表';
+
+-- Add comments to the columns 
+comment on column T_USER_BIND_ACCOUNT.id
+  is '唯一标识';
+comment on column T_USER_BIND_ACCOUNT.credit_code
+  is '统一社会信用代码';
+comment on column T_USER_BIND_ACCOUNT.main_u_id
+  is '主账号';
+comment on column T_USER_BIND_ACCOUNT.child_u_id
+  is '子账号';
+comment on column T_USER_BIND_ACCOUNT.remark
+  is '备注';

@@ -1,0 +1,174 @@
+[
+  {
+    "name": "招标项目",
+    "ruleList": [
+      {
+        "id": 1, 
+        "ruleName": "目标项目下所有投标人",
+        "operator": ">=",
+        "number": 1,
+        "remark": "目标项目多个时，则分开罗列"
+      },
+      {
+        "id": 2,
+        "ruleName": "目标项目下所有评标专家",
+        "operator": ">=",
+        "number": 1,
+        "remark": "目标项目多个时，则分开罗列"
+      },
+      {
+        "id": 3,
+        "ruleName": "所有目标项目中，出现频率排名前十的投标人",
+        "operator": ">=",
+        "number": 1,
+        "remark": ""
+      },
+      {
+        "id": 4,
+        "ruleName": "所有目标项目中，出现频率排名前十的招标人",
+        "operator": ">=",
+        "number": 1,
+        "remark": ""
+      },
+      {
+        "id": 5,
+        "ruleName": "所有目标项目中，出现频率排名前十的代理机构",
+        "operator": ">=",
+        "number": 1,
+        "remark": ""
+      },
+      {
+        "id": 6,
+        "ruleName": "所有目标项目中，出现频率排名前十的评标专家",
+        "operator": ">=",
+        "number": 1,
+        "remark": ""
+      },
+      {
+        "id": 7,
+        "ruleName": "目标项目下所有投标人硬件信息",
+        "operator": ">=",
+        "number": 1,
+        "remark": "目标项目多个时，则分开罗列"
+      }
+    ]
+  },
+  {
+    "name": "投标人",
+    "ruleList": [
+      {
+        "id": 8,
+        "ruleName": "目标投标人所有投标项目",
+        "operator": ">=",
+        "number": 1,
+        "remark": "目标项目多个时，则分开罗列"
+      },
+      {
+        "id": 9,
+        "ruleName": "目标投标人所有中标项目",
+        "operator": ">=",
+        "number": 1,
+        "remark": "目标项目多个时，则分开罗列"
+      },
+      {
+        "id": 10,
+        "ruleName": "目标投标人，同场的项目",
+        "operator": ">=",
+        "number": 1,
+        "remark": ""
+      },
+      {
+        "id": 11,
+        "ruleName": "与目标投标人，同场次数排名前十的其他投标人",
+        "operator": ">=",
+        "number": 1,
+        "remark": "如目标投标人为多个，则为所有目标投标人同场时，在场次数排名前十的其他投标人"
+      },
+      {
+        "id": 12,
+        "ruleName": "与目标投标人，同场次数排名前十的招标人",
+        "operator": ">=",
+        "number": 1,
+        "remark": "如目标投标人为多个，则为所有目标投标人同场时，在场次数排名前十的其他投标人"
+      },
+      {
+        "id": 13,
+        "ruleName": "与目标投标人，同场次数排名前十的代理机构",
+        "operator": ">=",
+        "number": 1,
+        "remark": "如目标投标人为多个，则为所有目标投标人同场时，在场次数排名前十的其他投标人"
+      },
+      {
+        "id": 14,
+        "ruleName": "与目标投标人，同场次数排名前十的评标专家",
+        "operator": ">=",
+        "number": 1,
+        "remark": "如目标投标人为多个，则为所有目标投标人同场时，在场次数排名前十的其他投标人"
+      },
+      {
+        "id": 15,
+        "ruleName": "与目标投标人中标时同场，次数排名前十的其他投标人",
+        "operator": "=",
+        "number": 1,
+        "remark": ""
+      },
+      {
+        "id": 16,
+        "ruleName": "与目标投标人中标时同场，次数排名前十的招标人",
+        "operator": "=",
+        "number": 1,
+        "remark": ""
+      },
+      {
+        "id": 17,
+        "ruleName": "与目标投标人中标时同场，次数排名前十的代理机构",
+        "operator": "=",
+        "number": 1,
+        "remark": ""
+      },
+      {
+        "id": 18,
+        "ruleName": "与目标投标人中标时同场，次数排名前十的评标专家",
+        "operator": "=",
+        "number": 1,
+        "remark": ""
+      },
+      {
+        "id": 19,
+        "ruleName": "目标投标人所有硬件信息",
+        "operator": ">=",
+        "number": 1,
+        "remark": "目标项目多个时，则分开罗列"
+      },
+      {
+        "id": 20,
+        "ruleName": "与目标投标人硬件信息相同的其他投标人",
+        "operator": ">=",
+        "number": 1,
+        "remark": "目标项目多个时，则分开罗列"
+      },
+      {
+        "id": 21,
+        "ruleName": "与目标投标人硬件信息相同的其他中标人",
+        "operator": ">=",
+        "number": 1,
+        "remark": "目标项目多个时，则分开罗列"
+      },
+      {
+        "id": 22,
+        "ruleName": "所有目标投标人投标项目中，硬件信息相同的项目",
+        "operator": ">=",
+        "number": 1,
+        "remark": ""
+      },
+      {
+        "id": 23,
+        "ruleName": "所有目标投标人中标项目中，硬件信息相同的项目",
+        "operator": ">=",
+        "number": 1,
+        "remark": ""
+      }
+
+    ]
+  }
+]

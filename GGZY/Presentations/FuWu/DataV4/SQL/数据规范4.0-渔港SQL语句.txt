@@ -1,0 +1,2546 @@
+--创建表
+CREATE TABLE YG_PROJECT
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+PROJECT_CODE   VARCHAR2(17),
+PROJECT_NAME   VARCHAR2(600),
+REGION_CODE   VARCHAR2(6),
+RELATE_CODE   VARCHAR2(1),
+INVEST_PROJECT_CODE   VARCHAR2(24),
+ADDRESS   VARCHAR2(200),
+LEGAL_PERSON   VARCHAR2(200),
+CLASS_VER_CODE   VARCHAR2(1),
+INDUSTRIES_TYPE   VARCHAR2(3),
+FUND_SOURCE   VARCHAR2(1000),
+CONTRIBUTION_SCALE   VARCHAR2(1000),
+PROJECT_SCALE   VARCHAR2(1000),
+CONTACTOR   VARCHAR2(100),
+CONTACT_INFORMATION   VARCHAR2(100),
+APPROVAL_NAME   VARCHAR2(500),
+APPROVAL_NUMBER   VARCHAR2(100),
+APPROVAL_AUTHORITY   VARCHAR2(200),
+CREATE_TIME   DATE,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_PROJECT is '项目'; 
+comment on column YG_PROJECT.PROJECT_CODE is '项目编号'; 
+comment on column YG_PROJECT.PROJECT_NAME is '项目名称'; 
+comment on column YG_PROJECT.REGION_CODE is '项目所在行政区域代码'; 
+comment on column YG_PROJECT.RELATE_CODE is '项目类别关联代码'; 
+comment on column YG_PROJECT.INVEST_PROJECT_CODE is '投资项目统一代码'; 
+comment on column YG_PROJECT.ADDRESS is '项目地址'; 
+comment on column YG_PROJECT.LEGAL_PERSON is '项目法人'; 
+comment on column YG_PROJECT.CLASS_VER_CODE is '分类版本代码'; 
+comment on column YG_PROJECT.INDUSTRIES_TYPE is '项目行业分类'; 
+comment on column YG_PROJECT.FUND_SOURCE is '资金来源'; 
+comment on column YG_PROJECT.CONTRIBUTION_SCALE is '出资比例'; 
+comment on column YG_PROJECT.PROJECT_SCALE is '项目规模'; 
+comment on column YG_PROJECT.CONTACTOR is '联系人'; 
+comment on column YG_PROJECT.CONTACT_INFORMATION is '联系方式'; 
+comment on column YG_PROJECT.APPROVAL_NAME is '项目审批文件名称'; 
+comment on column YG_PROJECT.APPROVAL_NUMBER is '项目审批文号'; 
+comment on column YG_PROJECT.APPROVAL_AUTHORITY is '项目审批单位'; 
+comment on column YG_PROJECT.CREATE_TIME is '项目建立时间'; 
+comment on column YG_PROJECT.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_PROJECT.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_PROJECT.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_PROJECT.TRADE_PLAT is '电子招标投标交易平台或发布工具标识码'; 
+comment on column YG_PROJECT.PUB_SERVICE_PLAT is '电子招标投标公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_PROJECT
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_PROJECT
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+PROJECT_CODE   VARCHAR2(17),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+TENDER_SELF_CODE   VARCHAR2(200),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+IS_TO_LAW   VARCHAR2(1),
+TENDER_PROJECT_NAME   VARCHAR2(600),
+TENDER_PROJECT_TYPE   VARCHAR2(3),
+REGION_CODE   VARCHAR2(6),
+TENDER_CONTENT   CLOB,
+OWNER_NAME   VARCHAR2(200),
+TENDERER_NAME   VARCHAR2(2000),
+TENDERER_CODE_TYPE   VARCHAR2(20),
+TENDERER_CODE   VARCHAR2(2000),
+ISUNION   VARCHAR2(1),
+TENDERER_ROLE   VARCHAR2(2),
+TENDERER_REGION_CODE   VARCHAR2(6),
+TENDERER_PROPERTY   VARCHAR2(1),
+TENDER_AGENCY_NAME   VARCHAR2(200),
+TENDER_AGENCY_CODE_TYPE   VARCHAR2(1),
+TENDER_AGENCY_CODE   VARCHAR2(18),
+TENDER_AGENCY_ROLE   VARCHAR2(2),
+TENDER_AGENCY_REGION_CODE   VARCHAR2(6),
+TENDER_AGENCY_PROPERTY   VARCHAR2(1),
+TENDER_MODE   VARCHAR2(1),
+TENDER_ORGANIZE_FORM   VARCHAR2(1),
+CREATE_TIME   DATE,
+SUPERVISE_DEPT_NAME   VARCHAR2(200),
+SUPERVISE_DEPT_CODE   VARCHAR2(18),
+APPROVE_DEPT_NAME   VARCHAR2(200),
+APPROVE_DEPT_CODE   VARCHAR2(18),
+REPORT_DUTY   VARCHAR2(100),
+OPERATION_NAME   VARCHAR2(200),
+TRADE_SYSTEM_NO   VARCHAR2(100),
+TRADE_SYSTEM_FEE   NUMBER,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_PROJECT is '招标项目'; 
+comment on column YG_TENDER_PROJECT.PROJECT_CODE is '项目编号'; 
+comment on column YG_TENDER_PROJECT.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_PROJECT.TENDER_SELF_CODE is '招标项目编号'; 
+comment on column YG_TENDER_PROJECT.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_TENDER_PROJECT.IS_TO_LAW is '是否依法必须招标'; 
+comment on column YG_TENDER_PROJECT.TENDER_PROJECT_NAME is '招标项目名称'; 
+comment on column YG_TENDER_PROJECT.TENDER_PROJECT_TYPE is '招标项目类型'; 
+comment on column YG_TENDER_PROJECT.REGION_CODE is '招标项目所在行政区域代码'; 
+comment on column YG_TENDER_PROJECT.TENDER_CONTENT is '招标内容与范围及招标方案说明'; 
+comment on column YG_TENDER_PROJECT.OWNER_NAME is '项目业主名称'; 
+comment on column YG_TENDER_PROJECT.TENDERER_NAME is '招标人名称'; 
+comment on column YG_TENDER_PROJECT.TENDERER_CODE_TYPE is '招标人类别'; 
+comment on column YG_TENDER_PROJECT.TENDERER_CODE is '招标人代码'; 
+comment on column YG_TENDER_PROJECT.ISUNION is '是否联合招标'; 
+comment on column YG_TENDER_PROJECT.TENDERER_ROLE is '招标人角色'; 
+comment on column YG_TENDER_PROJECT.TENDERER_REGION_CODE is '招标人企业注册所在地'; 
+comment on column YG_TENDER_PROJECT.TENDERER_PROPERTY is '招标人企业性质'; 
+comment on column YG_TENDER_PROJECT.TENDER_AGENCY_NAME is '招标代理机构名称'; 
+comment on column YG_TENDER_PROJECT.TENDER_AGENCY_CODE_TYPE is '招标代理机构类别'; 
+comment on column YG_TENDER_PROJECT.TENDER_AGENCY_CODE is '招标代理机构代码'; 
+comment on column YG_TENDER_PROJECT.TENDER_AGENCY_ROLE is '招标代理机构角色'; 
+comment on column YG_TENDER_PROJECT.TENDER_AGENCY_REGION_CODE is '招标代理机构企业注册所在地'; 
+comment on column YG_TENDER_PROJECT.TENDER_AGENCY_PROPERTY is '招标代理机构企业性质'; 
+comment on column YG_TENDER_PROJECT.TENDER_MODE is '招标方式'; 
+comment on column YG_TENDER_PROJECT.TENDER_ORGANIZE_FORM is '招标组织形式'; 
+comment on column YG_TENDER_PROJECT.CREATE_TIME is '招标项目建立时间'; 
+comment on column YG_TENDER_PROJECT.SUPERVISE_DEPT_NAME is '监督部门名称'; 
+comment on column YG_TENDER_PROJECT.SUPERVISE_DEPT_CODE is '监督部门代码'; 
+comment on column YG_TENDER_PROJECT.APPROVE_DEPT_NAME is '审核部门名称'; 
+comment on column YG_TENDER_PROJECT.APPROVE_DEPT_CODE is '审核部门代码'; 
+comment on column YG_TENDER_PROJECT.REPORT_DUTY is '申报责任人'; 
+comment on column YG_TENDER_PROJECT.OPERATION_NAME is '信息录入人员'; 
+comment on column YG_TENDER_PROJECT.TRADE_SYSTEM_NO is '交易系统编号'; 
+comment on column YG_TENDER_PROJECT.TRADE_SYSTEM_FEE is '交易系统平台使用费'; 
+comment on column YG_TENDER_PROJECT.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_PROJECT.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_PROJECT.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_PROJECT.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_TENDER_PROJECT.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_PROJECT
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_SECTION
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+BID_SECTION_NAME   VARCHAR2(500),
+BID_ECTION_NUM   NUMBER,
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BID_TENDER_MODE   VARCHAR2(1),
+REGION_CODE   VARCHAR2(6),
+TRA_PLACE_CODE   VARCHAR2(6),
+BID_SECTION_CONTENT   CLOB,
+TENDER_PROJECT_CLASSIFY_CODE   VARCHAR2(30),
+CONTRACT_RECKON_PRICE   NUMBER,
+CURRENCY_CODE   VARCHAR2(3),
+PRICE_UNIT   VARCHAR2(1),
+BID_QUALIFICATION   CLOB,
+BEGIN_DATE   date,
+LIMITE_TIME   NUMBER,
+CREATE_TIME   DATE,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_SECTION is '标段(包)'; 
+comment on column YG_SECTION.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_SECTION.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_SECTION.BID_SECTION_NAME is '标段（包）名称'; 
+comment on column YG_SECTION.BID_ECTION_NUM is '标段（包）招标次数'; 
+comment on column YG_SECTION.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_SECTION.BID_TENDER_MODE is '标段（包）招标方式'; 
+comment on column YG_SECTION.REGION_CODE is '标段（包）所在行政区域代码'; 
+comment on column YG_SECTION.TRA_PLACE_CODE is '交易发生行政区域代码'; 
+comment on column YG_SECTION.BID_SECTION_CONTENT is '标段（包）内容'; 
+comment on column YG_SECTION.TENDER_PROJECT_CLASSIFY_CODE is '标段（包）分类代码'; 
+comment on column YG_SECTION.CONTRACT_RECKON_PRICE is '标段合同估算价'; 
+comment on column YG_SECTION.CURRENCY_CODE is '标段合同估算价币种代码'; 
+comment on column YG_SECTION.PRICE_UNIT is '标段合同估算价单位'; 
+comment on column YG_SECTION.BID_QUALIFICATION is '投标人资格条件'; 
+comment on column YG_SECTION.BEGIN_DATE is '计划开工日期'; 
+comment on column YG_SECTION.LIMITE_TIME is '工期'; 
+comment on column YG_SECTION.CREATE_TIME is '标段(包)建立时间'; 
+comment on column YG_SECTION.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_SECTION.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_SECTION.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_SECTION.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_SECTION.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_SECTION
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_QUA_INQUERY_ANN
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+NOTICE_BID_NUM   NUMBER,
+BID_SECTION_CODES   CLOB,
+TRAD_CENTER_NAME   VARCHAR2(2000),
+UNIFIED_DEAL_CODES   CLOB,
+TENDER_SELF_CODE   VARCHAR2(600),
+NOTICE_NAME   VARCHAR2(600),
+NOTICE_CONTENT   CLOB,
+NOTICE_SEND_TIME   DATE,
+NOTICE_MEDIA   VARCHAR2(1000),
+URL   VARCHAR2(500),
+NOTICE_NATURE   VARCHAR2(1),
+BULLETIN_TYPE   VARCHAR2(1),
+DOC_GET_START_TIME   DATE,
+DOC_GET_END_TIME   DATE,
+TENDER_DOC_GET_METHOD   VARCHAR2(500),
+BID_DOC_REFER_END_TIME   DATE,
+IS_POSTPONE   VARCHAR2(1),
+BID_OPEN_TIME   DATE,
+BID_OPEN_METHOD   CLOB,
+QUAL_TYPE   CLOB,
+DOC_PRICE   NUMBER,
+DOC_PRICE_CURRENCY   VARCHAR2(3),
+DOC_PRICE_UNIT   VARCHAR2(1),
+BID_DOC_REFER_METHOD   VARCHAR2(500),
+SYNDICATED_FLAG   VARCHAR2(1),
+TENDERER_CODE   VARCHAR2(18),
+TENDERER_NAME   VARCHAR2(200),
+TENDERER_ADDRESS   VARCHAR2(200),
+TENDERER_CONTACTOR   VARCHAR2(100),
+TENDERER_PHONE_NUMBER   VARCHAR2(20),
+TENDERER_EMAIL   VARCHAR2(100),
+TENDER_AGENCY_CODE   VARCHAR2(18),
+TENDER_AGENCY_NAME   VARCHAR2(200),
+TENDER_AGENCY_ADDRESS   VARCHAR2(200),
+TENDER_AGENCY_CONTACTOR   VARCHAR2(100),
+TENDER_AGENCY_PHONE_NUMBER   VARCHAR2(20),
+TENDER_AGENCY_EMAIL   VARCHAR2(100),
+OTHER_CONTENT   CLOB,
+BULLETIN_DUTY   VARCHAR2(50),
+BULLETIN_DUTY_CODE_TYPE   VARCHAR2(50),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_QUA_INQUERY_ANN is '招标公告与资格预审公告'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.NOTICE_BID_NUM is '公告标段（包）数量'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.BID_SECTION_CODES is '相关标段（包）编号'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TRAD_CENTER_NAME is '交易中心名称'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.UNIFIED_DEAL_CODES is '统一交易标识码'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDER_SELF_CODE is '招标编号'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.NOTICE_NAME is '公告标题'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.NOTICE_CONTENT is '公告内容'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.NOTICE_SEND_TIME is '公告发布时间'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.NOTICE_MEDIA is '公告发布媒体'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.URL is '公告源URL'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.NOTICE_NATURE is '公告性质'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.BULLETIN_TYPE is '公告类型'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.DOC_GET_START_TIME is '招标文件/资格预审文件获取时间'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.DOC_GET_END_TIME is '招标文件/资格预审文件获取截至时间'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDER_DOC_GET_METHOD is '招标文件/资格预审文件获取方法'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.BID_DOC_REFER_END_TIME is '投标文件/资格预审申请文件递交截止时间'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.IS_POSTPONE is '是否延期开标'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.BID_OPEN_TIME is '开标时间/开启时间'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.BID_OPEN_METHOD is '开标方式/文件开启方式'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.QUAL_TYPE is '评审办法'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.DOC_PRICE is '文件售价'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.DOC_PRICE_CURRENCY is '文件售价币种'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.DOC_PRICE_UNIT is '文件售价单位'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.BID_DOC_REFER_METHOD is '投标文件/资格预审申请文件递交方法'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.SYNDICATED_FLAG is '是否允许联合体投标'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDERER_CODE is '招标人代码'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDERER_NAME is '招标人名称'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDERER_ADDRESS is '招标人地址'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDERER_CONTACTOR is '招标人联系人'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDERER_PHONE_NUMBER is '招标人联系电话'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDERER_EMAIL is '招标人电子邮箱'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDER_AGENCY_CODE is '招标代理机构代码'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDER_AGENCY_NAME is '招标代理机构名称'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDER_AGENCY_ADDRESS is '招标代理机构地址'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDER_AGENCY_CONTACTOR is '招标代理机构联系人'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDER_AGENCY_PHONE_NUMBER is '招标代理机构联系电话'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TENDER_AGENCY_EMAIL is '招标代理机构电子邮箱'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.OTHER_CONTENT is '其他内容'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.BULLETIN_DUTY is '公告发布责任人'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.BULLETIN_DUTY_CODE_TYPE is '交易平台验证责任人'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_TENDER_QUA_INQUERY_ANN.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_QUA_INQUERY_ANN
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_FILE_CLARI_MODI
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(2000),
+UNIFIED_DEAL_CODES   VARCHAR2(2000),
+DOC_NO   VARCHAR2(26),
+DOC_NAME   VARCHAR2(600),
+BID_QUALIFICATION   CLOB,
+SYNDICATED_REQUIRED   CLOB,
+BID_DOC_REFER_END_TIME   DATE,
+VALID_PERIOD   NUMBER,
+BID_DOC_REFER_METHOD   CLOB,
+MARGIN_PAY_TYPE   VARCHAR2(10),
+PRICE_FORM_CODE   VARCHAR2(1),
+MARGIN_AMOUNT   NUMBER,
+MARGIN_CURRENCY   VARCHAR2(3),
+MARGIN_AMOUNT_UNIT   VARCHAR2(1),
+MARGIN_PERCENT   VARCHAR2(200),
+CONTROL_PRICE   NUMBER,
+CONTROL_PRICE_CURRENCY   VARCHAR2(3),
+CONTROL_PRICE_UNIT   VARCHAR2(1),
+EVALUATING_METHOD   CLOB,
+BID_OPEN_TIME   DATE,
+BID_OPEN_PLACE   VARCHAR2(200),
+BID_OPEN_TYPE   CLOB,
+QUAL_TYPE   VARCHAR2(1),
+CLARIFY_TIME   DATE,
+IS_POSTPONE   VARCHAR2(1),
+POST_OPEN_TIME   DATE,
+POST_OPEN_ADDRESS   VARCHAR2(200),
+CLARIFY_CONTENT   CLOB,
+SUBMIT_TIME   DATE,
+URL   VARCHAR2(500),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_FILE_CLARI_MODI is '招标文件/招标文件澄清与修改'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.BID_SECTION_CODE is '相关标段（包）编号'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.DOC_NO is '文件编号'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.DOC_NAME is '文件名称'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.BID_QUALIFICATION is '投标资格'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.SYNDICATED_REQUIRED is '联合体投标要求'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.BID_DOC_REFER_END_TIME is '投标文件递交截止时间'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.VALID_PERIOD is '投标有效期'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.BID_DOC_REFER_METHOD is '投标文件递交方法'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.MARGIN_PAY_TYPE is '投标保证金缴纳方式'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.PRICE_FORM_CODE is '价款形式代码'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.MARGIN_AMOUNT is '投标保证金金额'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.MARGIN_CURRENCY is '投标保证金币种代码'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.MARGIN_AMOUNT_UNIT is '投标保证金单位'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.MARGIN_PERCENT is '投标保证金比率或其他'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.CONTROL_PRICE is '控制价（最高限价）（如有）'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.CONTROL_PRICE_CURRENCY is '控制价币种代码（如有）'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.CONTROL_PRICE_UNIT is '控制价单位（如有）'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.EVALUATING_METHOD is '评标办法'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.BID_OPEN_TIME is '开标时间'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.BID_OPEN_PLACE is '开标地点'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.BID_OPEN_TYPE is '开标方式'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.QUAL_TYPE is '资格审查方式'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.CLARIFY_TIME is '答疑澄清时间'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.IS_POSTPONE is '是否延期'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.POST_OPEN_TIME is '延期后开标时间'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.POST_OPEN_ADDRESS is '延期后开标地点'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.CLARIFY_CONTENT is '对文件澄清与修改的主要内容'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.SUBMIT_TIME is '递交时间'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.URL is '文件源URL'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_TENDER_FILE_CLARI_MODI.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_FILE_CLARI_MODI
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_QUALIFICATION
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(2000),
+UNIFIED_DEAL_CODES   VARCHAR2(2000),
+QUALIFICATION_TYPE   VARCHAR2(1),
+QUALIFICATION_NAME   VARCHAR2(600),
+QUALIFICATION_LEVEL   VARCHAR2(200),
+QUALIFICATION_CERTIFICATE_NAME   VARCHAR2(600),
+QUALIFICATION_DETAIL   CLOB,
+QUALIFICATION_OTHER   CLOB,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_QUALIFICATION is '招标文件投标资格要求'; 
+comment on column YG_TENDER_QUALIFICATION.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_QUALIFICATION.BID_SECTION_CODE is '相关标段（包）编号'; 
+comment on column YG_TENDER_QUALIFICATION.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column YG_TENDER_QUALIFICATION.QUALIFICATION_TYPE is '投标资格要求类型'; 
+comment on column YG_TENDER_QUALIFICATION.QUALIFICATION_NAME is '投标资格要求类型名称'; 
+comment on column YG_TENDER_QUALIFICATION.QUALIFICATION_LEVEL is '投标资格要求等级'; 
+comment on column YG_TENDER_QUALIFICATION.QUALIFICATION_CERTIFICATE_NAME is '投标资格要求证书名称'; 
+comment on column YG_TENDER_QUALIFICATION.QUALIFICATION_DETAIL is '投标资格要求详情'; 
+comment on column YG_TENDER_QUALIFICATION.QUALIFICATION_OTHER is '其他要求'; 
+comment on column YG_TENDER_QUALIFICATION.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_QUALIFICATION.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_QUALIFICATION.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_QUALIFICATION.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_TENDER_QUALIFICATION.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_QUALIFICATION
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_FILE_EVALUATION
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+QUALIFICATION_DETAIL   CLOB,
+BUSINESS_DETAIL   CLOB,
+TECHNICAL_DETAIL   CLOB,
+RESPONSE_DETAIL   CLOB,
+OTHER_DETAIL   CLOB,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_FILE_EVALUATION is '招标文件评标条件设置'; 
+comment on column YG_TENDER_FILE_EVALUATION.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_FILE_EVALUATION.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_TENDER_FILE_EVALUATION.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_TENDER_FILE_EVALUATION.QUALIFICATION_DETAIL is '资格文件'; 
+comment on column YG_TENDER_FILE_EVALUATION.BUSINESS_DETAIL is '商务文件'; 
+comment on column YG_TENDER_FILE_EVALUATION.TECHNICAL_DETAIL is '技术文件'; 
+comment on column YG_TENDER_FILE_EVALUATION.RESPONSE_DETAIL is '响应性评审'; 
+comment on column YG_TENDER_FILE_EVALUATION.OTHER_DETAIL is '其他文件'; 
+comment on column YG_TENDER_FILE_EVALUATION.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_FILE_EVALUATION.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_FILE_EVALUATION.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_FILE_EVALUATION.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_TENDER_FILE_EVALUATION.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_FILE_EVALUATION
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_INVITATION
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BID_INVITE_ISSUE_NATURE   VARCHAR2(1),
+BID_INVITE_ISSUE_CONTENT   CLOB,
+DOC_GET_START_TIME   DATE,
+DOC_GET_END_TIME   DATE,
+TENDER_DOC_GET_METHOD   CLOB,
+BID_DOC_REFER_END_TIME   DATE,
+BID_DOC_REFER_METHOD   CLOB,
+BID_INVITE_ISSUE_TIME   DATE,
+BULLETIN_DUTY   VARCHAR2(50),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_INVITATION is '投标邀请书'; 
+comment on column YG_TENDER_INVITATION.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_INVITATION.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_TENDER_INVITATION.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_TENDER_INVITATION.BID_INVITE_ISSUE_NATURE is '投标邀请性质'; 
+comment on column YG_TENDER_INVITATION.BID_INVITE_ISSUE_CONTENT is '投标邀请内容及变更内容'; 
+comment on column YG_TENDER_INVITATION.DOC_GET_START_TIME is '招标文件获取开始时间'; 
+comment on column YG_TENDER_INVITATION.DOC_GET_END_TIME is '招标文件获取截止时间'; 
+comment on column YG_TENDER_INVITATION.TENDER_DOC_GET_METHOD is '招标文件获取方法'; 
+comment on column YG_TENDER_INVITATION.BID_DOC_REFER_END_TIME is '投标文件递交截止时间'; 
+comment on column YG_TENDER_INVITATION.BID_DOC_REFER_METHOD is '投标文件递交方法'; 
+comment on column YG_TENDER_INVITATION.BID_INVITE_ISSUE_TIME is '投标邀请发出时间'; 
+comment on column YG_TENDER_INVITATION.BULLETIN_DUTY is '投标邀请发布责任人'; 
+comment on column YG_TENDER_INVITATION.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_INVITATION.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_INVITATION.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_INVITATION.TRADE_PLAT is '电子招标投标交易平台或发布工具标识码'; 
+comment on column YG_TENDER_INVITATION.PUB_SERVICE_PLAT is '电子招标投标公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_INVITATION
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BID_INVITE_LIST
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+UNIT_NAME   VARCHAR2(100),
+QUALIFICATION   VARCHAR2(1000),
+MANAGER_LEVEL   VARCHAR2(100),
+MANAGER_NAME   VARCHAR2(100),
+MANAGER_PHONE   VARCHAR2(100),
+MANAGER_TELPHONE   VARCHAR2(100),
+INVITE_TIME   DATE,
+INVITATION_STATUS   VARCHAR2(100),
+REMARK   VARCHAR2(2000),
+IS_CONFIRM   VARCHAR2(1),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BID_INVITE_LIST is '投标邀请人名单'; 
+comment on column YG_BID_INVITE_LIST.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BID_INVITE_LIST.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_BID_INVITE_LIST.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_BID_INVITE_LIST.UNIT_NAME is '单位名称'; 
+comment on column YG_BID_INVITE_LIST.QUALIFICATION is '资质'; 
+comment on column YG_BID_INVITE_LIST.MANAGER_LEVEL is '项目负责人等级'; 
+comment on column YG_BID_INVITE_LIST.MANAGER_NAME is '联系人'; 
+comment on column YG_BID_INVITE_LIST.MANAGER_PHONE is '联系电话'; 
+comment on column YG_BID_INVITE_LIST.MANAGER_TELPHONE is '联系手机'; 
+comment on column YG_BID_INVITE_LIST.INVITE_TIME is '邀请时间'; 
+comment on column YG_BID_INVITE_LIST.INVITATION_STATUS is '邀请函发出状态'; 
+comment on column YG_BID_INVITE_LIST.REMARK is '备注'; 
+comment on column YG_BID_INVITE_LIST.IS_CONFIRM is '是否已确认'; 
+comment on column YG_BID_INVITE_LIST.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BID_INVITE_LIST.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BID_INVITE_LIST.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BID_INVITE_LIST.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BID_INVITE_LIST.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BID_INVITE_LIST
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_EVALUATION_BUILD_APPLY
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11),
+EXTRACT_RULE   VARCHAR2(1000),
+EXTRACT_APPLY_TIME   DATE,
+EXTRACT_TIME   DATE,
+EXPERT_LIST_CONFIRM   VARCHAR2(2000)
+);
+--创建注释
+comment on table YG_EVALUATION_BUILD_APPLY is '评标委员会组建申请'; 
+comment on column YG_EVALUATION_BUILD_APPLY.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_EVALUATION_BUILD_APPLY.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_EVALUATION_BUILD_APPLY.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_EVALUATION_BUILD_APPLY.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_EVALUATION_BUILD_APPLY.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_EVALUATION_BUILD_APPLY.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_EVALUATION_BUILD_APPLY.TRADE_PLAT is '电子招标投标交易平台或发布工具标识码'; 
+comment on column YG_EVALUATION_BUILD_APPLY.PUB_SERVICE_PLAT is '电子招标投标公共服务平台标识码'; 
+comment on column YG_EVALUATION_BUILD_APPLY.EXTRACT_RULE is '专家抽取规则'; 
+comment on column YG_EVALUATION_BUILD_APPLY.EXTRACT_APPLY_TIME is '专家抽取申请时间'; 
+comment on column YG_EVALUATION_BUILD_APPLY.EXTRACT_TIME is '专家抽取时间'; 
+comment on column YG_EVALUATION_BUILD_APPLY.EXPERT_LIST_CONFIRM is '专家名单确定方式'; 
+ --创建序列
+create sequence seq_YG_EVALUATION_BUILD_APPLY
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_QUALI_INQUERY_CLARI
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODES   CLOB,
+UNIFIED_DEAL_CODES   CLOB,
+DOC_CODE   VARCHAR2(50),
+DOC_NAME   VARCHAR2(600),
+APPLICANT_QUALIFICATIONS   CLOB,
+APPLICATION_VALID_TIME   VARCHAR2(200),
+DOC_SUBMIT_END_TIME   DATE,
+DOC_SUBMIT_METHOD   VARCHAR2(50),
+DOC_OPEN_TIME   DATE,
+DOC_OPEN_METHOD   VARCHAR2(50),
+EVALUATION_METHOD   CLOB,
+CLARIFY_CONTENT   CLOB,
+IS_POSTPONE   VARCHAR2(1),
+POST_OPEN_TIME   DATE,
+POST_OPEN_ADDRESS   VARCHAR2(200),
+TENDER_CLARIFY_CONTENT   CLOB,
+TENDER_SUBMIT_TIME   DATE,
+SUBMIT_TIME   DATE,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_QUALI_INQUERY_CLARI is '资格预审/资格预审澄清'; 
+comment on column YG_QUALI_INQUERY_CLARI.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_QUALI_INQUERY_CLARI.BID_SECTION_CODES is '相关标段（包）编号'; 
+comment on column YG_QUALI_INQUERY_CLARI.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column YG_QUALI_INQUERY_CLARI.DOC_CODE is '文件编号'; 
+comment on column YG_QUALI_INQUERY_CLARI.DOC_NAME is '文件名称'; 
+comment on column YG_QUALI_INQUERY_CLARI.APPLICANT_QUALIFICATIONS is '申请资格'; 
+comment on column YG_QUALI_INQUERY_CLARI.APPLICATION_VALID_TIME is '申请有效期'; 
+comment on column YG_QUALI_INQUERY_CLARI.DOC_SUBMIT_END_TIME is '申请文件递交截止时间'; 
+comment on column YG_QUALI_INQUERY_CLARI.DOC_SUBMIT_METHOD is '申请文件递交方法'; 
+comment on column YG_QUALI_INQUERY_CLARI.DOC_OPEN_TIME is '文件开启时间'; 
+comment on column YG_QUALI_INQUERY_CLARI.DOC_OPEN_METHOD is '文件开启方式'; 
+comment on column YG_QUALI_INQUERY_CLARI.EVALUATION_METHOD is '评审办法'; 
+comment on column YG_QUALI_INQUERY_CLARI.CLARIFY_CONTENT is '对文件澄清与修改的主要内容'; 
+comment on column YG_QUALI_INQUERY_CLARI.IS_POSTPONE is '是否延期'; 
+comment on column YG_QUALI_INQUERY_CLARI.POST_OPEN_TIME is '延期后开标时间'; 
+comment on column YG_QUALI_INQUERY_CLARI.POST_OPEN_ADDRESS is '延期后开标地点'; 
+comment on column YG_QUALI_INQUERY_CLARI.TENDER_CLARIFY_CONTENT is '对资格预审澄清与修改的主要内容'; 
+comment on column YG_QUALI_INQUERY_CLARI.TENDER_SUBMIT_TIME is '递交时间'; 
+comment on column YG_QUALI_INQUERY_CLARI.SUBMIT_TIME is '上传时间'; 
+comment on column YG_QUALI_INQUERY_CLARI.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_QUALI_INQUERY_CLARI.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_QUALI_INQUERY_CLARI.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_QUALI_INQUERY_CLARI.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_QUALI_INQUERY_CLARI.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_QUALI_INQUERY_CLARI
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_QUALI_INQUERY_APP_FILE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODES   CLOB,
+UNIFIED_DEAL_CODES   CLOB,
+APPLICANTION_NAME   VARCHAR2(200),
+APPLICANTION_CODE   VARCHAR2(18),
+QUALIFICATION_ELEMENT   CLOB,
+BID_MANAGER   VARCHAR2(100),
+APPLY_SUBMIT_TIME   DATE,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_QUALI_INQUERY_APP_FILE is '资格预审申请文件'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.BID_SECTION_CODES is '相关标段（包）编号'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.APPLICANTION_NAME is '申请人名称'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.APPLICANTION_CODE is '申请人代码'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.QUALIFICATION_ELEMENT is '投标资格条件'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.BID_MANAGER is '投标单位项目负责人'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.APPLY_SUBMIT_TIME is '申请递交时间'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_QUALI_INQUERY_APP_FILE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_QUALI_INQUERY_APP_FILE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_QUALI_INQUERY_RESULT
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+NOTICE_NAME   VARCHAR2(600),
+PASSED_APPLICANT_LIST   CLOB,
+RESULT_CREATE_TIME   DATE,
+URL   VARCHAR2(500),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_QUALI_INQUERY_RESULT is '资格预审结果'; 
+comment on column YG_QUALI_INQUERY_RESULT.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_QUALI_INQUERY_RESULT.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_QUALI_INQUERY_RESULT.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_QUALI_INQUERY_RESULT.NOTICE_NAME is '资格预审结果标题'; 
+comment on column YG_QUALI_INQUERY_RESULT.PASSED_APPLICANT_LIST is '通过资格预审的申请人名单'; 
+comment on column YG_QUALI_INQUERY_RESULT.RESULT_CREATE_TIME is '资格评审结果生成时间'; 
+comment on column YG_QUALI_INQUERY_RESULT.URL is '结果发布源URL'; 
+comment on column YG_QUALI_INQUERY_RESULT.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_QUALI_INQUERY_RESULT.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_QUALI_INQUERY_RESULT.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_QUALI_INQUERY_RESULT.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_QUALI_INQUERY_RESULT.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_QUALI_INQUERY_RESULT
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_FILE_BUYYER_INFO
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+PURCHASE_WAY   VARCHAR2(1),
+PURCHASE_MODE   VARCHAR2(1),
+PURCHASE_MONEY   NUMBER,
+PURCHASE_ORDER_NUMBER   VARCHAR2(200),
+PURCHASE_ACCOUNT   VARCHAR2(2000),
+PURCHASE_TIME   DATE,
+PURCHASE_IP   VARCHAR2(200),
+PURCHASE_BROWSER   VARCHAR2(200),
+DOWNLOAD_IP   VARCHAR2(200),
+DOWNLOAD_BROWSER   VARCHAR2(200),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_FILE_BUYYER_INFO is '招标文件购买信息'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PURCHASE_WAY is '招标文件购买途径'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PURCHASE_MODE is '招标文件购买方式'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PURCHASE_MONEY is '招标文件购买金额'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PURCHASE_ORDER_NUMBER is '招标文件购买订单号'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PURCHASE_ACCOUNT is '招标文件购买账号'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PURCHASE_TIME is '招标文件购买时间'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PURCHASE_IP is '招标文件购买IP地址'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PURCHASE_BROWSER is '招标文件购买浏览器信息'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.DOWNLOAD_IP is '招标文件下载IP地址'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.DOWNLOAD_BROWSER is '招标文件下载浏览器信息'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_TENDER_FILE_BUYYER_INFO.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_FILE_BUYYER
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_LIST
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(300),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(200),
+BIDDER_ROLE   VARCHAR2(2),
+BIDDER_REGION_CODE   VARCHAR2(6),
+BIDDER_PROPERTY   VARCHAR2(1),
+BIDDER_CREDIT_SCORE   NUMBER,
+IS_LOST   VARCHAR2(1),
+BIDDER_OPERATION_PERSON   VARCHAR2(100),
+BIDDER_OPERATION_PERSON_ID   VARCHAR2(18),
+BIDDER_OPERATION_PERSON_CON   VARCHAR2(100),
+BID_MANAGER   VARCHAR2(100),
+ID_CARD   VARCHAR2(50),
+REGIST_CERTIFICATE   CLOB,
+MARGIN_PAY_FORM   VARCHAR2(1),
+IS_COMMIT_MARGIN   VARCHAR2(1),
+MARGIN_RECEIVE_TIME   DATE,
+UNION_ENTERPRISE_NAME   VARCHAR2(1000),
+UNION_ORGAN_SET_CODE   VARCHAR2(500),
+UNION_CONTACT_NAME   VARCHAR2(3000),
+UNION_CONTACT_PHONE   VARCHAR2(2000),
+BIDDER_INFO_VERSION   DATE,
+PRICE_FORM_CODE   VARCHAR2(1),
+OTHER_BID_PRICE   VARCHAR2(2000),
+BID_PRICE   NUMBER,
+PRICE_CURRENCY   VARCHAR2(3),
+PRICE_UNIT   VARCHAR2(1),
+TIME_LIMIT   NUMBER,
+PURCHASE_ORDER_NUMBER   VARCHAR2(200),
+IS_REVIEW_SHORTLISTED   VARCHAR2(1),
+CHECKIN_TIME   DATE,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_LIST is '投标人名单'; 
+comment on column YG_TENDER_LIST.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_LIST.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_TENDER_LIST.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_TENDER_LIST.BIDDER_NAME is '投标人名称'; 
+comment on column YG_TENDER_LIST.BIDDER_CODE_TYPE is '投标人类别'; 
+comment on column YG_TENDER_LIST.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_TENDER_LIST.BIDDER_ROLE is '投标人角色'; 
+comment on column YG_TENDER_LIST.BIDDER_REGION_CODE is '投标人企业注册所在地'; 
+comment on column YG_TENDER_LIST.BIDDER_PROPERTY is '投标人企业性质'; 
+comment on column YG_TENDER_LIST.BIDDER_CREDIT_SCORE is '投标人信用分'; 
+comment on column YG_TENDER_LIST.IS_LOST is '是否失信人'; 
+comment on column YG_TENDER_LIST.BIDDER_OPERATION_PERSON is '投标操作人员'; 
+comment on column YG_TENDER_LIST.BIDDER_OPERATION_PERSON_ID is '投标操作人员身份证'; 
+comment on column YG_TENDER_LIST.BIDDER_OPERATION_PERSON_CON is '投标操作人联系方式'; 
+comment on column YG_TENDER_LIST.BID_MANAGER is '投标单位项目负责人'; 
+comment on column YG_TENDER_LIST.ID_CARD is '投标单位项目负责人身份证号'; 
+comment on column YG_TENDER_LIST.REGIST_CERTIFICATE is '注册证书类别及注册证书号'; 
+comment on column YG_TENDER_LIST.MARGIN_PAY_FORM is '保证金递交方式'; 
+comment on column YG_TENDER_LIST.IS_COMMIT_MARGIN is '是否提交保证金'; 
+comment on column YG_TENDER_LIST.MARGIN_RECEIVE_TIME is '保证金递交时间'; 
+comment on column YG_TENDER_LIST.UNION_ENTERPRISE_NAME is '联合体名称（如有）'; 
+comment on column YG_TENDER_LIST.UNION_ORGAN_SET_CODE is '联合体组织机构代码证（联合体招标时填写）'; 
+comment on column YG_TENDER_LIST.UNION_CONTACT_NAME is '联合体联系人（如有）'; 
+comment on column YG_TENDER_LIST.UNION_CONTACT_PHONE is '联合体联系电话（如有）'; 
+comment on column YG_TENDER_LIST.BIDDER_INFO_VERSION is '投标人信息版本'; 
+comment on column YG_TENDER_LIST.PRICE_FORM_CODE is '价款形式代码'; 
+comment on column YG_TENDER_LIST.OTHER_BID_PRICE is '费率或其它类型报价'; 
+comment on column YG_TENDER_LIST.BID_PRICE is '投标报价金额'; 
+comment on column YG_TENDER_LIST.PRICE_CURRENCY is '投标报价币种'; 
+comment on column YG_TENDER_LIST.PRICE_UNIT is '投标报价单位'; 
+comment on column YG_TENDER_LIST.TIME_LIMIT is '投标工期'; 
+comment on column YG_TENDER_LIST.PURCHASE_ORDER_NUMBER is '招标文件购买订单号'; 
+comment on column YG_TENDER_LIST.IS_REVIEW_SHORTLISTED is '投标人是否入围评审'; 
+comment on column YG_TENDER_LIST.CHECKIN_TIME is '投标文件递交时间'; 
+comment on column YG_TENDER_LIST.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_LIST.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_LIST.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_LIST.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_TENDER_LIST.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_LIST
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BIDDER_PROJECT_MEMBER
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(300),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(200),
+NAME   VARCHAR2(200),
+PHONE   VARCHAR2(200),
+ID_CARD_NO   VARCHAR2(18),
+POSITION   VARCHAR2(200),
+TECHNICAL_POST   VARCHAR2(200),
+CERTIFICATE_NO   VARCHAR2(200),
+CERTIFICATE_TYPE   VARCHAR2(200),
+CERTIFICATE_FULL_NAME   VARCHAR2(200),
+CERTIFICATE_LEVLE   VARCHAR2(200),
+YEARS_OF_WORKING   NUMBER,
+CREDIT_SCORE   NUMBER,
+GRADUATE_SCHOOL   VARCHAR2(200),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BIDDER_PROJECT_MEMBER is '投标文件项目组成员'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.BIDDER_NAME is '投标人名称'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.BIDDER_CODE_TYPE is '投标人类别'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.NAME is '成员姓名'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.PHONE is '成员联系方式'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.ID_CARD_NO is '成员身份证号'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.POSITION is '成员岗位类型'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.TECHNICAL_POST is '成员职称'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.CERTIFICATE_NO is '成员证书编号'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.CERTIFICATE_TYPE is '成员证书类型'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.CERTIFICATE_FULL_NAME is '成员证书全称'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.CERTIFICATE_LEVLE is '成员证书等级'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.YEARS_OF_WORKING is '成员工作年限'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.CREDIT_SCORE is '成员信用分'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.GRADUATE_SCHOOL is '成员毕业院校'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BIDDER_PROJECT_MEMBER.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BIDDER_PROJECT_MEMBER
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BIDDER_PERFORMANCE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(300),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(200),
+PROJECT_NAME   VARCHAR2(600),
+TENDERE_NAME   VARCHAR2(600),
+WIN_BIDDER   VARCHAR2(600),
+WIN_BIDDER_NOTICE   CLOB,
+COMPLETE_TIME   DATE,
+CONTRACT_BID_AMOUNT   NUMBER,
+END_TIME   DATE,
+EVALUATE   VARCHAR2(2000),
+BID_AMOUNT   NUMBER,
+APPROVAL_NUMBER   VARCHAR2(600),
+COMMEND_NAME   VARCHAR2(600),
+COMMEND_CONTENT   CLOB,
+UNITY_COMPANY   VARCHAR2(600),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BIDDER_PERFORMANCE is '投标人业绩'; 
+comment on column YG_BIDDER_PERFORMANCE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BIDDER_PERFORMANCE.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_BIDDER_PERFORMANCE.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_BIDDER_PERFORMANCE.BIDDER_NAME is '投标人名称'; 
+comment on column YG_BIDDER_PERFORMANCE.BIDDER_CODE_TYPE is '投标人类别'; 
+comment on column YG_BIDDER_PERFORMANCE.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_BIDDER_PERFORMANCE.PROJECT_NAME is '业绩项目名称'; 
+comment on column YG_BIDDER_PERFORMANCE.TENDERE_NAME is '业绩项目招标人'; 
+comment on column YG_BIDDER_PERFORMANCE.WIN_BIDDER is '业绩项目中标人'; 
+comment on column YG_BIDDER_PERFORMANCE.WIN_BIDDER_NOTICE is '业绩项目中标通知书内容'; 
+comment on column YG_BIDDER_PERFORMANCE.COMPLETE_TIME is '业绩项目完成时间'; 
+comment on column YG_BIDDER_PERFORMANCE.CONTRACT_BID_AMOUNT is '业绩合同金额'; 
+comment on column YG_BIDDER_PERFORMANCE.END_TIME is '业绩竣工时间'; 
+comment on column YG_BIDDER_PERFORMANCE.EVALUATE is '业绩评价'; 
+comment on column YG_BIDDER_PERFORMANCE.BID_AMOUNT is '业绩中标金额'; 
+comment on column YG_BIDDER_PERFORMANCE.APPROVAL_NUMBER is '业绩立项文号'; 
+comment on column YG_BIDDER_PERFORMANCE.COMMEND_NAME is '业绩表彰名称'; 
+comment on column YG_BIDDER_PERFORMANCE.COMMEND_CONTENT is '业绩表彰内容'; 
+comment on column YG_BIDDER_PERFORMANCE.UNITY_COMPANY is '联合体企业名称'; 
+comment on column YG_BIDDER_PERFORMANCE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BIDDER_PERFORMANCE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BIDDER_PERFORMANCE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BIDDER_PERFORMANCE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BIDDER_PERFORMANCE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BIDDER_PERFORMANCE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BIDDER_QUALIFICATION
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(300),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(200),
+QUALIFICATION_NAME   VARCHAR2(600),
+QUALIFICATION_TYPE   VARCHAR2(6),
+QUALIFICATION_LEVEL   VARCHAR2(2),
+UNITY_COMPANY   VARCHAR2(600),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BIDDER_QUALIFICATION is '投标人资质'; 
+comment on column YG_BIDDER_QUALIFICATION.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BIDDER_QUALIFICATION.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_BIDDER_QUALIFICATION.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_BIDDER_QUALIFICATION.BIDDER_NAME is '投标人名称'; 
+comment on column YG_BIDDER_QUALIFICATION.BIDDER_CODE_TYPE is '投标人类别'; 
+comment on column YG_BIDDER_QUALIFICATION.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_BIDDER_QUALIFICATION.QUALIFICATION_NAME is '资质名称'; 
+comment on column YG_BIDDER_QUALIFICATION.QUALIFICATION_TYPE is '资质类型'; 
+comment on column YG_BIDDER_QUALIFICATION.QUALIFICATION_LEVEL is '资质等级'; 
+comment on column YG_BIDDER_QUALIFICATION.UNITY_COMPANY is '联合体企业名称'; 
+comment on column YG_BIDDER_QUALIFICATION.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BIDDER_QUALIFICATION.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BIDDER_QUALIFICATION.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BIDDER_QUALIFICATION.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BIDDER_QUALIFICATION.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BIDDER_QUALIFICATION
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BID_DOC_CHARACT_CODE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODES   CLOB,
+BIDDER_NAME   VARCHAR2(200),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(18),
+BIDDER_ROLE   VARCHAR2(2),
+BID_DOCUMENT_NAME   VARCHAR2(200),
+BID_DOCUMENT_SIDE   VARCHAR2(200),
+BID_DOCUMENT_MD5   VARCHAR2(200),
+TENDER_DOC_SUBMITTIME   date,
+CPU_ID   VARCHAR2(2000),
+HARD_DISK_SERIAL_NUMBER   VARCHAR2(2000),
+MEMORY_SERIAL_NUMBER   VARCHAR2(2000),
+NET_ID   VARCHAR2(200),
+MAC_ADDRESS   VARCHAR2(200),
+TENDER_DOCUMENTS_URL   VARCHAR2(500),
+VALUATION_XML   CLOB,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BID_DOC_CHARACT_CODE is '投标文件特征码'; 
+comment on column YG_BID_DOC_CHARACT_CODE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BID_DOC_CHARACT_CODE.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_BID_DOC_CHARACT_CODE.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column YG_BID_DOC_CHARACT_CODE.BIDDER_NAME is '投标人名称'; 
+comment on column YG_BID_DOC_CHARACT_CODE.BIDDER_CODE_TYPE is '投标人类别'; 
+comment on column YG_BID_DOC_CHARACT_CODE.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_BID_DOC_CHARACT_CODE.BIDDER_ROLE is '投标人角色'; 
+comment on column YG_BID_DOC_CHARACT_CODE.BID_DOCUMENT_NAME is '投标文件名称'; 
+comment on column YG_BID_DOC_CHARACT_CODE.BID_DOCUMENT_SIDE is '投标文件大小'; 
+comment on column YG_BID_DOC_CHARACT_CODE.BID_DOCUMENT_MD5 is '投标文件MD5码'; 
+comment on column YG_BID_DOC_CHARACT_CODE.TENDER_DOC_SUBMITTIME is '投标文件提交时间'; 
+comment on column YG_BID_DOC_CHARACT_CODE.CPU_ID is 'CPU序列号'; 
+comment on column YG_BID_DOC_CHARACT_CODE.HARD_DISK_SERIAL_NUMBER is '硬盘序列号'; 
+comment on column YG_BID_DOC_CHARACT_CODE.MEMORY_SERIAL_NUMBER is '内存序列号'; 
+comment on column YG_BID_DOC_CHARACT_CODE.NET_ID is 'IP地址'; 
+comment on column YG_BID_DOC_CHARACT_CODE.MAC_ADDRESS is '网卡MAC地址'; 
+comment on column YG_BID_DOC_CHARACT_CODE.TENDER_DOCUMENTS_URL is '投标文件URL'; 
+comment on column YG_BID_DOC_CHARACT_CODE.VALUATION_XML is '计价软硬件信息xml'; 
+comment on column YG_BID_DOC_CHARACT_CODE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BID_DOC_CHARACT_CODE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BID_DOC_CHARACT_CODE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BID_DOC_CHARACT_CODE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BID_DOC_CHARACT_CODE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BID_DOC_CHARACT_CODE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BIDDER_MAKE_TOOL_INFO
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODES   CLOB,
+BIDDER_NAME   VARCHAR2(200),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(18),
+BIDDER_ROLE   VARCHAR2(2),
+SUBMITTIME   date,
+CPU_ID   VARCHAR2(2000),
+HARD_DISK_SERIAL_NUMBER   VARCHAR2(2000),
+MEMORY_SERIAL_NUMBER   VARCHAR2(2000),
+NET_ID   VARCHAR2(200),
+MAC_ADDRESS   VARCHAR2(200),
+TOOL_VERSION   VARCHAR2(200),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BIDDER_MAKE_TOOL_INFO is '投标文件制作工具固化特征码'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.BIDDER_NAME is '投标人名称'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.BIDDER_CODE_TYPE is '投标人类别'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.BIDDER_ROLE is '投标人角色'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.SUBMITTIME is '投标文件固化时间'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.CPU_ID is 'CPU序列号'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.HARD_DISK_SERIAL_NUMBER is '硬盘序列号'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.MEMORY_SERIAL_NUMBER is '内存序列号'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.NET_ID is 'IP地址'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.MAC_ADDRESS is '网卡MAC地址'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.TOOL_VERSION is '投标文件制作工具版本号'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BIDDER_MAKE_TOOL_INFO.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BIDDER_MAKE_TOOL_INFO
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_LETTER_OF_GUARANTEE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(200),
+BIDDER_ORG_CODE   VARCHAR2(18),
+UNION_ENTERPRISE_NAME   VARCHAR2(1000),
+UNION_ORGAN_SET_CODE   VARCHAR2(500),
+GUARANTEE_TYPE   NUMBER,
+GUARANTEE_NO   VARCHAR2(200),
+GUARANTEE_STATUS   VARCHAR2(200),
+PROPOSER   VARCHAR2(200),
+PROPOSER_PHONE   VARCHAR2(200),
+PROPOSER_CARD_TYPE   VARCHAR2(2),
+PROPOSER_CODE   VARCHAR2(200),
+BENEFICIARY   VARCHAR2(200),
+INSURER   VARCHAR2(200),
+GUARANTEE_AMOUNT   NUMBER,
+GUARANTEE_COST   NUMBER,
+CREATE_TIME   DATE,
+BEGIN_TIME   DATE,
+END_TIME   DATE,
+PURCHASE_METHOD   VARCHAR2(200),
+PURCHASE_TIME   DATE,
+PURCHASE_ACCOUN   VARCHAR2(600),
+RATE   NUMBER,
+GUARANTEE_URL   VARCHAR2(600),
+GUARANTEE_MD5   VARCHAR2(600),
+LETTER_TIME   DATE,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_LETTER_OF_GUARANTEE is '投标电子保函'; 
+comment on column YG_LETTER_OF_GUARANTEE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_LETTER_OF_GUARANTEE.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_LETTER_OF_GUARANTEE.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_LETTER_OF_GUARANTEE.BIDDER_NAME is '投标人名称'; 
+comment on column YG_LETTER_OF_GUARANTEE.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_LETTER_OF_GUARANTEE.UNION_ENTERPRISE_NAME is '联合体名称（如有）'; 
+comment on column YG_LETTER_OF_GUARANTEE.UNION_ORGAN_SET_CODE is '联合体组织机构代码证（联合体招标时填写）'; 
+comment on column YG_LETTER_OF_GUARANTEE.GUARANTEE_TYPE is '保函类型'; 
+comment on column YG_LETTER_OF_GUARANTEE.GUARANTEE_NO is '保函编号'; 
+comment on column YG_LETTER_OF_GUARANTEE.GUARANTEE_STATUS is '保函状态'; 
+comment on column YG_LETTER_OF_GUARANTEE.PROPOSER is '申请人员'; 
+comment on column YG_LETTER_OF_GUARANTEE.PROPOSER_PHONE is '申请人员联系方式'; 
+comment on column YG_LETTER_OF_GUARANTEE.PROPOSER_CARD_TYPE is '证件类型'; 
+comment on column YG_LETTER_OF_GUARANTEE.PROPOSER_CODE is '证件号码'; 
+comment on column YG_LETTER_OF_GUARANTEE.BENEFICIARY is '受益人'; 
+comment on column YG_LETTER_OF_GUARANTEE.INSURER is '承保人'; 
+comment on column YG_LETTER_OF_GUARANTEE.GUARANTEE_AMOUNT is '担保金额'; 
+comment on column YG_LETTER_OF_GUARANTEE.GUARANTEE_COST is '担保费用'; 
+comment on column YG_LETTER_OF_GUARANTEE.CREATE_TIME is '保函创建时间'; 
+comment on column YG_LETTER_OF_GUARANTEE.BEGIN_TIME is '担保开始时间'; 
+comment on column YG_LETTER_OF_GUARANTEE.END_TIME is '担保结束时间'; 
+comment on column YG_LETTER_OF_GUARANTEE.PURCHASE_METHOD is '支付方式'; 
+comment on column YG_LETTER_OF_GUARANTEE.PURCHASE_TIME is '支付时间'; 
+comment on column YG_LETTER_OF_GUARANTEE.PURCHASE_ACCOUN is '支付账号'; 
+comment on column YG_LETTER_OF_GUARANTEE.RATE is '费率'; 
+comment on column YG_LETTER_OF_GUARANTEE.GUARANTEE_URL is '电子保单文件下载地址'; 
+comment on column YG_LETTER_OF_GUARANTEE.GUARANTEE_MD5 is '电子保单文件md5码'; 
+comment on column YG_LETTER_OF_GUARANTEE.LETTER_TIME is '出函时间'; 
+comment on column YG_LETTER_OF_GUARANTEE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_LETTER_OF_GUARANTEE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_LETTER_OF_GUARANTEE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_LETTER_OF_GUARANTEE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_LETTER_OF_GUARANTEE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_LETTER_OF_GUARANTEE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BIDDER_MARGIN_INFO
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(200),
+BIDDER_ORG_CODE   VARCHAR2(18),
+UNION_ENTERPRISE_NAME   VARCHAR2(1000),
+UNION_ORGAN_SET_CODE   VARCHAR2(500),
+MARGIN_PAY_FORM   VARCHAR2(1),
+MARGIN_RECEIVE_TIME   DATE,
+MARGIN_BANK   VARCHAR2(200),
+MARGIN_ACCOUNT   VARCHAR2(200),
+MARGIN_PAY   NUMBER,
+YEAR_MARGIN   VARCHAR2(2000),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BIDDER_MARGIN_INFO is '投标保证金缴纳信息'; 
+comment on column YG_BIDDER_MARGIN_INFO.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BIDDER_MARGIN_INFO.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_BIDDER_MARGIN_INFO.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_BIDDER_MARGIN_INFO.BIDDER_NAME is '投标人名称'; 
+comment on column YG_BIDDER_MARGIN_INFO.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_BIDDER_MARGIN_INFO.UNION_ENTERPRISE_NAME is '联合体名称（如有）'; 
+comment on column YG_BIDDER_MARGIN_INFO.UNION_ORGAN_SET_CODE is '联合体组织机构代码证（联合体招标时填写）'; 
+comment on column YG_BIDDER_MARGIN_INFO.MARGIN_PAY_FORM is '保证金递交方式'; 
+comment on column YG_BIDDER_MARGIN_INFO.MARGIN_RECEIVE_TIME is '保证金递交时间'; 
+comment on column YG_BIDDER_MARGIN_INFO.MARGIN_BANK is '保证金缴纳基本户银行'; 
+comment on column YG_BIDDER_MARGIN_INFO.MARGIN_ACCOUNT is '保证金缴纳基本户账号'; 
+comment on column YG_BIDDER_MARGIN_INFO.MARGIN_PAY is '保证金缴纳金额'; 
+comment on column YG_BIDDER_MARGIN_INFO.YEAR_MARGIN is '年度保证金信息'; 
+comment on column YG_BIDDER_MARGIN_INFO.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BIDDER_MARGIN_INFO.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BIDDER_MARGIN_INFO.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BIDDER_MARGIN_INFO.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BIDDER_MARGIN_INFO.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BIDDER_MARGIN_INFO
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BIDDER_CREDIT_INFO
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(300),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(200),
+BIDDER_ROLE   VARCHAR2(2),
+UNION_ENTERPRISE_NAME   VARCHAR2(1000),
+UNION_ORGAN_SET_CODE   VARCHAR2(500),
+UNION_CONTACT_NAME   VARCHAR2(3000),
+UNION_CONTACT_PHONE   VARCHAR2(2000),
+SCORE_SYSTEM_NAME   VARCHAR2(200),
+SCORE_YEAR   NUMBER,
+SCORE_QUARTER   NUMBER,
+SCORE_MONTH   NUMBER,
+SCORE_DAY   NUMBER,
+SCORE   NUMBER,
+PROJECT_RANK   NUMBER,
+PROVINCE_RANK   NUMBER,
+REMARK   CLOB,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BIDDER_CREDIT_INFO is '投标人信用信息'; 
+comment on column YG_BIDDER_CREDIT_INFO.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BIDDER_CREDIT_INFO.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_BIDDER_CREDIT_INFO.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_BIDDER_CREDIT_INFO.BIDDER_NAME is '投标人名称'; 
+comment on column YG_BIDDER_CREDIT_INFO.BIDDER_CODE_TYPE is '投标人类别'; 
+comment on column YG_BIDDER_CREDIT_INFO.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_BIDDER_CREDIT_INFO.BIDDER_ROLE is '投标人角色'; 
+comment on column YG_BIDDER_CREDIT_INFO.UNION_ENTERPRISE_NAME is '联合体名称（如有）'; 
+comment on column YG_BIDDER_CREDIT_INFO.UNION_ORGAN_SET_CODE is '联合体组织机构代码证（联合体招标时填写）'; 
+comment on column YG_BIDDER_CREDIT_INFO.UNION_CONTACT_NAME is '联合体联系人（如有）'; 
+comment on column YG_BIDDER_CREDIT_INFO.UNION_CONTACT_PHONE is '联合体联系电话（如有）'; 
+comment on column YG_BIDDER_CREDIT_INFO.SCORE_SYSTEM_NAME is '应用信用分系统名称'; 
+comment on column YG_BIDDER_CREDIT_INFO.SCORE_YEAR is '应用信用分年份'; 
+comment on column YG_BIDDER_CREDIT_INFO.SCORE_QUARTER is '应用信用分季度'; 
+comment on column YG_BIDDER_CREDIT_INFO.SCORE_MONTH is '应用信用分月份'; 
+comment on column YG_BIDDER_CREDIT_INFO.SCORE_DAY is '应用信用分天'; 
+comment on column YG_BIDDER_CREDIT_INFO.SCORE is '信用分数'; 
+comment on column YG_BIDDER_CREDIT_INFO.PROJECT_RANK is '信用排名(本项目所有投标人)'; 
+comment on column YG_BIDDER_CREDIT_INFO.PROVINCE_RANK is '信用排名(全省企业)'; 
+comment on column YG_BIDDER_CREDIT_INFO.REMARK is '备注'; 
+comment on column YG_BIDDER_CREDIT_INFO.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BIDDER_CREDIT_INFO.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BIDDER_CREDIT_INFO.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BIDDER_CREDIT_INFO.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BIDDER_CREDIT_INFO.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BIDDER_CREDIT_INFO
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_AVOID_ENTERPRISE_LIST
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(300),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(200),
+BIDDER_ROLE   VARCHAR2(2),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_AVOID_ENTERPRISE_LIST is '回避企业名单'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.BIDDER_NAME is '回避企业名称'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.BIDDER_CODE_TYPE is '回避企业类别'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.BIDDER_ORG_CODE is '回避企业代码'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.BIDDER_ROLE is '回避企业角色'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_AVOID_ENTERPRISE_LIST.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_AVOID_ENTERPRISE_LIST
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BID_OPENING_RECORD
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODES   CLOB,
+UNIFIED_DEAL_CODES   CLOB,
+BID_OPENING_ACTOR   VARCHAR2(500),
+OPEN_COMPERE   VARCHAR2(600),
+TENDER_AGENCY_PERSON   VARCHAR2(600),
+TENDERER_PERSON   VARCHAR2(600),
+NOTICE_NAME   VARCHAR2(600),
+BID_OPENING_CONTENT   CLOB,
+BID_OPENING_ADDRESS   VARCHAR2(200),
+BID_OPENING_TIME   date,
+URL   VARCHAR2(500),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BID_OPENING_RECORD is '开标记录'; 
+comment on column YG_BID_OPENING_RECORD.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BID_OPENING_RECORD.BID_SECTION_CODES is '相关标段（包）编号'; 
+comment on column YG_BID_OPENING_RECORD.UNIFIED_DEAL_CODES is '相关统一交易标识码'; 
+comment on column YG_BID_OPENING_RECORD.BID_OPENING_ACTOR is '开标参与人'; 
+comment on column YG_BID_OPENING_RECORD.OPEN_COMPERE is '开标主持人'; 
+comment on column YG_BID_OPENING_RECORD.TENDER_AGENCY_PERSON is '开标代理机构代表'; 
+comment on column YG_BID_OPENING_RECORD.TENDERER_PERSON is '开标招标人代表'; 
+comment on column YG_BID_OPENING_RECORD.NOTICE_NAME is '开标记录标题'; 
+comment on column YG_BID_OPENING_RECORD.BID_OPENING_CONTENT is '开标记录内容'; 
+comment on column YG_BID_OPENING_RECORD.BID_OPENING_ADDRESS is '开标地点'; 
+comment on column YG_BID_OPENING_RECORD.BID_OPENING_TIME is '开标时间'; 
+comment on column YG_BID_OPENING_RECORD.URL is '开标记录源URL'; 
+comment on column YG_BID_OPENING_RECORD.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BID_OPENING_RECORD.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BID_OPENING_RECORD.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BID_OPENING_RECORD.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BID_OPENING_RECORD.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BID_OPENING_RECORD
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BID_OPEN_DETAIL
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+NOTARY   VARCHAR2(600),
+ROUND   NUMBER,
+ROLL_BALL_LIST   VARCHAR2(2000),
+VALUE_RESULT   CLOB,
+CONTENT   CLOB,
+SEND_COMPANY_LIST   CLOB,
+SEND_COMPANY_CODE_LIST   CLOB,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BID_OPEN_DETAIL is '开标明细'; 
+comment on column YG_BID_OPEN_DETAIL.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BID_OPEN_DETAIL.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_BID_OPEN_DETAIL.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_BID_OPEN_DETAIL.NOTARY is '摇球公证人'; 
+comment on column YG_BID_OPEN_DETAIL.ROUND is '轮次'; 
+comment on column YG_BID_OPEN_DETAIL.ROLL_BALL_LIST is '摇球列表'; 
+comment on column YG_BID_OPEN_DETAIL.VALUE_RESULT is '各项取值结果'; 
+comment on column YG_BID_OPEN_DETAIL.CONTENT is '开标明细'; 
+comment on column YG_BID_OPEN_DETAIL.SEND_COMPANY_LIST is '送评企业列表'; 
+comment on column YG_BID_OPEN_DETAIL.SEND_COMPANY_CODE_LIST is '送评企业代码列表'; 
+comment on column YG_BID_OPEN_DETAIL.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BID_OPEN_DETAIL.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BID_OPEN_DETAIL.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BID_OPEN_DETAIL.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BID_OPEN_DETAIL.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BID_OPEN_DETAIL
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BID_EVALUATION_EXPERT
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+EXPERT_TYPE   VARCHAR2(1),
+EXPERT_NAME   VARCHAR2(50),
+ID_CARD   VARCHAR2(50),
+ID_CARD_TYPE   VARCHAR2(2),
+EXPERT_CHECK_IN_TIME   DATE,
+IS_CHAIR_MAN   VARCHAR2(1),
+IS_INVALID_SCORE   VARCHAR2(1),
+IS_TENDER_AGENT   VARCHAR2(1),
+IS_ECONOMICAL_EXPERT   VARCHAR2(1),
+IS_TECHNOLOGICAL_EXPERT   VARCHAR2(1),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BID_EVALUATION_EXPERT is '评标专家'; 
+comment on column YG_BID_EVALUATION_EXPERT.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BID_EVALUATION_EXPERT.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_BID_EVALUATION_EXPERT.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_BID_EVALUATION_EXPERT.EXPERT_TYPE is '专家类别'; 
+comment on column YG_BID_EVALUATION_EXPERT.EXPERT_NAME is '专家姓名'; 
+comment on column YG_BID_EVALUATION_EXPERT.ID_CARD is '专家身份证件号'; 
+comment on column YG_BID_EVALUATION_EXPERT.ID_CARD_TYPE is '专家身份证件类型'; 
+comment on column YG_BID_EVALUATION_EXPERT.EXPERT_CHECK_IN_TIME is '专家签到时间'; 
+comment on column YG_BID_EVALUATION_EXPERT.IS_CHAIR_MAN is '是否为评标组长'; 
+comment on column YG_BID_EVALUATION_EXPERT.IS_INVALID_SCORE is '是否无效评分'; 
+comment on column YG_BID_EVALUATION_EXPERT.IS_TENDER_AGENT is '是否招标人代表'; 
+comment on column YG_BID_EVALUATION_EXPERT.IS_ECONOMICAL_EXPERT is '是否经济标评委'; 
+comment on column YG_BID_EVALUATION_EXPERT.IS_TECHNOLOGICAL_EXPERT is '是否技术标评委'; 
+comment on column YG_BID_EVALUATION_EXPERT.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BID_EVALUATION_EXPERT.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BID_EVALUATION_EXPERT.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BID_EVALUATION_EXPERT.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BID_EVALUATION_EXPERT.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BID_EVALUATION_EXPERT
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_EVALUATION_SCORE_DETAIL
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(300),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(200),
+BIDDER_ROLE   VARCHAR2(2),
+UNION_ENTERPRISE_NAME   VARCHAR2(1000),
+UNION_ORGAN_SET_CODE   VARCHAR2(500),
+UNION_CONTACT_NAME   VARCHAR2(3000),
+UNION_CONTACT_PHONE   VARCHAR2(2000),
+EXPERT_NAME   VARCHAR2(200),
+ID_CARD   VARCHAR2(18),
+PRICE_POINTS   NUMBER,
+QUALIFICATION_POINTS   NUMBER,
+BUSINESS_POINTS   NUMBER,
+TECHNICAL_POINTS   NUMBER,
+RESPONSE_POINTS   NUMBER,
+OTHER_POINTS   NUMBER,
+QUALIFICATION_DETAIL   CLOB,
+BUSINESS_DETAIL   CLOB,
+TECHNICAL_DETAIL   CLOB,
+RESPONSE_DETAIL   CLOB,
+OTHER_DETAIL   CLOB,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_EVALUATION_SCORE_DETAIL is '评分细项'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.BIDDER_NAME is '投标人名称'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.BIDDER_CODE_TYPE is '投标人类别'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.BIDDER_ROLE is '投标人角色'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.UNION_ENTERPRISE_NAME is '联合体名称（如有）'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.UNION_ORGAN_SET_CODE is '联合体组织机构代码证（联合体招标时填写）'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.UNION_CONTACT_NAME is '联合体联系人（如有）'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.UNION_CONTACT_PHONE is '联合体联系电话（如有）'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.EXPERT_NAME is '评标专家名称'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.ID_CARD is '评标专家身份证号'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.PRICE_POINTS is '报价分'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.QUALIFICATION_POINTS is '资格分'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.BUSINESS_POINTS is '商务分'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.TECHNICAL_POINTS is '技术分'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.RESPONSE_POINTS is '响应性评审'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.OTHER_POINTS is '其他分'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.QUALIFICATION_DETAIL is '资格分明细'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.BUSINESS_DETAIL is '商务分明细'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.TECHNICAL_DETAIL is '技术分明细'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.RESPONSE_DETAIL is '响应性评审'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.OTHER_DETAIL is '其他文件'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_EVALUATION_SCORE_DETAIL.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_EVALUATION_SCORE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_REJECTED_BID_INFO
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(300),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(200),
+BIDDER_ROLE   VARCHAR2(2),
+UNION_ENTERPRISE_NAME   VARCHAR2(1000),
+UNION_ORGAN_SET_CODE   VARCHAR2(500),
+UNION_CONTACT_NAME   VARCHAR2(3000),
+UNION_CONTACT_PHONE   VARCHAR2(2000),
+EXPERT_NAME   VARCHAR2(200),
+ID_CARD   VARCHAR2(18),
+REASON   VARCHAR2(2000),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_REJECTED_BID_INFO is '被否决投标企业情况'; 
+comment on column YG_REJECTED_BID_INFO.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_REJECTED_BID_INFO.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_REJECTED_BID_INFO.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_REJECTED_BID_INFO.BIDDER_NAME is '投标人名称'; 
+comment on column YG_REJECTED_BID_INFO.BIDDER_CODE_TYPE is '投标人类别'; 
+comment on column YG_REJECTED_BID_INFO.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_REJECTED_BID_INFO.BIDDER_ROLE is '投标人角色'; 
+comment on column YG_REJECTED_BID_INFO.UNION_ENTERPRISE_NAME is '联合体名称（如有）'; 
+comment on column YG_REJECTED_BID_INFO.UNION_ORGAN_SET_CODE is '联合体组织机构代码证（联合体招标时填写）'; 
+comment on column YG_REJECTED_BID_INFO.UNION_CONTACT_NAME is '联合体联系人（如有）'; 
+comment on column YG_REJECTED_BID_INFO.UNION_CONTACT_PHONE is '联合体联系电话（如有）'; 
+comment on column YG_REJECTED_BID_INFO.EXPERT_NAME is '评标专家名称'; 
+comment on column YG_REJECTED_BID_INFO.ID_CARD is '评标专家身份证号'; 
+comment on column YG_REJECTED_BID_INFO.REASON is '废标理由'; 
+comment on column YG_REJECTED_BID_INFO.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_REJECTED_BID_INFO.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_REJECTED_BID_INFO.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_REJECTED_BID_INFO.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_REJECTED_BID_INFO.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_REJECTED_BID_INFO
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_EVALUATION_RESULT
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+BIDDER_NAME   VARCHAR2(300),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+BIDDER_ORG_CODE   VARCHAR2(200),
+BIDDER_ROLE   VARCHAR2(2),
+UNION_ENTERPRISE_NAME   VARCHAR2(1000),
+UNION_ORGAN_SET_CODE   VARCHAR2(500),
+UNION_CONTACT_NAME   VARCHAR2(3000),
+UNION_CONTACT_PHONE   VARCHAR2(2000),
+PRICE_POINTS   NUMBER,
+QUALIFICATION_POINTS   NUMBER,
+BUSINESS_POINTS   NUMBER,
+TECHNICAL_POINTS   NUMBER,
+RESPONSE_POINTS   NUMBER,
+OTHER_POINTS   NUMBER,
+IS_VETO   VARCHAR2(1),
+VETO_REASON_DETAIL   CLOB,
+RANK   NUMBER,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_EVALUATION_RESULT is '评标结果'; 
+comment on column YG_EVALUATION_RESULT.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_EVALUATION_RESULT.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_EVALUATION_RESULT.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_EVALUATION_RESULT.BIDDER_NAME is '投标人名称'; 
+comment on column YG_EVALUATION_RESULT.BIDDER_CODE_TYPE is '投标人类别'; 
+comment on column YG_EVALUATION_RESULT.BIDDER_ORG_CODE is '投标人代码'; 
+comment on column YG_EVALUATION_RESULT.BIDDER_ROLE is '投标人角色'; 
+comment on column YG_EVALUATION_RESULT.UNION_ENTERPRISE_NAME is '联合体名称（如有）'; 
+comment on column YG_EVALUATION_RESULT.UNION_ORGAN_SET_CODE is '联合体组织机构代码证（联合体招标时填写）'; 
+comment on column YG_EVALUATION_RESULT.UNION_CONTACT_NAME is '联合体联系人（如有）'; 
+comment on column YG_EVALUATION_RESULT.UNION_CONTACT_PHONE is '联合体联系电话（如有）'; 
+comment on column YG_EVALUATION_RESULT.PRICE_POINTS is '报价分'; 
+comment on column YG_EVALUATION_RESULT.QUALIFICATION_POINTS is '资格分'; 
+comment on column YG_EVALUATION_RESULT.BUSINESS_POINTS is '商务分'; 
+comment on column YG_EVALUATION_RESULT.TECHNICAL_POINTS is '技术分'; 
+comment on column YG_EVALUATION_RESULT.RESPONSE_POINTS is '响应性评审'; 
+comment on column YG_EVALUATION_RESULT.OTHER_POINTS is '其他分'; 
+comment on column YG_EVALUATION_RESULT.IS_VETO is '是否否决投标'; 
+comment on column YG_EVALUATION_RESULT.VETO_REASON_DETAIL is '否决投标理由汇总'; 
+comment on column YG_EVALUATION_RESULT.RANK is '评分结果排位'; 
+comment on column YG_EVALUATION_RESULT.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_EVALUATION_RESULT.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_EVALUATION_RESULT.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_EVALUATION_RESULT.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_EVALUATION_RESULT.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_EVALUATION_RESULT
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_CANDIDATE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+WIN_CANDIDATE_NAME   VARCHAR2(200),
+BIDDER_CODE_TYPE   VARCHAR2(1),
+WIN_CANDIDATE_CODE   VARCHAR2(200),
+BIDDER_ROLE   VARCHAR2(2),
+BIDDER_REGION_CODE   VARCHAR2(6),
+BIDDER_PROPERTY   VARCHAR2(1),
+WIN_CANDIDATE_ORDER   NUMBER,
+IS_FLOAT_RATE   VARCHAR2(1),
+EVALUATION_RESULT   CLOB,
+PRICE_FORM_CODE   VARCHAR2(1),
+OTHER_BID_PRICE   CLOB,
+BID_PRICE   NUMBER,
+PRICE_CURRENCY   VARCHAR2(3),
+PRICE_UINT   VARCHAR2(1),
+QUALITY   CLOB,
+EVALUATION_STATUS   CLOB,
+WIN_CANDIDATE_QUALIFICATION   CLOB,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_CANDIDATE is '中标候选人'; 
+comment on column YG_TENDER_CANDIDATE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_CANDIDATE.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_TENDER_CANDIDATE.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_TENDER_CANDIDATE.WIN_CANDIDATE_NAME is '中标候选人名称'; 
+comment on column YG_TENDER_CANDIDATE.BIDDER_CODE_TYPE is '中标候选人类别'; 
+comment on column YG_TENDER_CANDIDATE.WIN_CANDIDATE_CODE is '中标候选人代码'; 
+comment on column YG_TENDER_CANDIDATE.BIDDER_ROLE is '中标候选人角色'; 
+comment on column YG_TENDER_CANDIDATE.BIDDER_REGION_CODE is '中标候选人人企业注册所在地'; 
+comment on column YG_TENDER_CANDIDATE.BIDDER_PROPERTY is '中标候选人企业性质'; 
+comment on column YG_TENDER_CANDIDATE.WIN_CANDIDATE_ORDER is '中标候选人排名'; 
+comment on column YG_TENDER_CANDIDATE.IS_FLOAT_RATE is '是否采用下浮率'; 
+comment on column YG_TENDER_CANDIDATE.EVALUATION_RESULT is '评分结果'; 
+comment on column YG_TENDER_CANDIDATE.PRICE_FORM_CODE is '价款形式代码'; 
+comment on column YG_TENDER_CANDIDATE.OTHER_BID_PRICE is '费率或其它类型报价'; 
+comment on column YG_TENDER_CANDIDATE.BID_PRICE is '投标价格'; 
+comment on column YG_TENDER_CANDIDATE.PRICE_CURRENCY is '价格币种代码'; 
+comment on column YG_TENDER_CANDIDATE.PRICE_UINT is '价格单位'; 
+comment on column YG_TENDER_CANDIDATE.QUALITY is '质量'; 
+comment on column YG_TENDER_CANDIDATE.EVALUATION_STATUS is '评标情况'; 
+comment on column YG_TENDER_CANDIDATE.WIN_CANDIDATE_QUALIFICATION is '中标候选人响应招标文件的资格能力条件'; 
+comment on column YG_TENDER_CANDIDATE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_CANDIDATE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_CANDIDATE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_CANDIDATE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_TENDER_CANDIDATE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+comment on column YG_TENDER_CANDIDATE.PLATFORM_CODE is '交易系统标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_CANDIDATE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_EVALUATION_REPORT
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+NOTICE_NAME   VARCHAR2(600),
+EVALUATION_CONTENT   CLOB,
+SUBMIT_TIME   DATE,
+END_TIME   DATE,
+EVALUATION_RESULT   VARCHAR2(1),
+URL   VARCHAR2(500),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_EVALUATION_REPORT is '评标报告'; 
+comment on column YG_EVALUATION_REPORT.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_EVALUATION_REPORT.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_EVALUATION_REPORT.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_EVALUATION_REPORT.NOTICE_NAME is '评标报告标题'; 
+comment on column YG_EVALUATION_REPORT.EVALUATION_CONTENT is '评标报告正文'; 
+comment on column YG_EVALUATION_REPORT.SUBMIT_TIME is '评标报告提交时间'; 
+comment on column YG_EVALUATION_REPORT.END_TIME is '评标结束时间'; 
+comment on column YG_EVALUATION_REPORT.EVALUATION_RESULT is '评标结果'; 
+comment on column YG_EVALUATION_REPORT.URL is '报告源URL'; 
+comment on column YG_EVALUATION_REPORT.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_EVALUATION_REPORT.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_EVALUATION_REPORT.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_EVALUATION_REPORT.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_EVALUATION_REPORT.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_EVALUATION_REPORT
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_CANDIDATE_ANN
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODES   CLOB,
+UNIFIED_DEAL_CODE   CLOB,
+PUBLICITY_NAME   VARCHAR2(600),
+PUBLICITY_CONTENT   CLOB,
+PUBLICITY_REFER_TIME   date,
+NOTICE_MEDIA   VARCHAR2(1000),
+URL   VARCHAR2(500),
+PUBLICITY_TYPE   VARCHAR2(1),
+PUBLICITY_START_TIME   date,
+PUBLICITY_END_TIME   date,
+OBJECTION_METHOD   CLOB,
+OTHER_CONTENT   CLOB,
+FIRST_BIDDER_NAME   VARCHAR2(200),
+FIRST_BIDDER_CODE   VARCHAR2(18),
+SECOND_BIDDER_NAME   VARCHAR2(200),
+SECOND_BIDDER_CODE   VARCHAR2(18),
+THIRD_BIDDER_NAME   VARCHAR2(200),
+THIRD_BIDDER_CODE   VARCHAR2(18),
+BULLETIN_DUTY   VARCHAR2(50),
+EXAMINER_NAME   VARCHAR2(50),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_CANDIDATE_ANN is '中标候选人公示'; 
+comment on column YG_TENDER_CANDIDATE_ANN.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_CANDIDATE_ANN.BID_SECTION_CODES is '相关标段（包）编号'; 
+comment on column YG_TENDER_CANDIDATE_ANN.UNIFIED_DEAL_CODE is '相关统一交易标识码'; 
+comment on column YG_TENDER_CANDIDATE_ANN.PUBLICITY_NAME is '公示标题'; 
+comment on column YG_TENDER_CANDIDATE_ANN.PUBLICITY_CONTENT is '公示内容'; 
+comment on column YG_TENDER_CANDIDATE_ANN.PUBLICITY_REFER_TIME is '公示提交时间'; 
+comment on column YG_TENDER_CANDIDATE_ANN.NOTICE_MEDIA is '公示发布媒体'; 
+comment on column YG_TENDER_CANDIDATE_ANN.URL is '公示源URL'; 
+comment on column YG_TENDER_CANDIDATE_ANN.PUBLICITY_TYPE is '公示类型'; 
+comment on column YG_TENDER_CANDIDATE_ANN.PUBLICITY_START_TIME is '公示开始时间'; 
+comment on column YG_TENDER_CANDIDATE_ANN.PUBLICITY_END_TIME is '公示结束时间'; 
+comment on column YG_TENDER_CANDIDATE_ANN.OBJECTION_METHOD is '提出异议的渠道和方式'; 
+comment on column YG_TENDER_CANDIDATE_ANN.OTHER_CONTENT is '其他内容'; 
+comment on column YG_TENDER_CANDIDATE_ANN.FIRST_BIDDER_NAME is '第一中标候选人名称'; 
+comment on column YG_TENDER_CANDIDATE_ANN.FIRST_BIDDER_CODE is '第一中标候选人统一社会信用代码'; 
+comment on column YG_TENDER_CANDIDATE_ANN.SECOND_BIDDER_NAME is '第二中标候选人名称'; 
+comment on column YG_TENDER_CANDIDATE_ANN.SECOND_BIDDER_CODE is '第二中标候选人统一社会信用代码'; 
+comment on column YG_TENDER_CANDIDATE_ANN.THIRD_BIDDER_NAME is '第三中标候选人名称'; 
+comment on column YG_TENDER_CANDIDATE_ANN.THIRD_BIDDER_CODE is '第三中标候选人统一社会信用代码'; 
+comment on column YG_TENDER_CANDIDATE_ANN.BULLETIN_DUTY is '公示发布责任人'; 
+comment on column YG_TENDER_CANDIDATE_ANN.EXAMINER_NAME is '交易平台数据验证责任人姓名'; 
+comment on column YG_TENDER_CANDIDATE_ANN.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_CANDIDATE_ANN.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_CANDIDATE_ANN.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_CANDIDATE_ANN.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_TENDER_CANDIDATE_ANN.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_CANDIDATE_ANN
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_WIN_RESULT_ANNO
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   CLOB,
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+REGION_CODE   VARCHAR2(6),
+TRA_PLACE_CODE   VARCHAR2(6),
+TENDER_AGENCY_NAME   VARCHAR2(200),
+TENDER_AGENCY_CODE   VARCHAR2(18),
+NOTICE_NAME   VARCHAR2(600),
+NOTICE_CONTENT   CLOB,
+NOTICE_SEND_TIME   DATE,
+NOTICE_MEDIA   VARCHAR2(1000),
+URL   VARCHAR2(500),
+NOTICE_NATURE   VARCHAR2(1),
+BULLETIN_TYPE   VARCHAR2(1),
+UNION_CODE   VARCHAR2(1000),
+UNION_NAME   VARCHAR2(18),
+WIN_BIDDER_NAME   VARCHAR2(200),
+BIDDER_CODE_TYPE   VARCHAR2(30),
+WIN_BIDDER_CODE   VARCHAR2(2000),
+BIDDER_ROLE   VARCHAR2(2),
+BIDDER_REGION_CODE   VARCHAR2(6),
+BIDDER_PROPERTY   VARCHAR2(1),
+PROJECT_LEAD   CLOB,
+PROJECT_LEAD_ID   VARCHAR2(50),
+PRICE_FORM_CODE   VARCHAR2(1),
+BID_AMOUNT   NUMBER,
+BID_CURRENCY   VARCHAR2(3),
+PRICE_UNIT   VARCHAR2(1),
+OTHER_BID_PRICE   CLOB,
+OTHER_CONTENT   CLOB,
+BULLETIN_DUTY   VARCHAR2(50),
+EXAMINER_NAME   VARCHAR2(50),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_WIN_RESULT_ANNO is '中标结果公告'; 
+comment on column YG_WIN_RESULT_ANNO.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_WIN_RESULT_ANNO.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_WIN_RESULT_ANNO.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_WIN_RESULT_ANNO.REGION_CODE is '标段（包）所在行政区域代码'; 
+comment on column YG_WIN_RESULT_ANNO.TRA_PLACE_CODE is '交易发生行政区域代码'; 
+comment on column YG_WIN_RESULT_ANNO.TENDER_AGENCY_NAME is '招标代理机构名称'; 
+comment on column YG_WIN_RESULT_ANNO.TENDER_AGENCY_CODE is '招标代理机构代码'; 
+comment on column YG_WIN_RESULT_ANNO.NOTICE_NAME is '公告标题'; 
+comment on column YG_WIN_RESULT_ANNO.NOTICE_CONTENT is '公告内容'; 
+comment on column YG_WIN_RESULT_ANNO.NOTICE_SEND_TIME is '公告发布时间'; 
+comment on column YG_WIN_RESULT_ANNO.NOTICE_MEDIA is '公告发布媒体'; 
+comment on column YG_WIN_RESULT_ANNO.URL is '公告源URL'; 
+comment on column YG_WIN_RESULT_ANNO.NOTICE_NATURE is '公告性质'; 
+comment on column YG_WIN_RESULT_ANNO.BULLETIN_TYPE is '公告类型'; 
+comment on column YG_WIN_RESULT_ANNO.UNION_CODE is '联合体代码'; 
+comment on column YG_WIN_RESULT_ANNO.UNION_NAME is '联合体名称'; 
+comment on column YG_WIN_RESULT_ANNO.WIN_BIDDER_NAME is '中标投标人名称'; 
+comment on column YG_WIN_RESULT_ANNO.BIDDER_CODE_TYPE is '中标投标人类别'; 
+comment on column YG_WIN_RESULT_ANNO.WIN_BIDDER_CODE is '中标投标人代码'; 
+comment on column YG_WIN_RESULT_ANNO.BIDDER_ROLE is '中标投标人角色'; 
+comment on column YG_WIN_RESULT_ANNO.BIDDER_REGION_CODE is '中标投标人企业注册所在地'; 
+comment on column YG_WIN_RESULT_ANNO.BIDDER_PROPERTY is '中标投标人企业性质'; 
+comment on column YG_WIN_RESULT_ANNO.PROJECT_LEAD is '项目负责人'; 
+comment on column YG_WIN_RESULT_ANNO.PROJECT_LEAD_ID is '项目负责人身份证号码'; 
+comment on column YG_WIN_RESULT_ANNO.PRICE_FORM_CODE is '价款形式代码'; 
+comment on column YG_WIN_RESULT_ANNO.BID_AMOUNT is '中标金额'; 
+comment on column YG_WIN_RESULT_ANNO.BID_CURRENCY is '价格币种代码'; 
+comment on column YG_WIN_RESULT_ANNO.PRICE_UNIT is '价格单位'; 
+comment on column YG_WIN_RESULT_ANNO.OTHER_BID_PRICE is '费率或其它类型结果'; 
+comment on column YG_WIN_RESULT_ANNO.OTHER_CONTENT is '其他内容'; 
+comment on column YG_WIN_RESULT_ANNO.BULLETIN_DUTY is '公示发布责任人'; 
+comment on column YG_WIN_RESULT_ANNO.EXAMINER_NAME is '交易平台数据验证责任人姓名'; 
+comment on column YG_WIN_RESULT_ANNO.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_WIN_RESULT_ANNO.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_WIN_RESULT_ANNO.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_WIN_RESULT_ANNO.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_WIN_RESULT_ANNO.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_WIN_RESULT_ANNO
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_BID_WINNING_NOTICE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+PROJECT_CODE   VARCHAR2(200),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+TENDER_PROJECT_NAME   VARCHAR2(600),
+BID_SECTION_CODES   CLOB,
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+WIN_NOTICE_CODE_ENTP   VARCHAR2(600),
+WIN_NOTICE_CODE   VARCHAR2(100),
+WIN_BIDDER_NAME   VARCHAR2(200),
+WIN_BIDDER_CODE   VARCHAR2(18),
+BID_TIME   DATE,
+TENDER_NOTICE_CONTENT   CLOB,
+TIME_LIMIT   NUMBER,
+BID_AMOUNT   NUMBER,
+BID_CURRENCY   VARCHAR2(3),
+PRICE_UNIT   VARCHAR2(1),
+PRICE_FORM_CODE   VARCHAR2(1),
+OTHER_BID_PRICE   CLOB,
+PROJECT_LEAD   CLOB,
+PROJECT_LEAD_ID   VARCHAR2(50),
+PROJECT_LEAD_CERTITY_NO   VARCHAR2(50),
+WIN_NOTICE_CONTENT   CLOB,
+WIN_NOTICE_SEND_TIME   DATE,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_BID_WINNING_NOTICE is '中标通知书'; 
+comment on column YG_BID_WINNING_NOTICE.PROJECT_CODE is '项目编号'; 
+comment on column YG_BID_WINNING_NOTICE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_BID_WINNING_NOTICE.TENDER_PROJECT_NAME is '招标项目名称'; 
+comment on column YG_BID_WINNING_NOTICE.BID_SECTION_CODES is '标段（包）编号'; 
+comment on column YG_BID_WINNING_NOTICE.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_BID_WINNING_NOTICE.WIN_NOTICE_CODE_ENTP is '中标通知书编号（企业）'; 
+comment on column YG_BID_WINNING_NOTICE.WIN_NOTICE_CODE is '中标通知书编号（主管部门）'; 
+comment on column YG_BID_WINNING_NOTICE.WIN_BIDDER_NAME is '中标人名称'; 
+comment on column YG_BID_WINNING_NOTICE.WIN_BIDDER_CODE is '中标人统一社会信用代码'; 
+comment on column YG_BID_WINNING_NOTICE.BID_TIME is '投标日期'; 
+comment on column YG_BID_WINNING_NOTICE.TENDER_NOTICE_CONTENT is '招标范围和内容'; 
+comment on column YG_BID_WINNING_NOTICE.TIME_LIMIT is '工期'; 
+comment on column YG_BID_WINNING_NOTICE.BID_AMOUNT is '中标价'; 
+comment on column YG_BID_WINNING_NOTICE.BID_CURRENCY is '价格币种代码'; 
+comment on column YG_BID_WINNING_NOTICE.PRICE_UNIT is '价格单位'; 
+comment on column YG_BID_WINNING_NOTICE.PRICE_FORM_CODE is '价款形式代码'; 
+comment on column YG_BID_WINNING_NOTICE.OTHER_BID_PRICE is '费率或其它类型结果'; 
+comment on column YG_BID_WINNING_NOTICE.PROJECT_LEAD is '项目负责人'; 
+comment on column YG_BID_WINNING_NOTICE.PROJECT_LEAD_ID is '项目负责人身份证号码'; 
+comment on column YG_BID_WINNING_NOTICE.PROJECT_LEAD_CERTITY_NO is '项目负责人注册证书类别及注册证书号'; 
+comment on column YG_BID_WINNING_NOTICE.WIN_NOTICE_CONTENT is '中标通知书的文本内容'; 
+comment on column YG_BID_WINNING_NOTICE.WIN_NOTICE_SEND_TIME is '中标通知书发出日期'; 
+comment on column YG_BID_WINNING_NOTICE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_BID_WINNING_NOTICE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_BID_WINNING_NOTICE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_BID_WINNING_NOTICE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_BID_WINNING_NOTICE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_BID_WINNING_NOTICE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_TENDER_ABNORMITY_REPORT
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+EXCEPITON_NAME   VARCHAR2(600),
+EXCEPITON_INFOR   CLOB,
+APPROVAL_RESULT   CLOB,
+APPROVAL_TIME   DATE,
+EXCEPITON_TYPE   NUMBER,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_TENDER_ABNORMITY_REPORT is '招标异常情况报告'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.EXCEPITON_NAME is '报告名称'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.EXCEPITON_INFOR is '异常情况描述'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.APPROVAL_RESULT is '审批或核准结果'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.APPROVAL_TIME is '审批或核准时间'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.EXCEPITON_TYPE is '异常类型'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_TENDER_ABNORMITY_REPORT.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_TENDER_ABNORMITY
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_OBJECTION
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+OBJECTIONG_GUID   VARCHAR2(100),
+TITTLE   VARCHAR2(200),
+CONTENT   VARCHAR2(2000),
+TYPE   VARCHAR2(1),
+SUBMIT_TIME   DATE,
+CREATOR   VARCHAR2(200),
+CREATOR_TYPE   VARCHAR2(1),
+CREATOR_ROLE   VARCHAR2(2),
+CREATOR_CODE   VARCHAR2(200),
+CREATOR_CONTACT   VARCHAR2(200),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_OBJECTION is '异议'; 
+comment on column YG_OBJECTION.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_OBJECTION.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_OBJECTION.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_OBJECTION.OBJECTIONG_GUID is '异议唯一标识'; 
+comment on column YG_OBJECTION.TITTLE is '异议标题'; 
+comment on column YG_OBJECTION.CONTENT is '异议内容'; 
+comment on column YG_OBJECTION.TYPE is '异议类型'; 
+comment on column YG_OBJECTION.SUBMIT_TIME is '提交时间'; 
+comment on column YG_OBJECTION.CREATOR is '异议人'; 
+comment on column YG_OBJECTION.CREATOR_TYPE is '异议人类别'; 
+comment on column YG_OBJECTION.CREATOR_ROLE is '异议人角色'; 
+comment on column YG_OBJECTION.CREATOR_CODE is '异议人代码'; 
+comment on column YG_OBJECTION.CREATOR_CONTACT is '异议人联系方式'; 
+comment on column YG_OBJECTION.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_OBJECTION.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_OBJECTION.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_OBJECTION.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_OBJECTION.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_OBJECTION
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_OBJECTION_REPLY
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+OBJECTIONG_GUID   VARCHAR2(100),
+RESPONSE_TITTLE   VARCHAR2(200),
+RESPONSE_CONTENT   VARCHAR2(2000),
+RESPONSE_SUBMIT_TIME   DATE,
+RESPONSE_CREATOR   VARCHAR2(200),
+RESPONSE_CREATOR_TYPE   VARCHAR2(1),
+RESPONSE_CREATOR_ROLE   VARCHAR2(2),
+RESPONSE_CREATOR_CODE   VARCHAR2(200),
+RESPONSE_CREATOR_CONTACT   VARCHAR2(200),
+RESPONSE_STATUS   VARCHAR2(1),
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_OBJECTION_REPLY is '异议回复'; 
+comment on column YG_OBJECTION_REPLY.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_OBJECTION_REPLY.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_OBJECTION_REPLY.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_OBJECTION_REPLY.OBJECTIONG_GUID is '异议唯一标识'; 
+comment on column YG_OBJECTION_REPLY.RESPONSE_TITTLE is '异议回复标题'; 
+comment on column YG_OBJECTION_REPLY.RESPONSE_CONTENT is '异议回复内容'; 
+comment on column YG_OBJECTION_REPLY.RESPONSE_SUBMIT_TIME is '回复提交时间'; 
+comment on column YG_OBJECTION_REPLY.RESPONSE_CREATOR is '异议回复人'; 
+comment on column YG_OBJECTION_REPLY.RESPONSE_CREATOR_TYPE is '异议回复人类别'; 
+comment on column YG_OBJECTION_REPLY.RESPONSE_CREATOR_ROLE is '异议回复人角色'; 
+comment on column YG_OBJECTION_REPLY.RESPONSE_CREATOR_CODE is '异议回复人代码'; 
+comment on column YG_OBJECTION_REPLY.RESPONSE_CREATOR_CONTACT is '异议回复人联系方式'; 
+comment on column YG_OBJECTION_REPLY.RESPONSE_STATUS is '异议处理状态'; 
+comment on column YG_OBJECTION_REPLY.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_OBJECTION_REPLY.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_OBJECTION_REPLY.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_OBJECTION_REPLY.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_OBJECTION_REPLY.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_OBJECTION_REPLY
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+
+--创建表
+CREATE TABLE YG_CONTRACT_PERFORMANCE
+(
+M_ID NUMBER PRIMARY KEY,
+data_key                          VARCHAR2(50),
+m_data_source                  VARCHAR2(50),
+m_tm                           DATE,
+M_VERSION VARCHAR2(3),
+TENDER_PROJECT_CODE   VARCHAR2(20),
+BID_SECTION_CODE   VARCHAR2(23),
+UNIFIED_DEAL_CODE   VARCHAR2(40),
+CONTRACT_CODE   VARCHAR2(600),
+CONTRACT_NAME   VARCHAR2(600),
+TENDERER_NAME   VARCHAR2(200),
+TENDER_CODE   VARCHAR2(18),
+BIDDER_NAME   VARCHAR2(200),
+BIDDER_CODE   VARCHAR2(18),
+PRICE_FORM_CODE   VARCHAR2(1),
+CONTRACT_PRICE   NUMBER,
+PRICE_CURRENCY   VARCHAR2(3),
+PRICE_UNIT   VARCHAR2(1),
+OTHER_CONTRACT_PRICE   VARCHAR2(2000),
+CONTRACT_CONTENT   CLOB,
+LIMITE_TIME   NUMBER,
+QUALITY_REQUIRE   CLOB,
+SUBMIT_TIME   DATE,
+CONTRACT_SIGN_TIME   DATE,
+PLATFORM_CODE   VARCHAR2(18),
+PUB_SERVICE_PLAT_CODE   VARCHAR2(18),
+DATA_TIMESTAMP   DATE,
+TRADE_PLAT   VARCHAR2(11),
+PUB_SERVICE_PLAT   VARCHAR2(11)
+);
+--创建注释
+comment on table YG_CONTRACT_PERFORMANCE is '合同'; 
+comment on column YG_CONTRACT_PERFORMANCE.TENDER_PROJECT_CODE is '招标项目编号'; 
+comment on column YG_CONTRACT_PERFORMANCE.BID_SECTION_CODE is '标段（包）编号'; 
+comment on column YG_CONTRACT_PERFORMANCE.UNIFIED_DEAL_CODE is '统一交易标识码'; 
+comment on column YG_CONTRACT_PERFORMANCE.CONTRACT_CODE is '合同编号'; 
+comment on column YG_CONTRACT_PERFORMANCE.CONTRACT_NAME is '合同名称'; 
+comment on column YG_CONTRACT_PERFORMANCE.TENDERER_NAME is '招标人名称'; 
+comment on column YG_CONTRACT_PERFORMANCE.TENDER_CODE is '招标人代码'; 
+comment on column YG_CONTRACT_PERFORMANCE.BIDDER_NAME is '中标人名称'; 
+comment on column YG_CONTRACT_PERFORMANCE.BIDDER_CODE is '中标人代码'; 
+comment on column YG_CONTRACT_PERFORMANCE.PRICE_FORM_CODE is '价款形式代码'; 
+comment on column YG_CONTRACT_PERFORMANCE.CONTRACT_PRICE is '合同金额'; 
+comment on column YG_CONTRACT_PERFORMANCE.PRICE_CURRENCY is '金额币种代码'; 
+comment on column YG_CONTRACT_PERFORMANCE.PRICE_UNIT is '金额单位'; 
+comment on column YG_CONTRACT_PERFORMANCE.OTHER_CONTRACT_PRICE is '其它形式合同报价'; 
+comment on column YG_CONTRACT_PERFORMANCE.CONTRACT_CONTENT is '合同主要内容'; 
+comment on column YG_CONTRACT_PERFORMANCE.LIMITE_TIME is '合同期限'; 
+comment on column YG_CONTRACT_PERFORMANCE.QUALITY_REQUIRE is '质量要求'; 
+comment on column YG_CONTRACT_PERFORMANCE.SUBMIT_TIME is '递交时间'; 
+comment on column YG_CONTRACT_PERFORMANCE.CONTRACT_SIGN_TIME is '合同签署时间'; 
+comment on column YG_CONTRACT_PERFORMANCE.PLATFORM_CODE is '交易系统标识码'; 
+comment on column YG_CONTRACT_PERFORMANCE.PUB_SERVICE_PLAT_CODE is '交易服务系统标识码'; 
+comment on column YG_CONTRACT_PERFORMANCE.DATA_TIMESTAMP is '数据时间戳'; 
+comment on column YG_CONTRACT_PERFORMANCE.TRADE_PLAT is '交易平台或发布工具标识码'; 
+comment on column YG_CONTRACT_PERFORMANCE.PUB_SERVICE_PLAT is '公共服务平台标识码'; 
+ --创建序列
+create sequence seq_YG_CONTRACT_PERFORMANCE
+minvalue 1
+maxvalue 999999999
+start with 1
+increment by 1
+nocache
+order;
+
+

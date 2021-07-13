@@ -1,0 +1,137 @@
+﻿@*@{
+    bool show = Request.IsLocal&&false;
+    //var menus = User.AuthorizeFormsIdentityUser().AllPermissions.Where(c => c.Pid == "-1").OrderBy(c => c.Sort).ToList();
+    //var menus = new List<PermissionViewModel>();
+    //var menus = EngineContext.Current.Resolve<IPrtMenuService>().FindAll().Where(c=>c.PARENT_ID=="-1").OrderBy(c=>c.SORT).ToList();
+    var menus =User.AuthorizeFormsIdentityUser().UserPermission().Where(c => c.PARENT_ID == "-1"&&c.MENU_TYPE==0&&c.ENABLED==1).OrderBy(c => c.SORT).ToList();
+}
+
+<nav class="navbar navbar-inverse display-default opnav-navbar navbar-fixed-top" role="navigation">
+    <div class="topnav-navbar">
+        <div class="navbar-header text-center">
+            <button type="button" class="navbar-toggle" id="showMenu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand " href="javascript:void(0)" data-index="0" style="font-size: 14px">公共资源交易信息数据管理平台</a>
+        </div>
+    </div>
+    <div class="navbar-container container-fluid">
+        <div class="collapse navbar-collapse navbar-collapse-toolbar row" id="jpMenu">
+            <ul id="o1" class="nav navbar-toolbar nav-tabs  navbar-left" style="width: calc(100% - 680px)" role="tablist">
+              
+                @for (var i = 0; i < menus.Count; i++)
+                {
+                    var menu = menus[i];
+                    <li role="presentation" class='@(i == 0 ? "active" : "")'>
+                        <a href="#@(menu.ID)" role="tab" data-toggle="tab">
+                            <i class="@menu.ICON"></i> <span>@menu.NAME</span>
+                        </a>
+                    </li>
+                }
+
+
+
+            </ul>
+            <ul class="nav navbar-nav pull-right navbar-right">
+                @if (show)
+                {
+                    <li>
+                        <a href="~/a/home" class="J_menuItem"><i class="fa fa-home" style="font-size:14px;"></i></a>
+                    </li>
+                    <li class="hidden-xs">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="active">
+                                <a id="showTab" href="#">开启tab</a>
+                            </li>
+                            <li class="">
+                                <a id="closeTab" href="#">关闭tab</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="label label-info">0</span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeIn">
+                            <li class="messages-top text-center">
+                                你有 0 封未读邮件.
+                            </li>
+                            <li class=" text-center">
+                                <a class="J_menuItem" href="~/a/iim/mailBox/list?orderBy=sEndTime desc">
+                                    <font color='gray'> <i class="fa fa-envelope"></i> 查看所有邮件</font>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="label label-info">0</span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeIn">
+                            <li class="messages-top text-center">
+                                你有 0 条新通知.
+                            </li>
+                        </ul>
+                    </li>
+                    @Html.Partial("_LayoutColorPicker")
+                }
+                <li class="hidden-xs">
+                    <a href="#" onClick="toggleFullScreen()" data-toggle="fullscreen"><i class="fa fa-arrows-alt"></i></a>
+                </li>
+                <li class="dropdown admin-dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <img src="~/static/common/images/flat-avatar.png" class="topnav-img" style=" width: 30px;margin-right: 5px;max-height: 30px;" alt=""><span class="hidden-sm">@User.Identity.Name</span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeIn" role="menu">
+                        @*<li>
+                                <a class="J_menuItem" href="~/a/sys/user/imageEdit">修改头像</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/a/sys/user/info">个人资料</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/a/iim/contact/index">我的通讯录</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/a/iim/mailBox/list">信箱</a>
+                            </li>
+                            <li><a href="javascript:changeStyle()">切换成左侧菜单</a>*@
+                        <li>
+                            <a href="@Url.Action("SignOut","Ajax")">安全退出</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="nav navbar-nav pull-right hidd">
+        <li class="dropdown admin-dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <img src="~/static/common/images/flat-avatar.png" class="topnav-img" style="width: 30px;margin-right: 5px;max-height: 30px;" alt=""><span class="hidden-sm">管理员</span>
+            </a>
+            <ul class="dropdown-menu animated fadeIn" role="menu">
+                @for (var i = 0; i < menus.Count; i++)
+                {
+                    var menu = menus[i];
+                    <li role="presentation" class='@(i==0?"active":"")'>
+                        <a href="#@(menu.ID)" role="tab" data-toggle="tab">
+                            <i class="@menu.ICON"></i> <span>@menu.NAME</span>
+                        </a>
+                    </li>
+                }
+              
+                <hr />
+                <li><a href="javaScript:changeStyle()">切换成左侧菜单</a>
+                <li>
+                    <a href="@Url.Action("SignOut","Ajax")">安全退出</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>*@

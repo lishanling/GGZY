@@ -1,0 +1,2131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D58153CC-37D4-41B2-BD52-570EBCFE80F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GGZY.Services</RootNamespace>
+    <AssemblyName>GGZY.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\..\Assemblies\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.KTPKIAPPCOMCLNTLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\Assemblies\Interop.KTPKIAPPCOMCLNTLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TzCodeService">
+      <HintPath>..\..\Assemblies\TzCodeService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseService.cs" />
+    <Compile Include="Base\BaseService.orm.cs">
+      <DependentUpon>BaseService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\BaseServiceT.cs">
+      <DependentUpon>BaseService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\JdEnumList.cs" />
+    <Compile Include="Base\ServicesFactory.cs" />
+    <Compile Include="Base\ServicesFactoryFw.cs">
+      <DependentUpon>ServicesFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ServicesFactoryJd.cs">
+      <DependentUpon>ServicesFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ServicesFactoryJh.cs">
+      <DependentUpon>ServicesFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BigData\CorrelationService.cs" />
+    <Compile Include="BigData\DashboardService.cs" />
+    <Compile Include="BigData\EnterpriseInfoService.cs" />
+    <Compile Include="BigData\GGZYBigDataService.cs" />
+    <Compile Include="BigData\Model\CorrelationConfigModel.cs" />
+    <Compile Include="BigData\Model\PieTenderProjectModel.cs" />
+    <Compile Include="BigData\Scheduler\TenderStatistics.cs" />
+    <Compile Include="BigData\StatisticsAgencyService.cs" />
+    <Compile Include="BigData\StatisticsExpertService.cs" />
+    <Compile Include="BigData\StatisticsSupervisionService.cs" />
+    <Compile Include="BigData\StatisticsTenderService.cs" />
+    <Compile Include="Extensions\FwSysAttachmentComparer.cs" />
+    <Compile Include="Extensions\SysAttachmentComparer.cs" />
+    <Compile Include="FuWu\BdHardwareMultiService.cs" />
+    <Compile Include="FuWu\BidderProjectMemberService.cs" />
+    <Compile Include="FuWu\BidderProjectMemberService.tool.cs" />
+    <Compile Include="FuWu\TAskanswerService.tool.cs">
+      <DependentUpon>TAskanswerService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TbParticipateService.tool.cs">
+      <DependentUpon>TbParticipateService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TenderListStatisticsService.cs" />
+    <Compile Include="FuWu\TenderListStatisticsService.tool.cs" />
+    <Compile Include="FuWu\TMacResultFirstService.cs" />
+    <Compile Include="FuWu\TMacResultSecondService.cs" />
+    <Compile Include="FuWu\TMacResultSecondService.tool.cs" />
+    <Compile Include="FuWu\TMacResultThirdService.cs" />
+    <Compile Include="FuWu\TMacResultThirdService.tool.cs" />
+    <Compile Include="FuWu\TMacService.cs" />
+    <Compile Include="FuWu\TMacResultFirstService.tool.cs" />
+    <Compile Include="FuWu\TMacService.tool.cs" />
+    <Compile Include="FuWu\WarnExpressionDetailService.cs" />
+    <Compile Include="FuWu\WarnExpressionService.cs" />
+    <Compile Include="FuWu\WarnExpressionService.tool.cs">
+      <DependentUpon>WarnExpressionService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\WarnFeedbackService.cs" />
+    <Compile Include="FuWu\WarnFeedBackService.tool.cs" />
+    <Compile Include="FuWu\WarnRecordService.tool.cs">
+      <DependentUpon>WarnRecordService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\WarnResultService.chuzhang.cs">
+      <DependentUpon>WarnResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\WarnResultService.cs" />
+    <Compile Include="FuWu\WarnResultService.tool.cs">
+      <DependentUpon>WarnResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\WarnTemplateService.cs" />
+    <Compile Include="FuWu\WarnTemplateService.tool.cs" />
+    <Compile Include="Infrastructure\Enums\Jd\JdTUserType.cs" />
+    <Compile Include="Infrastructure\Enums\Jd\JdTUserDepartmentDType.cs" />
+    <Compile Include="Infrastructure\Enums\Jd\TAfcProjectKind.cs" />
+    <Compile Include="Infrastructure\Extensions\MztUserExtensions.cs" />
+    <Compile Include="Infrastructure\Fields\LabelValueField.cs" />
+    <Compile Include="Infrastructure\Model\BigData\ChartOptionModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\ChartxAxis.cs">
+      <DependentUpon>ChartOptionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\BigData\DashboardTradeDataSummaryModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\DashboardTradeRankModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\EnterpriseInfoOverlapDetailModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\EnterpriseInfoSameDetailModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\EnterpriseInfoSearchModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\ExpertInfoModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\IChartSeries.cs">
+      <DependentUpon>ChartOptionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\BigData\LineBarSeries.cs">
+      <DependentUpon>ChartOptionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\BigData\PieSeries.cs">
+      <DependentUpon>ChartOptionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\BigData\PieSeriesData.cs">
+      <DependentUpon>PieSeries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\BigData\StatisticsBidderDataSummaryModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\StatisticsBidderRankModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\StatisticsBidderSearchModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\StatisticsSummaryModel.cs" />
+    <Compile Include="Infrastructure\Model\BigData\StatisticsSupervisionSearchModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\EarlyWarnModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\Feedback_Model.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\FwWarnResultExpressionModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\MvTjAllCreateXzjdModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\MvTjAllresultXzjdModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\Point_Model.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\PortalSearchModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\TAskAnswerModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\Template_Model.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\TradeInfoModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\Traffic_Light_Change_Model.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\Early_Model.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\GongChengTongJiModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JDCompareModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JDHomePageModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JdJcTransRecordModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JdJcTransResultModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JdTenderProjectModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JdVideoPointInfoModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JD_CountData.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JD_Model.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\OperationRecordModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ProjectSupervisionBaseInfoResponseModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ProjectSupervisionCountResponseModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ProjectSupervisionHandleItemResponseModelJW.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ProjectSupervisionHandleItemResponseModelGA.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ProjectSupervisionHandleItemResponseModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ProjectSupervisionRequestModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ProjectSupervisionResponseJwModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ProjectSupervisionResponseHyModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\Project_Model.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\RecordResultModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\RecordReviewProcessResponseModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ReviewSuperviseProjectModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\SYLabelValueModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TAfcProjectStatisticsModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TCopySendModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TPunisnDataModer.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseAndFeedbackModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseFeedbackModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseFeedbackModel.partial.cs">
+      <DependentUpon>TSuperviseFeedbackModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TSupervisePointResultModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseResultLogModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseLogModel.partial.cs">
+      <DependentUpon>TSuperviseResultLogModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseModel.partial.cs">
+      <DependentUpon>TSuperviseModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseResultAfcModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseResultZXTSModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseResultModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JdMainUserModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\MonitorHomePageModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\MonitorHomePageSummaryStatisticsModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseResultModel.partial.cs">
+      <DependentUpon>TSuperviseResultModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseResultSearchModel.cs" />
+    <Compile Include="Infrastructure\Model\FwPortalTradeInfoType.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TPunishModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TSuperviseZBBAResultModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TTPunishModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TTPunishRecordModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\WGJDRulesModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JdVideoBasicInfoModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\XinPtZxtsModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\XinWarnResultModel.cs" />
+    <Compile Include="JianDu\JcTransPersonService.chuzhang.cs">
+      <DependentUpon>JcTransPersonService.tool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\JcTransPersonService.tool.cs" />
+    <Compile Include="JianDu\JcTransProjectService.chuzhang.cs">
+      <DependentUpon>JcTransProjectService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\JcTransProjectService.tool.cs" />
+    <Compile Include="JianDu\JcTransRecordService.chuzhang.cs">
+      <DependentUpon>JcTransRecordService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\JcTransRecordService.cs" />
+    <Compile Include="JianDu\JcTransRecordService.tool.cs">
+      <DependentUpon>JcTransRecordService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\JcTransResultService.cs" />
+    <Compile Include="JianDu\JcTransResultService.tool.cs" />
+    <Compile Include="JianDu\JcTransDetailService.tool.cs" />
+    <Compile Include="JianDu\JcTransEntityService.tool.cs" />
+    <Compile Include="JianDu\JcTransProjectService.cs" />
+    <Compile Include="JianDu\JdPortalObjectionService.cs" />
+    <Compile Include="JianDu\MgrLogService.tool.cs">
+      <DependentUpon>MgrLogService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\ProjectSupervisionService.cs" />
+    <Compile Include="JianDu\ProjectSupervisionService.ga.cs">
+      <DependentUpon>ProjectSupervisionService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\ProjectSupervisionService.hybm.cs">
+      <DependentUpon>ProjectSupervisionService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\ProjectSupervisionService.jwjw.cs">
+      <DependentUpon>ProjectSupervisionService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\RecordReviewService.chuzhang.cs">
+      <DependentUpon>RecordReviewService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\RecordReviewService.mzt.cs">
+      <DependentUpon>RecordReviewService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\RecordReviewService.tool.cs">
+      <DependentUpon>RecordReviewService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\RecordReviewSuperviseService.cs" />
+    <Compile Include="JianDu\SysAreaQuanguoService.tool.cs">
+      <DependentUpon>SysAreaQuanguoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TAfcProjectService.chuzhang.cs">
+      <DependentUpon>TAfcProjectService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TAfcProjectService.mzt.cs">
+      <DependentUpon>TAfcProjectService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TCopysendService.cs" />
+    <Compile Include="JianDu\TCopysendService.tool.cs" />
+    <Compile Include="JianDu\TenderProjectService.mzt.cs">
+      <DependentUpon>TenderProjectService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TPunishService.cs" />
+    <Compile Include="JianDu\TPunishService.tool.cs" />
+    <Compile Include="JianDu\TSmsLogService.tool.cs">
+      <DependentUpon>TSmsLogService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TSuperviseResultService.bdVillationEntity.cs">
+      <DependentUpon>TSuperviseResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TSuperviseResultService.bdVillationRecord.cs">
+      <DependentUpon>TSuperviseResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TSuperviseResultService.point.cs">
+      <DependentUpon>TSuperviseResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TSuperviseResultService.tender.project.cs">
+      <DependentUpon>TSuperviseResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TSuperviseResultService.warnresult.cs">
+      <DependentUpon>TSuperviseResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TSuperviseResultService.zbba.cs">
+      <DependentUpon>TSuperviseResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TSuperviseResultService.afc.project.cs">
+      <DependentUpon>TSuperviseResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TSuperviseResultService.cs" />
+    <Compile Include="JianDu\TSuperviseResultService.tool.cs">
+      <DependentUpon>TSuperviseResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TSuperviseResultService.zxts.cs">
+      <DependentUpon>TSuperviseResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TSuperviseService.cs" />
+    <Compile Include="JianDu\TSuperviseService.tool.cs">
+      <DependentUpon>TSuperviseService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserDepartmentService.initial.cs">
+      <DependentUpon>TUserDepartmentService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserService.initial.cs">
+      <DependentUpon>TUserService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\VVideobasicinfoService.tool.cs">
+      <DependentUpon>VVideobasicinfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Violation\BdInquireRecordService.tool.cs" />
+    <Compile Include="Violation\BdViolationBasicService.cs" />
+    <Compile Include="Violation\BdViolationEntityService.cs" />
+    <Compile Include="Violation\BdViolationEntityService.tool.cs" />
+    <Compile Include="Violation\BdViolationHistoryService.cs" />
+    <Compile Include="Violation\BdViolationPointDetailService.cs" />
+    <Compile Include="Violation\BdViolationPointService.tool.cs" />
+    <Compile Include="BigData\BigDataMainSqlService.cs" />
+    <Compile Include="BigData\BigDataMainService.cs" />
+    <Compile Include="BigData\BigDataSearchModel.cs" />
+    <Compile Include="BigData\StatisticsBidderService.cs" />
+    <Compile Include="DZBH\Attributes\BaseMatchAttributes.cs" />
+    <Compile Include="DZBH\Attributes\DateTimeMatch.cs" />
+    <Compile Include="DZBH\Attributes\DoubleMatch.cs" />
+    <Compile Include="DZBH\Attributes\EnumMatch.cs" />
+    <Compile Include="DZBH\Attributes\NotNullMatch.cs" />
+    <Compile Include="DZBH\Attributes\StringLengthMatch.cs" />
+    <Compile Include="DZBH\BhAttachmentHelper.cs" />
+    <Compile Include="DZBH\BhGetDataService.cs" />
+    <Compile Include="DZBH\BhReceiveService.cs" />
+    <Compile Include="DZBH\BhSendService.cs" />
+    <Compile Include="DZBH\BhSignService.cs" />
+    <Compile Include="DZBH\ClaimService.cs" />
+    <Compile Include="DZBH\DZBHService.cs" />
+    <Compile Include="DZBH\Exception\MyException.cs" />
+    <Compile Include="DZBH\Exception\ThrowHelper.cs" />
+    <Compile Include="DZBH\ExChangeService.cs" />
+    <Compile Include="DZBH\GetDataService.cs" />
+    <Compile Include="DZBH\OfdApiService.cs" />
+    <Compile Include="DZBH\ParamModel\DictModel.cs" />
+    <Compile Include="DZBH\ParamModel\ListSearchModel.cs" />
+    <Compile Include="DZBH\ParamModel\ReceiveModel\ChangeStatusModel.cs" />
+    <Compile Include="DZBH\ParamModel\SignParamModel.cs" />
+    <Compile Include="DZBH\ParseFileService.cs" />
+    <Compile Include="Extensions\DbEntityExtension.cs" />
+    <Compile Include="Extensions\EntityExtension.cs" />
+    <Compile Include="FuWu\AdminSuperItemInfoService.tool.cs">
+      <DependentUpon>AdminSuperItemInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AgencyAprInfoService.tool.cs">
+      <DependentUpon>AgencyAprInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AhwhBszxService.tool.cs">
+      <DependentUpon>AhwhBszxService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AhwhDocumentService.tool.cs">
+      <DependentUpon>AhwhDocumentService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AhwhGzlyService.tool.cs">
+      <DependentUpon>AhwhGzlyService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AhwhNewsService.tool.cs">
+      <DependentUpon>AhwhNewsService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AhwhXzfwService.tool.cs">
+      <DependentUpon>AhwhXzfwService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AnomalyInfoService.tool.cs">
+      <DependentUpon>AnomalyInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AssigneeExInfoService.tool.cs">
+      <DependentUpon>AssigneeExInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AssistCorrectInfoService.cs" />
+    <Compile Include="FuWu\AssistCorrectInfoService.tool.cs">
+      <DependentUpon>AssistCorrectInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AwardInfoService.tool.cs">
+      <DependentUpon>AwardInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhGuaranteeResultService.tool.cs">
+      <DependentUpon>BhGuaranteeResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhJiekouUserService.tool.cs">
+      <DependentUpon>BhJiekouUserService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhSendApplicationFormService.tool.cs">
+      <DependentUpon>BhSendApplicationFormService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhSendClaimFormService.tool.cs">
+      <DependentUpon>BhSendClaimFormService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhxxCompletAcceptReviewService.cs" />
+    <Compile Include="FuWu\BhxxCompletAcceptReviewService.tool.cs">
+      <DependentUpon>BhxxCompletAcceptReviewService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhxxCompleteAcceptService.cs" />
+    <Compile Include="FuWu\BhxxCompleteAcceptService.tool.cs">
+      <DependentUpon>BhxxCompleteAcceptService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhxxConstructAlterService.cs" />
+    <Compile Include="FuWu\BhxxConstructAlterService.tool.cs">
+      <DependentUpon>BhxxConstructAlterService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhxxConstructPermitsService.cs" />
+    <Compile Include="FuWu\BhxxConstructPermitsService.tool.cs">
+      <DependentUpon>BhxxConstructPermitsService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhxxContractMemberService.cs" />
+    <Compile Include="FuWu\BhxxContractMemberService.tool.cs">
+      <DependentUpon>BhxxContractMemberService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhxxPerformanceConditionService.cs" />
+    <Compile Include="FuWu\BhxxPerformanceConditionService.tool.cs">
+      <DependentUpon>BhxxPerformanceConditionService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhxxPerformanceMemberService.cs" />
+    <Compile Include="FuWu\BhxxPerformanceMemberService.tool.cs">
+      <DependentUpon>BhxxPerformanceMemberService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhxxSceneManagerInfoService.cs" />
+    <Compile Include="FuWu\BhxxSceneManagerInfoService.tool.cs">
+      <DependentUpon>BhxxSceneManagerInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BhxxSceneSupervisorInfoService.cs" />
+    <Compile Include="FuWu\BhxxSceneSupervisorInfoService.tool.cs">
+      <DependentUpon>BhxxSceneSupervisorInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BidDealAnnounceService.tool.cs">
+      <DependentUpon>BidDealAnnounceService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BidDocCharactCodeService.tool.cs">
+      <DependentUpon>BidDocCharactCodeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BiderExInfoService.tool.cs">
+      <DependentUpon>BiderExInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BidEvaluationExpertDelService.tool.cs">
+      <DependentUpon>BidEvaluationExpertDelService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BidEvaluationExpertService.tool.cs">
+      <DependentUpon>BidEvaluationExpertService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BidOpeningRecordService.tool.cs">
+      <DependentUpon>BidOpeningRecordService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BidViolationService.tool.cs">
+      <DependentUpon>BidViolationService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BidWorkControlService.tool.cs">
+      <DependentUpon>BidWorkControlService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BidZjrjCodeService.tool.cs">
+      <DependentUpon>BidZjrjCodeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\BlackListService.tool.cs">
+      <DependentUpon>BlackListService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\CaImgService.tool.cs">
+      <DependentUpon>CaImgService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\CainfoService.tool.cs">
+      <DependentUpon>CainfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\CalcSqlService.tool.cs">
+      <DependentUpon>CalcSqlService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\CompareSelectAnnService.tool.cs">
+      <DependentUpon>CompareSelectAnnService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\CompareSelectResultService.tool.cs">
+      <DependentUpon>CompareSelectResultService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\ComplaintInfoService.tool.cs">
+      <DependentUpon>ComplaintInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\CorrectionItemService.tool.cs">
+      <DependentUpon>CorrectionItemService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\DealBehaviorInfoService.tool.cs">
+      <DependentUpon>DealBehaviorInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\DealLandInfoService.tool.cs">
+      <DependentUpon>DealLandInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\EvaluationReportService.tool.cs">
+      <DependentUpon>EvaluationReportService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\ExplorBidAuctionTransAnnService.tool.cs">
+      <DependentUpon>ExplorBidAuctionTransAnnService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\ExplorBidAucTransResAnnService.tool.cs">
+      <DependentUpon>ExplorBidAucTransResAnnService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\ListingPubInfoService.tool.cs">
+      <DependentUpon>ListingPubInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\MiningBidAuctionTransAnnService.tool.cs">
+      <DependentUpon>MiningBidAuctionTransAnnService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\MiningBidAucTransResAnnService.tool.cs">
+      <DependentUpon>MiningBidAucTransResAnnService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\MvGgxxXzjdService.cs" />
+    <Compile Include="FuWu\MvGgxxXzjdService.tool.cs">
+      <DependentUpon>MvGgxxXzjdService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\MvJyxxHistoryService.cs" />
+    <Compile Include="FuWu\MvJyxxHistoryService.tool.cs">
+      <DependentUpon>MvJyxxHistoryService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\MvJyxxService.cs" />
+    <Compile Include="FuWu\MvJyxxService.tool.cs">
+      <DependentUpon>MvJyxxService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\MvTjAllresultXzjdService.cs" />
+    <Compile Include="FuWu\MvTjAllcreateXzjdService.cs" />
+    <Compile Include="FuWu\MvTjAllcreateXzjdService.tool.cs">
+      <DependentUpon>MvTjAllcreateXzjdService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\MvTjAllresultXzjdService.tool.cs">
+      <DependentUpon>MvTjAllresultXzjdService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\MvUserTenderListService.cs" />
+    <Compile Include="FuWu\MvUserTenderListService.tool.cs">
+      <DependentUpon>MvUserTenderListService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\PerformanceService.tool.cs">
+      <DependentUpon>PerformanceService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\PurchaseProjectService.tool.cs">
+      <DependentUpon>PurchaseProjectService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\PurchaseQualiInqueryAnnService.tool.cs">
+      <DependentUpon>PurchaseQualiInqueryAnnService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\StockListingPubInfoService.tool.cs">
+      <DependentUpon>StockListingPubInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\StockTradeResultInfoService.tool.cs">
+      <DependentUpon>StockTradeResultInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\StockTradeResultPreService.tool.cs">
+      <DependentUpon>StockTradeResultPreService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\SupplierExInfoService.tool.cs">
+      <DependentUpon>SupplierExInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\SysAreaQuanguoService.tool.cs">
+      <DependentUpon>SysAreaQuanguoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\SysAreaService.tool.cs">
+      <DependentUpon>SysAreaService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\SysDicService.tool.cs">
+      <DependentUpon>SysDicService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TAttachmentService.tool.cs">
+      <DependentUpon>TAttachmentService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TenderAgentExInfoService.tool.cs">
+      <DependentUpon>TenderAgentExInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TenderAnnQuaInqueryAnnService.tool.cs">
+      <DependentUpon>TenderAnnQuaInqueryAnnService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TenderCandidateAnnounceService.tool.cs">
+      <DependentUpon>TenderCandidateAnnounceService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TenderCandidateService.tool.cs">
+      <DependentUpon>TenderCandidateService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TendererExInfoService.tool.cs">
+      <DependentUpon>TendererExInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TenderExInfoService.tool.cs">
+      <DependentUpon>TenderExInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TenderListService.tool.cs">
+      <DependentUpon>TenderListService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TJyptAccessService.tool.cs">
+      <DependentUpon>TJyptAccessService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TMedicalService.tool.cs">
+      <DependentUpon>TMedicalService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TModifyApplicationService.cs" />
+    <Compile Include="FuWu\TModifyApplicationService.tool.cs">
+      <DependentUpon>TModifyApplicationService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TradeResultInfoService.tool.cs">
+      <DependentUpon>TradeResultInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TUserTradeplatformService.tool.cs">
+      <DependentUpon>TUserTradeplatformService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\VUnifyUserService.cs" />
+    <Compile Include="FuWu\ViolatingLawsRulesInfoService.tool.cs">
+      <DependentUpon>ViolatingLawsRulesInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\VUnifyUserService.tool.cs">
+      <DependentUpon>VUnifyUserService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\WinResultAnnoService.tool.cs">
+      <DependentUpon>WinResultAnnoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\ZjEnterpriseCreditScoreService.tool.cs">
+      <DependentUpon>ZjEnterpriseCreditScoreService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Extensions\FwUserExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\GeneralAttributeExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\JdUserExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\UploadResDataExtensions.cs" />
+    <Compile Include="Infrastructure\Helper\ConfigHelper.AppSettings.cs">
+      <DependentUpon>ConfigHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Helper\ConfigHelper.Const.cs">
+      <DependentUpon>ConfigHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Helper\ConfigHelper.cs" />
+    <Compile Include="Base\DbContext.cs" />
+    <Compile Include="Base\DbSessionExtensions.cs">
+      <DependentUpon>DbContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\IdentityExtensions.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="FuWu\AdminSuperItemInfoService.cs" />
+    <Compile Include="FuWu\AgencyAprInfoService.cs" />
+    <Compile Include="FuWu\AgencyQaTableService.cs" />
+    <Compile Include="FuWu\AgencyQaTableService.tool.cs">
+      <DependentUpon>AgencyQaTableService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\AhwhBszxService.cs" />
+    <Compile Include="FuWu\AhwhDocumentService.cs" />
+    <Compile Include="FuWu\AhwhGzlyService.cs" />
+    <Compile Include="FuWu\AhwhNewsService.cs" />
+    <Compile Include="FuWu\AhwhXzfwService.cs" />
+    <Compile Include="FuWu\AnomalyInfoService.cs" />
+    <Compile Include="FuWu\AssigneeExInfoService.cs" />
+    <Compile Include="FuWu\AwardInfoService.cs" />
+    <Compile Include="FuWu\BhGuaranteeResultService.cs" />
+    <Compile Include="FuWu\BhJiekouUserService.cs" />
+    <Compile Include="FuWu\BhSendApplicationFormService.cs" />
+    <Compile Include="FuWu\BhSendClaimFormService.cs" />
+    <Compile Include="FuWu\BidDealAnnounceService.cs" />
+    <Compile Include="FuWu\BidDocCharactCodeService.cs" />
+    <Compile Include="FuWu\BiderExInfoService.cs" />
+    <Compile Include="FuWu\BidEvaluationExpertDelService.cs" />
+    <Compile Include="FuWu\BidEvaluationExpertService.cs" />
+    <Compile Include="FuWu\BidOpeningRecordService.cs" />
+    <Compile Include="FuWu\BidViolationService.cs" />
+    <Compile Include="FuWu\BidWorkControlService.cs" />
+    <Compile Include="FuWu\BidZjrjCodeService.cs" />
+    <Compile Include="FuWu\BlackListService.cs" />
+    <Compile Include="FuWu\CaImgService.cs" />
+    <Compile Include="FuWu\CainfoService.cs" />
+    <Compile Include="FuWu\CalcSqlService.cs" />
+    <Compile Include="FuWu\CommonService.cs" />
+    <Compile Include="FuWu\CompareSelectAnnService.cs" />
+    <Compile Include="FuWu\CompareSelectResultService.cs" />
+    <Compile Include="FuWu\ComplaintInfoService.cs" />
+    <Compile Include="FuWu\ContractPerformanceService.cs" />
+    <Compile Include="FuWu\ContractPerformanceService.tool.cs" />
+    <Compile Include="FuWu\CorrectionItemService.cs" />
+    <Compile Include="FuWu\CreditAssessmentService.cs" />
+    <Compile Include="FuWu\CreditAssessmentService.tool.cs" />
+    <Compile Include="FuWu\CreditAttachmentsService.cs" />
+    <Compile Include="FuWu\DataAnalyseService.cs" />
+    <Compile Include="FuWu\DataAnalyseService.tool.cs" />
+    <Compile Include="FuWu\DbSystemService.cs" />
+    <Compile Include="FuWu\DbSystemService.tool.cs" />
+    <Compile Include="FuWu\DeaCarbonQuotaSellAnnoService.cs" />
+    <Compile Include="FuWu\DeaCarbonQuotaSellAnnoService.tool.cs" />
+    <Compile Include="FuWu\DeaCarbonQuotaSellResultService.cs" />
+    <Compile Include="FuWu\DeaCarbonQuotaSellResultService.tool.cs" />
+    <Compile Include="FuWu\DealBehaviorInfoService.cs" />
+    <Compile Include="FuWu\DealLandInfoService.cs" />
+    <Compile Include="FuWu\DeaMediChangeAnnoService.cs" />
+    <Compile Include="FuWu\DeaMediChangeAnnoService.tool.cs" />
+    <Compile Include="FuWu\DeaMediFixedPurchaseAnnoService.cs" />
+    <Compile Include="FuWu\DeaMediFixedPurchaseAnnoService.tool.cs" />
+    <Compile Include="FuWu\DeaMediFixedPurchaseDetailService.cs" />
+    <Compile Include="FuWu\DeaMediFixedPurchaseDetailService.tool.cs" />
+    <Compile Include="FuWu\DeaMediFixedPurchaseListService.cs" />
+    <Compile Include="FuWu\DeaMediFixedPurchaseListService.tool.cs" />
+    <Compile Include="FuWu\DeaMediNegoPurchaseAnnoService.cs" />
+    <Compile Include="FuWu\DeaMediNegoPurchaseAnnoService.tool.cs" />
+    <Compile Include="FuWu\DeaMediNegoPurchaseDetailService.cs" />
+    <Compile Include="FuWu\DeaMediNegoPurchaseDetailService.tool.cs" />
+    <Compile Include="FuWu\DeaMediNegoPurchaseListService.cs" />
+    <Compile Include="FuWu\DeaMediNegoPurchaseListService.tool.cs" />
+    <Compile Include="FuWu\DeaMediNetPurchaseAnnoService.cs" />
+    <Compile Include="FuWu\DeaMediNetPurchaseAnnoService.tool.cs" />
+    <Compile Include="FuWu\DeaMediNetPurchaseDetailService.cs" />
+    <Compile Include="FuWu\DeaMediNetPurchaseDetailService.tool.cs" />
+    <Compile Include="FuWu\DeaMediNetPurchaseListService.cs" />
+    <Compile Include="FuWu\DeaMediNetPurchaseListService.tool.cs" />
+    <Compile Include="FuWu\DeaMediOtherPurchaseAnnoService.cs" />
+    <Compile Include="FuWu\DeaMediOtherPurchaseAnnoService.tool.cs" />
+    <Compile Include="FuWu\DeaMediPurchaseOrderService.cs" />
+    <Compile Include="FuWu\DeaMediPurchaseOrderService.tool.cs" />
+    <Compile Include="FuWu\DeaMediTenderAnnoService.cs" />
+    <Compile Include="FuWu\DeaMediTenderAnnoService.tool.cs" />
+    <Compile Include="FuWu\DeaMediTenderDetailService.cs" />
+    <Compile Include="FuWu\DeaMediTenderDetailService.tool.cs" />
+    <Compile Include="FuWu\DeaMediTenderListService.cs" />
+    <Compile Include="FuWu\DeaMediTenderListService.tool.cs" />
+    <Compile Include="FuWu\DeaMediWinBidAnnoService.cs" />
+    <Compile Include="FuWu\DeaMediWinBidAnnoService.tool.cs" />
+    <Compile Include="FuWu\DeaMediWinBidDetailService.cs" />
+    <Compile Include="FuWu\DeaMediWinBidDetailService.tool.cs" />
+    <Compile Include="FuWu\DeaMediWinBidListService.cs" />
+    <Compile Include="FuWu\DeaMediWinBidListService.tool.cs" />
+    <Compile Include="FuWu\DeaSewageAssigneeListService.cs" />
+    <Compile Include="FuWu\DeaSewageAssigneeListService.tool.cs" />
+    <Compile Include="FuWu\DeaSewagePaidTransferAnnoService.cs" />
+    <Compile Include="FuWu\DeaSewagePaidTransferAnnoService.tool.cs" />
+    <Compile Include="FuWu\DeaSewagePaidTransferResService.cs" />
+    <Compile Include="FuWu\DeaSewagePaidTransferResService.tool.cs" />
+    <Compile Include="FuWu\DsjAreaService.cs" />
+    <Compile Include="FuWu\EcaPcaxService.cs" />
+    <Compile Include="FuWu\EcaPcaxService.tool.cs" />
+    <Compile Include="FuWu\EnterCredtiInfoService.cs" />
+    <Compile Include="FuWu\EvaluationReportService.cs" />
+    <Compile Include="FuWu\EvaluationResultsService.cs" />
+    <Compile Include="FuWu\EvaluationResultsService.tool.cs" />
+    <Compile Include="FuWu\ExpertBidEvaluationService.cs" />
+    <Compile Include="FuWu\ExpertBidEvaluationService.tool.cs" />
+    <Compile Include="FuWu\ExpertCreditRecordService.cs" />
+    <Compile Include="FuWu\ExpertCreditRecordService.tool.cs" />
+    <Compile Include="FuWu\ExpertEvaluationService.cs" />
+    <Compile Include="FuWu\ExpertEvaluationService.tool.cs" />
+    <Compile Include="FuWu\ExplorBidAuctionTransAnnService.cs" />
+    <Compile Include="FuWu\ExplorBidAucTransResAnnService.cs" />
+    <Compile Include="FuWu\ExplorTransPubInfoService.cs" />
+    <Compile Include="FuWu\ExplorTransPubInfoService.tool.cs" />
+    <Compile Include="FuWu\ExTrainAndTestService.cs" />
+    <Compile Include="FuWu\ExTrainAndTestService.tool.cs" />
+    <Compile Include="FuWu\ExtServiceAdviceService.cs" />
+    <Compile Include="FuWu\ExtServiceAdviceService.tool.cs" />
+    <Compile Include="FuWu\FhhgService.cs" />
+    <Compile Include="FuWu\FhhgService.tool.cs" />
+    <Compile Include="FuWu\GetDataLogService.cs" />
+    <Compile Include="FuWu\GetDataLogService.tool.cs" />
+    <Compile Include="FuWu\GgfwProductAnalysisService.cs" />
+    <Compile Include="FuWu\GgfwProductAnalysisService.tool.cs" />
+    <Compile Include="FuWu\GgfwSService.cs" />
+    <Compile Include="FuWu\GgfwStudentService.cs" />
+    <Compile Include="FuWu\GgfwStudentService.tool.cs" />
+    <Compile Include="FuWu\IdentInformationService.cs" />
+    <Compile Include="FuWu\IdentInformationService.tool.cs" />
+    <Compile Include="FuWu\IndividualAssigneeExInfoService.cs" />
+    <Compile Include="FuWu\IndividualAssigneeExInfoService.tool.cs" />
+    <Compile Include="FuWu\IndividualBaseService.cs" />
+    <Compile Include="FuWu\IndividualBaseService.tool.cs" />
+    <Compile Include="FuWu\IndividualBiderExInfoService.cs" />
+    <Compile Include="FuWu\IndividualBiderExInfoService.tool.cs" />
+    <Compile Include="FuWu\IndividualSupplierExInfoService.cs" />
+    <Compile Include="FuWu\IndividualSupplierExInfoService.tool.cs" />
+    <Compile Include="FuWu\IndividualSuppplierExInfoService.cs" />
+    <Compile Include="FuWu\IndividualSuppplierExInfoService.tool.cs" />
+    <Compile Include="FuWu\LegalPersonBaseService.cs" />
+    <Compile Include="FuWu\LegalPersonBaseService.tool.cs">
+      <DependentUpon>LegalPersonBaseService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\LegalPersonTradePerformService.cs" />
+    <Compile Include="FuWu\LegalPersonTradePerformService.tool.cs" />
+    <Compile Include="FuWu\LetterOfGuaranteeService.cs" />
+    <Compile Include="FuWu\LetterOfGuaranteeService.tool.cs" />
+    <Compile Include="FuWu\ListingPubInfoPreService.cs" />
+    <Compile Include="FuWu\ListingPubInfoPreService.tool.cs" />
+    <Compile Include="FuWu\ListingPubInfoService.cs" />
+    <Compile Include="FuWu\ListPubInfoService.cs" />
+    <Compile Include="FuWu\ListPubInfoService.tool.cs" />
+    <Compile Include="FuWu\LoginLogService.cs" />
+    <Compile Include="FuWu\LoginLogService.tool.cs" />
+    <Compile Include="FuWu\LogProcessingService.cs" />
+    <Compile Include="FuWu\LogProcessingService.tool.cs" />
+    <Compile Include="FuWu\LogReportService.cs" />
+    <Compile Include="FuWu\LogReportService.tool.cs" />
+    <Compile Include="FuWu\MakPerService.cs" />
+    <Compile Include="FuWu\MakPerService.tool.cs" />
+    <Compile Include="FuWu\MchgProgMgtService.cs" />
+    <Compile Include="FuWu\MchgProgMgtService.tool.cs" />
+    <Compile Include="FuWu\MClobtestService.cs" />
+    <Compile Include="FuWu\MiningAttachmentsService.cs" />
+    <Compile Include="FuWu\MiningBidAuctionTransAnnService.cs" />
+    <Compile Include="FuWu\MiningBidAucTransResAnnService.cs" />
+    <Compile Include="FuWu\MiningDistrictRangePubService.cs" />
+    <Compile Include="FuWu\MiningDistrictRangePubService.tool.cs" />
+    <Compile Include="FuWu\MiningDistrivtRangePubService.cs" />
+    <Compile Include="FuWu\MiningDistrivtRangePubService.tool.cs" />
+    <Compile Include="FuWu\MiningTransPubInfoService.cs" />
+    <Compile Include="FuWu\MiningTransPubInfoService.tool.cs" />
+    <Compile Include="FuWu\NonOilGasExplorRegAnnService.cs" />
+    <Compile Include="FuWu\NonOilGasExplorRegAnnService.tool.cs" />
+    <Compile Include="FuWu\NonOilGasMiningRegAnnService.cs" />
+    <Compile Include="FuWu\NonOilGasMiningRegAnnService.tool.cs" />
+    <Compile Include="FuWu\OilGasExplorRegAnnService.cs" />
+    <Compile Include="FuWu\OilGasExplorRegAnnService.tool.cs" />
+    <Compile Include="FuWu\OilGasMiningRegAnnService.cs" />
+    <Compile Include="FuWu\OilGasMiningRegAnnService.tool.cs" />
+    <Compile Include="FuWu\OtherAbnormityReportService.cs" />
+    <Compile Include="FuWu\OtherAbnormityReportService.tool.cs" />
+    <Compile Include="FuWu\OtherTradePubInfoService.cs" />
+    <Compile Include="FuWu\OtherTradePubInfoService.tool.cs" />
+    <Compile Include="FuWu\OtherTradeResultInfoService.cs" />
+    <Compile Include="FuWu\OtherTradeResultInfoService.tool.cs" />
+    <Compile Include="FuWu\PaymentAuditService.cs" />
+    <Compile Include="FuWu\PaymentAuditService.tool.cs" />
+    <Compile Include="FuWu\PaymentManageService.cs" />
+    <Compile Include="FuWu\PaymentManageService.tool.cs" />
+    <Compile Include="FuWu\PerformanceInfoService.cs" />
+    <Compile Include="FuWu\PerformanceInfoService.tool.cs" />
+    <Compile Include="FuWu\PerformanceService.cs" />
+    <Compile Include="FuWu\PractitionCredtiInfoService.cs" />
+    <Compile Include="FuWu\ProductAnalysisService.cs" />
+    <Compile Include="FuWu\ProductAnalysisService.tool.cs" />
+    <Compile Include="FuWu\ProductClassifyService.cs" />
+    <Compile Include="FuWu\ProductClassifyService.tool.cs" />
+    <Compile Include="FuWu\ProductComponentDataService.cs" />
+    <Compile Include="FuWu\ProductComponentDataService.tool.cs" />
+    <Compile Include="FuWu\ProductDataService.cs" />
+    <Compile Include="FuWu\ProductDataService.tool.cs" />
+    <Compile Include="FuWu\ProductEqpService.cs" />
+    <Compile Include="FuWu\ProductEqpService.tool.cs" />
+    <Compile Include="FuWu\ProductMaterialService.cs" />
+    <Compile Include="FuWu\ProductMaterialService.tool.cs" />
+    <Compile Include="FuWu\ProductParameterService.cs" />
+    <Compile Include="FuWu\ProductParameterService.tool.cs" />
+    <Compile Include="FuWu\ProductPartTableService.cs" />
+    <Compile Include="FuWu\ProductPartTableService.tool.cs" />
+    <Compile Include="FuWu\ProductValueService.cs" />
+    <Compile Include="FuWu\ProductValueService.tool.cs" />
+    <Compile Include="FuWu\ProExResultService.cs" />
+    <Compile Include="FuWu\ProExResultService.tool.cs" />
+    <Compile Include="FuWu\ProExtDetRecService.cs" />
+    <Compile Include="FuWu\ProExtDetRecService.tool.cs" />
+    <Compile Include="FuWu\ProjectAlertingInfoService.cs" />
+    <Compile Include="FuWu\ProjectAlertingInfoService.tool.cs" />
+    <Compile Include="FuWu\ProjectAttachmentsService.cs" />
+    <Compile Include="FuWu\ProjectPerformanceService.cs" />
+    <Compile Include="FuWu\ProjectPerformanceService.tool.cs" />
+    <Compile Include="FuWu\ProjectService.cs" />
+    <Compile Include="FuWu\ProjectService.tool.cs" />
+    <Compile Include="FuWu\ProTpotiotService.cs" />
+    <Compile Include="FuWu\ProTpotiotService.tool.cs" />
+    <Compile Include="FuWu\PrtLogService.cs" />
+    <Compile Include="FuWu\PrtMenuService.cs" />
+    <Compile Include="FuWu\PrtRoleMenuService.cs" />
+    <Compile Include="FuWu\PrtRoleService.cs" />
+    <Compile Include="FuWu\PrtUserService.cs" />
+    <Compile Include="FuWu\PtArticleService.cs" />
+    <Compile Include="FuWu\PtArticleService.tool.cs">
+      <DependentUpon>PtArticleService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\PtAtypeService.cs" />
+    <Compile Include="FuWu\PtAtypeService.tool.cs" />
+    <Compile Include="FuWu\PtCommentService.cs" />
+    <Compile Include="FuWu\PtCommentService.tool.cs" />
+    <Compile Include="FuWu\PtLinkService.cs" />
+    <Compile Include="FuWu\PtLinkService.tool.cs" />
+    <Compile Include="FuWu\PtTjBgService.cs" />
+    <Compile Include="FuWu\PtTjBgService.tool.cs" />
+    <Compile Include="FuWu\PtTjDataService.cs" />
+    <Compile Include="FuWu\PtTjDataService.tool.cs" />
+    <Compile Include="FuWu\PtTjMainService.cs" />
+    <Compile Include="FuWu\PtTjMainService.tool.cs" />
+    <Compile Include="FuWu\PtTjTmService.cs" />
+    <Compile Include="FuWu\PtTjTmService.tool.cs" />
+    <Compile Include="FuWu\PurchaseAgentExInfoService.cs" />
+    <Compile Include="FuWu\PurchaseAgentExInfoService.tool.cs" />
+    <Compile Include="FuWu\PurchaseBiddingRecordService.cs" />
+    <Compile Include="FuWu\PurchaseBiddingRecordService.tool.cs" />
+    <Compile Include="FuWu\PurchaseContractService.cs" />
+    <Compile Include="FuWu\PurchaseContractService.tool.cs" />
+    <Compile Include="FuWu\PurchaseExInfoService.cs" />
+    <Compile Include="FuWu\PurchaseExInfoService.tool.cs" />
+    <Compile Include="FuWu\PurchaseProjectService.cs" />
+    <Compile Include="FuWu\PurchaseQualiInqueryAnnService.cs" />
+    <Compile Include="FuWu\PurchaseTenderListService.cs" />
+    <Compile Include="FuWu\PurchaseTenderListService.tool.cs" />
+    <Compile Include="FuWu\QualiInqueryAppFileService.cs" />
+    <Compile Include="FuWu\QualiInqueryAppFileService.tool.cs" />
+    <Compile Include="FuWu\QualiInqueryClariService.cs" />
+    <Compile Include="FuWu\QualiInqueryClariService.tool.cs" />
+    <Compile Include="FuWu\QualiInqueryResultService.cs" />
+    <Compile Include="FuWu\QualiInqueryResultService.tool.cs" />
+    <Compile Include="FuWu\QualiPersonBaseService.cs" />
+    <Compile Include="FuWu\QualiPersonBaseService.tool.cs" />
+    <Compile Include="FuWu\QualiPersonPerformeService.cs" />
+    <Compile Include="FuWu\QualiPersonPerformeService.tool.cs" />
+    <Compile Include="FuWu\QualiPersonQualiService.cs" />
+    <Compile Include="FuWu\QualiPersonQualiService.tool.cs" />
+    <Compile Include="FuWu\SectionService.cs" />
+    <Compile Include="FuWu\SectionService.tool.cs" />
+    <Compile Include="FuWu\SltScoreHistoryLogService.cs" />
+    <Compile Include="FuWu\SltScoreLogService.cs" />
+    <Compile Include="FuWu\SltScoreLogService.tool.cs">
+      <DependentUpon>SltScoreLogService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\SltScoreService.cs" />
+    <Compile Include="FuWu\SltStaffLogService.cs" />
+    <Compile Include="FuWu\SltStaffLogService.tool.cs">
+      <DependentUpon>SltStaffLogService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\SltStaffService.cs" />
+    <Compile Include="FuWu\SocialCreditInfoService.cs" />
+    <Compile Include="FuWu\SocialCreditInfoService.tool.cs" />
+    <Compile Include="FuWu\StatlSumService.cs" />
+    <Compile Include="FuWu\StatlSumService.tool.cs" />
+    <Compile Include="FuWu\StockListingPubInfoPreService.cs" />
+    <Compile Include="FuWu\StockListingPubInfoPreService.tool.cs" />
+    <Compile Include="FuWu\StockListingPubInfoService.cs" />
+    <Compile Include="FuWu\StockTradeResultInfoService.cs" />
+    <Compile Include="FuWu\StockTradeResultPreService.cs" />
+    <Compile Include="FuWu\StPptnRService.cs" />
+    <Compile Include="FuWu\StPptnRService.tool.cs" />
+    <Compile Include="FuWu\StRiverRService.cs" />
+    <Compile Include="FuWu\StRiverRService.tool.cs" />
+    <Compile Include="FuWu\StRsvrRService.cs" />
+    <Compile Include="FuWu\StRsvrRService.tool.cs" />
+    <Compile Include="FuWu\StStbprpBService.cs" />
+    <Compile Include="FuWu\StStbprpBService.tool.cs" />
+    <Compile Include="FuWu\StTideRService.cs" />
+    <Compile Include="FuWu\StTideRService.tool.cs" />
+    <Compile Include="FuWu\SupervisionAttachmentsService.cs" />
+    <Compile Include="FuWu\SupplierExInfoService.cs" />
+    <Compile Include="FuWu\SysAreaQuanguoService.cs" />
+    <Compile Include="FuWu\SysAreaService.cs" />
+    <Compile Include="FuWu\SysAttachmentService.cs" />
+    <Compile Include="FuWu\SysAttachmentService.tool.cs" />
+    <Compile Include="FuWu\SysAuditInfoService.cs" />
+    <Compile Include="FuWu\SysAuditInfoService.tool.cs" />
+    <Compile Include="FuWu\SysAuditService.cs" />
+    <Compile Include="FuWu\SysAuditService.tool.cs" />
+    <Compile Include="FuWu\SysDepartmentService.cs" />
+    <Compile Include="FuWu\SysDepartmentService.tool.cs" />
+    <Compile Include="FuWu\SysDicService.cs" />
+    <Compile Include="FuWu\SysDocumentsService.cs" />
+    <Compile Include="FuWu\SysDocumentsService.tool.cs" />
+    <Compile Include="FuWu\SysInfoService.cs" />
+    <Compile Include="FuWu\SysInfoService.tool.cs" />
+    <Compile Include="FuWu\SysLogService.cs" />
+    <Compile Include="FuWu\SysLogService.tool.cs" />
+    <Compile Include="FuWu\SysMenuService.cs" />
+    <Compile Include="FuWu\SysMenuService.tool.cs" />
+    <Compile Include="FuWu\SysPopedomService.cs" />
+    <Compile Include="FuWu\SysPopedomService.tool.cs" />
+    <Compile Include="FuWu\SysPublictypeinfoService.cs" />
+    <Compile Include="FuWu\SysPublictypeinfoService.tool.cs" />
+    <Compile Include="FuWu\SysSeqService.cs" />
+    <Compile Include="FuWu\SysSeqService.tool.cs" />
+    <Compile Include="FuWu\SysTreeService.cs" />
+    <Compile Include="FuWu\SysTreeService.tool.cs" />
+    <Compile Include="FuWu\SysUrlService.cs" />
+    <Compile Include="FuWu\SysUrlService.tool.cs" />
+    <Compile Include="FuWu\SysUserroleService.cs" />
+    <Compile Include="FuWu\SysUserroleService.tool.cs" />
+    <Compile Include="FuWu\SysUserService.cs" />
+    <Compile Include="FuWu\SysUserService.tool.cs" />
+    <Compile Include="FuWu\Table1Service.cs" />
+    <Compile Include="FuWu\TableFliedService.cs" />
+    <Compile Include="FuWu\TableFliedService.tool.cs" />
+    <Compile Include="FuWu\TAnswerAnnService.cs" />
+    <Compile Include="FuWu\TAnswerAnnService.tool.cs" />
+    <Compile Include="FuWu\TAskanswerService.cs" />
+    <Compile Include="FuWu\TAttachmentService.cs" />
+    <Compile Include="FuWu\TAuditDetailService.cs" />
+    <Compile Include="FuWu\TAuditDetailService.tool.cs" />
+    <Compile Include="FuWu\TAuditService.cs" />
+    <Compile Include="FuWu\TAuditService.tool.cs" />
+    <Compile Include="FuWu\TBaseTradeCenterService.cs" />
+    <Compile Include="FuWu\TBaseTradeCenterService.tool.cs" />
+    <Compile Include="FuWu\TbFavoriteService.cs" />
+    <Compile Include="FuWu\TbFavoriteService.tool.cs" />
+    <Compile Include="FuWu\TbParticipateService.cs" />
+    <Compile Include="FuWu\TbReplaceService.cs" />
+    <Compile Include="FuWu\TbReplaceService.tool.cs" />
+    <Compile Include="FuWu\TbTableconfigService.cs" />
+    <Compile Include="FuWu\TbTableconfigService.tool.cs" />
+    <Compile Include="FuWu\TbTablefieldconfigService.cs" />
+    <Compile Include="FuWu\TbTablefieldconfigService.tool.cs" />
+    <Compile Include="FuWu\TCaAccessService.cs" />
+    <Compile Include="FuWu\TCaAccessService.tool.cs" />
+    <Compile Include="FuWu\TCaPloyService.cs" />
+    <Compile Include="FuWu\TCaPloyService.tool.cs" />
+    <Compile Include="FuWu\TCertificateService.cs" />
+    <Compile Include="FuWu\TCertificateService.tool.cs" />
+    <Compile Include="FuWu\TcpSystemService.cs" />
+    <Compile Include="FuWu\TcpSystemService.tool.cs" />
+    <Compile Include="FuWu\TDownloadlistService.cs" />
+    <Compile Include="FuWu\TDownloadlistService.tool.cs" />
+    <Compile Include="FuWu\TEc2AmendbulletinService.cs" />
+    <Compile Include="FuWu\TEc2AmendbulletinService.tool.cs" />
+    <Compile Include="FuWu\TEc2BidderinfoService.cs" />
+    <Compile Include="FuWu\TEc2BidderinfoService.tool.cs" />
+    <Compile Include="FuWu\TEc2BidinviteService.cs" />
+    <Compile Include="FuWu\TEc2BidinviteService.tool.cs" />
+    <Compile Include="FuWu\TEc2BidsectionService.cs" />
+    <Compile Include="FuWu\TEc2BidsectionService.tool.cs" />
+    <Compile Include="FuWu\TEc2GoodsopenbidlistService.cs" />
+    <Compile Include="FuWu\TEc2GoodsopenbidlistService.tool.cs" />
+    <Compile Include="FuWu\TEc2OpenbidrecordService.cs" />
+    <Compile Include="FuWu\TEc2OpenbidrecordService.tool.cs" />
+    <Compile Include="FuWu\TEc2ProjectopenbidlistService.cs" />
+    <Compile Include="FuWu\TEc2ProjectopenbidlistService.tool.cs" />
+    <Compile Include="FuWu\TEc2ProjectService.cs" />
+    <Compile Include="FuWu\TEc2ProjectService.tool.cs" />
+    <Compile Include="FuWu\TEc2QualifybulletinService.cs" />
+    <Compile Include="FuWu\TEc2QualifybulletinService.tool.cs" />
+    <Compile Include="FuWu\TEc2ServiceopenbidlistService.cs" />
+    <Compile Include="FuWu\TEc2ServiceopenbidlistService.tool.cs" />
+    <Compile Include="FuWu\TEc2TenderagencyinfoService.cs" />
+    <Compile Include="FuWu\TEc2TenderagencyinfoService.tool.cs" />
+    <Compile Include="FuWu\TEc2TenderbulletinService.cs" />
+    <Compile Include="FuWu\TEc2TenderbulletinService.tool.cs" />
+    <Compile Include="FuWu\TEc2TendererinfoService.cs" />
+    <Compile Include="FuWu\TEc2TendererinfoService.tool.cs" />
+    <Compile Include="FuWu\TEc2TenderprojectService.cs" />
+    <Compile Include="FuWu\TEc2TenderprojectService.tool.cs" />
+    <Compile Include="FuWu\TEc2WinbidbulletinService.cs" />
+    <Compile Include="FuWu\TEc2WinbidbulletinService.tool.cs" />
+    <Compile Include="FuWu\TEc2WinbidService.cs" />
+    <Compile Include="FuWu\TEc2WinbidService.tool.cs" />
+    <Compile Include="FuWu\TEc2WincandidatebulletinService.cs" />
+    <Compile Include="FuWu\TEc2WincandidatebulletinService.tool.cs" />
+    <Compile Include="FuWu\TenderAbnormityReportService.cs" />
+    <Compile Include="FuWu\TenderAbnormityReportService.tool.cs" />
+    <Compile Include="FuWu\TenderAgentExInfoService.cs" />
+    <Compile Include="FuWu\TenderAnnQuaInqueryAnn1206Service.cs" />
+    <Compile Include="FuWu\TenderAnnQuaInqueryAnnService.cs" />
+    <Compile Include="FuWu\TenderCandidateAnnounceService.cs" />
+    <Compile Include="FuWu\TenderCandidateService.cs" />
+    <Compile Include="FuWu\TendererExInfoService.cs" />
+    <Compile Include="FuWu\TenderEvaluationService.cs" />
+    <Compile Include="FuWu\TenderEvaluationService.tool.cs" />
+    <Compile Include="FuWu\TenderExInfoService.cs" />
+    <Compile Include="FuWu\TenderFileClariModiService.cs" />
+    <Compile Include="FuWu\TenderFileClariModiService.tool.cs" />
+    <Compile Include="FuWu\TenderFlowMarkService.cs" />
+    <Compile Include="FuWu\TenderFlowMarkService.tool.cs" />
+    <Compile Include="FuWu\TenderInvitationService.cs" />
+    <Compile Include="FuWu\TenderInvitationService.tool.cs" />
+    <Compile Include="FuWu\TenderListService.cs" />
+    <Compile Include="FuWu\TenderProjectDelService.cs" />
+    <Compile Include="FuWu\TenderProjectDelService.tool.cs" />
+    <Compile Include="FuWu\TenderProjectGdService.cs" />
+    <Compile Include="FuWu\TenderProjectGdService.tool.cs" />
+    <Compile Include="FuWu\TenderProjectService.cs" />
+    <Compile Include="FuWu\TenderProjectService.tool.cs">
+      <DependentUpon>TenderProjectService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TestService.cs" />
+    <Compile Include="FuWu\TestTableService.cs" />
+    <Compile Include="FuWu\TFindpwdService.cs" />
+    <Compile Include="FuWu\TFindpwdService.tool.cs" />
+    <Compile Include="FuWu\TFjjAttachmentsetService.cs" />
+    <Compile Include="FuWu\TFjjAttachmentsetService.tool.cs" />
+    <Compile Include="FuWu\TFrBaseService.cs" />
+    <Compile Include="FuWu\TFrBaseService.tool.cs" />
+    <Compile Include="FuWu\TGqPublishService.cs" />
+    <Compile Include="FuWu\TGqPublishService.tool.cs" />
+    <Compile Include="FuWu\TheEelExpertService.cs" />
+    <Compile Include="FuWu\TheEelExpertService.tool.cs" />
+    <Compile Include="FuWu\TheEelRowResultService.cs" />
+    <Compile Include="FuWu\TheEelRowResultService.tool.cs" />
+    <Compile Include="FuWu\TheEelRowService.cs" />
+    <Compile Include="FuWu\TheEelRowService.tool.cs" />
+    <Compile Include="FuWu\TheEelSetAndAuthService.cs" />
+    <Compile Include="FuWu\TheEelSetAndAuthService.tool.cs" />
+    <Compile Include="FuWu\TIndexshowSetService.cs" />
+    <Compile Include="FuWu\TIndexshowSetService.tool.cs" />
+    <Compile Include="FuWu\TJiekouUserService.cs" />
+    <Compile Include="FuWu\TJiekouUserService.tool.cs" />
+    <Compile Include="FuWu\TJyptAccessService.cs" />
+    <Compile Include="FuWu\TMedicalService.cs" />
+    <Compile Include="FuWu\TMedicalTestService.cs" />
+    <Compile Include="FuWu\TMedicalTotleService.cs" />
+    <Compile Include="FuWu\TMedicalTotleService.tool.cs" />
+    <Compile Include="FuWu\TMenuService.cs" />
+    <Compile Include="FuWu\TMenuService.tool.cs" />
+    <Compile Include="FuWu\TMessageService.cs" />
+    <Compile Include="FuWu\TMessageService.tool.cs" />
+    <Compile Include="FuWu\TMessageTextService.cs" />
+    <Compile Include="FuWu\TMessageTextService.tool.cs" />
+    <Compile Include="FuWu\TMssmService.cs" />
+    <Compile Include="FuWu\TNoticeService.cs" />
+    <Compile Include="FuWu\TNoticeService.tool.cs" />
+    <Compile Include="FuWu\TOperAskService.cs" />
+    <Compile Include="FuWu\TOperAskService.tool.cs" />
+    <Compile Include="FuWu\TOpernoticeService.cs" />
+    <Compile Include="FuWu\TOpernoticeService.tool.cs" />
+    <Compile Include="FuWu\TpaQaTableService.cs" />
+    <Compile Include="FuWu\TpaQaTableService.tool.cs" />
+    <Compile Include="FuWu\TpewInfoService.cs" />
+    <Compile Include="FuWu\TpewInfoService.tool.cs" />
+    <Compile Include="FuWu\TPopedomService.cs" />
+    <Compile Include="FuWu\TPopedomService.tool.cs" />
+    <Compile Include="FuWu\TPushzpLogService.cs" />
+    <Compile Include="FuWu\TPushzpLogService.tool.cs" />
+    <Compile Include="FuWu\TradeResultInfoPreService.cs" />
+    <Compile Include="FuWu\TradeResultInfoPreService.tool.cs" />
+    <Compile Include="FuWu\TradeResultInfoService.cs" />
+    <Compile Include="FuWu\TransferEnteHareholderService.cs" />
+    <Compile Include="FuWu\TransferEnteHareholderService.tool.cs" />
+    <Compile Include="FuWu\TransferEnteHolderPreService.cs" />
+    <Compile Include="FuWu\TransferEnteHolderPreService.tool.cs" />
+    <Compile Include="FuWu\TransferEnteInfoPreService.cs" />
+    <Compile Include="FuWu\TransferEnteInfoPreService.tool.cs" />
+    <Compile Include="FuWu\TransferEnteInfoService.cs" />
+    <Compile Include="FuWu\TransferEnteInfoService.tool.cs" />
+    <Compile Include="FuWu\TransferorExInfoService.cs" />
+    <Compile Include="FuWu\TransferorExInfoService.tool.cs" />
+    <Compile Include="FuWu\TRowidService.cs" />
+    <Compile Include="FuWu\TRpDbconfigService.cs" />
+    <Compile Include="FuWu\TRpDbconfigService.tool.cs" />
+    <Compile Include="FuWu\TRpFieldService.cs" />
+    <Compile Include="FuWu\TRpFieldService.tool.cs" />
+    <Compile Include="FuWu\TRpMenuService.cs" />
+    <Compile Include="FuWu\TRpMenuService.tool.cs" />
+    <Compile Include="FuWu\TRpService.cs" />
+    <Compile Include="FuWu\TRpService.tool.cs" />
+    <Compile Include="FuWu\TRpStTreeNodeService.cs" />
+    <Compile Include="FuWu\TRpStTreeNodeService.tool.cs" />
+    <Compile Include="FuWu\TRpStTreeService.cs" />
+    <Compile Include="FuWu\TRpStTreeService.tool.cs" />
+    <Compile Include="FuWu\TSeqLogService.cs" />
+    <Compile Include="FuWu\TSeqLogService.tool.cs" />
+    <Compile Include="FuWu\TSeqService.cs" />
+    <Compile Include="FuWu\TSeqService.tool.cs" />
+    <Compile Include="FuWu\TServiceDatakeyService.cs" />
+    <Compile Include="FuWu\TServiceLogService.cs" />
+    <Compile Include="FuWu\TServiceLogService.tool.cs" />
+    <Compile Include="FuWu\TServiceTcidService.cs" />
+    <Compile Include="FuWu\TSignCaService.cs" />
+    <Compile Include="FuWu\TSignCaService.tool.cs" />
+    <Compile Include="FuWu\TSignLogService.cs" />
+    <Compile Include="FuWu\TSignLogService.tool.cs" />
+    <Compile Include="FuWu\TsInfoService.cs" />
+    <Compile Include="FuWu\TsInfoService.tool.cs" />
+    <Compile Include="FuWu\TSmsLogService.cs" />
+    <Compile Include="FuWu\TSmsLogService.tool.cs" />
+    <Compile Include="FuWu\TSsoAuthorizationService.cs" />
+    <Compile Include="FuWu\TSsoAuthorizationService.tool.cs" />
+    <Compile Include="FuWu\TSsoInfoService.cs" />
+    <Compile Include="FuWu\TSsoInfoService.tool.cs" />
+    <Compile Include="FuWu\TSsoInfoSqService.cs" />
+    <Compile Include="FuWu\TSsoInfoSqService.tool.cs" />
+    <Compile Include="FuWu\TSsoJycenterService.cs" />
+    <Compile Include="FuWu\TSsoJycenterService.tool.cs" />
+    <Compile Include="FuWu\TSwPublishService.cs" />
+    <Compile Include="FuWu\TSwPublishService.tool.cs" />
+    <Compile Include="FuWu\TSysMessageService.cs" />
+    <Compile Include="FuWu\TSysMessageService.tool.cs" />
+    <Compile Include="FuWu\TTableFieldService.cs" />
+    <Compile Include="FuWu\TTableFieldService.tool.cs" />
+    <Compile Include="FuWu\TTimelinessCountService.cs" />
+    <Compile Include="FuWu\TTimelinessCountService.tool.cs" />
+    <Compile Include="FuWu\TTjAlltbUploadService.cs" />
+    <Compile Include="FuWu\TTjAlltbUploadService.tool.cs" />
+    <Compile Include="FuWu\TTransLogService.cs" />
+    <Compile Include="FuWu\TTransLogService.tool.cs" />
+    <Compile Include="FuWu\TTuisongService.cs" />
+    <Compile Include="FuWu\TTuisongTotalService.cs" />
+    <Compile Include="FuWu\TUploadErrorLogService.cs" />
+    <Compile Include="FuWu\TUploadErrorService.cs" />
+    <Compile Include="FuWu\TUploadErrorService.tool.cs" />
+    <Compile Include="FuWu\TUploadOkLogService.cs" />
+    <Compile Include="FuWu\TUploadOkLogService.tool.cs" />
+    <Compile Include="FuWu\TUploadService.cs" />
+    <Compile Include="FuWu\TUploadService.tool.cs" />
+    <Compile Include="FuWu\TUserBanService.cs" />
+    <Compile Include="FuWu\TUserMenuService.cs" />
+    <Compile Include="FuWu\TUserMenuService.tool.cs" />
+    <Compile Include="FuWu\TUserPopedomService.cs" />
+    <Compile Include="FuWu\TUserPopedomService.tool.cs" />
+    <Compile Include="FuWu\TUserQyzcService.cs" />
+    <Compile Include="FuWu\TUserQyzcService.tool.cs">
+      <DependentUpon>TUserQyzcService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TUserRoleService.cs" />
+    <Compile Include="FuWu\TUserRoleService.tool.cs" />
+    <Compile Include="FuWu\TUserService.cs" />
+    <Compile Include="FuWu\TUserService.tool.cs">
+      <DependentUpon>TUserService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TUserTradeplatformService.cs" />
+    <Compile Include="FuWu\TUserUrlService.cs" />
+    <Compile Include="FuWu\TXiehuiUploadLogService.cs" />
+    <Compile Include="FuWu\TXiehuiUploadLogService.tool.cs" />
+    <Compile Include="FuWu\TYcLogService.cs" />
+    <Compile Include="FuWu\TYcLogService.tool.cs" />
+    <Compile Include="FuWu\TZtBiddercontractService.cs" />
+    <Compile Include="FuWu\TZtBiddercontractService.tool.cs">
+      <DependentUpon>TZtBiddercontractService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TZtLegalService.cs" />
+    <Compile Include="FuWu\TZtLegalService.tool.cs">
+      <DependentUpon>TZtLegalService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TZtOrganqualService.cs" />
+    <Compile Include="FuWu\TZtOrganqualService.tool.cs">
+      <DependentUpon>TZtOrganqualService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TZtPersonService.cs" />
+    <Compile Include="FuWu\TZtPersonService.tool.cs">
+      <DependentUpon>TZtPersonService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TZtPracticequalService.cs" />
+    <Compile Include="FuWu\TZtPracticequalService.tool.cs">
+      <DependentUpon>TZtPracticequalService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TZtPractitionerachievementService.cs" />
+    <Compile Include="FuWu\TZtPractitionerachievementService.tool.cs">
+      <DependentUpon>TZtPractitionerachievementService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TZtPractitionerService.cs" />
+    <Compile Include="FuWu\TZtPractitionerService.tool.cs">
+      <DependentUpon>TZtPractitionerService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TZtPurchasingagentService.cs" />
+    <Compile Include="FuWu\TZtPurchasingagentService.tool.cs">
+      <DependentUpon>TZtPurchasingagentService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TZtTransfereeService.cs" />
+    <Compile Include="FuWu\TZtTransfereeService.tool.cs">
+      <DependentUpon>TZtTransfereeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\TZtTransferService.cs" />
+    <Compile Include="FuWu\TZtTransferService.tool.cs">
+      <DependentUpon>TZtTransferService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\UnifyAuthsService.tool.cs">
+      <DependentUpon>UnifyAuthsService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\UnifyUserService.cs" />
+    <Compile Include="FuWu\UnifyAuthsService.cs" />
+    <Compile Include="FuWu\UnifyAppService.cs" />
+    <Compile Include="FuWu\UnifyAppService.tool.cs">
+      <DependentUpon>UnifyAppService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\UnifyUserService.tool.cs">
+      <DependentUpon>UnifyUserService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuWu\UseAfterSaleService.cs" />
+    <Compile Include="FuWu\UseAfterSaleService.tool.cs" />
+    <Compile Include="FuWu\WarnRecordService.cs" />
+    <Compile Include="FuWu\ViolatingLawsRulesInfoService.cs" />
+    <Compile Include="FuWu\WinResultAnnoService.cs" />
+    <Compile Include="FuWu\WithdrawBlackListService.cs" />
+    <Compile Include="FuWu\WithdrawBlackListService.tool.cs" />
+    <Compile Include="FuWu\YdEvaRoomService.cs" />
+    <Compile Include="FuWu\YdEvaRoomService.tool.cs" />
+    <Compile Include="FuWu\YdRequisitionService.cs" />
+    <Compile Include="FuWu\YdRequisitionService.tool.cs" />
+    <Compile Include="FuWu\YdRoomsetService.cs" />
+    <Compile Include="FuWu\YdRoomsetService.tool.cs" />
+    <Compile Include="FuWu\ZjAwardInfoService.cs" />
+    <Compile Include="FuWu\ZjEnterpriseCertificateInfoService.cs" />
+    <Compile Include="FuWu\ZjEnterpriseCreditScoreService.cs" />
+    <Compile Include="FuWu\ZjEnterpriseQualificationService.cs" />
+    <Compile Include="FuWu\ZjLegalPersonBaseService.cs" />
+    <Compile Include="FuWu\ZjpriBadBehaviorService.cs" />
+    <Compile Include="FuWu\ZjpriBadBehaviorService.tool.cs" />
+    <Compile Include="FuWu\ZjpriComprehensiveService.cs" />
+    <Compile Include="FuWu\ZjpriComprehensiveService.tool.cs" />
+    <Compile Include="FuWu\ZjpriConstructCertifiService.cs" />
+    <Compile Include="FuWu\ZjpriConstructCertifiService.tool.cs" />
+    <Compile Include="FuWu\ZjpriConstructEnterInfoService.cs" />
+    <Compile Include="FuWu\ZjpriConstructEnterInfoService.tool.cs" />
+    <Compile Include="FuWu\ZjpriConstructIntermediateService.cs" />
+    <Compile Include="FuWu\ZjpriConstructIntermediateService.tool.cs" />
+    <Compile Include="FuWu\ZjpriConstructKeypersonService.cs" />
+    <Compile Include="FuWu\ZjpriConstructKeypersonService.tool.cs" />
+    <Compile Include="FuWu\ZjpriConstructQualiInfoService.cs" />
+    <Compile Include="FuWu\ZjpriConstructQualiInfoService.tool.cs" />
+    <Compile Include="FuWu\ZjpriEmployeesInfoService.cs" />
+    <Compile Include="FuWu\ZjpriEmployeesInfoService.tool.cs" />
+    <Compile Include="FuWu\ZjpriEmployeesQualiService.cs" />
+    <Compile Include="FuWu\ZjpriEmployeesQualiService.tool.cs" />
+    <Compile Include="FuWu\ZjpriExtCompanyService.cs" />
+    <Compile Include="FuWu\ZjpriExtCompanyService.tool.cs" />
+    <Compile Include="FuWu\ZjpriExtPeopleService.cs" />
+    <Compile Include="FuWu\ZjpriExtPeopleService.tool.cs" />
+    <Compile Include="FuWu\ZjpriExtSelfproveService.cs" />
+    <Compile Include="FuWu\ZjpriExtSelfproveService.tool.cs" />
+    <Compile Include="FuWu\ZjpriGoodBehaviorService.cs" />
+    <Compile Include="FuWu\ZjpriGoodBehaviorService.tool.cs" />
+    <Compile Include="FuWu\ZjpriRegisterPersonService.cs" />
+    <Compile Include="FuWu\ZjpriRegisterPersonService.tool.cs" />
+    <Compile Include="FuWu\ZjQualiPersonBaseService.cs" />
+    <Compile Include="FuWu\ZjQualiPersonPerformeService.cs" />
+    <Compile Include="FuWu\ZjQualiPersonQualiService.cs" />
+    <Compile Include="FuWu\ZjViolatingLawsRulesInfoService.cs" />
+    <Compile Include="FuWu\ZpUserService.cs" />
+    <Compile Include="FuWu\ZpUserService.tool.cs" />
+    <Compile Include="Infrastructure\Model\BigData\EngineerSearchModel.cs" />
+    <Compile Include="Infrastructure\Model\CaDecodeParamModel.cs" />
+    <Compile Include="Infrastructure\Model\CertificateAuthorityModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\FwGCJSTradeDetail.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\FwUserModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\FwOAuthModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\MvGgxxXzjdChartModel.cs">
+      <DependentUpon>MvGgxxXzjdModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\FuWu\MvGgxxXzjdModel.cs" />
+    <Compile Include="Infrastructure\Model\FuWu\MvGgxxXzjdModel.partial.cs">
+      <DependentUpon>MvGgxxXzjdModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\BeforeDetailModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\CreditSearchModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JdUserModel.partial.cs">
+      <DependentUpon>JdUserModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TUserExtend.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TUserExtend.partial.cs">
+      <DependentUpon>TUserExtend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\ProfileModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\PtComplainModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\PtComplainModel.partial.cs">
+      <DependentUpon>PtComplainModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsBtsrModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsBtsrModel.partail.cs">
+      <DependentUpon>PtZxtsBtsrModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsHandleModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsLogModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsLogModel.partial.cs">
+      <DependentUpon>PtZxtsLogModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsLookIntoFeedbackModel.partial.cs">
+      <DependentUpon>PtZxtsLookIntoFeedbackModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsLookIntoModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsLookIntoFeedbackModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsLookIntoModel.partial.cs">
+      <DependentUpon>PtZxtsLookIntoModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\PtZxtsModel.partial.cs">
+      <DependentUpon>PtZxtsModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TMpPlanInfoModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TMpPlanInfoModel.partial.cs">
+      <DependentUpon>TMpPlanInfoModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TouSuChuLiJueDingShuModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\BuYuShouLiTongZhiShuModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TPmJdinfoLogModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TPmJdinfoLogModel.partial.cs">
+      <DependentUpon>TPmJdinfoLogModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TProjectDataModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TProjectDataModel.partial.cs">
+      <DependentUpon>TProjectDataModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TTpDataModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TTpDataModel.partial.cs">
+      <DependentUpon>TTpDataModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TUserDepartment.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TUserDepartment.partial.cs">
+      <DependentUpon>TUserDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\UserGroup.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\JdUserModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ObjectionResultResponse.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\ObjectionSearchRequest.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TAfcLogModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TAfcLogModel.partial.cs">
+      <DependentUpon>TAfcLogModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\JianDu\TAfcProjectModel.cs" />
+    <Compile Include="Infrastructure\Model\JianDu\TAfcProjectModel.partial.cs">
+      <DependentUpon>TAfcProjectModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Model\SelectModel.cs" />
+    <Compile Include="Infrastructure\Model\UnifyUser\UnifyUserAppAuth.cs" />
+    <Compile Include="Infrastructure\Helper\FileHelper.cs" />
+    <Compile Include="Infrastructure\Model\SmsModel.cs" />
+    <Compile Include="JianDu\AwardInfoService.cs" />
+    <Compile Include="JianDu\AwardInfoService.tool.cs" />
+    <Compile Include="JianDu\BakLegalPersonBaseService.cs" />
+    <Compile Include="JianDu\BakPtArticleService.cs" />
+    <Compile Include="JianDu\BakPtComplainService.cs" />
+    <Compile Include="JianDu\BakPtZxtsService.cs" />
+    <Compile Include="JianDu\BakTAccesstoapplicationService.cs" />
+    <Compile Include="JianDu\BakTDishonestyExposureService.cs" />
+    <Compile Include="JianDu\BakTIllegalService.cs" />
+    <Compile Include="JianDu\BascResultService.cs" />
+    <Compile Include="Violation\BdInquireRecordService.cs" />
+    <Compile Include="Violation\BdViolationPointService.cs" />
+    <Compile Include="JianDu\BlackListService.tool.cs">
+      <DependentUpon>BlackListService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\CommonService.adhoc.cs">
+      <DependentUpon>CommonService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\PtLinkService.tool.cs">
+      <DependentUpon>PtLinkService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\OpertionRecordService.tool.cs" />
+    <Compile Include="JianDu\PtZxtsBtsrService.tool.cs">
+      <DependentUpon>PtZxtsBtsrService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\PtZxtsDepconfigService.tool.cs">
+      <DependentUpon>PtZxtsDepconfigService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\PtZxtsLogService.tool.cs">
+      <DependentUpon>PtZxtsLogService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\PtZxtsLookIntoService.cs" />
+    <Compile Include="JianDu\PtZxtsLookIntoService.tool.cs">
+      <DependentUpon>PtZxtsLookIntoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\PtZxtsRevokeService.tool.cs">
+      <DependentUpon>PtZxtsRevokeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\PunishService.cs" />
+    <Compile Include="JianDu\Record_Review_Doc\BuildDoc.cs" />
+    <Compile Include="JianDu\Record_Review_Doc\BuildFactory.cs" />
+    <Compile Include="JianDu\Record_Review_Doc\ReplaceQSD.cs" />
+    <Compile Include="JianDu\Record_Review_Doc\ReplaceYJZGS.cs" />
+    <Compile Include="JianDu\Record_Review_Doc\ReplaceZGD.cs" />
+    <Compile Include="JianDu\Record_Review_Doc\ZJ_BuildDoc.cs" />
+    <Compile Include="JianDu\Record_Review_Doc\ZJ_ReplaceQSD.cs" />
+    <Compile Include="JianDu\Record_Review_Doc\ZJ_ReplaceZGD.cs" />
+    <Compile Include="JianDu\SysAreaService.tool.cs">
+      <DependentUpon>SysAreaService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TAfcFixedService.cs" />
+    <Compile Include="JianDu\TAfcFixedService.tool.cs">
+      <DependentUpon>TAfcFixedService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TAfcLogService.manager.cs">
+      <DependentUpon>TAfcLogService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TAfcProjectService.manager.cs">
+      <DependentUpon>TAfcProjectService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TGeneralAttributeV2Service.cs" />
+    <Compile Include="JianDu\BascResultService.tool.cs">
+      <DependentUpon>BlackListService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\BlackListService.cs" />
+    <Compile Include="JianDu\CommonService.cs" />
+    <Compile Include="JianDu\GetdatalogService.cs" />
+    <Compile Include="JianDu\GetdatalogService.tool.cs" />
+    <Compile Include="JianDu\JtBidDocCharactCodeService.cs" />
+    <Compile Include="JianDu\JtBidDocCharactCodeService.tool.cs" />
+    <Compile Include="JianDu\JtBidEvaluationExpertService.cs" />
+    <Compile Include="JianDu\JtBidEvaluationExpertService.tool.cs" />
+    <Compile Include="JianDu\JtBidOpeningRecordService.cs" />
+    <Compile Include="JianDu\JtBidOpeningRecordService.tool.cs" />
+    <Compile Include="JianDu\JtCivilConTenderFileService.cs" />
+    <Compile Include="JianDu\JtCivilConTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtConstructTenderFileService.cs" />
+    <Compile Include="JianDu\JtConstructTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtConsultSubmitReportService.cs" />
+    <Compile Include="JianDu\JtConsultSubmitReportService.tool.cs" />
+    <Compile Include="JianDu\JtContractPerformanceService.cs" />
+    <Compile Include="JianDu\JtContractPerformanceService.tool.cs" />
+    <Compile Include="JianDu\JtContructSuperTimeService.cs" />
+    <Compile Include="JianDu\JtContructSuperTimeService.tool.cs" />
+    <Compile Include="JianDu\JtDesignerApproachTimeService.cs" />
+    <Compile Include="JianDu\JtDesignerApproachTimeService.tool.cs" />
+    <Compile Include="JianDu\JtDesignMainLivingService.cs" />
+    <Compile Include="JianDu\JtDesignMainLivingService.tool.cs" />
+    <Compile Include="JianDu\JtEnginConTenderFileService.cs" />
+    <Compile Include="JianDu\JtEnginConTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtEquipMinMachineryService.cs" />
+    <Compile Include="JianDu\JtEquipMinMachineryService.tool.cs" />
+    <Compile Include="JianDu\JtEvaluationReportService.cs" />
+    <Compile Include="JianDu\JtEvaluationReportService.tool.cs" />
+    <Compile Include="JianDu\JtGenralConTenderFile01Service.cs" />
+    <Compile Include="JianDu\JtGenralConTenderFileService.cs" />
+    <Compile Include="JianDu\JtGenralConTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtGenSuperTenderFileService.cs" />
+    <Compile Include="JianDu\JtGenSuperTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtGenSurveyTenderFileService.cs" />
+    <Compile Include="JianDu\JtGenSurveyTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtHighwayOtherContentService.cs" />
+    <Compile Include="JianDu\JtHighwayOtherContentService.tool.cs" />
+    <Compile Include="JianDu\JtLetterOfGuaranteeService.cs" />
+    <Compile Include="JianDu\JtLetterOfGuaranteeService.tool.cs" />
+    <Compile Include="JianDu\JtMachEleTenderFileService.cs" />
+    <Compile Include="JianDu\JtMachEleTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtMainProjectRequireService.cs" />
+    <Compile Include="JianDu\JtMainProjectRequireService.tool.cs" />
+    <Compile Include="JianDu\JtMinRequirePersonnelService.cs" />
+    <Compile Include="JianDu\JtMinRequirePersonnelService.tool.cs" />
+    <Compile Include="JianDu\JtOrdMainTenderFileService.cs" />
+    <Compile Include="JianDu\JtOrdMainTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtOtherRequirePersonnelService.cs" />
+    <Compile Include="JianDu\JtOtherRequirePersonnelService.tool.cs" />
+    <Compile Include="JianDu\JtOwnerDocWorkplanService.cs" />
+    <Compile Include="JianDu\JtOwnerDocWorkplanService.tool.cs" />
+    <Compile Include="JianDu\JtPerformanceService.cs" />
+    <Compile Include="JianDu\JtPerformanceService.tool.cs" />
+    <Compile Include="JianDu\JtPortConTenderFileService.cs" />
+    <Compile Include="JianDu\JtPortConTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtPortSuperTenderFileService.cs" />
+    <Compile Include="JianDu\JtPortSuperTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtProjectService.cs" />
+    <Compile Include="JianDu\JtProjectService.tool.cs" />
+    <Compile Include="JianDu\JtQualificationRequireService.cs" />
+    <Compile Include="JianDu\JtQualificationRequireService.tool.cs" />
+    <Compile Include="JianDu\JtQualiInqueryAppFileService.cs" />
+    <Compile Include="JianDu\JtQualiInqueryAppFileService.tool.cs" />
+    <Compile Include="JianDu\JtQualiInqueryClariService.cs" />
+    <Compile Include="JianDu\JtQualiInqueryClariService.tool.cs" />
+    <Compile Include="JianDu\JtQualiInqueryResultService.cs" />
+    <Compile Include="JianDu\JtQualiInqueryResultService.tool.cs" />
+    <Compile Include="JianDu\JtSectionService.cs" />
+    <Compile Include="JianDu\JtSectionService.tool.cs" />
+    <Compile Include="JianDu\JtSubgradeTenderFileService.cs" />
+    <Compile Include="JianDu\JtSubgradeTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtSubSupTenderFileService.cs" />
+    <Compile Include="JianDu\JtSubSupTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtSuperTenderFileService.cs" />
+    <Compile Include="JianDu\JtSuperTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtSurveyTenderFileService.cs" />
+    <Compile Include="JianDu\JtSurveyTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtTenderAbnormityReportService.cs" />
+    <Compile Include="JianDu\JtTenderAbnormityReportService.tool.cs" />
+    <Compile Include="JianDu\JtTenderCandidateAnnService.cs" />
+    <Compile Include="JianDu\JtTenderCandidateAnnService.tool.cs" />
+    <Compile Include="JianDu\JtTenderCandidateService.cs" />
+    <Compile Include="JianDu\JtTenderCandidateService.tool.cs" />
+    <Compile Include="JianDu\JtTenderEvaluationService.cs" />
+    <Compile Include="JianDu\JtTenderEvaluationService.tool.cs" />
+    <Compile Include="JianDu\JtTenderFileClariModiService.cs" />
+    <Compile Include="JianDu\JtTenderFileClariModiService.tool.cs" />
+    <Compile Include="JianDu\JtTenderInvitationService.cs" />
+    <Compile Include="JianDu\JtTenderInvitationService.tool.cs" />
+    <Compile Include="JianDu\JtTenderListService.cs" />
+    <Compile Include="JianDu\JtTenderListService.tool.cs" />
+    <Compile Include="JianDu\JtTenderProjectService.cs" />
+    <Compile Include="JianDu\JtTenderProjectService.tool.cs" />
+    <Compile Include="JianDu\JtTenderQuaInqueryAnnService.cs" />
+    <Compile Include="JianDu\JtTenderQuaInqueryAnnService.tool.cs" />
+    <Compile Include="JianDu\JtTestBidTenderFileService.cs" />
+    <Compile Include="JianDu\JtTestBidTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtTestTenderFileService.cs" />
+    <Compile Include="JianDu\JtTestTenderFileService.tool.cs" />
+    <Compile Include="JianDu\JtVehicleRequirementService.cs" />
+    <Compile Include="JianDu\JtVehicleRequirementService.tool.cs" />
+    <Compile Include="JianDu\JtWinResultAnnoService.cs" />
+    <Compile Include="JianDu\JtWinResultAnnoService.tool.cs" />
+    <Compile Include="JianDu\LegalPersonBaseService.cs" />
+    <Compile Include="JianDu\LegalPersonBaseService.tool.cs">
+      <DependentUpon>LegalPersonBaseService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\LoginLogService.cs" />
+    <Compile Include="JianDu\LoginLogService.tool.cs" />
+    <Compile Include="JianDu\MgrLogService.cs" />
+    <Compile Include="JianDu\MvGcjsGgxxHistoryService.cs" />
+    <Compile Include="JianDu\MvGcjsGgxxService.cs" />
+    <Compile Include="JianDu\OpertionRecordService.cs" />
+    <Compile Include="JianDu\ProjectService.cs" />
+    <Compile Include="JianDu\ProjectService.tool.cs" />
+    <Compile Include="JianDu\PtArticleService.cs" />
+    <Compile Include="JianDu\PtArticleService.tool.cs">
+      <DependentUpon>PtArticleService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\PtAtypeService.cs" />
+    <Compile Include="JianDu\PtAtypeService.tool.cs">
+      <DependentUpon>PtAtypeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\PtCommentService.cs" />
+    <Compile Include="JianDu\PtCommentService.tool.cs" />
+    <Compile Include="JianDu\PtComplainService.cs" />
+    <Compile Include="JianDu\PtComplainService.tool.cs">
+      <DependentUpon>PtComplainService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\PtExposureService.cs" />
+    <Compile Include="JianDu\PtExposureService.tool.cs" />
+    <Compile Include="JianDu\PtLinkService.cs" />
+    <Compile Include="JianDu\PtTxteditService.cs" />
+    <Compile Include="JianDu\PtTxteditService.tool.cs" />
+    <Compile Include="JianDu\PtZxtsBtsrService.cs" />
+    <Compile Include="JianDu\PtZxtsDepconfigService.cs" />
+    <Compile Include="JianDu\PtZxtsLogService.cs" />
+    <Compile Include="JianDu\PtZxtsRevokeService.cs" />
+    <Compile Include="JianDu\PtZxtsService.cs" />
+    <Compile Include="JianDu\PtZxtsService.tool.cs">
+      <DependentUpon>PtZxtsService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\RecordAttachmentService.cs" />
+    <Compile Include="JianDu\RecordAttachmentService.tool.cs" />
+    <Compile Include="JianDu\RecordBiddingWriteService.cs" />
+    <Compile Include="JianDu\RecordBiddingWriteService.tool.cs" />
+    <Compile Include="JianDu\RecordBiddocNormalService.cs" />
+    <Compile Include="JianDu\RecordBiddocNormalService.tool.cs" />
+    <Compile Include="JianDu\RecordClassifyNormalService.cs" />
+    <Compile Include="JianDu\RecordClassifyNormalService.tool.cs" />
+    <Compile Include="JianDu\RecordClassifyService.cs" />
+    <Compile Include="JianDu\RecordClassifyService.tool.cs" />
+    <Compile Include="JianDu\RecordContractService.cs" />
+    <Compile Include="JianDu\RecordContractService.tool.cs" />
+    <Compile Include="JianDu\RecordCreditDeductionService.cs" />
+    <Compile Include="JianDu\RecordCreditDeductionService.tool.cs" />
+    <Compile Include="JianDu\RecordHandleResultService.cs" />
+    <Compile Include="JianDu\RecordHandleResultService.tool.cs" />
+    <Compile Include="JianDu\RecordLogService.cs" />
+    <Compile Include="JianDu\RecordLogService.tool.cs" />
+    <Compile Include="JianDu\RecordResidentialBiddocService.cs" />
+    <Compile Include="JianDu\RecordResidentialBiddocService.tool.cs" />
+    <Compile Include="JianDu\RecordReviewService.cs" />
+    <Compile Include="JianDu\RecordSectionInfoService.cs" />
+    <Compile Include="JianDu\RecordSectionInfoService.tool.cs" />
+    <Compile Include="JianDu\RecordWrittenService.cs" />
+    <Compile Include="JianDu\RecordWrittenService.tool.cs" />
+    <Compile Include="JianDu\ReviewButtonService.cs" />
+    <Compile Include="JianDu\ReviewButtonService.tool.cs" />
+    <Compile Include="JianDu\ReviewDepconfigService.cs" />
+    <Compile Include="JianDu\ReviewDepconfigService.tool.cs" />
+    <Compile Include="JianDu\ReviewInstanceService.cs" />
+    <Compile Include="JianDu\ReviewInstanceService.tool.cs" />
+    <Compile Include="JianDu\ReviewLogService.cs" />
+    <Compile Include="JianDu\ReviewLogService.tool.cs" />
+    <Compile Include="JianDu\ReviewMainService.cs" />
+    <Compile Include="JianDu\ReviewMainService.tool.cs" />
+    <Compile Include="JianDu\ReviewNodeService.cs" />
+    <Compile Include="JianDu\ReviewNodeService.tool.cs" />
+    <Compile Include="JianDu\ReviewOpersService.cs" />
+    <Compile Include="JianDu\ReviewOpersService.tool.cs" />
+    <Compile Include="JianDu\SectionService.cs" />
+    <Compile Include="JianDu\SectionService.tool.cs" />
+    <Compile Include="JianDu\SlBidderQualifiRequireService.cs" />
+    <Compile Include="JianDu\SlBidderQualifiRequireService.tool.cs" />
+    <Compile Include="JianDu\SlBidDocCharactCodeService.cs" />
+    <Compile Include="JianDu\SlBidDocCharactCodeService.tool.cs" />
+    <Compile Include="JianDu\SlBidEvaluationExpertService.cs" />
+    <Compile Include="JianDu\SlBidEvaluationExpertService.tool.cs" />
+    <Compile Include="JianDu\SlBidOpeningRecordService.cs" />
+    <Compile Include="JianDu\SlBidOpeningRecordService.tool.cs" />
+    <Compile Include="JianDu\SlConstructBidocRequireService.cs" />
+    <Compile Include="JianDu\SlConstructBidocRequireService.tool.cs" />
+    <Compile Include="JianDu\SlConstructSuperRequireService.cs" />
+    <Compile Include="JianDu\SlConstructSuperRequireService.tool.cs" />
+    <Compile Include="JianDu\SlContractPerformanceService.cs" />
+    <Compile Include="JianDu\SlContractPerformanceService.tool.cs" />
+    <Compile Include="JianDu\SlEvaluationReportService.cs" />
+    <Compile Include="JianDu\SlEvaluationReportService.tool.cs" />
+    <Compile Include="JianDu\SlItemControlPriceService.cs" />
+    <Compile Include="JianDu\SlItemControlPriceService.tool.cs" />
+    <Compile Include="JianDu\SlLetterOfGuaranteeService.cs" />
+    <Compile Include="JianDu\SlLetterOfGuaranteeService.tool.cs" />
+    <Compile Include="JianDu\SlMinimumEquipRequireService.cs" />
+    <Compile Include="JianDu\SlMinimumEquipRequireService.tool.cs" />
+    <Compile Include="JianDu\SlOtherRequireService.cs" />
+    <Compile Include="JianDu\SlOtherRequireService.tool.cs" />
+    <Compile Include="JianDu\SlPerformanceService.cs" />
+    <Compile Include="JianDu\SlPerformanceService.tool.cs" />
+    <Compile Include="JianDu\SlProjectService.cs" />
+    <Compile Include="JianDu\SlProjectService.tool.cs" />
+    <Compile Include="JianDu\SlQualiInqueryAppFileService.cs" />
+    <Compile Include="JianDu\SlQualiInqueryAppFileService.tool.cs" />
+    <Compile Include="JianDu\SlQualiInqueryClariService.cs" />
+    <Compile Include="JianDu\SlQualiInqueryClariService.tool.cs" />
+    <Compile Include="JianDu\SlQualiInqueryResultService.cs" />
+    <Compile Include="JianDu\SlQualiInqueryResultService.tool.cs" />
+    <Compile Include="JianDu\SlSectionService.cs" />
+    <Compile Include="JianDu\SlSectionService.tool.cs" />
+    <Compile Include="JianDu\SlSurveyDesignRequireService.cs" />
+    <Compile Include="JianDu\SlSurveyDesignRequireService.tool.cs" />
+    <Compile Include="JianDu\SlTenderAbnormityReportService.cs" />
+    <Compile Include="JianDu\SlTenderAbnormityReportService.tool.cs" />
+    <Compile Include="JianDu\SlTenderCandidateAnnService.cs" />
+    <Compile Include="JianDu\SlTenderCandidateAnnService.tool.cs" />
+    <Compile Include="JianDu\SlTenderCandidateService.cs" />
+    <Compile Include="JianDu\SlTenderCandidateService.tool.cs" />
+    <Compile Include="JianDu\SlTenderEvaluationService.cs" />
+    <Compile Include="JianDu\SlTenderEvaluationService.tool.cs" />
+    <Compile Include="JianDu\SlTenderFileClariModiService.cs" />
+    <Compile Include="JianDu\SlTenderFileClariModiService.tool.cs" />
+    <Compile Include="JianDu\SlTenderInvitationService.cs" />
+    <Compile Include="JianDu\SlTenderInvitationService.tool.cs" />
+    <Compile Include="JianDu\SlTenderListService.cs" />
+    <Compile Include="JianDu\SlTenderListService.tool.cs" />
+    <Compile Include="JianDu\SlTenderProjectService.cs" />
+    <Compile Include="JianDu\SlTenderProjectService.tool.cs" />
+    <Compile Include="JianDu\SlTenderQuaInqueryAnnService.cs" />
+    <Compile Include="JianDu\SlTenderQuaInqueryAnnService.tool.cs" />
+    <Compile Include="JianDu\SlWinResultAnnoService.cs" />
+    <Compile Include="JianDu\SlWinResultAnnoService.tool.cs" />
+    <Compile Include="JianDu\SysAreaQuanguoBakService.cs" />
+    <Compile Include="JianDu\SysAreaQuanguoService.cs" />
+    <Compile Include="JianDu\SysAreaService.cs" />
+    <Compile Include="JianDu\SysAttachmentService.cs" />
+    <Compile Include="JianDu\SysAttachmentService.tool.cs" />
+    <Compile Include="JianDu\SysDataLogService.cs" />
+    <Compile Include="JianDu\SysDataLogService.tool.cs" />
+    <Compile Include="JianDu\SysDepartmentService.cs" />
+    <Compile Include="JianDu\SysDepartmentService.tool.cs" />
+    <Compile Include="JianDu\SysDicnewService.cs" />
+    <Compile Include="JianDu\SysDicService.cs" />
+    <Compile Include="JianDu\SysDicService.tool.cs">
+      <DependentUpon>SysDicService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\SysDocumentsService.cs" />
+    <Compile Include="JianDu\SysDocumentsService.tool.cs" />
+    <Compile Include="JianDu\SysInfoService.cs" />
+    <Compile Include="JianDu\SysInfoService.tool.cs" />
+    <Compile Include="JianDu\SysLogService.cs" />
+    <Compile Include="JianDu\SysLogService.tool.cs" />
+    <Compile Include="JianDu\SysMenuBackService.cs" />
+    <Compile Include="JianDu\SysMenuBackService.tool.cs">
+      <DependentUpon>SysMenuBackService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\SysMenuService.cs" />
+    <Compile Include="JianDu\SysMenuService.tool.cs" />
+    <Compile Include="JianDu\SysPopedomService.cs" />
+    <Compile Include="JianDu\SysPopedomService.tool.cs" />
+    <Compile Include="JianDu\SysPublictypeinfoService.cs" />
+    <Compile Include="JianDu\SysPublictypeinfoService.tool.cs" />
+    <Compile Include="JianDu\SysTreeService.cs" />
+    <Compile Include="JianDu\SysTreeService.tool.cs" />
+    <Compile Include="JianDu\SysUrlService.cs" />
+    <Compile Include="JianDu\SysUserroleService.cs" />
+    <Compile Include="JianDu\SysUserroleService.tool.cs" />
+    <Compile Include="JianDu\SysUserService.cs" />
+    <Compile Include="JianDu\SysUserService.tool.cs" />
+    <Compile Include="JianDu\TAccessDataService.cs" />
+    <Compile Include="JianDu\TAccessDataService.tool.cs" />
+    <Compile Include="JianDu\TAccesstoapplicationService.cs" />
+    <Compile Include="JianDu\TAccesstoapplicationService.tool.cs" />
+    <Compile Include="JianDu\TAfcChangeService.cs" />
+    <Compile Include="JianDu\TAfcChangeService.tool.cs" />
+    <Compile Include="JianDu\TAfcLogService.cs" />
+    <Compile Include="JianDu\TAfcLogService.tool.cs">
+      <DependentUpon>TAfcLogService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TAfcProjectService.cs" />
+    <Compile Include="JianDu\TAfcProjectService.tool.cs">
+      <DependentUpon>TAfcProjectService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TAfcSecondaryService.cs" />
+    <Compile Include="JianDu\TAfcSecondaryService.tool.cs">
+      <DependentUpon>TAfcSecondaryService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TAfcXmcodeService.cs" />
+    <Compile Include="JianDu\TAfcXmcodeService.tool.cs">
+      <DependentUpon>TAfcXmcodeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TAttachmentService.cs" />
+    <Compile Include="JianDu\TAttachmentService.tool.cs" />
+    <Compile Include="JianDu\TAuditDetailService.cs" />
+    <Compile Include="JianDu\TAuditDetailService.tool.cs" />
+    <Compile Include="JianDu\TAuditService.cs" />
+    <Compile Include="JianDu\TAuditService.tool.cs" />
+    <Compile Include="JianDu\TBaseTradeCenterService.cs" />
+    <Compile Include="JianDu\TBaseTradeCenterService.tool.cs" />
+    <Compile Include="JianDu\TbFavoriteService.cs" />
+    <Compile Include="JianDu\TbFavoriteService.tool.cs" />
+    <Compile Include="JianDu\TbReplaceService.cs" />
+    <Compile Include="JianDu\TbReplaceService.tool.cs" />
+    <Compile Include="JianDu\TbTableconfigService.cs" />
+    <Compile Include="JianDu\TbTableconfigService.tool.cs" />
+    <Compile Include="JianDu\TbTablefieldconfigService.cs" />
+    <Compile Include="JianDu\TbTablefieldconfigService.tool.cs" />
+    <Compile Include="JianDu\TComplainService.cs" />
+    <Compile Include="JianDu\TComplainService.tool.cs" />
+    <Compile Include="JianDu\TComplaintsProcessService.cs" />
+    <Compile Include="JianDu\TComplaintsProcessService.tool.cs" />
+    <Compile Include="JianDu\TCreditBonusService.cs" />
+    <Compile Include="JianDu\TCreditBonusService.tool.cs" />
+    <Compile Include="JianDu\TDishonestyExposureService.cs" />
+    <Compile Include="JianDu\TDishonestyExposureService.tool.cs" />
+    <Compile Include="JianDu\TenderDocTransLogService.cs" />
+    <Compile Include="JianDu\TenderDocTransLogService.tool.cs" />
+    <Compile Include="JianDu\TenderProjectDelService.cs" />
+    <Compile Include="JianDu\TenderProjectDelService.tool.cs" />
+    <Compile Include="JianDu\TenderProjectService.cs" />
+    <Compile Include="JianDu\TenderProjectService.tool.cs">
+      <DependentUpon>TenderProjectService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TEvaluationService.cs" />
+    <Compile Include="JianDu\TEvaluationService.tool.cs" />
+    <Compile Include="JianDu\TExpertBlacklistService.cs" />
+    <Compile Include="JianDu\TExpertBlacklistService.tool.cs" />
+    <Compile Include="JianDu\TExpertEvaluationInfoService.cs" />
+    <Compile Include="JianDu\TExpertEvaluationInfoService.tool.cs" />
+    <Compile Include="JianDu\TExpertExtractionService.cs" />
+    <Compile Include="JianDu\TExpertExtractionService.tool.cs" />
+    <Compile Include="JianDu\TFindpwdService.cs" />
+    <Compile Include="JianDu\TFindpwdService.tool.cs" />
+    <Compile Include="JianDu\TFraudService.cs" />
+    <Compile Include="JianDu\TFraudService.tool.cs">
+      <DependentUpon>TFraudService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TFrBaseService.cs" />
+    <Compile Include="JianDu\TFrBaseService.tool.cs" />
+    <Compile Include="JianDu\TGeneralAttributeV2Service.tool.cs">
+      <DependentUpon>TGeneralAttributeV2Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TGqPublishService.cs" />
+    <Compile Include="JianDu\TGqPublishService.tool.cs" />
+    <Compile Include="JianDu\THolidayService.cs" />
+    <Compile Include="JianDu\THolidayService.tool.cs">
+      <DependentUpon>THolidayService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TIllegalService.cs" />
+    <Compile Include="JianDu\TIllegalService.tool.cs" />
+    <Compile Include="JianDu\TJiekouUser20180330Service.cs" />
+    <Compile Include="JianDu\TJiekouUserService.cs" />
+    <Compile Include="JianDu\TJiekouUserService.tool.cs" />
+    <Compile Include="JianDu\TMessageService.cs" />
+    <Compile Include="JianDu\TMessageService.tool.cs">
+      <DependentUpon>TMessageService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TMpPlanInfoService.cs" />
+    <Compile Include="JianDu\TMpPlanInfoService.tool.cs">
+      <DependentUpon>TMpPlanInfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TMpPlanService.cs" />
+    <Compile Include="JianDu\TMpPlanService.tool.cs" />
+    <Compile Include="JianDu\TMsgStateService.cs" />
+    <Compile Include="JianDu\TMsgStateService.tool.cs" />
+    <Compile Include="JianDu\TMultimediaDataService.cs" />
+    <Compile Include="JianDu\TMultimediaDataService.tool.cs" />
+    <Compile Include="JianDu\TNoticeService.cs" />
+    <Compile Include="JianDu\TNoticeService.tool.cs">
+      <DependentUpon>TNoticeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TPcNodeService.cs" />
+    <Compile Include="JianDu\TPcNodeService.tool.cs" />
+    <Compile Include="JianDu\TPcPathService.cs" />
+    <Compile Include="JianDu\TPcPathService.tool.cs" />
+    <Compile Include="JianDu\TPewPinfoService.cs" />
+    <Compile Include="JianDu\TPewPinfoService.tool.cs" />
+    <Compile Include="JianDu\TPmJdinfoLogService.cs" />
+    <Compile Include="JianDu\TPmJdinfoLogService.tool.cs">
+      <DependentUpon>TPmJdinfoLogService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TPmJdinfoService.cs" />
+    <Compile Include="JianDu\TPmJdinfoService.tool.cs" />
+    <Compile Include="JianDu\TPmMsgmodelService.cs" />
+    <Compile Include="JianDu\TPmMsgmodelService.tool.cs" />
+    <Compile Include="JianDu\TPmRelationService.cs" />
+    <Compile Include="JianDu\TPmRelationService.tool.cs" />
+    <Compile Include="JianDu\TProjectBrowseService.cs" />
+    <Compile Include="JianDu\TProjectBrowseService.tool.cs">
+      <DependentUpon>TProjectBrowseService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TProjectDataService.cs" />
+    <Compile Include="JianDu\TProjectDataService.tool.cs">
+      <DependentUpon>TProjectDataService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TProjectWarnService.cs" />
+    <Compile Include="JianDu\TProjectWarnService.tool.cs" />
+    <Compile Include="JianDu\TProSupervisionService.cs" />
+    <Compile Include="JianDu\TProSupervisionService.tool.cs" />
+    <Compile Include="JianDu\TradeCenterService.cs" />
+    <Compile Include="JianDu\TradeCenterService.tool.cs" />
+    <Compile Include="JianDu\TradeEvaRoomService.cs" />
+    <Compile Include="JianDu\TradeEvaRoomService.tool.cs" />
+    <Compile Include="JianDu\TRecordOperationAttachmentService.cs" />
+    <Compile Include="JianDu\TRecordOperationAttachmentService.tool.cs" />
+    <Compile Include="JianDu\TRecordProjectinfoService.cs" />
+    <Compile Include="JianDu\TRecordProjectinfoService.tool.cs" />
+    <Compile Include="JianDu\TRecordRegulatorService.cs" />
+    <Compile Include="JianDu\TRecordRegulatorService.tool.cs" />
+    <Compile Include="JianDu\TRecordReviewNewService.cs" />
+    <Compile Include="JianDu\TRecordReviewNewService.tool.cs" />
+    <Compile Include="JianDu\TRecordReviewService.cs" />
+    <Compile Include="JianDu\TRecordReviewService.tool.cs" />
+    <Compile Include="JianDu\TSeqService.cs" />
+    <Compile Include="JianDu\TSeqService.tool.cs" />
+    <Compile Include="JianDu\TServiceLogService.cs" />
+    <Compile Include="JianDu\TServiceLogService.tool.cs" />
+    <Compile Include="JianDu\TServiceTcid20170315Service.cs" />
+    <Compile Include="JianDu\TServiceTcidService.cs" />
+    <Compile Include="JianDu\TServiceTcidService.tool.cs" />
+    <Compile Include="JianDu\TSmsLogService.cs" />
+    <Compile Include="JianDu\TSmsSendService.cs" />
+    <Compile Include="JianDu\TSmsSendService.tool.cs" />
+    <Compile Include="JianDu\TTableFieldService.cs" />
+    <Compile Include="JianDu\TTableFieldService.tool.cs" />
+    <Compile Include="JianDu\TTenderProjectService.cs" />
+    <Compile Include="JianDu\TTenderProjectService.tool.cs" />
+    <Compile Include="JianDu\TTpColumnsService.cs" />
+    <Compile Include="JianDu\TTpColumnsService.tool.cs" />
+    <Compile Include="JianDu\TTpDataService.cs" />
+    <Compile Include="JianDu\TTpDataService.tool.cs" />
+    <Compile Include="JianDu\TTpMainService.cs" />
+    <Compile Include="JianDu\TTpMainService.tool.cs" />
+    <Compile Include="JianDu\TTpNodeService.cs" />
+    <Compile Include="JianDu\TTpNodeService.tool.cs" />
+    <Compile Include="JianDu\TTpTacheService.cs" />
+    <Compile Include="JianDu\TTpTacheService.tool.cs" />
+    <Compile Include="JianDu\TTuisongService.cs" />
+    <Compile Include="JianDu\TTuisongService.tool.cs" />
+    <Compile Include="JianDu\TTuisongTotalService.cs" />
+    <Compile Include="JianDu\TTuisongTotalService.tool.cs" />
+    <Compile Include="JianDu\TUpdateemailService.cs" />
+    <Compile Include="JianDu\TUpdateemailService.tool.cs" />
+    <Compile Include="JianDu\TUserBindAccountService.cs" />
+    <Compile Include="JianDu\TUserDepartmentService.cs" />
+    <Compile Include="JianDu\TUserDepartmentService.tool.cs">
+      <DependentUpon>TUserDepartmentService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserExtendService.cs" />
+    <Compile Include="JianDu\TUserExtendService.tool.cs">
+      <DependentUpon>TUserExtendService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserMenuService.cs" />
+    <Compile Include="JianDu\TUserMenuService.tool.cs">
+      <DependentUpon>TUserMenuService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserMenuV2Service.cs" />
+    <Compile Include="JianDu\TUserMenuV2Service.tool.cs">
+      <DependentUpon>TUserMenuV2Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserMsgService.cs" />
+    <Compile Include="JianDu\TUserMsgService.tool.cs" />
+    <Compile Include="JianDu\TUserPopedomService.cs" />
+    <Compile Include="JianDu\TUserPopedomService.tool.cs">
+      <DependentUpon>TUserPopedomService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserPopedomV2Service.cs" />
+    <Compile Include="JianDu\TUserPopedomV2Service.tool.cs">
+      <DependentUpon>TUserPopedomV2Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserRoleV2Service.cs" />
+    <Compile Include="JianDu\TUserRoleService.cs" />
+    <Compile Include="JianDu\TUserRoleService.tool.cs">
+      <DependentUpon>TUserRoleService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserRoleV2Service.tool.cs">
+      <DependentUpon>TUserRoleV2Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserService.cs" />
+    <Compile Include="JianDu\TUserService.tool.cs">
+      <DependentUpon>TUserService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserTradeplatformService.cs" />
+    <Compile Include="JianDu\TUserTradeplatformService.tool.cs">
+      <DependentUpon>TUserTradeplatformService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\TUserUrlService.cs" />
+    <Compile Include="JianDu\TUserUrlService.tool.cs">
+      <DependentUpon>TUserUrlService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\VGongChengTongJiService.cs" />
+    <Compile Include="JianDu\VGongChengTongJiService.tool.cs">
+      <DependentUpon>VGongChengTongJiService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\VVideobasicinfoService.cs" />
+    <Compile Include="JianDu\VVideopointinfoService.cs" />
+    <Compile Include="JianDu\VVideopointinfoService.tool.cs">
+      <DependentUpon>VVideopointinfoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\ZjBidDocCharactCodeService.tool.cs">
+      <DependentUpon>ZjBidDocCharactCodeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JianDu\ZjSoftwareAndHardwareSimilarModel.cs">
+      <DependentUpon>ZjBidDocCharactCodeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Violation\BdViolationRecordService.cs" />
+    <Compile Include="Violation\BdViolationRecordService.tool.cs">
+      <DependentUpon>BdViolationRecordService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VProjectRegisterService.cs" />
+    <Compile Include="YDPB\EnumList.cs" />
+    <Compile Include="YDPB\Extensions.cs" />
+    <Compile Include="YDPB\GlobalDataService.cs" />
+    <Compile Include="YDPB\VYdpbApplyAllService.cs" />
+    <Compile Include="YDPB\VYdpbRoomSeatService.cs" />
+    <Compile Include="YDPB\YdbpBranchService.cs" />
+    <Compile Include="YDPB\YdpbApplyTradeService.cs" />
+    <Compile Include="YDPB\YdpbEvalApplyDetailService.cs" />
+    <Compile Include="YDPB\YdpbEvalApplyDetailService.tool.cs" />
+    <Compile Include="YDPB\YdpbEvalApplyRecordService.cs" />
+    <Compile Include="YDPB\YdpbEvalApplyService.cs" />
+    <Compile Include="YDPB\YdpbEvalApplyService.tool.cs" />
+    <Compile Include="YDPB\YdpbEvalExpertRecordService.cs" />
+    <Compile Include="YDPB\YdpbEvalExpertRecordService.tool.cs" />
+    <Compile Include="YDPB\YdpbEvalRoomSeatRecordService.cs" />
+    <Compile Include="YDPB\YdpbEvalRoomService.cs" />
+    <Compile Include="JianDu\ZjBidDocCharactCodeService.cs" />
+    <Compile Include="JianDu\ZjBidEvaluationExpertService.cs" />
+    <Compile Include="JianDu\ZjBidEvaluationExpertService.tool.cs" />
+    <Compile Include="JianDu\ZjBidOpeningRecordService.cs" />
+    <Compile Include="JianDu\ZjBidOpeningRecordService.tool.cs" />
+    <Compile Include="JianDu\ZjBidWinningNoticeService.cs" />
+    <Compile Include="JianDu\ZjBidWinningNoticeService.tool.cs" />
+    <Compile Include="JianDu\ZjContractPerformanceService.cs" />
+    <Compile Include="JianDu\ZjContractPerformanceService.tool.cs" />
+    <Compile Include="JianDu\ZjEvaluationReportService.cs" />
+    <Compile Include="JianDu\ZjEvaluationReportService.tool.cs" />
+    <Compile Include="JianDu\ZjExpertFineScoreService.cs" />
+    <Compile Include="JianDu\ZjExpertFineScoreService.tool.cs" />
+    <Compile Include="JianDu\ZjLetterOfGuaranteeService.cs" />
+    <Compile Include="JianDu\ZjLetterOfGuaranteeService.tool.cs" />
+    <Compile Include="JianDu\ZjPerformanceService.cs" />
+    <Compile Include="JianDu\ZjPerformanceService.tool.cs" />
+    <Compile Include="JianDu\ZjProjectService.cs" />
+    <Compile Include="JianDu\ZjProjectService.tool.cs" />
+    <Compile Include="JianDu\ZjQualiInqueryAppFileService.cs" />
+    <Compile Include="JianDu\ZjQualiInqueryAppFileService.tool.cs" />
+    <Compile Include="JianDu\ZjQualiInqueryClariService.cs" />
+    <Compile Include="JianDu\ZjQualiInqueryClariService.tool.cs" />
+    <Compile Include="JianDu\ZjQualiInqueryResultService.cs" />
+    <Compile Include="JianDu\ZjQualiInqueryResultService.tool.cs" />
+    <Compile Include="JianDu\ZjRecordReviewMtService.cs" />
+    <Compile Include="JianDu\ZjRecordReviewMtService.tool.cs" />
+    <Compile Include="JianDu\ZjRecordReviewMzService.cs" />
+    <Compile Include="JianDu\ZjRecordReviewMzService.tool.cs" />
+    <Compile Include="JianDu\ZjReviewContentService.cs" />
+    <Compile Include="JianDu\ZjReviewContentService.tool.cs" />
+    <Compile Include="JianDu\ZjSectionService.cs" />
+    <Compile Include="JianDu\ZjSectionService.tool.cs" />
+    <Compile Include="JianDu\ZjTenderAbnormityReportService.cs" />
+    <Compile Include="JianDu\ZjTenderAbnormityReportService.tool.cs" />
+    <Compile Include="JianDu\ZjTenderCandidateAnnService.cs" />
+    <Compile Include="JianDu\ZjTenderCandidateAnnService.tool.cs" />
+    <Compile Include="JianDu\ZjTenderCandidateService.cs" />
+    <Compile Include="JianDu\ZjTenderCandidateService.tool.cs" />
+    <Compile Include="JianDu\ZjTenderEvaluationService.cs" />
+    <Compile Include="JianDu\ZjTenderEvaluationService.tool.cs" />
+    <Compile Include="JianDu\ZjTenderFileClariModiService.cs" />
+    <Compile Include="JianDu\ZjTenderFileClariModiService.tool.cs" />
+    <Compile Include="JianDu\ZjTenderInvitationService.cs" />
+    <Compile Include="JianDu\ZjTenderInvitationService.tool.cs" />
+    <Compile Include="JianDu\ZjTenderListService.cs" />
+    <Compile Include="JianDu\ZjTenderListService.tool.cs" />
+    <Compile Include="JianDu\ZjTenderProjectService.cs" />
+    <Compile Include="JianDu\ZjTenderProjectService.tool.cs" />
+    <Compile Include="JianDu\ZjTenderQuaInqueryAnnService.cs" />
+    <Compile Include="JianDu\ZjTenderQuaInqueryAnnService.tool.cs" />
+    <Compile Include="JianDu\ZjWinResultAnnoService.cs" />
+    <Compile Include="JianDu\ZjWinResultAnnoService.tool.cs" />
+    <Compile Include="JianDu\ZjWrittenReportService.cs" />
+    <Compile Include="JianDu\ZjWrittenReportService.tool.cs" />
+    <Compile Include="JianDu\ZyJiekouUserService.cs" />
+    <Compile Include="JianDu\ZyJiekouUserService.tool.cs" />
+    <Compile Include="Infrastructure\Model\ExternalLoginModel.cs" />
+    <Compile Include="Infrastructure\Model\LoginModel.cs" />
+    <Compile Include="Infrastructure\Model\RegisterModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YDPB\YdpbEvalRoomCameraService.cs" />
+    <Compile Include="YDPB\YdpbEvalRoomSeatService.cs" />
+    <Compile Include="YDPB\YdpbEvalRoomService.tool.cs" />
+    <Compile Include="YDPB\YdpbFileService.cs" />
+    <Compile Include="YDPB\YdpbNotifyConfigService.cs" />
+    <Compile Include="ZBCG\CommonService.cs" />
+    <Compile Include="ZBCG\ZpFaqService.cs" />
+    <Compile Include="ZBCG\ZpFaqService.tool.cs">
+      <DependentUpon>ZpFaqService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZBCG\ZpNoticeService.cs" />
+    <Compile Include="ZBCG\ZpNoticeService.tool.cs">
+      <DependentUpon>ZpNoticeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZBCG\ZpResultService.cs" />
+    <Compile Include="ZBCG\ZpResultService.tool.cs">
+      <DependentUpon>ZpResultService.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Dos.ORM\Dos.ORM.csproj">
+      <Project>{4bef1983-f275-4807-96ea-25b973bd6e94}</Project>
+      <Name>Dos.ORM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\GGZY.Core\GGZY.Core.csproj">
+      <Project>{e910c497-a03a-49e5-bfc5-d4f179673c2e}</Project>
+      <Name>GGZY.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Presentations\Assist\PullData\PullData.csproj">
+      <Project>{4241e9d3-dfb7-41f3-b0e6-aac2515b1a2c}</Project>
+      <Name>PullData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZYFW.DbEntity\GGZYFW.DbEntity.csproj">
+      <Project>{45b1992f-6a13-49bb-aee3-e5ee708756aa}</Project>
+      <Name>GGZYFW.DbEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZYJD.DbEntity\GGZYJD.DbEntity.csproj">
+      <Project>{6d6bb58c-e602-42aa-9108-38135dae9889}</Project>
+      <Name>GGZYJD.DbEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GGZYJH.DbEntity\GGZYJH.DbEntity.csproj">
+      <Project>{43a759cf-53b1-476f-99ad-0097b3b7df25}</Project>
+      <Name>GGZYJH.DbEntity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
